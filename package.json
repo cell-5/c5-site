@@ -2,7 +2,7 @@
   "name": "cell-5",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://cell5.co.uk",
+  "homepage": "cell5.co.uk",
   "dependencies": {
     "gh-pages": "^1.1.0",
     "react": "^16.2.0",
