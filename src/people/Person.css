@@ -1,0 +1,54 @@
+.Person {
+    /* background-color: lightgrey; */
+    border-color: lightgrey;
+    border-width: 1px;
+    border-style: solid;
+    margin-bottom: 10px;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+.Person .Header{
+    font-size: x-large;
+    /* background-color: darkgrey; */
+}
+
+.Person .Header .Name{
+    text-align: left;  
+    float: left;
+    vertical-align: middle;
+    font-weight: bolder;
+    padding-right: 10px;
+  
+}
+
+.Person .Header .Title{  
+    text-align: center; 
+    /* background-color: green; */
+    font-style: italic;
+    float: left;
+    color: darkcyan;
+}
+
+.Person .Header .IconLink{
+    font-size: smaller;
+    padding-left: 10px;
+    float: right;
+}
+
+.Person .Header img{
+    size: 400px;
+    height: 20px;
+    width: 20px;
+  
+}
+
+.Person .Body{
+    padding-top: 3%;
+    padding-right: 2%;
+    padding-bottom: 2%;
+}
+
+.Person .Body .Blurb{
+    font-size: larger;
+}

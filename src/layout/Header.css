@@ -1,0 +1,13 @@
+.Header {
+  background-color: #607d8b70;
+  margin-top: 10px;
+}
+.Header .Logo {
+  margin-top: 0px;
+  margin-left: 10px;
+  text-align: left;
+}
+
+.Header .Logo img {
+  height: 75px;
+}
