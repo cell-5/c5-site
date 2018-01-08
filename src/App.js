@@ -20,7 +20,7 @@ class App extends Component {
     return (
       <Layout>
         {/**todo might be outof data history**/ }
-        <Router>
+        <Router  basename={process.env.PUBLIC_URL}>
 
         {/* <Link to="/">Home</Link>{' '} */}
 
