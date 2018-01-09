@@ -19,7 +19,7 @@ class People extends Component {
     return (
       <div className="People">
         
-        <h2>Meet our team:</h2>
+        <h2>Meet the team:</h2>
 
         <Person 
           name="Peter" 
