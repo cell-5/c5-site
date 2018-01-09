@@ -10,7 +10,10 @@ class Footer extends Component {
   }
 
   render() {
-    return (<div>Copyright 2018</div>);
+    return (
+    <div className="footer">
+    <div>Copyright 2018</div>
+    </div>);
   }
 }
 

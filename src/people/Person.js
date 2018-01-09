@@ -13,7 +13,10 @@ class Person extends Component {
 
   render() {
     return (
+
+        
         <div className="Person">
+        
            
             <div className="Header">
                 
@@ -38,8 +41,12 @@ class Person extends Component {
                 </div>
 
                 <div className="Title"> - {this.props.title}</div>
+
+                
             
             </div>
+
+            
             <div className="Body">
                 <div className="Blurb">
                     {this.props.children}

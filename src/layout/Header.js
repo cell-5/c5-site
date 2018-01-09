@@ -36,8 +36,8 @@ class Header extends Component {
   render() {
     return (
       <div className="Header">
-        <Navbar color="faded" light expand="md">
-          <NavbarBrand href="/">   
+        <Navbar color="bg-light" light expand="md">
+          <NavbarBrand href="/">
             <div className="Logo">
               <img src={require('./cell5-logo-2.svg')} alt="logo" />
             </div>   
@@ -46,13 +46,13 @@ class Header extends Component {
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
               <NavItem>
-                <NavLink href="/people">People</NavLink>
+                <NavLink href="/people">PEOPLE</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/approach">Approach</NavLink>
+                <NavLink href="/approach">APPROACH</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/contact">Contact</NavLink>
+                <NavLink href="/contact">CONTACT</NavLink>
               </NavItem>
             </Nav>
           </Collapse>

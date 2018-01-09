@@ -1,3 +1,44 @@
 .Home {
   background-color: black;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
+}
+
+/* .main {
+  padding: 1em;
+} */
+
+.mission {
+  padding-top: 2em;
+}
+
+.image {
+  padding: 2em;
+}
+
+.mission {
+  padding-top: 3em;
+  padding-bottom: 3em;
+  padding-left: 2.5em;
+  padding-right: 2.5em;
+  background: #1a73ba;
+  text-align: center;
+  color: white;
+}
+
+.line {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+}
+
+h3 {
+  font-weight: 100;
+  font-size: 48px;
+  line-height: 1em;
+}
+
+.bold {
+  font-weight: 900;
+  /* font-size: 48px; */
+  line-height: 1em;
 }

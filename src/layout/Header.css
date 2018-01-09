@@ -11,3 +11,13 @@
 .Header .Logo img {
   height: 75px;
 }
+
+.nav-link:hover{
+  background: #fff;
+  color: #ef5ba1;
+}
+
+/* .navbar {
+  background: #ef5ba1;
+}
+ */
