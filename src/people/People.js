@@ -23,7 +23,7 @@ class People extends Component {
 
         <Person 
           name="Peter" 
-          title="Full-stack developer specializing in cloud architectures and devops." 
+          title="Full-stack developer and team coach, specializing in cloud architectures and devops." 
           twitter="https://twitter.com/peterabarry" 
           linkedIn="https://www.linkedin.com/in/peterbarry/" 
           github="https://github.com/peterabarry" 
