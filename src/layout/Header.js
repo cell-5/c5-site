@@ -38,9 +38,9 @@ class Header extends Component {
       <div className="Header">
         <Navbar color="bg-light" light expand="md">
           <NavbarBrand href="/">
-            <div className="Logo">
+            {/* <div className="Logo">
               <img src={require('./cell5-logo-2.svg')} alt="logo" />
-            </div>   
+            </div>    */}
           </NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>

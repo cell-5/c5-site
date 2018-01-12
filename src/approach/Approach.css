@@ -8,6 +8,7 @@
   background: #3cbace;
   text-align: center;
   color:#eeeeee;
+  text-align: left;
 
 }
 
@@ -18,6 +19,7 @@ h2{
 }
 
 .header{
+  text-align: center;
   background: white;
   color:black
 }
