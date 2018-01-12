@@ -1,7 +1,7 @@
 
 import React, { Component } from 'react';
 import './Person.css';
-import { Card, Button, CardTitle, CardText, Row, Col} from 'reactstrap';
+import { Card, Button, CardTitle, CardText, Row, Col } from 'reactstrap';
 
 
 class Person extends Component {
@@ -19,22 +19,22 @@ class Person extends Component {
                 <div className="Header">
                     <div className="Name">{this.props.name}</div>
                     <div className="icons">
-                    <div className="IconLink">
-                        <a href={this.props.linkedIn}>
-                            <img src={require('./linkedin.svg')} alt='a' />
-                        </a>
+                        <div className="IconLink">
+                            <a href={this.props.linkedIn}>
+                                <img src={require('./linkedin.svg')} alt='a' />
+                            </a>
+                        </div>
+                        <div className="IconLink">
+                            <a href={this.props.twitter}><img src={require('./twitter.svg')} alt='b' /></a>
+                        </div>
+                        <div className="IconLink">
+                            <a href={this.props.github}><img src={require('./github.svg')} alt='c' /></a>
+                        </div>
+                        <div className="IconLink">
+                            <a href={'mailto:' + this.props.email}><img src={require('./gmail.svg')} alt='c' /></a>
+                        </div>
                     </div>
-                    <div className="IconLink">
-                        <a href={this.props.twitter}><img src={require('./twitter.svg')} alt='b' /></a>
-                    </div>
-                    <div className="IconLink">
-                        <a href={this.props.github}><img src={require('./github.svg')} alt='c' /></a>
-                    </div>
-                    <div className="IconLink">
-                        <a href={'mailto:' + this.props.email}><img src={require('./gmail.svg')} alt='c' /></a>
-                    </div>
-                    </div>
-                    <div className="Title"> - {this.props.title}</div>
+                    <div className="Title"> {this.props.title}</div>
                 </div>
                 <div className="Body">
                     <div className="Blurb">
