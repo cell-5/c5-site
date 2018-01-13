@@ -5,12 +5,19 @@
     border-style: solid;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     margin-top: 1em;
+    border-radius: 5px;
 }
 
 .Person .Header{
     font-size: x-large;
-    background-color: white; 
-} 
+    background-color: white;
+}
+
+.Person .Header .Title{
+    text-align: center;
+    padding:1em;
+    font-weight: 100;
+}
 
 .Person .Header .Name{
     text-align: center;  
@@ -19,42 +26,43 @@
     line-height: 1em;
     vertical-align: middle;
     padding: .25em;
+    padding-top: .5em;
 }
-.Person .Header .icons {
-    padding: 1em;
+.Person .Header .image{
     text-align: center;
-    height:auto;
+    padding: 1em;
 }
+
+.img-circle {
+    border-radius: 50%;
+    height: 10em;
+}
+
+.Person .Header .icons {
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+}
+
 .Person .Header .IconLink{
-    display: inline-block; 
+    text-align: center;
     padding-left: 10px;
     float: left;
 }
 
 .Person .Body{
-    text-align: center;  
+
     vertical-align: middle;
-    padding-bottom: 3em;
-
-  
-}
-.Person .Header .Title{  
-    text-align: center; 
-    padding:1em;
-    font-weight: 100;
+    padding: 0em 2em 2em 2em;
 }
 
 
-
-.Person .Header img{
+.Person .Header .IconLink{
     size: 400px;
-    height: 20px;
-    width: 20px;
+    height: 40px;
+    width: 40px;
 }
 
-.Person .Body{
-    padding: 2em;
-}
 
 .Person .Body .Blurb{
     font-size: smaller;

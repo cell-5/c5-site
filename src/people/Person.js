@@ -18,6 +18,7 @@ class Person extends Component {
             <div className="Person">
                 <div className="Header">
                     <div className="Name">{this.props.name}</div>
+                    <div className="image"> <img src={this.props.image} className="img-circle" alt='c' /></div>
                     <div className="icons">
                         <div className="IconLink">
                             <a href={this.props.linkedIn}>
@@ -34,12 +35,16 @@ class Person extends Component {
                             <a href={'mailto:' + this.props.email}><img src={require('./gmail.svg')} alt='c' /></a>
                         </div>
                     </div>
+
                     <div className="Title"> {this.props.title}</div>
                 </div>
                 <div className="Body">
                     <div className="Blurb">
                         {this.props.children}
                     </div>
+                    {/* <div classnName="cv">
+                        <Button outline color="primary">CV</Button>{' '}
+                    </div> */}
                 </div>
             </div>
         );

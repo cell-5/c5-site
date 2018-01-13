@@ -33,6 +33,7 @@ class People extends Component {
                   linkedIn="https://www.linkedin.com/in/peterbarry/"
                   github="https://github.com/peterabarry"
                   email="peter@cell5.co.uk"
+                  image={require('./peter.jpg')}
                 >
                   <p>Peter has 10+ years delivering value as a hands-on developer, architect and team
                   coach. Initially trained at Thoughtworks and going on to a career Goldman Sachs building trading systems,
@@ -53,6 +54,7 @@ class People extends Component {
                   linkedIn="harrys linked in"
                   github="harrys github"
                   email="harry@cell5.co.uk"
+                  image={require('./harry.jpg')}
                 >
                   <p>Harry was a derivatives trader and entrepreneur with a keen interest in finance and technology before
                 retraining as a developer. He has delivered with Peter on two client products as a full stack developer
