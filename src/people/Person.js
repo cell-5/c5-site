@@ -42,9 +42,9 @@ class Person extends Component {
                     <div className="Blurb">
                         {this.props.children}
                     </div>
-                    {/* <div classnName="cv">
-                        <Button outline color="primary">CV</Button>{' '}
-                    </div> */}
+                    <div className="cv">
+                        <Button outline color="primary"> <a href={this.props.cv} download="harry-cv.pdf">Download CV</a></Button>
+                    </div>
                 </div>
             </div>
         );

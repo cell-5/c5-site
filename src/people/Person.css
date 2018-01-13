@@ -15,7 +15,7 @@
 
 .Person .Header .Title{
     text-align: center;
-    padding:1em;§
+    padding:1em;
     font-weight: 100;
 }
 
@@ -64,4 +64,8 @@
 
 .Person .Body .Blurb{
     font-size: smaller;
+}
+
+.Person .Body .cv {
+    text-align: center
 }
