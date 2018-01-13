@@ -6,6 +6,8 @@
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     margin-top: 1em;
     border-radius: 5px;
+    height: 100%;
+    width: 100%;
 }
 
 .Person .Header{
