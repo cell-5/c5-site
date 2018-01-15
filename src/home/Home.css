@@ -1,46 +1,22 @@
 .Home {
-  background-color: black;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
+  font-family: var(--our-paired-font);
 }
 
-/* .main {
-  padding: 1em;
-} */
-
-.mission {
-  padding-top: 2em;
+.home-banner-image {
+  max-height: 800px;
+  min-height: 500px;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.image {
-  padding: 2em;
-}
-
-.mission {
-  font-weight: 100;
-
-  padding-top: 3em;
-  padding-bottom: 3em;
-  padding-left: 2.5em;
-  padding-right: 2.5em;
-  background: #1a73ba;
+.what-we-do{
+  font-size: 3vw;
+  padding: 10px;
+  margin: 10px;
   text-align: center;
-  color: white;
-}
-
-.line {
-  position: absolute;
-  width: 100%;
-  top: 50%;
-}
-
-h3 {
-  font-weight: 100;
-  font-size: 48px;
-  line-height: 1em;
-}
-
-.bold {
-  font-weight: 900;
-  /* font-size: 48px; */
-  line-height: 1em;
+  font-weight:200;
 }

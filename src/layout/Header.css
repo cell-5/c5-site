@@ -1,23 +1,21 @@
-.Header {
-  background-color: #607d8b70;
-  margin-top: 10px;
-}
-.Header .Logo {
-  margin-top: 0px;
-  margin-left: 10px;
-  text-align: left;
+.Header{
+  padding-top:0px;
+  margin-top:0px;
+  line-height: 1;
+  font-family: var(--our-font-family);
+  height: 80px;
+
+  box-shadow: 0px 0px 10px black;
+  z-index: 10;
+  position: relative;
 }
 
-.Header .Logo img {
-  height: 75px;
+.headline{
+  margin:auto;
+  text-align: center;
+  flex-grow: 1;
+  font-size: 2vw;
+  font-style: italic;
+  white-space: nowrap;
 }
 
-.nav-link:hover{
-  background: #fff;
-  color: #ef5ba1;
-}
-
-/* .navbar {
-  background: #ef5ba1;
-}
- */

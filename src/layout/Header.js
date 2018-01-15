@@ -13,6 +13,8 @@ import {
   DropdownToggle,
   DropdownMenu,
   DropdownItem } from 'reactstrap';
+
+import Logo from '../logo/Logo';  
     
 class Header extends Component {
 
@@ -35,29 +37,38 @@ class Header extends Component {
 
   render() {
     return (
-      <div className="Header">
-        <Navbar color="bg-light" light expand="md">
-          <NavbarBrand href="/">
-            <div className="Logo">
-              <img src={require('./cell5-logo-2.svg')} alt="logo" />
-            </div>   
+      <header className="Header">
+        <Navbar light expand="md">
+          <NavbarBrand light href="/">
+           <Logo/>
           </NavbarBrand>
+          <div className="d-none d-lg-inline headline">sustainable, software product delivery.</div>
           <NavbarToggler onClick={this.toggle} />
-          <Collapse isOpen={this.state.isOpen} navbar>
-            <Nav className="ml-auto" navbar>
-              <NavItem>
-                <NavLink href="/people">PEOPLE</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="/approach">APPROACH</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="/contact">CONTACT</NavLink>
-              </NavItem>
-            </Nav>
-          </Collapse>
+           <Collapse isOpen={this.state.isOpen} navbar>
+             <Nav className="ml-auto" navbar>
+               <NavItem>
+                 <NavLink href="/people">PEOPLE</NavLink>
+               </NavItem>
+               <NavItem>
+                 <NavLink href="/approach">APPROACH</NavLink>
+               </NavItem>
+               <NavItem>
+                 <NavLink href="/contact">CONTACT</NavLink>
+               </NavItem>
+             </Nav>
+           </Collapse>
         </Navbar>
-      </div>
+      </header>
+
+
+      // <div class="Header">
+      //   <Navbar dark expand="md">
+      //     <NavbarBrand dark href="/">
+            
+      //     </NavbarBrand>
+   
+      //   </Navbar>
+      // </div>
     );
   }
 }
