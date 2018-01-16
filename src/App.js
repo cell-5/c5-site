@@ -18,20 +18,19 @@ import Contact from './contact/Contact';
 class App extends Component {
   render() {
     return (
-      <Layout>
+      <Router  basename={process.env.PUBLIC_URL}>
+        <Layout>
         {/**todo might be outof data history**/ }
-        <Router  basename={process.env.PUBLIC_URL}>
-
         {/* <Link to="/">Home</Link>{' '} */}
-
           <Switch>
             <Route exact path="/" component={Home}/>
             <Route exact path="/people" component={People}/>
             <Route exact path="/approach" component={Approach}/>
             <Route exact path="/contact" component={Contact}/>
           </Switch>
-        </Router>
-      </Layout>)
+        </Layout>
+      </Router>
+      )
     }
   }
    

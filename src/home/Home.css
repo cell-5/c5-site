@@ -1,5 +1,6 @@
 .Home {
   font-family: var(--our-paired-font);
+  position:relative;
 }
 
 .home-banner-image {
