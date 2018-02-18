@@ -16,9 +16,10 @@ import {
 
 
 import { Link } from 'react-router-dom';
+import $ from 'jquery';
 
-import Logo from '../logo/Logo';  
-    
+import Logo from '../logo/Logo';
+
 class Header extends Component {
 
   constructor(props){
@@ -29,6 +30,16 @@ class Header extends Component {
     this.state = {
       isOpen: false
     };
+  }
+
+  componentDidMount() {
+    $(window).on('scroll', () => {
+      if ($(window).scrollTop()) {
+        $('header').addClass('sticky');
+      } else {
+        $('header').removeClass('sticky');
+      }
+    });
   }
 
   toggle() {
@@ -45,12 +56,15 @@ class Header extends Component {
           <NavLink tag={Link} to="/" >
           <Logo/>
           </NavLink>
-         
+
           </NavbarBrand>
           <div className="d-none d-lg-inline headline">sustainable, software product delivery.</div>
           <NavbarToggler onClick={this.toggle} />
            <Collapse isOpen={this.state.isOpen} navbar>
              <Nav className="ml-auto" navbar>
+               <NavItem>
+                 <NavLink tag={Link} to="/">HOME</NavLink>
+               </NavItem>
                <NavItem>
                  <NavLink tag={Link} to="/people" >PEOPLE</NavLink>
                </NavItem>
