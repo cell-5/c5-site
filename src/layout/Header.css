@@ -14,7 +14,7 @@
 }
 
 /* To add sticky nav to medium size screens */
-@media only screen and (min-width: 992px) {
+@media only screen and (min-width: 768px) {
   header.Header {
     position: fixed;
     top: 0;

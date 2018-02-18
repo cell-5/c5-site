@@ -16,10 +16,10 @@ class Contact extends Component {
   render() {
 
     return (
-    <div>
+    <div class="Contact">
       <p>We are always keen to here of new business opportunities, projects, products or chances to collaborate!</p>
       <h2>Contact Us:</h2>
-        <p><a href="mailto:peter@cell5.co.uk">Email Us</a></p>
+        <p>Email: <a href="mailto:peter@cell5.co.uk">peter@cell5.co.uk</a></p>
         <p>Tel: 07871 410 885</p>
     </div>);
 

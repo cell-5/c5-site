@@ -1,3 +1,24 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+/* For absolute bottom footer */
+#root {
+  min-height: 100%;
+  position: relative;
+}
+
 .Layout {
   text-align: left;
+}
+
+/* For absolute bottom footer */
+.Home,
+.People,
+.Contact {
+  height: 100%;
+  padding-bottom: 65px;
 }

@@ -24,7 +24,7 @@
 }
 
 /* To reduce the size of logo by 10% */
-@media only screen and (min-width: 992px) {
+@media only screen and (min-width: 768px) {
   .sticky .Logo img {
     height: 45px;
   }
