@@ -1,7 +1,6 @@
 .Header{
 
   /** To add a shadow between header and picture*/ 
-  box-shadow: 0px 0px 10px black;
   z-index: 10;
   position: relative;
   /** **/
@@ -11,6 +10,8 @@
   /** **/  
   transition: top 0.2s ease-in-out;
 
+  width: 80%;
+  margin: 0 auto;
 }
 
 
@@ -20,7 +21,7 @@
 }
 
 .navbar-light .navbar-nav .nav-link {
-  color: var(--c3);
+  color: rgb(90, 90, 90);
   margin-left: 15px;
   padding-bottom: 5px;
   background-color: transparent;
@@ -32,10 +33,9 @@
 
 .navbar-light .navbar-collapse>ul>li>a:hover,
 .navbar-light .navbar-collapse>li>a:focus,
-.navbar-light .navbar-collapse>li>a.active {
-  color: var(--dark);
-  background-color: rgba(214, 73, 51, 0.25);
-  border-left: 2px solid var(--c2);
+.Navbar-light .navbar-collapse>li>a.active {
+  color:rgb(255, 255, 255);
+  background: rgb(238, 238, 238);
   
 }
 
@@ -58,11 +58,16 @@
 } */
  
 .headline{
-  margin:auto;
+  margin:auto 0;
   text-align: center;
   flex-grow: 10;
-  font-size: 2vw;
-  font-style: italic;
+  font-size: .9em;
   white-space: nowrap;
+  color: rgb(90, 90, 90);
+}
+
+NavLink
+{
+  margin: 0;
 }
 

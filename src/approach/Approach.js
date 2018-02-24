@@ -16,7 +16,7 @@ class Approach extends Component {
   render() {
 
     return (
-      <div>
+      <div class="myContainer">
         <div className="approach header">
           <h2>Our Approach:</h2>
         </div>
@@ -27,7 +27,7 @@ class Approach extends Component {
           </p>
           <p> We are great under pressure and continue to deliver, but we also highly value the health
             and well being of our team, so we managime effectively and set expectations to ensure we sustain
-            a pace that maximizes delivery.</p>
+            a pace that maximizes delivery.</p>sustainable, software
         </div>
         <div className="approach header">
           <h2>Our Practises:</h2>

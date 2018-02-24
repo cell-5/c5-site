@@ -1,6 +1,8 @@
 .people-body {
   padding-bottom: 2em;
   background: #1a73ba;
+  margin-bottom: 4em;
+  padding: 5em 0;
 }
 
 .People h2 {
@@ -9,3 +11,20 @@
   margin-bottom: 20px;
 }
 
+.People
+{
+  width: 80%;
+  margin: 0 auto;
+}
+
+h3
+{
+  text-align: center;
+  margin: 2em 0;
+  color: snow;
+}
+
+Row
+{
+  margin: 4em 0;
+}

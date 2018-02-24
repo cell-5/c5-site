@@ -1,11 +1,13 @@
 .Home {
   font-family: var(--our-paired-font);
   position:relative;
+  width: 80%;
+  margin: 0 auto;
 }
 
 .home-banner-image {
   max-height: 800px;
-  min-height: 500px;
+  min-height: 50em;
   background-size: cover;
   background-position: center center;
   background-attachment: fixed;
@@ -15,9 +17,11 @@
 }
 
 .what-we-do{
-  font-size: 3vw;
+  font-size: 2em;
   padding: 10px;
-  margin: 10px;
+  margin: 1em 0 4em;
   text-align: center;
-  font-weight:200;
+  font-weight: 100;
+  color: rgb(58, 58, 58);
+  background: white;
 }

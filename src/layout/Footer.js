@@ -11,8 +11,8 @@ class Footer extends Component {
 
   render() {
     return (
-    <div className="footer">
-    <div>Copyright 2018</div>
+    <div>
+      <div class="myFooter">Copyright 2018</div>
     </div>);
   }
 }

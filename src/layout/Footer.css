@@ -1,6 +1,13 @@
-.footer {
-  padding: 2em;
-  background: grey;
-  color: white;
-  font-size: 12px;
+.myFooter
+{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    background-color: white;
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
+    z-index: -1;
 }
