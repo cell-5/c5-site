@@ -40,6 +40,12 @@ class Header extends Component {
         $('header').removeClass('sticky');
       }
     });
+
+    $('.nav-link').on('click', () => {
+      $('.navbar-toggler').click();
+      window.scrollTo(0, 0);
+      this.forceUpdate();
+    });
   }
 
   toggle() {

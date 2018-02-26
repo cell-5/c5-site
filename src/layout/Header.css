@@ -14,46 +14,50 @@
 }
 
 /* To add sticky nav to medium size screens */
-@media only screen and (min-width: 768px) {
+header.Header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+  background: rgba(255, 255, 255, 0.35);
+}
+
+header.Header + div {
+  position: relative;
+  margin-top: 92px;
+}
+
+header.Header li {
+  transition: 0.2s;
+}
+
+header.sticky {
+  background: white;
+}
+
+/* To remove the top and bottom padding of header */
+.sticky .navbar,
+.sticky .nav-link {
+  padding: 0 1rem;
+}
+
+/* To reduce the sizes of header texts by 10% */
+.sticky .headline {
+  font-size: 1.8vw;
+}
+
+.sticky li {
+  font-size: 0.9rem;
+}
+
+/* To make the background color of the header white on mobile */
+@media only screen and (max-width: 767px) {
   header.Header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 92px;
-    z-index: 9999;
-    background: rgba(255, 255, 255, 0.35);
-  }
-
-  header.Header + div {
-    position: relative;
-    margin-top: 92px;
-  }
-
-  header.Header li {
-    transition: 0.2s;
-  }
-
-  header.sticky {
     background: white;
-    height: 55px;
-  }
-
-  /* To remove the top and bottom padding of header */
-  .sticky .navbar,
-  .sticky .nav-link {
-    padding: 0 1rem;
-  }
-
-  /* To reduce the sizes of header texts by 10% */
-  .sticky .headline {
-    font-size: 1.8vw;
-  }
-
-  .sticky li {
-    font-size: 0.9rem;
   }
 }
+
 
 /**START: customize color of hamburger**/
 .navbar-light .navbar-toggler {
