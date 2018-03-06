@@ -3,3 +3,107 @@
 @import 'variables';
 @import 'mixins';
 @import 'base';
+
+@import url('https://fonts.googleapis.com/css?family=Merriweather+Sans|Roboto:100|Roboto+Mono:100');
+
+#logo {
+    margin-bottom: 0;
+
+    img {
+        height: 50px;
+        width: 50px;
+    }
+
+    a {
+        color: #4c0827;
+        font-family: "Merriweather Sans", sans-serif;
+        font-size: 35px;
+    }
+}
+
+nav.navbar {
+    padding: 0.5rem 2rem;
+}
+
+div.navbar-collapse {
+    position: relative;
+}
+
+li.nav-item {
+    text-align: center;
+    padding: 0 0.5rem;
+
+    &:hover {
+        background-color: none;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    ul.navbar-nav {
+        position: absolute;
+        right: 0;
+    }
+}
+
+#slogan{
+    div.wrapper {
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: "Roboto Mono";
+            font-size: 2rem;
+            font-weight: bold;
+            line-height: 100%;
+        }
+
+        div.text-roller {
+            text-transform: uppercase;
+
+            div {
+                overflow: hidden;
+
+                ul.text-roll-up {
+                    animation:  text-roll-up 1s 1 forwards;
+                }
+
+                ul.text-roll-up.active {
+                    animation: active-text-roll-up 1s 1 forwards;
+                }
+
+                @keyframes text-roll-up {
+                  from {
+                    transform: translateY(0);
+                  }
+
+                  to {
+                    transform: translateY(-25%);
+                  }
+                }
+
+                @keyframes active-text-roll-up {
+                  from {
+                    transform: translateY(0);
+                  }
+
+                  to {
+                    transform: translateY(-50%);
+                  }
+                }
+            }
+
+            div:first-child,
+            div:last-child {
+                height: 6rem;
+                z-index: -1;
+            }
+
+            div:nth-child(2) {
+                height: 2rem;
+            }
+
+            ul {
+                list-style: none;
+            }
+        }
+    }
+}
