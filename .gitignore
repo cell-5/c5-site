@@ -1,5 +1,5 @@
-/.sass-cache
+src/.sass-cache
+src/css
+src/vendor
 /dist
-/css
 /node_modules
-/vendor
