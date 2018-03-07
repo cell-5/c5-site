@@ -8,3 +8,28 @@
         clear: both;
     }
 }
+
+// media queries
+@mixin large-screen() {
+	@include breakpoint($large) {
+		@content;
+	}
+}
+
+@mixin medium-screen() {
+	@include breakpoint($medium-only) {
+		@content;
+	}
+}
+
+@mixin tablet-only() {
+	@include breakpoint($tablet-only) {
+		@content;
+	}
+}
+
+@mixin mobile-only() {
+	@include breakpoint($mobile-only) {
+		@content;
+	}
+}
