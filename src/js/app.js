@@ -1,6 +1,7 @@
 'use strict';
 
 $(document).ready(function() {
+    // Slogan
     const
         prev = [
           'web',
@@ -52,15 +53,24 @@ $(document).ready(function() {
         nextUList.html(currListItems);
 
         setTimeout(function() {
-          prevUList.addClass('text-roll-up');
-          currUList.addClass('text-roll-up');
-          nextUList.addClass('text-roll-up');
-        }.bind(this), 1000);
+            prevUList.addClass('text-roll-up');
+            currUList.addClass('text-roll-up');
+            nextUList.addClass('text-roll-up');
+        }.bind(this), 1500);
+    });
+
+    // To close nav dropdown when a nav link is clicked.
+    $('header .nav-link').on('click', () => {
+        if(window.innerWidth <= 767) {
+            $('.navbar-toggler').click();
+        }
     });
 });
 
 function toListItems(list) {
   return list.map(function(item) {
-    return '<li>' + item + '</li>';
+    const len = item.length;
+    const letterSpacing = (8 - len) / len;
+    return '<li style="letter-spacing: ' + letterSpacing + 'ch">' + item + '</li>';
   });
 }

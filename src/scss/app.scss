@@ -4,25 +4,35 @@
 @import 'mixins';
 @import 'base';
 
-@import url('https://fonts.googleapis.com/css?family=Merriweather+Sans|Roboto:100|Roboto+Mono:100');
+@import url('https://fonts.googleapis.com/css?family=Merriweather+Sans|Roboto:100|Roboto+Mono');
+
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+}
 
 #logo {
     margin-bottom: 0;
+    margin-top: 0;
+    line-height: 100%;
 
     img {
-        height: 50px;
-        width: 50px;
+        height: 40px;
+        width: 40px;
     }
 
     a {
         color: #4c0827;
         font-family: "Merriweather Sans", sans-serif;
-        font-size: 35px;
+        font-size: 28px;
     }
 }
 
 nav.navbar {
-    padding: 0.5rem 2rem;
+    padding: 0rem 2rem;
 }
 
 div.navbar-collapse {
@@ -46,28 +56,120 @@ li.nav-item {
 }
 
 #slogan{
+    margin-top: 52px;
+    display: flex;
+    background-color: teal;
+    color: ghostwhite;
+    font-family: "Roboto Mono", monospace;
+    font-weight: bold;
+    font-size: $slogan-primary-font-size;
+    height: $slogan-primary-font-size * 10.5;
+    line-height: 100%;
+    overflow: hidden;
+    position: relative;
+
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    @media only screen and (max-width: 767px) {
+        height: $slogan-primary-font-size * 7;
+    }
+
     div.wrapper {
-        * {
-            margin: 0;
-            padding: 0;
-            font-family: "Roboto Mono";
-            font-size: 2rem;
-            font-weight: bold;
-            line-height: 100%;
+        // margin: 0 auto;
+        z-index: 1;
+        position: relative;
+
+        @media only screen and (min-width: 991px) and (max-width: 1200px){
+            margin: 0 auto;
+        }
+
+        p {
+            float: left;
+            padding: 0 0.5ch;
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+
+            @media only screen and (max-width: 991px) {
+                top: 0;
+                transform: none;
+            }
+        }
+
+        @media only screen and (max-width: 575px) and (orientation: portrait) {
+            top: 21%
+        }
+
+        @media only screen and (min-width: 576px) and (max-width: 767px) and (orientation: portrait) {
+            top: 35%
+        }
+
+        @media only screen and (min-width: 768px) and (max-width: 991px) and (orientation: portrait) {
+            top: 42%
+        }
+
+        @media only screen and (min-width: 576px) and (max-width: 767px) and (orientation: landscape) {
+            top: 35%
+        }
+
+        @media only screen and (min-width: 768px) and (max-width: 991px) and (orientation: landscape) {
+            top: 42%
         }
 
         div.text-roller {
             text-transform: uppercase;
+            float: left;
+            position: relative;
+            height: $slogan-primary-font-size * 7;
+            top: 50%;
+            transform: translateY(-50%);
+
+            @media only screen and (max-width: 991px) {
+                padding: 0 0.5ch;
+                height: $slogan-primary-font-size;
+                top: 0;
+                transform: none;
+            }
 
             div {
                 overflow: hidden;
 
-                ul.text-roll-up {
-                    animation:  text-roll-up 1s 1 forwards;
+                &:nth-child(2) {
+                    color: #212121;
+                    height: $slogan-primary-font-size;
                 }
 
-                ul.text-roll-up.active {
-                    animation: active-text-roll-up 1s 1 forwards;
+                &:first-child {
+                    height: $slogan-primary-font-size * 3;
+                    z-index: -1;
+                }
+
+                &:last-child {
+                    height: $slogan-primary-font-size * 3;
+                    z-index: -1;
+                }
+
+                @media only screen and (max-width: 991px) {
+                    &:first-child,
+                    &:last-child {
+                        display: none;
+                    }
+                }
+
+                ul {
+                    list-style: none;
+                    text-align: center;
+
+                    &.text-roll-up {
+                        animation:  text-roll-up 1s 1 forwards;
+                    }
+
+                    &.text-roll-up.active {
+                        animation: active-text-roll-up 1s 1 forwards;
+                    }
                 }
 
                 @keyframes text-roll-up {
@@ -90,19 +192,53 @@ li.nav-item {
                   }
                 }
             }
+        }
+    }
 
-            div:first-child,
-            div:last-child {
-                height: 6rem;
-                z-index: -1;
+    div.icon-set {
+        height: 100%;
+        opacity: 0.4;
+        filter: alpha(opacity=40);
+        font-size: 1rem;
+        margin: 0 auto;
+        width: 100%;
+        position: absolute;
+
+        @media only screen and (max-width: 767px) {
+            font-size: 0.6rem;
+        }
+
+        img {
+            position: absolute;
+
+            &.monitor-icon {
+                height: 30em;
+                right: -2.5em;
             }
 
-            div:nth-child(2) {
-                height: 2rem;
+            &.laptop-icon {
+                height: 30em;
+                right: 10em;
+                top: 1.7em;
             }
 
-            ul {
-                list-style: none;
+            &.tablet-icon {
+                height: 18em;
+                right: -5em;
+                top: 8.5em;
+            }
+
+            &.phone-icon {
+                height: 12em;
+                right: 2.5em;
+                top: 14.4em;
+            }
+
+            &.bulb-icon {
+                height: 20em;
+                right: 27em;
+                transform: rotate(-20deg);
+                z-index: -1
             }
         }
     }
