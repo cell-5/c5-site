@@ -4,7 +4,7 @@
 @import 'mixins';
 @import 'base';
 
-@import url('https://fonts.googleapis.com/css?family=Merriweather+Sans|Roboto:100|Roboto+Mono');
+@import url('https://fonts.googleapis.com/css?family=Merriweather+Sans|Roboto:100|Roboto+Mono|Montserrat');
 
 header {
     position: fixed;
@@ -55,10 +55,10 @@ li.nav-item {
     }
 }
 
-#slogan{
+#slogan {
     margin-top: 52px;
     display: flex;
-    background-color: teal;
+    background-color: #E06D2F;
     color: ghostwhite;
     font-family: "Roboto Mono", monospace;
     font-weight: bold;
@@ -77,14 +77,11 @@ li.nav-item {
         height: $slogan-primary-font-size * 7;
     }
 
+    // Tagline or slogan
     div.wrapper {
-        // margin: 0 auto;
         z-index: 1;
         position: relative;
-
-        @media only screen and (min-width: 991px) and (max-width: 1200px){
-            margin: 0 auto;
-        }
+        margin: 0 auto;
 
         p {
             float: left;
@@ -139,6 +136,7 @@ li.nav-item {
 
                 &:nth-child(2) {
                     color: #212121;
+                    background-color: rgba(255, 255, 255, 0.1);
                     height: $slogan-primary-font-size;
                 }
 
@@ -195,14 +193,16 @@ li.nav-item {
         }
     }
 
+    // Icons
     div.icon-set {
         height: 100%;
-        opacity: 0.4;
-        filter: alpha(opacity=40);
+        opacity: 0.9;
+        filter: alpha(opacity=90);
         font-size: 1rem;
-        margin: 0 auto;
-        width: 100%;
+        width: 49em;
         position: absolute;
+        margin-left: -24.5em;
+        left: 50%;
 
         @media only screen and (max-width: 767px) {
             font-size: 0.6rem;
@@ -213,32 +213,177 @@ li.nav-item {
 
             &.monitor-icon {
                 height: 30em;
-                right: -2.5em;
+                right: 2.5em;
             }
 
             &.laptop-icon {
                 height: 30em;
-                right: 10em;
+                right: 14em;
                 top: 1.7em;
             }
 
             &.tablet-icon {
                 height: 18em;
-                right: -5em;
+                right: 0;
                 top: 8.5em;
             }
 
             &.phone-icon {
                 height: 12em;
-                right: 2.5em;
+                right: 7.5em;
                 top: 14.4em;
             }
 
             &.bulb-icon {
-                height: 20em;
-                right: 27em;
-                transform: rotate(-20deg);
+                height: 15em;
+                right: 34em;
+                transform: rotate(-27deg);
+                top: 5em;
                 z-index: -1
+            }
+
+            &.cloud-icon {
+                height: 12em;
+                right: 24em;
+                top: 0;
+                z-index: -1;
+            }
+
+            &.cog-icon {
+                height: 7em;
+                right: 0;
+                top: 16em;
+                z-index: -1;
+            }
+        }
+    }
+}
+
+#home {
+    text-align: center;
+    padding: 2vh 12vw;
+    color: #212121;
+
+    @media only screen and (max-width: 575px) and (orientation: portrait) {
+        padding: 2vh 5vw;
+    }
+
+    > p {
+        font-family: Roboto, sans-serif;
+        font-size: 3vw;
+        display: block;
+        margin: 5vh auto;
+
+        @media only screen and (max-width: 575px) and (orientation: portrait) {
+            font-size: 6vw;
+        }
+
+        span.brand {
+            color: #4c0827;
+            font-family: "Merriweather Sans", sans-serif;
+        }
+    }
+
+    > section {
+        h3 {
+            font-family: Montserrat, sans-serif;
+            font-size: 3vw;
+        }
+
+        p {
+            font-family: Roboto, sans-serif;
+            font-size: 2rem;
+        }
+    }
+}
+
+#testimonials {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(255,255,255,0)), url(../img/cell-5-logo.svg) repeat 0 0;
+    background-color: #1F9471;
+    color: ghostwhite;
+    font-family: Montserrat, sans-serif;
+    padding: 1rem 1rem 5rem 1rem;
+
+    h2 {
+        font-family: Roboto, sans-serif;
+        font-size: 4rem;
+        text-align: center;
+    }
+
+    @media only screen and (max-width: 992px) and (orientation: portrait) {
+        padding-bottom: 1rem;
+    }
+
+    div.testimonial {
+        @media only screen and (max-width: 992px) and (orientation: portrait) {
+            margin-bottom: 8rem;
+        }
+
+        div.bubble {
+            background-color: #3CA182;
+            border-radius: 5px;
+            position: relative;
+            padding: 1rem;
+            font-size: 1rem;
+            text-align: center;
+
+            img {
+                display: block;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+
+                &:first-child {
+                    left: 1rem;
+                }
+
+                &:last-child {
+                    transform: rotate(180deg);
+                    right: 1rem;
+                }
+            }
+
+            p {
+                margin: 0 2rem;
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                left: 5rem;
+                bottom: -1rem;
+                height: 1rem;
+                border-left: 1rem solid transparent;
+                border-right: 1rem solid transparent;
+                border-top: 1rem solid #3CA182;
+            }
+        }
+
+        div.author {
+            position: relative;
+            margin-top: -1rem;
+
+            img {
+                position: absolute;
+                width: 4.4rem;
+                height: 4.4rem;
+                background-color: white;
+                border-radius: 2.2rem;
+                border: 0.5em solid #1F9471;
+            }
+
+            p {
+                color: ghostwhite;
+                position: absolute;
+                right: 1rem;
+                top: 1rem;
+            }
+
+            @media only screen and (max-width: 992px) and (orientation: portrait) {
+                p {
+                    left: 1rem;
+                    top: 4.4rem;
+                }
             }
         }
     }

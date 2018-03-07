@@ -60,10 +60,17 @@ $(document).ready(function() {
     });
 
     // To close nav dropdown when a nav link is clicked.
-    $('header .nav-link').on('click', () => {
+    $('header .nav-link').on('click', function(e) {
+        e.preventDefault();
+
         if(window.innerWidth <= 767) {
             $('.navbar-toggler').click();
         }
+
+        const section = $(this).attr('href');
+        $('html,body').animate({
+            scrollTop: section === '#home' ? 0 : $(section).offset().top - 52
+        }, 500);
     });
 });
 
