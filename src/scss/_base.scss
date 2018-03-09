@@ -242,3 +242,104 @@ li.nav-item {
         }
     }
 }
+
+#profiles {
+    padding: 5vw 10vw;
+    position: relative;
+
+    &:before {
+        content: '';
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        height: $section-break-border-size;
+        width: 50%;
+        border-left: $section-break-border-size solid transparent;
+        border-bottom: $section-break-border-size solid $dark-base-color;
+    }
+
+    h2 {
+        font-family: $tagline-primary-font-family;
+        font-size: 3rem;
+        text-align: center;
+    }
+}
+
+.sitefooter {
+    background: $dark-base-color;
+    color: white;
+    padding-bottom: 5vw;
+    padding-top: 5vw;
+    position: relative;
+
+    &-col1 {
+        ul {
+            list-style: none;
+            padding-left: 0;
+            font-size: 1.8em;
+            font-weight: bold;
+            line-height: 1.4;
+        }
+    }
+
+    &-col2 {
+        text-align: right;
+
+        img {
+            width: 165px;
+        }
+
+        h5 {
+            color: $stand-out-base-color;
+            font-size: 2.2em;
+            font-weight: bold;
+            margin: 12px 15px 10px 0;
+            text-transform: uppercase;
+        }
+
+        h6 {
+            font-size: 2.2em;
+            font-weight: bold;
+            margin-top: 0;
+        }
+    }
+}
+
+.contact {
+    font-size: 2em;
+    line-height: 1.2;
+    margin-top: 0.5em;
+
+    &--right {
+        text-align: right;
+    }
+
+    &-name {
+        font-size: 1em;
+        display: block;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    a {
+        color: white;
+        display: inline-block;
+        text-decoration: none;
+       
+        &:after {
+            content: "";
+            background: transparent;
+            height: 3px;
+            display: block;
+            margin-top: 5px;
+            transition: 0.1s;
+        } 
+        
+        &:hover,
+        &:focus {
+            &:after { 
+                background: $stand-out-base-color;
+            }
+        }
+    }
+}
