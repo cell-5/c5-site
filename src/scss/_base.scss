@@ -130,7 +130,7 @@ li.nav-item {
             }
         }
 
-        #intro {
+        div.cta {
             margin-top: 1rem;
 
             a {
@@ -160,6 +160,7 @@ li.nav-item {
 }
 
 #home {
+    color: $dark-base-color;
     padding: 5vw 10vw;
     position: relative;
 
@@ -175,7 +176,6 @@ li.nav-item {
     }
 
     p {
-        color: $dark-base-color;
         font-family: $content-font-family;
         font-size: 4vw;
         text-align: center;
