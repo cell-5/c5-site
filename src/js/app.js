@@ -1,41 +1,41 @@
 'use strict';
 
 $(document).ready(function() {
-    // Slogan
-    const
+    // Tagline
+    var
         prev = [
           'web',
           'mobile',
-          'software',
           'design'
         ],
         curr = [
           'design',
-          'digital'
+          'software',
         ],
         next = [
-          'digital',
+          'software',
           'cloud',
-          's.e.o.',
           'web'
         ],
-        prevUList = $('.text-roller div:first-child ul'),
-        currUList = $('.text-roller div:nth-child(2) ul'),
-        nextUList = $('.text-roller div:last-child ul');
 
-    let
+        prevUList = $('.tagline-text .roll-up-wrapper:first-child ul'),
+        currUList = $('.tagline-text .roll-up-wrapper:nth-child(2) ul'),
+        nextUList = $('.tagline-text .roll-up-wrapper:last-child ul'),
+
         prevListItems = toListItems(prev),
         currListItems = toListItems(curr),
-        nextListItems = toListItems(next);
+        nextListItems = toListItems(next),
+
+        maxCharLen = getMaxCharLen([prev, curr, next]);
 
     prevUList.html(prevListItems);
     currUList.html(currListItems);
     nextUList.html(nextListItems);
 
     currUList.on('webkitAnimationEnd oanimationend msAnimationEnd animationend', function() {
-        prevUList.removeClass('text-roll-up');
-        currUList.removeClass('text-roll-up');
-        nextUList.removeClass('text-roll-up');
+        prevUList.removeClass('roll-up');
+        currUList.removeClass('roll-up');
+        nextUList.removeClass('roll-up');
 
         prev.shift();
         prev.push(next[0]);
@@ -53,9 +53,9 @@ $(document).ready(function() {
         nextUList.html(currListItems);
 
         setTimeout(function() {
-            prevUList.addClass('text-roll-up');
-            currUList.addClass('text-roll-up');
-            nextUList.addClass('text-roll-up');
+            prevUList.addClass('roll-up');
+            currUList.addClass('roll-up');
+            nextUList.addClass('roll-up');
         }.bind(this), 1500);
     });
 
@@ -67,17 +67,44 @@ $(document).ready(function() {
             $('.navbar-toggler').click();
         }
 
-        const section = $(this).attr('href');
+        var section = $(this).attr('href');
         $('html,body').animate({
             scrollTop: section === '#home' ? 0 : $(section).offset().top - 52
-        }, 500);
+        }, 250);
     });
-});
 
-function toListItems(list) {
-  return list.map(function(item) {
-    const len = item.length;
-    const letterSpacing = (8 - len) / len;
-    return '<li style="letter-spacing: ' + letterSpacing + 'ch">' + item + '</li>';
-  });
-}
+    // Converts array items to html list items (pre-ES5 safe)
+    function toListItems(list) {
+        var returnValue = '';
+
+        for(var i in list) {
+            var item = list[i];
+            var len = item.length;
+            var letterSpacing = (maxCharLen - len) / len;
+            returnValue +=
+                '<li style="letter-spacing: ' +
+                letterSpacing +
+                'ch">' +
+                item +
+                '</li>';
+        }
+
+        return returnValue;
+    }
+
+    // Gets the max length of chars from the tagline rolling text list (pre-ES5 safe)
+    function getMaxCharLen(twoDList) {
+        var max = 0;
+
+        for(var i in twoDList) {
+            for(var j in twoDList[i]) {
+                var len = twoDList[i][j].length;
+                if(len > max) {
+                    max = len;
+                }
+            }
+        }
+
+        return max;
+    }
+});

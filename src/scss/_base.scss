@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Merriweather+Sans|Montserrat|Rozha+One|Yeseva+One');
+
 html {
     box-sizing: border-box;
     overflow-y: scroll;
@@ -11,4 +13,233 @@ html {
 body {
     font-size: 1em;
     height: 100%;
+}
+
+// To make the header stick on top
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+}
+
+#logo {
+    margin-bottom: 0;
+    margin-top: 0;
+    line-height: 100%;
+
+    img {
+        height: 40px;
+        width: 40px;
+    }
+
+    a {
+        color: $brand-color;
+        font-family: $brand-font-family;
+        font-size: 28px;
+    }
+}
+
+nav.navbar {
+    padding: 0rem 2rem;
+}
+
+div.navbar-collapse {
+    position: relative;
+}
+
+li.nav-item {
+    text-align: center;
+    padding: 0 0.5rem;
+
+    &:hover {
+        background-color: none;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    ul.navbar-nav {
+        position: absolute;
+        right: 0;
+    }
+}
+
+#tagline {
+    background-color: $tagline-primary-bg-color;
+    color: $tagline-primary-color;
+    font-family: $tagline-primary-font-family;
+    display: flex;
+    height: $tagline-primary-font-size * 8;
+    margin-top: $tagline-top-margin;
+    position: relative;
+
+    &:after {
+        content: '';
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        height: $section-break-border-size;
+        width: 50%;
+        border-left: $section-break-border-size solid transparent;
+        border-bottom: $section-break-border-size solid white;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        line-height: 100%;
+    }
+
+    div.tagline-text-wrapper {
+        position: relative;
+        margin: 0 auto;
+
+        p {
+            font-size: $tagline-primary-font-size;
+            float: left;
+            padding: 0 1ch;
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        div.tagline-text {
+            float: left;
+            position: relative;
+            text-transform: uppercase;
+            top: 50%;
+            transform: translateY(-50%);
+
+            div.roll-up-wrapper {
+                overflow: hidden;
+                width: 100%;
+
+                &:first-child,
+                &:last-child {
+                    height: $tagline-primary-font-size * 2;
+                    z-index: -1;
+
+                    // To hide the top and bottom roll-up text on smaller screens
+                    @media only screen and (max-width: 991px) and (orientation: portrait) {
+                        display: none;
+                    }
+                }
+
+                &:first-child {
+                    &:after {
+                        content: '';
+                        background: linear-gradient(180deg, $tagline-primary-bg-color, rgba(0, 0, 0, 0));
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        height: $tagline-primary-font-size * 2;
+                        width: 100%;
+                        z-index: 1;
+                    }
+                }
+
+                &:last-child {
+                    &:before {
+                        content: '';
+                        background: linear-gradient(360deg, $tagline-primary-bg-color, rgba(0, 0, 0, 0));
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        height: $tagline-primary-font-size * 2;
+                        width: 100%;
+                        z-index: 1;
+                    }
+                }
+
+                &:nth-child(2) {
+                    height: $tagline-primary-font-size;
+                    color: $tagline-active-text-color;
+                }
+
+                ul {
+                    font-size: $tagline-primary-font-size;
+                    list-style: none;
+
+                    &.roll-up {
+                        animation:
+                            roll-up
+                            $tagline-text-animation-duration
+                            $tagline-text-animation-delay
+                            $tagline-text-animation-iteration-count
+                            $tagline-text-animation-direction;
+
+                        &.active {
+                            animation:
+                                roll-up-active
+                                $tagline-text-animation-duration
+                                $tagline-text-animation-delay
+                                $tagline-text-animation-iteration-count
+                                $tagline-text-animation-direction;
+                        }
+                    }
+                }
+
+                @keyframes roll-up {
+                    from {
+                        transform: translateY(0);
+                    }
+
+                    to {
+                        transform: translateY(-33.33%);
+                    }
+                }
+
+                @keyframes roll-up-active {
+                    from {
+                        transform: translateY(0);
+                    }
+
+                    to {
+                        transform: translateY(-50%);
+                    }
+                }
+            }
+        }
+    }
+}
+
+#home {
+    padding: 5vw 10vw;
+    position: relative;
+
+    &:before {
+        content: '';
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        height: $section-break-border-size;
+        width: 50%;
+        border-left: $section-break-border-size solid transparent;
+        border-bottom: $section-break-border-size solid $dark-base-color;
+    }
+
+    p {
+        color: $dark-base-color;
+        font-family: $content-font-family;
+        font-size: 4vw;
+        text-align: center;
+
+        span.brand {
+            color: $brand-color;
+            font-family: $brand-font-family;
+        }
+    }
+}
+
+#testimonials {
+    background-color: #2c302e;
+    padding: 5vw 10vw;
+
+    h2 {
+        color: $light-base-color;
+        font-family: $headings-font-family;
+        font-size: 4vw;
+        text-align: center;
+    }
 }
