@@ -23,7 +23,7 @@ class Home extends Component {
         </section>
         <section className="blurb">
           <div className="what-we-do">
-          Our purpose at <span className="brand">CELL5</span> is to help our customers realize their vision through software.</div>
+          Client-first digital solutions.</div>
           </section>
           <section className="home-banner-image" style={{backgroundImage: "url(" + Background2 + ")"}}/>
           <section className="blurb">
