@@ -3,7 +3,7 @@ node_js:
 - '7'
 deploy:
   provider: s3
-  bucket: s3://cell5.co.uk/
+  bucket: "s3://cell5.co.uk/"
   skip_cleanup: true
   region: eu-west-1
   local_dir: build
