@@ -1,12 +1,13 @@
 language: node_js
 node_js:
-  - "7"
+- '7'
 deploy:
   provider: s3
-  access_key_id: "YOUR AWS ACCESS KEY"
-  secret_access_key: "YOUR AWS SECRET KEY"
-  bucket: "s3://cell5.co.uk/"
+  bucket: s3://cell5.co.uk/
   skip_cleanup: true
-  region: "eu-west-1"
+  region: eu-west-1
   local_dir: build
-  cache_control: "max-age=604800"
+  cache_control: no-cache
+  acl: public_read
+dd:
+  secure: X9+QbfdMogQFhC0QbSW5j0Gtihsqe4OEzZDq1NcMZI0DR4PWNZmeRlfEheTd7E7k0+ujSV+Q0YrCaV6xrrJzddEYR8HKY3NYdSwFt4yDpeBaOnZAF9tN/1hpe3TOKs453FK8Q9BXMTTYdBxrK2U3FILu8lpfXHszvK5CGT7bI+QIU9/ZCxeS8fpycANppAbdHFBkQ41NOB/uJhSpNa0TA9MNpvBiW4cetCvIb4rCnpBsaHdXOcItn4GInVZKHv+Onji9LZo9Ugy5DVSbQm524mX6dk/hnqVrSesZXnyjbrDHyOgg6tJ59RirEdr4VJ8sXLo275s8x0LAe48xyBxmzW5kTjqVKAbYZOxPE4p4iNozGdtdExOyd36YpyAubRV2C+/HGPRmailv+gINDM19lo/OJfsHfwf85rJG4/XGIGA5pzapcPya+WvonOuLUvuI/69t/PL5qIFvN/j2p2KS1cC33hl1B9UUmCyqkrumVPGqprmlryLb0OsPryxOLSkWzW8t/PF+a6OfMkDe8E0mE2gl7HqgMZFwsNG2F/TnLyWBwFf8iU8RvSkZjBXWrXMSwwk/XtWVaTZprEwZAPNF/9/36T7GKV2fF7uDM/A0pbA/cB/2euu/edVpAPtq5q/fqJv6xcpyeAgaB/D3bE33m0biXE6tYBQ+9+w1JqgQB40=
