@@ -2,8 +2,7 @@
 import React, { Component } from 'react';
 import './People.css';
 import Person from './Person';
-import { Grid, Row, Col, Clearfix } from 'react-bootstrap'
-import harryCv from './harry-cv.pdf'
+import { Grid, Row, Col  } from 'react-bootstrap'
 
 class People extends Component {
 

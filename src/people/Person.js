@@ -1,7 +1,7 @@
 
 import React, { Component } from 'react';
 import './Person.css';
-import { Card, Button, CardTitle, CardText, Row, Col } from 'reactstrap';
+import { Button  } from 'reactstrap';
 
 
 class Person extends Component {

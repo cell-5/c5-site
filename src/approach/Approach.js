@@ -91,13 +91,13 @@ class Approach extends Component {
             <h2>Want to meet the team?</h2>
           </div>
           <div className="approach">
-            <p><a href=".\people" />The team</p>
+            <p><a href=".\people">The team</a></p>
           </div>
           <div className="approach header">
 
             <h2> Contact us?</h2>
             <div className="approach header">
-              <p><a href=".\contact" />Contacts</p>
+              <p><a href=".\contact">Contacts</a></p>
             </div>
           </div>
         </div>
