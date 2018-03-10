@@ -266,11 +266,21 @@ li.nav-item {
 }
 
 .sitefooter {
+    @include mobile-only() {
+        text-align: center;
+    }
     background: $dark-base-color;
     color: white;
-    padding-bottom: 5vw;
+    padding-bottom: 3vw;
     padding-top: 5vw;
     position: relative;
+
+    &-col1,
+    &-col2 {
+        @include mobile-only() {
+            margin-bottom: 2em;
+        }
+    }
 
     &-col1 {
         ul {
@@ -283,7 +293,9 @@ li.nav-item {
     }
 
     &-col2 {
-        text-align: right;
+        @include tablet-and-up() {
+            text-align: right;
+        }
 
         img {
             width: 165px;
@@ -303,15 +315,79 @@ li.nav-item {
             margin-top: 0;
         }
     }
+
+    &-bottom {
+        @include clearfix;
+        border-top: 1px dashed transparentize(white, 0.8);
+        margin-top: 30px;
+        padding-top: 30px;
+
+        address {
+            float: left;
+            font-size: 1em;
+            font-style: italic;
+            font-weight: bold;
+
+            span {
+                color: $stand-out-base-color;
+            }
+        }
+
+        a {
+            color: white;
+            float: right;
+            transition: 0.4s;
+
+            &:hover,
+            &:focus {
+                color: $stand-out-base-color;
+                text-decoration: none;
+            }
+        }
+
+        address,
+        a {
+            @include mobile-only() {
+                float: none;
+            }
+        }
+    }
+
+    form {
+
+        h5 {
+            font-weight: bold;
+            margin-bottom: 1em;
+            text-transform: uppercase;
+        }
+
+        input,
+        textarea,
+        button {
+            border-radius: 0;
+        }
+
+        button {
+            background: $stand-out-base-color;
+            color: white;
+            min-width: 100px;
+        }
+    }
 }
 
 .contact {
+    @include mobile-only() {
+        font-size: 1.7em;
+        margin-bottom: 1em;
+    }
     font-size: 2em;
-    line-height: 1.2;
+    line-height: 1.1;
     margin-top: 0.5em;
 
     &--right {
-        text-align: right;
+        @include tablet-and-up() {
+            text-align: right;
+        }
     }
 
     &-name {
@@ -323,6 +399,7 @@ li.nav-item {
 
     a {
         color: white;
+        font-size: 0.8em;
         display: inline-block;
         text-decoration: none;
        
@@ -342,4 +419,12 @@ li.nav-item {
             }
         }
     }
+}
+
+.mobile-border {
+    @include tablet-and-up() {
+        display: none;
+    }
+    border-top: 1px dashed transparentize(white, 0.8);
+    margin: 30px 0;
 }

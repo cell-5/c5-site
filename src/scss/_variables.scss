@@ -21,3 +21,26 @@ $headings-font-family: 'Rozha One', serif;
 $content-font-family: 'Montserrat', sans-serif;
 
 $section-break-border-size: 0.8rem;
+
+// Breakpoints
+$large: 1200px;
+$medium-max: $large - 1;
+$medium-min: 992px;
+$tablet-max: $medium-min - 1;
+$tablet-min: 768px;
+$mobile-max: $tablet-min - 1;
+
+// expanded breakpoints
+$medium-only: $medium-min $medium-max;
+$tablet-only: $tablet-min $tablet-max;
+$mobile-only: max-width $mobile-max;
+
+$medium-below: max-width $medium-max;
+$tablet-below: max-width $tablet-max;
+
+// orientation
+$landscape-min: 481px;
+$portrait-max: $landscape-min - 1;
+
+$landscape: $landscape-min $mobile-max;
+$portrait: max-width $portrait-max;
