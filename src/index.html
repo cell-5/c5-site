@@ -4,21 +4,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="keywords" content="web, mobile, design, software, seo" />
 
     <title>Cell 5</title>
 
-    <!-- build:css css/all.css -->
+	<!-- build:css css/all.css -->
     <link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="vendor/Morphext/dist/morphext.css" />
+    <link rel="stylesheet" href="vendor/animate.css/animate.css" />
+    <link rel="stylesheet" href="vendor/fontawesome/web-fonts-with-css/css/fontawesome-all.css" />
     <link rel="stylesheet" href="css/app.css" />
-    <!-- endbuild -->
+	<!-- endbuild -->
 </head>
 <body>
-    <header id="home" role="banner">
-        <nav class="navbar navbar-expand-md bg-light navbar-light">
+    <header>
+        <nav class="navbar navbar-expand-md bg-dark navbar-dark">
             <h1 id="logo">
                 <a class="navbar-brand" href="#home">
                     <img src="img/cell-5-logo.svg" alt="Cell 5 logo">
-                    CELL<span>5</span>
+                    <span>CELL5</span>
                 </a>
             </h1>
 
@@ -39,7 +43,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#the-team">
+                        <a class="nav-link" href="#profiles">
                             The Team
                         </a>
                     </li>
@@ -54,110 +58,142 @@
     </header>
 
     <main role="main">
-        <section id="slogan">
-            <div class="wrapper">
+        <section id="tagline">
+            <div class="tagline-text-wrapper">
                 <p>Customer-first</p>
-                <div class="text-roller">
-                    <div>
-                        <ul class="text-roll-up"></ul>
-                    </div>
-                    <div>
-                        <ul class="text-roll-up active"></ul>
-                    </div>
-                    <div>
-                        <ul class="text-roll-up"></ul>
-                    </div>
-                </div>
+                <p id="rotating-text">web, mobile, design, software, s.e.o.</p>
                 <p>Solutions</p>
+                <ul>
+                    <li class="active">web</li>
+                    <li>mobile</li>
+                    <li>design</li>
+                    <li>software</li>
+                    <li>s.e.o.</li>
+                </ul>
+                <div style="clear: both"></div>
+                <div class="cta">
+                    <a href="#contact-us">Contact Us</a>
+                </div>
             </div>
         </section>
 
-        <div id="roller"></div>
+        <section id="home" class="container-fluid">
+            <div class="row">
+                <figure class="col-sm-6">
+                    <img src="img/code.svg" alt="Codes" />
+                </figure>
+                <p class="col-sm-6">
+                    Our purpose at <span class="brand">CELL5</span> is to help our customers realize their vision through software.
+                </p>
+            </div>
+        </section>
 
-        <section id="contact">
+        <section id="testimonials">
+            <h2>Testimonials</h2>
+                <article class="col-md-8">
+                    <img src="img/quote.svg" alt="quote" />
+                    <blockquote cite="">
+                        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </blockquote>
+                    <small class="author">- <span>Someone</span>, Somewhere</small>
+                </article>
+                <article class="col-md-8">
+                    <img src="img/quote.svg" alt="quote" />
+                    <blockquote cite="">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                    </blockquote>
+                    <small class="author">- <span>Another One</span>, Somewhere Else</small>
+                </article>
+                <article class="col-md-8">
+                    <img src="img/quote.svg" alt="quote" />
+                    <blockquote cite="">
+                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                    </blockquote>
+                    <small class="author">- <span>Somebody</span>, Nowhere</small>
+                </article>
+        </section>
+
+        <section id="profiles">
             <div class="container">
-                <div class="row">
-                    <div class="col-md-5">
-                        <h2>Get in touch!</h2>
-                        <p>We are always keen to here of new business opportunities, projects, products or chances to collaborate!</p>
-                        <ul class="contact-details">
-                            <li>
-                                <h4>E-mail</h4>
-                                <a href="mailto:peter@cell5.co.uk">peter@cell5.co.uk</a>
-                            </li>
-                            <li>
-                                <h4>Telephone</h4>
-                                <a href="tel:07871 410 885">07871 410 885</a>
-                            </li>
-                            <li>
-                                <h4>Business Hours</h4>
-                                <b>Monday - Friday</b> <br> 8:00am - 5:00pm
-                            </li>
-                            <li>
-                                <h4>Address</h4>
-                                Here, there and everywhere. <br>
-                                Somewhere down the road.
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-md-6 offset-md-1">
-                        <figure>
-                            <img src="img/texting.jpg" alt="Texting" class="img-fluid">
-                        </figure>
-                        <br>
-                        <form action="#" class="form">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="name" class="sr-only">Name (required)</label>
-                                        <input type="text" name="name" class="form-control" placeholder="Name*" required>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="email" class="sr-only">Email (required)</label>
-                                        <input type="email" name="email" class="form-control" placeholder="Email Address*" required>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="company" class="sr-only">Company Name (required)</label>
-                                        <input type="text" name="company" class="form-control" placeholder="Company Name" required>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="contact" class="sr-only">Contact Number (required)</label>
-                                        <input type="text" name="contact" class="form-control" placeholder="Contact Number" required>
-                                    </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <label for="message" class="sr-only">Message (required)</label>
-                                        <textarea rows="5" name="message" placeholder="Message" class="form-control"></textarea>
-                                    </div>
-                                </div>
-                            </div>
-                            <button type="submit" class="btn btn--orange">Submit</button>
-                        </form>
-                    </div>
-                </div>
+                <h2>Meet The Team</h2>
             </div>
         </section>
     </main>
 
     <footer class="sitefooter" role="contentinfo">
-        <div class="container">
-            <img src="img/cell-5-logo.svg" alt="Cell5 company logo" class="sitefooter-logo">
-            <p class="sitefooter-copyright">Cell5 &copy; 2018. <!-- Sustainable, software product delivery. --></p>
-            <a href="#" id="back-to-top">&uarr; Back to top</a>
+        <div id="contact-us" class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="row">
+                        <div class="sitefooter-col1 col-md-6">
+                            <ul>
+                                <li>web</li>
+                                <li>mobile</li>
+                                <li>design</li>
+                                <li>cloud</li>
+                                <li>social media</li>
+                                <li>s.e.o</li>
+                                <li>legacy code uplift</li>
+                                <li>start-up growth</li>
+                            </ul>
+                        </div>
+                        <div class="sitefooter-col2 col-md-6">
+                            <img src="img/logo-white.svg" alt="Cell5 Company Logo">
+                            <h5>Cell 5</h5>
+                            <h6>client-first <br>digital solutions</h6>
+                        </div>
+                    </div>
+                    <div class="mobile-border"></div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="contact">
+                                <span class="contact-name">Peter Barry</span>
+                                <a href="tel:07871 410 885">07871 410 885</a><br>
+                                <a href="mailto:peter@cell5.co.uk">peter@cell5.co.uk</a>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="contact contact--right">
+                                <span class="contact-name">Harry Wynn-Williams</span>
+                                <a href="tel:07871 410 885">07901 970 100</a><br>
+                                <a href="mailto:peter@cell5.co.uk">harry@cell5.co.uk</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mobile-border"></div>
+                </div>
+                <div class="col-md-3 offset-md-1">
+                    <form action="#">
+                        <h5>Get In Touch</h5>
+                        <p>We are always keen to hear of new business opportunities, projects, products or chances to collaborate!</p>
+                        <div class="form-group">
+                            <label for="name" class="sr-only">Name</label>
+                            <input type="text" class="form-control" name="name" id="name" placeholder="Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="sr-only">Email</label>
+                            <input type="email" class="form-control" name="email" id="email" placeholder="Email">
+                        </div>
+                        <div class="form-group">
+                            <label for="message" class="sr-only">Message</label>
+                            <textarea name="message" rows="5" class="form-control" id="message" placeholder="Message"></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send</button>
+                    </form>
+                </div>
+            </div>
+            <div class="sitefooter-bottom">
+                <address><span class="fa fa-map-marker-alt"></span> #123 Here There, Everywhere, Somewhere Down The Road. &copy; 2018 Cell5</address>
+                <a href="#"><span class="fa fa-arrow-circle-up"></span> Back to top</a>
+            </div>
         </div>
-    </footer><!-- /.sitefooter -->
+    </footer>
 
-    <!-- build:js js/all.js -->
-    <script src="vendor/jquery/dist/jquery.js"></script>
+	<!-- build:js js/all.js -->
+	<script src="vendor/jquery/dist/jquery.js"></script>
+    <script src="vendor/Morphext/dist/morphext.min.js"></script>
     <script src="vendor/bootstrap/dist/js/bootstrap.bundle.js"></script>
     <script src="js/app.js"></script>
-    <!-- endbuild -->
+	<!-- endbuild -->
 </body>
 </html>

@@ -1,0 +1,71 @@
+<svg id="codes" xmlns="http://www.w3.org/2000/svg" width="200" height="200.38" viewBox="0 0 200 200.38">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #4c4c4c;
+      }
+
+      .cls-2 {
+        fill: #c9c9c9;
+      }
+
+      .cls-3 {
+        fill: #777;
+      }
+
+      .cls-4 {
+        fill: #3dc152;
+      }
+
+      .cls-5 {
+        fill: #a33321;
+      }
+
+      .cls-6 {
+        fill: #e5e539;
+      }
+
+      .cls-7 {
+        fill: #3a3a3a;
+      }
+
+      .cls-8 {
+        fill: #25c1bc;
+      }
+    </style>
+  </defs>
+  <title>code</title>
+  <g>
+    <rect class="cls-1" y="0.38" width="200" height="200"/>
+    <rect class="cls-2" width="200" height="18"/>
+    <circle class="cls-3" cx="13" cy="118" r="5"/>
+    <circle class="cls-3" cx="13" cy="38.26" r="5"/>
+    <circle class="cls-3" cx="13.04" cy="178" r="5"/>
+    <circle class="cls-3" cx="13" cy="158" r="5"/>
+    <circle class="cls-3" cx="13" cy="98.25" r="5"/>
+    <circle class="cls-3" cx="13" cy="78.25" r="5"/>
+    <circle class="cls-3" cx="13" cy="58.25" r="5"/>
+    <circle class="cls-3" cx="13" cy="138" r="5"/>
+    <circle class="cls-4" cx="40" cy="9" r="5"/>
+    <circle class="cls-5" cx="11" cy="9" r="5"/>
+    <circle class="cls-6" cx="26" cy="9" r="5"/>
+    <rect class="cls-7" x="24" y="29" width="7" height="160"/>
+    <rect class="cls-4" x="43" y="53.25" width="78" height="10"/>
+    <rect class="cls-6" x="43" y="73.25" width="141" height="10"/>
+    <rect class="cls-5" x="43" y="93.38" width="94" height="10"/>
+    <rect class="cls-4" x="141" y="93.38" width="43" height="10"/>
+    <rect class="cls-5" x="43" y="133" width="119" height="10"/>
+    <rect class="cls-4" x="43" y="152.83" width="43" height="10"/>
+    <rect class="cls-6" x="90" y="152.83" width="94" height="10"/>
+    <rect class="cls-6" x="43" y="113" width="78" height="10"/>
+    <g>
+      <path class="cls-8" d="M70.6,64.41,84,58.84v4.1l-8.23,3.2L84,69.33v4.1L70.6,67.87Z" transform="translate(-28 -28)"/>
+      <path class="cls-8" d="M100.06,64.41v3.46L86.6,73.43v-4.1l8.23-3.19-8.23-3.2v-4.1Z" transform="translate(-28 -28)"/>
+    </g>
+    <g>
+      <path class="cls-8" d="M72.28,204.16l13.45-5.57v4.1l-8.23,3.2,8.23,3.19v4.1l-13.45-5.57Z" transform="translate(-28 -28)"/>
+      <path class="cls-8" d="M90.68,196.12h3.84l-4.44,20H86.23Z" transform="translate(-28 -28)"/>
+      <path class="cls-8" d="M108.48,204.16v3.46L95,213.18v-4.1l8.23-3.19L95,202.69v-4.1Z" transform="translate(-28 -28)"/>
+    </g>
+  </g>
+</svg>

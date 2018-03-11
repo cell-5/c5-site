@@ -7,6 +7,7 @@ var minifyCss = require('gulp-clean-css');
 var scss      = require('gulp-sass');
 var uglify    = require('gulp-uglify');
 var useref    = require('gulp-useref');
+var del       = require('del');
 
 gulp.task('dev', function() {
     return connect.server({
@@ -58,12 +59,22 @@ gulp.task('images', function() {
 });
 
 gulp.task('compile', function() {
-    return gulp.src('src/*.html')
-        .pipe(useref())
-        .pipe(condition('*.js', uglify()))
-        .pipe(condition('*.css', minifyCss()))
-        .pipe(gulp.dest('dist'));
+    return gulp.start('css', function() {
+        return gulp.src('src/*.html')
+            .pipe(useref())
+            .pipe(condition('*.js', uglify()))
+            .pipe(condition('*.css', minifyCss()))
+            .pipe(gulp.dest('dist'));
+    });
+});
+
+gulp.task('clean:src', function() {
+    return del([
+        'src/css',
+        'src/vendor'
+    ]);
 });
 
 gulp.task('default', ['css', 'dev', 'watch']);
-gulp.task('build', ['compile', 'images', 'production']);
+gulp.task('build', ['compile', 'images']);
+// gulp.task('build', ['compile', 'images', 'production']);

@@ -22,6 +22,12 @@
 	}
 }
 
+@mixin tablet-and-up() {
+	@include breakpoint($tablet-min) {
+		@content;
+	}
+}
+
 @mixin tablet-only() {
 	@include breakpoint($tablet-only) {
 		@content;
