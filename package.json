@@ -5,9 +5,13 @@
   "homepage": "http://cell5.co.uk",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "gulp"
+    "start": "gulp",
+    "build": "gulp build",
+    "postbuild": "gulp clean:src"
   },
   "devDependencies": {
+    "bower": "^1.8.2",
+    "del": "^3.0.0",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^5.0.0",
     "gulp-clean-css": "^3.9.2",
