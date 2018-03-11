@@ -58,6 +58,11 @@ gulp.task('images', function() {
         .pipe(gulp.dest('dist/img'));
 });
 
+gulp.task('fa:webfonts', function() {
+    return gulp.src('src/vendor/fontawesome/web-fonts-with-css/webfonts/**/*')
+        .pipe(gulp.dest('dist/webfonts'));
+});
+
 gulp.task('compile', function() {
     return gulp.start('css', function() {
         return gulp.src('src/*.html')
@@ -76,5 +81,5 @@ gulp.task('clean:src', function() {
 });
 
 gulp.task('default', ['css', 'dev', 'watch']);
-gulp.task('build', ['compile', 'images']);
+gulp.task('build', ['compile', 'images', 'fa:webfonts']);
 // gulp.task('build', ['compile', 'images', 'production']);

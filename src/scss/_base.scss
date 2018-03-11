@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=Merriweather+Sans|Montserrat|Rozha+One|Yeseva+One');
-
 html {
     box-sizing: border-box;
     overflow-y: scroll;
@@ -119,13 +117,17 @@ li.nav-item {
             list-style: none;
 
             li {
-                font-size: 1.5rem;
+                font-size: 1.2rem;
                 float: left;
-                padding-right: 10px;
+                padding: 0 0.6rem;
                 transition: all 0.2s linear;
 
                 &.active {
                     color: $tagline-active-text-color;
+                }
+
+                &:not(:last-child) {
+                    border-right: 1px solid $light-base-color;
                 }
             }
         }
@@ -135,14 +137,14 @@ li.nav-item {
 
             a {
                 letter-spacing: 1px;
+                font-size: 1.25rem;
 
                 &:link,
                 &:visited {
                     background-color: $tagline-active-text-color;
-                    border-radius: 5px;
                     color: $light-base-color;
                     display: inline-block;
-                    padding: 1rem 2rem;
+                    padding: 0.9rem 1.8rem;
                 }
 
                 &:hover,

@@ -20,7 +20,13 @@ $(document).ready(function() {
     });
 
     // To close nav dropdown when a nav link is clicked
-    $('header .nav-link').on('click', function(e) {
+    $('header .nav-link').on('click', animateSectionScroll);
+
+    $('.cta a').on('click', animateSectionScroll);
+
+    $('.sitefooter-bottom a').on('click', animateSectionScroll);
+
+    function animateSectionScroll(e) {
         e.preventDefault();
 
         if(window.innerWidth <= 767) {
@@ -29,7 +35,7 @@ $(document).ready(function() {
 
         var section = $(this).attr('href');
         $('html,body').animate({
-            scrollTop: section === '#home' ? 0 : $(section).offset().top - 52
-        }, 250);
-    });
+            scrollTop: section === '#home' || section === '#' ? 0 : $(section).offset().top - 52
+        }, 500);
+    }
 });
