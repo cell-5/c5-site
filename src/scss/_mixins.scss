@@ -16,7 +16,13 @@
 	}
 }
 
-@mixin medium-screen() {
+@mixin medium-screen-and-up() {
+	@include breakpoint($medium-min) {
+		@content;
+	}
+}
+
+@mixin medium-screen-only() {
 	@include breakpoint($medium-only) {
 		@content;
 	}
@@ -24,6 +30,12 @@
 
 @mixin tablet-and-up() {
 	@include breakpoint($tablet-min) {
+		@content;
+	}
+}
+
+@mixin tablet-and-below() {
+	@include breakpoint($tablet-below) {
 		@content;
 	}
 }

@@ -21,7 +21,8 @@
     "animate.css": "^3.5.2",
     "Morphext": "^2.4.4",
     "fontawesome": "font-awesome#^5.0.8",
-    "breakpoint-sass": "^2.7.1"
+    "breakpoint-sass": "^2.7.1",
+    "slick-carousel": "slick.js#^1.8.1"
   },
   "resolutions": {
     "jquery": "^3.3.1",

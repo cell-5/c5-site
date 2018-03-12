@@ -66,3 +66,22 @@ $(document).ready(function() {
         $('header .nav-item:nth-child(' + childNum + ')').addClass('active');
     });
 });
+
+(function ($) {
+    "use strict";
+
+    $('.team').slick({
+        autoplay: true,
+        autoplaySpeed: 4000,
+        fade: true,
+        asNavFor: '.teamNav-slide',
+        arrows: true,
+    });
+
+    $('.teamNav-slide').slick({
+        slidesToShow: 4,
+        arrows: false,
+        asNavFor: '.team',
+        focusOnSelect: true
+    });
+} (jQuery) );
