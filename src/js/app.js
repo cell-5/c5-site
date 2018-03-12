@@ -1,6 +1,8 @@
 'use strict';
 
 $(document).ready(function() {
+    var TAGLINE_TOP_MARGIN = 52;
+
     // To animate tagline
     setTimeout(function() {
         $('#rotating-text').text('web, mobile, design, cloud, social media, s.e.o., legacy code uplift, start-up growth');
@@ -39,7 +41,28 @@ $(document).ready(function() {
 
         var section = $(this).attr('href');
         $('html,body').animate({
-            scrollTop: section === '#home' || section === '#' ? 0 : $(section).offset().top - 52
+            scrollTop: section === '#home' || section === '#' ? 0 : $(section).offset().top - TAGLINE_TOP_MARGIN
         }, 500);
     }
+
+    // To change active nav link
+    var homeYOffset = $('#tagline').height() + $('#home').height() + TAGLINE_TOP_MARGIN,
+        testimonialsYOffset = $('#testimonials').offset().top + $('#testimonials').height(),
+        profilesYOffset = $('#profiles').offset().top + $('#profiles').height();
+
+    $(window).on('scroll', function() {
+        var yOffset = window.pageYOffset;
+        var childNum = 4;
+
+        if(yOffset <= homeYOffset) {
+            childNum = 1;
+        } else if(yOffset <= testimonialsYOffset) {
+            childNum = 2;
+        } else if(yOffset <= profilesYOffset) {
+            childNum = 3;
+        }
+
+        $('header .nav-item.active').removeClass('active');
+        $('header .nav-item:nth-child(' + childNum + ')').addClass('active');
+    });
 });
