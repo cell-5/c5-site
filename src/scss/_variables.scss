@@ -4,8 +4,13 @@ $brand-font-family: 'Merriweather Sans', sans-serif;
 $tagline-primary-color: #fefffe;
 $tagline-primary-bg-color: #2c302e;
 $tagline-active-text-color: #d64933;
-$tagline-primary-font-family: 'Rozha One', serif;
-$tagline-primary-font-size: 5rem;
+$tagline-primary-font-family: 'Montserrat', sans-serif;
+$tagline-primary-font-size: 4.5rem;
+$tagline-primary-font-size-mobile-portrait: 2.5rem;
+$tagline-primary-font-size-mobile-landscape: 2.25rem;
+$tagline-primary-font-size-tablet-portrait: 3.5rem;
+$tagline-primary-font-size-tablet-landscape: 3.25rem;
+$tagline-primary-font-weight: 900;
 $tagline-top-margin: 52px;
 $tagline-text-animation-duration: 1s;
 $tagline-text-animation-delay: 0s;
@@ -17,10 +22,15 @@ $light-base-color: #fefffe;
 $stand-out-base-color: #d64933;
 
 $headings-font-size: 3rem;
-$headings-font-family: 'Rozha One', serif;
+$headings-font-size-mobile-portrait: 2.25rem;
+$headings-font-family: 'Montserrat', sans-serif;
+$headings-font-weight: 900;
 $content-font-family: 'Montserrat', sans-serif;
 
 $section-break-border-size: 0.8rem;
+$section-padding: 2.5rem 10vw;
+
+$transition-default: all 0.2s linear;
 
 // Breakpoints
 $large: 1200px;
@@ -44,3 +54,9 @@ $portrait-max: $landscape-min - 1;
 
 $landscape: $landscape-min $mobile-max;
 $portrait: max-width $portrait-max;
+
+$mobile-portrait-only: (max-width $mobile-max) (orientation portrait);
+$mobile-landscape-only: (max-width $mobile-max) (orientation landscape);
+
+$tablet-portrait-only: (min-width $tablet-min) (max-width $tablet-max) (orientation portrait);
+$tablet-landscape-only: (min-width $tablet-min) (max-width $tablet-max) (orientation landscape);
