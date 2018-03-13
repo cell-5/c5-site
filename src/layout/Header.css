@@ -1,6 +1,6 @@
 .Header{
 
-  /** To add a shadow between header and picture*/ 
+  /** To add a shadow between header and picture*/
   box-shadow: 0px 0px 10px black;
   z-index: 10;
   position: relative;
@@ -8,9 +8,54 @@
 
   /** To center text on small device hamburger dropdown*/
   text-align: center;
-  /** **/  
+  /** **/
   transition: top 0.2s ease-in-out;
 
+}
+
+/* To add sticky nav to medium size screens */
+header.Header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+  background: rgba(255, 255, 255, 0.35);
+}
+
+header.Header + div {
+  position: relative;
+  margin-top: 92px;
+}
+
+header.Header li {
+  transition: 0.2s;
+}
+
+header.sticky {
+  background: white;
+}
+
+/* To remove the top and bottom padding of header */
+.sticky .navbar,
+.sticky .nav-link {
+  padding: 0 1rem;
+}
+
+/* To reduce the sizes of header texts by 10% */
+.sticky .headline {
+  font-size: 1.8vw;
+}
+
+.sticky li {
+  font-size: 0.9rem;
+}
+
+/* To make the background color of the header white on mobile */
+@media only screen and (max-width: 767px) {
+  header.Header {
+    background: white;
+  }
 }
 
 
@@ -25,7 +70,7 @@
   padding-bottom: 5px;
   background-color: transparent;
   border-left: 2px solid var(--bg);
- 
+
 }
 /**END: customize color of hamburger**/
 
@@ -36,7 +81,7 @@
   color: var(--dark);
   background-color: rgba(214, 73, 51, 0.25);
   border-left: 2px solid var(--c2);
-  
+
 }
 
 .navbar-light .navbar-toggler-icon{
@@ -53,10 +98,10 @@
 
 .show.navbar-collaps a{
   background-color: white;
-  text-align: center; 
+  text-align: center;
   text-decoration: underline;
 } */
- 
+
 .headline{
   margin:auto;
   text-align: center;
@@ -64,5 +109,5 @@
   font-size: 2vw;
   font-style: italic;
   white-space: nowrap;
+  transition: 0.2s;
 }
-

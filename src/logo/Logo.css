@@ -6,17 +6,30 @@
 
 .Logo .img-bg{
     display: flex;
-} 
+}
 
 .Logo img{
     height: 50px;
     width: 50px;
     margin:auto;
+    transition: 0.2s;
 }
-  
+
 .Cell{
     font-size: 35px;
     color: var(--c3); /* var(--c4); */
     display: inline-block;
     margin: auto;
-}  
+    transition: 0.2s;
+}
+
+/* To reduce the size of logo by 10% */
+@media only screen and (min-width: 768px) {
+  .sticky .Logo img {
+    height: 45px;
+  }
+
+  .sticky .Cell {
+    font-size: 28px;
+  }
+}
