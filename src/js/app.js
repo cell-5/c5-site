@@ -134,6 +134,8 @@ $(document).ready(function() {
         fade: true,
         asNavFor: '.teamNav-slide',
         arrows: true,
+        nextArrow: '<span class="slick-next-arrow" role="button"><i class="fa fa-angle-right"></i></span>',
+        prevArrow: '<span class="slick-prev-arrow" role="button"><i class="fa fa-angle-left"></i></span>',
     });
 
     $('.teamNav-slide').slick({
