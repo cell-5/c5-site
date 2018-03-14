@@ -39,12 +39,12 @@ class Header extends Component {
       <header className="Header">
         <Navbar light expand="md">
           <NavbarBrand light>
-          <NavLink tag={Link} to="/" >
-          <Logo/>
-          </NavLink>
-         
+            <NavLink tag={Link} to="/" >
+            <Logo/>
+            </NavLink>
           </NavbarBrand>
-          <div className="d-none d-lg-inline headline">sustainable, software product delivery.</div>
+          
+          <div className="d-none d-lg-inline headline">Sustainable, Software product delivery.</div>
           <NavbarToggler onClick={this.toggle} />
            <Collapse isOpen={this.state.isOpen} navbar>
              <Nav className="ml-auto" navbar>

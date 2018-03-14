@@ -19,12 +19,12 @@ class People extends Component {
     return (
       <div className="People">
         <div className="mission">
-          <h3>Meet the team:</h3>
+          <h2>Meet the Team</h2>
         </div>
         <div className="people-body">
           <Grid>
             <Row className="show-grid">
-              <Col lg={6} md={3}>
+              <Col lg={6} md={6}>
                 <Person
                   name="Peter"
                   title="Full-stack developer and team coach, specializing in cloud architectures and devops."
@@ -46,7 +46,7 @@ class People extends Component {
                 </b></p>
                 </Person>
               </Col>
-              <Col lg={6} md={3}>
+              <Col lg={6} md={6}>
                 <Person
                   name="Harry"
                   title="Full-stack developer specializing in front end applications."
