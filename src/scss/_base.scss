@@ -42,21 +42,87 @@ header {
 }
 
 #logo {
-    margin-bottom: 0;
-    margin-top: 0;
+    @include breakpoint($mobile-portrait-only) {
+        padding: 0.25rem 0;
+    }
+    @include breakpoint($mobile-landscape-only) {
+        padding: 0.25rem 0;
+    }
     line-height: 100%;
+    text-align: center;
+    margin: 0;
+    padding: 2rem 0;
 
-    img {
-        height: 40px;
-        width: 40px;
+    * {
+        margin: 0;
+        padding: 0;
+        line-height: 100%;
+    }
+
+    &.shrink {
+        padding: 0.25rem 0;
+
+        a {
+            img {
+                height: $brand-logo-height - ($brand-logo-height * 0.5);
+                width: $brand-logo-height - ($brand-logo-height * 0.5);
+                transition: $transition-default;
+            }
+
+            p {
+                animation: disappearing-text 0.2s forwards;
+            }
+        }
     }
 
     a {
-        font-family: $brand-font-family;
-        font-size: 28px;
+        color: $light-base-color;
 
-        span {
-            color: $light-base-color;
+        img {
+            @include breakpoint($mobile-portrait-only) {
+                height: $brand-logo-height - ($brand-logo-height * 0.5);
+                width: $brand-logo-height - ($brand-logo-height * 0.5);
+                transition: $transition-default;
+            }
+            @include breakpoint($mobile-landscape-only) {
+                height: $brand-logo-height - ($brand-logo-height * 0.5);
+                width: $brand-logo-height - ($brand-logo-height * 0.5);
+                transition: $transition-default;
+            }
+            height: $brand-logo-height;
+            width: $brand-logo-width;
+            transition: $transition-default;
+        }
+
+        p {
+            @include breakpoint($mobile-portrait-only) {
+                animation: disappearing-text 0.2s forwards;
+            }
+            @include breakpoint($mobile-landscape-only) {
+                animation: disappearing-text 0.2s forwards;
+            }
+
+            font-family: $brand-font-family;
+            font-size: $brand-font-size;
+            font-weight: bold;
+            height: $brand-font-size;
+            transition: $transition-default;
+
+            span {
+                margin-left: -0.25ch;
+            }
+        }
+    }
+
+    @keyframes disappearing-text {
+        from {
+            font-size: $brand-font-size;
+            height: $brand-font-size;
+        }
+
+        to {
+            font-size: 0;
+            height: 0;
         }
     }
 }
@@ -71,7 +137,8 @@ div.navbar-collapse {
 
 li.nav-item {
     text-align: center;
-    padding: 0 0.5rem;
+    padding: 0 1.5rem;
+    font-family: $content-font-family;
 
     &:hover {
         background-color: none;
@@ -86,32 +153,32 @@ li.nav-item {
 }
 
 #tagline {
-    @include breakpoint($mobile-portrait-only) {
-        height: $tagline-primary-font-size-mobile-portrait * 10;
-        padding: 0 5vw;
-        transition: $transition-default;
-    }
-
-    @include breakpoint($mobile-landscape-only) {
-        height: $tagline-primary-font-size-mobile-landscape * 10;
-        transition: $transition-default;
-    }
-
-    @include breakpoint($tablet-portrait-only) {
-        height: $tagline-primary-font-size-tablet-portrait * 10;
-        transition: $transition-default;
-    }
-
-    @include breakpoint($tablet-landscape-only) {
-        height: $tagline-primary-font-size-tablet-landscape * 10;
-        transition: $transition-default;
-    }
+    // @include breakpoint($mobile-portrait-only) {
+    //     height: $tagline-primary-font-size-mobile-portrait * 10;
+    //     padding: 0 5vw;
+    //     transition: $transition-default;
+    // }
+    //
+    // @include breakpoint($mobile-landscape-only) {
+    //     height: $tagline-primary-font-size-mobile-landscape * 10;
+    //     transition: $transition-default;
+    // }
+    //
+    // @include breakpoint($tablet-portrait-only) {
+    //     height: $tagline-primary-font-size-tablet-portrait * 10;
+    //     transition: $transition-default;
+    // }
+    //
+    // @include breakpoint($tablet-landscape-only) {
+    //     height: $tagline-primary-font-size-tablet-landscape * 10;
+    //     transition: $transition-default;
+    // }
 
     background-color: $tagline-primary-bg-color;
     color: $tagline-primary-color;
     font-family: $tagline-primary-font-family;
     display: flex;
-    height: $tagline-primary-font-size * 10;
+    height: 100vh;
     margin-top: $tagline-top-margin;
     padding: 0 10vw;
     position: relative;
@@ -135,16 +202,16 @@ li.nav-item {
     }
 
     div.tagline-text-wrapper {
-        @include breakpoint($mobile-portrait-only) {
-            top: 25%;
-            transform: translateY(-25%);
-            transition: $transition-default;
-        }
+        // @include breakpoint($mobile-portrait-only) {
+        //     top: 25%;
+        //     transform: translateY(-25%);
+        //     transition: $transition-default;
+        // }
 
         position: absolute;
         margin: 0 auto;
-        top: 33.33%;
-        transform: translateY(-33.33%);
+        top: 50%;
+        transform: translateY(-50%);
         transition: $transition-default;
 
         > p {
@@ -174,7 +241,6 @@ li.nav-item {
 
             &#rotating-text {
                 color: $tagline-active-text-color;
-                text-transform: uppercase;
             }
         }
 
