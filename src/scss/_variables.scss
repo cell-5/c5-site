@@ -9,11 +9,11 @@ $tagline-primary-color: #fefffe;
 $tagline-primary-bg-color: #2c302e;
 $tagline-active-text-color: #d64933;
 $tagline-primary-font-family: 'Montserrat', sans-serif;
-$tagline-primary-font-size: 4.5rem;
-$tagline-primary-font-size-mobile-portrait: 2.5rem;
-$tagline-primary-font-size-mobile-landscape: 2.25rem;
-$tagline-primary-font-size-tablet-portrait: 3.5rem;
-$tagline-primary-font-size-tablet-landscape: 3.25rem;
+$tagline-primary-font-size: 6vmax;
+$tagline-primary-font-size-mobile-portrait: 12vmin;
+$tagline-primary-font-size-mobile-landscape: 12vmin;
+$tagline-primary-font-size-tablet-portrait: 12vmin;
+$tagline-primary-font-size-tablet-landscape: 12vmin;
 $tagline-primary-font-weight: 900;
 $tagline-top-margin: 0px;
 $tagline-text-animation-duration: 1s;
@@ -25,14 +25,14 @@ $dark-base-color: #2c302e;
 $light-base-color: #fefffe;
 $stand-out-base-color: #d64933;
 
-$headings-font-size: 3rem;
-$headings-font-size-mobile-portrait: 2.25rem;
+$headings-font-size: 6vmax;
+$headings-font-size-mobile-portrait: 6vmax;
 $headings-font-family: 'Montserrat', sans-serif;
 $headings-font-weight: 900;
 $content-font-family: 'Montserrat', sans-serif;
 
 $section-break-border-size: 0.8rem;
-$section-padding: 2.5rem 10vw;
+$section-padding: 10vh 10vw;
 
 $transition-default: all 0.2s linear;
 

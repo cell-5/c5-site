@@ -137,7 +137,7 @@ div.navbar-collapse {
 
 li.nav-item {
     text-align: center;
-    padding: 0 1.5rem;
+    padding: 0 1.2rem;
     font-family: $content-font-family;
 
     &:hover {
@@ -152,28 +152,7 @@ li.nav-item {
     }
 }
 
-#tagline {
-    // @include breakpoint($mobile-portrait-only) {
-    //     height: $tagline-primary-font-size-mobile-portrait * 10;
-    //     padding: 0 5vw;
-    //     transition: $transition-default;
-    // }
-    //
-    // @include breakpoint($mobile-landscape-only) {
-    //     height: $tagline-primary-font-size-mobile-landscape * 10;
-    //     transition: $transition-default;
-    // }
-    //
-    // @include breakpoint($tablet-portrait-only) {
-    //     height: $tagline-primary-font-size-tablet-portrait * 10;
-    //     transition: $transition-default;
-    // }
-    //
-    // @include breakpoint($tablet-landscape-only) {
-    //     height: $tagline-primary-font-size-tablet-landscape * 10;
-    //     transition: $transition-default;
-    // }
-
+#home {
     background-color: $tagline-primary-bg-color;
     color: $tagline-primary-color;
     font-family: $tagline-primary-font-family;
@@ -202,12 +181,6 @@ li.nav-item {
     }
 
     div.tagline-text-wrapper {
-        // @include breakpoint($mobile-portrait-only) {
-        //     top: 25%;
-        //     transform: translateY(-25%);
-        //     transition: $transition-default;
-        // }
-
         position: absolute;
         margin: 0 auto;
         top: 50%;
@@ -249,12 +222,14 @@ li.nav-item {
 
             li {
                 @include breakpoint($mobile-portrait-only) {
-                    font-size: 1.1rem;
+                    font-size: 1rem;
+                    padding: 0.35rem 1.4rem 0 0;
                     transition: $transition-default;
                 }
 
                 @include breakpoint($mobile-landscape-only) {
-                    font-size: 1.1rem;
+                    font-size: 1rem;
+                    padding: 0.35rem 1.4rem 0 0;
                     transition: $transition-default;
                 }
 
@@ -267,10 +242,6 @@ li.nav-item {
                 &.active a {
                     color: $tagline-active-text-color;
                 }
-
-                // &:not(:last-child) {
-                //     border-right: 1px solid $light-base-color;
-                // }
 
                 a {
                     color: $light-base-color;
@@ -308,7 +279,7 @@ li.nav-item {
     }
 }
 
-#home {
+#services {
     color: $dark-base-color;
     padding: $section-padding;
     position: relative;
@@ -324,22 +295,53 @@ li.nav-item {
         border-bottom: $section-break-border-size solid $dark-base-color;
     }
 
-    p {
-        font-family: $content-font-family;
-        font-size: 4vw;
+    h2 {
         text-align: center;
+    }
 
-        span.brand {
-            color: $brand-color;
-            font-family: $brand-font-family;
+    article {
+        text-align: center;
+        padding: 1.2rem;
+
+        p {
+            font-family: $content-font-family;
+            font-size: 1rem;
+            text-align: center;
         }
     }
 
     figure {
-        text-align: center;
-
         img {
-            width: 30vw;
+            width: 10rem;
+            height: 10rem;
+            margin: 0 auto;
+            transition: $transition-default;
+        }
+
+        figcaption {
+            font-size: 1.3rem;
+            font-family: $headings-font-family;
+            padding-top: 1rem;
+            text-align: center;
+        }
+    }
+
+    div.services-carousel {
+        .slick-arrow {
+            height: 3rem;
+            width: 3rem;
+
+            &:before {
+                color: $dark-base-color;
+                font-size: 3rem;
+                opacity: 1;
+            }
+        }
+
+        .slick-current {
+            figcaption{
+                font-weight: 900;
+            }
         }
     }
 }
@@ -347,7 +349,7 @@ li.nav-item {
 #testimonials {
     background-color: #2c302e;
     color: $light-base-color;
-    padding: 2.5rem 0;
+    padding: 10vh 0;
     position: relative;
 
     &:after {
