@@ -51,7 +51,7 @@ header {
     line-height: 100%;
     text-align: center;
     margin: 0;
-    padding: 2rem 0;
+    padding: 0.5rem 0;
 
     * {
         margin: 0;
@@ -60,17 +60,15 @@ header {
     }
 
     &.shrink {
-        padding: 0.25rem 0;
-
         a {
             img {
-                height: $brand-logo-height - ($brand-logo-height * 0.5);
-                width: $brand-logo-height - ($brand-logo-height * 0.5);
+                height: $brand-logo-height - ($brand-logo-height * 0.4);
+                width: $brand-logo-height - ($brand-logo-height * 0.4);
                 transition: $transition-default;
             }
 
             p {
-                animation: disappearing-text 0.2s forwards;
+                animation: shrinking-text 0.2s forwards;
             }
         }
     }
@@ -80,13 +78,13 @@ header {
 
         img {
             @include breakpoint($mobile-portrait-only) {
-                height: $brand-logo-height - ($brand-logo-height * 0.5);
-                width: $brand-logo-height - ($brand-logo-height * 0.5);
+                height: $brand-logo-height - ($brand-logo-height * 0.4);
+                width: $brand-logo-height - ($brand-logo-height * 0.4);
                 transition: $transition-default;
             }
             @include breakpoint($mobile-landscape-only) {
-                height: $brand-logo-height - ($brand-logo-height * 0.5);
-                width: $brand-logo-height - ($brand-logo-height * 0.5);
+                height: $brand-logo-height - ($brand-logo-height * 0.4);
+                width: $brand-logo-height - ($brand-logo-height * 0.4);
                 transition: $transition-default;
             }
             height: $brand-logo-height;
@@ -96,10 +94,10 @@ header {
 
         p {
             @include breakpoint($mobile-portrait-only) {
-                animation: disappearing-text 0.2s forwards;
+                animation: shrinking-text 0.2s forwards;
             }
             @include breakpoint($mobile-landscape-only) {
-                animation: disappearing-text 0.2s forwards;
+                animation: shrinking-text 0.2s forwards;
             }
 
             font-family: $brand-font-family;
@@ -114,21 +112,21 @@ header {
         }
     }
 
-    @keyframes disappearing-text {
+    @keyframes shrinking-text {
         from {
             font-size: $brand-font-size;
             height: $brand-font-size;
         }
 
         to {
-            font-size: 0;
-            height: 0;
+            font-size: $brand-font-size - ($brand-font-size * 0.4);
+            height: $brand-font-size - ($brand-font-size * 0.4);
         }
     }
 }
 
 nav.navbar {
-    padding: 0rem 2rem;
+    padding: 0rem 1rem;
 }
 
 div.navbar-collapse {
@@ -306,7 +304,9 @@ li.nav-item {
         p {
             font-family: $content-font-family;
             font-size: 1rem;
-            text-align: center;
+            text-align: justify;
+            width: 75%;
+            margin: 1rem auto;
         }
     }
 
@@ -349,7 +349,7 @@ li.nav-item {
 #testimonials {
     background-color: #2c302e;
     color: $light-base-color;
-    padding: 10vh 0;
+    padding: 5rem 0;
     position: relative;
 
     &:after {
@@ -456,7 +456,7 @@ li.nav-item {
                 @include tablet-and-below() {
                     border: 4px solid $gray;
                     border-radius: 50%;
-                }   
+                }
             }
         }
     }
@@ -527,7 +527,6 @@ li.nav-item {
             font-size: 2.2em;
             font-weight: bold;
             margin: 12px 15px 10px 0;
-            text-transform: uppercase;
         }
 
         h6 {
