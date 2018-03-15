@@ -527,7 +527,10 @@ li.nav-item {
             font-size: 2.2em;
             font-weight: bold;
             margin: 12px 15px 10px 0;
-            text-transform: uppercase;
+            span {
+                display: inline-block;
+                margin-left: 2px;
+            }
         }
 
         h6 {
