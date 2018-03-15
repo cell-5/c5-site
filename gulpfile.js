@@ -63,6 +63,11 @@ gulp.task('fa:webfonts', function() {
         .pipe(gulp.dest('dist/webfonts'));
 });
 
+gulp.task('slick:fonts', function() {
+    return gulp.src('src/vendor/slick-carousel/slick/fonts/**/*')
+        .pipe(gulp.dest('dist/css/fonts'));
+});
+
 gulp.task('compile', function() {
     return gulp.start('css', function() {
         return gulp.src('src/*.html')
@@ -81,5 +86,5 @@ gulp.task('clean:src', function() {
 });
 
 gulp.task('default', ['css', 'dev', 'watch']);
-gulp.task('build', ['compile', 'images', 'fa:webfonts']);
+gulp.task('build', ['compile', 'images', 'fa:webfonts', 'slick:fonts']);
 // gulp.task('build', ['compile', 'images', 'production']);
