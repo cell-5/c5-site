@@ -2,74 +2,16 @@
 
 $(document).ready(function() {
     // Services
-    $('.services-carousel').slick({
-        slidesToShow: 3,
-        arrows: true,
-        dots: true,
-        centerMode: true,
-        centerPadding: '0',
-        focusOnSelect: true,
-        asNavFor: '.services-carousel-active',
-        responsive: [
-            {
-                breakpoint: 1024,
-                settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 3,
-                    infinite: true,
-                    dots: true
-                }
-            },
-            {
-                breakpoint: 600,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1
-                }
-            },
-            {
-                breakpoint: 480,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1
-                }
-            }
-        ]
-    });
-
-    $('.services-carousel-active').slick({
+    $('.services-wrapper').slick({
+        autoplay: true,
+        autoplaySpeed: 30000,
         slidesToShow: 1,
-        slidesToScroll: 1,
-        arrows: false,
-        fade: true,
-        asNavFor: '.services-carousel'
+        arrows: true,
+        focusOnSelect: true
     });
-
-    // To animate tagline
-    setTimeout(function() {
-        $('#rotating-text').text('web, mobile, design, cloud, social media, s.e.o., legacy code uplift, start-up growth');
-        $('.tagline-text-wrapper ul li:first-child').addClass('active');
-        $('#rotating-text').Morphext({
-            animation: "fadeIn",
-            separator: ",",
-            speed: 15000,
-            complete: function () {
-                setTimeout(function() {
-                    var active = $('.tagline-text-wrapper ul li.active');
-                    active.removeClass('active');
-                    if(active.next().length) {
-                        active.next().addClass('active');
-                    } else {
-                        $('.tagline-text-wrapper ul li:first-child').addClass('active');
-                    }
-                }, 15000)
-            }
-        });
-    }, 15000);
 
     // To close nav dropdown when a nav link is clicked
     $('header .nav-link').on('click', animateSectionScroll);
-    $('.cta a').on('click', animateSectionScroll);
     $('#logo a').on('click', animateTopScroll);
     $('.sitefooter-bottom a').on('click', animateTopScroll);
 
@@ -93,24 +35,22 @@ $(document).ready(function() {
         }, 500);
     }
 
-    var servicesYOffset = Math.floor($('#services').offset().top),
+    var
         testimonialsYOffset = Math.floor($('#testimonials').offset().top),
         profilesYOffset = Math.floor($('#profiles').offset().top),
         contactUsYOffset = Math.floor($('#contact-us').offset().top);
 
     $(window).on('scroll', function() {
         var yOffset = window.pageYOffset,
-            childNum = 5;
+            childNum = 4;
 
         // To change active nav link
-        if (yOffset >= 0 && yOffset < servicesYOffset) {
+        if (yOffset >= 0 && yOffset < testimonialsYOffset) {
             childNum = 1;
-        } else if (yOffset >= servicesYOffset && yOffset < testimonialsYOffset) {
-            childNum = 2;
         } else if (yOffset >= testimonialsYOffset && yOffset < profilesYOffset) {
-            childNum = 3;
+            childNum = 2;
         } else if (yOffset >= profilesYOffset && yOffset < contactUsYOffset) {
-            childNum = 4;
+            childNum = 3;
         }
 
         $('header .nav-item.active').removeClass('active');

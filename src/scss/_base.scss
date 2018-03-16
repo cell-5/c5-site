@@ -43,10 +43,10 @@ header {
 
 #logo {
     @include breakpoint($mobile-portrait-only) {
-        padding: 0.25rem 0;
+        height: $brand-logo-height - ($brand-logo-height * 0.2);
     }
     @include breakpoint($mobile-landscape-only) {
-        padding: 0.25rem 0;
+        height: $brand-logo-height - ($brand-logo-height * 0.2);
     }
     line-height: 100%;
     text-align: center;
@@ -60,6 +60,7 @@ header {
     }
 
     &.shrink {
+        height: $brand-logo-height - ($brand-logo-height * 0.2);
         a {
             img {
                 height: $brand-logo-height - ($brand-logo-height * 0.4);
@@ -102,7 +103,6 @@ header {
 
             font-family: $brand-font-family;
             font-size: $brand-font-size;
-            font-weight: bold;
             height: $brand-font-size;
             transition: $transition-default;
 
@@ -119,8 +119,8 @@ header {
         }
 
         to {
-            font-size: $brand-font-size - ($brand-font-size * 0.4);
-            height: $brand-font-size - ($brand-font-size * 0.4);
+            font-size: 0;
+            height: 0;
         }
     }
 }
@@ -178,177 +178,64 @@ li.nav-item {
         line-height: 100%;
     }
 
-    div.tagline-text-wrapper {
-        position: absolute;
-        margin: 0 auto;
-        top: 50%;
-        transform: translateY(-50%);
-        transition: $transition-default;
+// ------------------- Services wrapper
+    div.services-wrapper {
+        color: $light-base-color;
+        position: relative;
+        top: 25vh;
+        width: 100%;
 
-        > p {
-            @include breakpoint($mobile-portrait-only) {
-                font-size: $tagline-primary-font-size-mobile-portrait;
-                transition: $transition-default;
-            }
+        > div {
+            figure {
+                text-align: center;
 
-            @include breakpoint($mobile-landscape-only) {
-                font-size: $tagline-primary-font-size-mobile-landscape;
-                transition: $transition-default;
-            }
-
-            @include breakpoint($tablet-portrait-only) {
-                font-size: $tagline-primary-font-size-tablet-portrait;
-                transition: $transition-default;
-            }
-
-            @include breakpoint($tablet-landscape-only) {
-                font-size: $tagline-primary-font-size-tablet-landscape;
-                transition: $transition-default;
-            }
-
-            font-size: $tagline-primary-font-size;
-            font-weight: $tagline-primary-font-weight;
-            transition: $transition-default;
-
-            &#rotating-text {
-                color: $tagline-active-text-color;
-            }
-        }
-
-        ul {
-            list-style: none;
-
-            li {
-                @include breakpoint($mobile-portrait-only) {
-                    font-size: 1rem;
-                    padding: 0.35rem 1.4rem 0 0;
+                img {
+                    width: 40vmin;
+                    height: 40vmin;
+                    margin: 0 auto;
                     transition: $transition-default;
                 }
+            }
 
-                @include breakpoint($mobile-landscape-only) {
-                    font-size: 1rem;
-                    padding: 0.35rem 1.4rem 0 0;
-                    transition: $transition-default;
+            h2 {
+                color: $light-base-color;
+                font-size: $tagline-primary-font-size;
+                text-align: left;
+                padding: 0 3vmax;
+
+                span {
+                    color: $stand-out-base-color;
                 }
+            }
 
-                font-size: 1.2rem;
-                font-weight: bold;
-                float: left;
-                padding: 0.35rem 1.4rem 0.35rem 0;
-                transition: $transition-default;
-
-                &.active a {
-                    color: $tagline-active-text-color;
-                }
-
-                a {
-                    color: $light-base-color;
-                }
+            p {
+                font-family: $content-font-family;
+                color: $light-base-color;
+                font-size: 0.9rem;
+                margin: 1rem auto;
+                text-align: left !important;
+                line-height: 150%;
+                padding: 0 3vmax;
             }
         }
 
-        div.cta {
-            margin-top: 1rem;
-
-            a {
-                letter-spacing: 1px;
-                font-size: 1.25rem;
-                font-weight: bold;
-
-                &:link,
-                &:visited {
-                    background-color: $tagline-active-text-color;
-                    color: $light-base-color;
-                    display: inline-block;
-                    padding: 0.9rem 1.8rem;
-                }
-
-                &:hover,
-                &:active {
-                    background-color: $tagline-active-text-color * 1.1;
-                    text-decoration: none;
-                }
-
-                &:active {
-                    background-color: $tagline-active-text-color;
-                }
-            }
-        }
-    }
-}
-
-#services {
-    color: $dark-base-color;
-    padding: $section-padding;
-    position: relative;
-
-    &:before {
-        content: '';
-        position: absolute;
-        right: 0;
-        bottom: 0;
-        height: $section-break-border-size;
-        width: 50%;
-        border-left: $section-break-border-size solid transparent;
-        border-bottom: $section-break-border-size solid $dark-base-color;
-    }
-
-    h2 {
-        text-align: center;
-    }
-
-    article {
-        text-align: center;
-        padding: 1.2rem;
-
-        p {
-            font-family: $content-font-family;
-            font-size: 1rem;
-            text-align: justify;
-            width: 75%;
-            margin: 1rem auto;
-        }
-    }
-
-    figure {
-        img {
-            width: 10rem;
-            height: 10rem;
-            margin: 0 auto;
-            transition: $transition-default;
-        }
-
-        figcaption {
-            font-size: 1.3rem;
-            font-family: $headings-font-family;
-            padding-top: 1rem;
-            text-align: center;
-        }
-    }
-
-    div.services-carousel {
         .slick-arrow {
             height: 3rem;
             width: 3rem;
 
             &:before {
-                color: $dark-base-color;
+                color: $light-base-color;
                 font-size: 3rem;
                 opacity: 1;
             }
         }
-
-        .slick-current {
-            figcaption{
-                font-weight: 900;
-            }
-        }
     }
+// ------------------- END Services wrapper
 }
 
 #testimonials {
-    background-color: #2c302e;
-    color: $light-base-color;
+    background-color: #light-base-color;
+    color: $dark-base-color;
     padding: 5rem 0;
     position: relative;
 
