@@ -68,6 +68,7 @@ $(document).ready(function() {
 (function ($) {
     "use strict";
 
+    // Team carousel
     $('.team').slick({
         autoplay: true,
         autoplaySpeed: 4000,
@@ -84,4 +85,56 @@ $(document).ready(function() {
         asNavFor: '.team',
         focusOnSelect: true
     });
+
+    // Contact form submission
+    var form = $('#contact-form')
+    ,   name = $('#name')
+    ,   email = $('#email')
+    ,   message = $('#message');
+
+    form.submit(function (e) {
+        e.preventDefault();
+
+        var data = {
+            name: name.val(),
+            email: email.val(),
+            message: message.val(),
+        }
+
+        var errors = validate(data);
+
+        if (errors) {
+            showMessage('danger', 'Please fill in the form correctly.');
+            return;
+        }
+        
+        axios.post(form.prop('action'), data)
+        .then(function (response) {
+            showMessage('success', 'Message successfully sent!');
+            // clear form
+            form[0].reset();
+        })
+        .catch(function (error) {
+            showMessage('danger', 'Something went wrong. Please try again some other time.');
+        });
+    });
+
+    function validate(data) {
+        var errors = false;
+
+        var emailReg = /^([a-zA-Z0-9\\.]+)@([a-zA-Z0-9\\-\\_\\.]+)\.([a-zA-Z0-9]+)$/i;
+
+        if (data.name == '' || ! emailReg.test(data.email) || data.message == '') {
+            return ! errors;
+        }
+
+        return errors;
+    }
+
+    function showMessage(alertType, message) {
+        var markup = '<div class="alert alert-' + alertType + '">' + message + '<div>';
+
+        $('.alert').remove();
+        form.append(markup);
+    }
 } (jQuery) );
