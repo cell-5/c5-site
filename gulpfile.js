@@ -68,6 +68,11 @@ gulp.task('slick:fonts', function() {
         .pipe(gulp.dest('dist/css/fonts'));
 });
 
+gulp.task('favicon', function() {
+    return gulp.src('src/favicon.ico')
+        .pipe(gulp.dest('dist'));
+});
+
 gulp.task('compile', function() {
     return gulp.start('css', function() {
         return gulp.src('src/*.html')
@@ -86,5 +91,5 @@ gulp.task('clean:src', function() {
 });
 
 gulp.task('default', ['css', 'dev', 'watch']);
-gulp.task('build', ['compile', 'images', 'fa:webfonts', 'slick:fonts']);
+gulp.task('build', ['compile', 'images', 'fa:webfonts', 'slick:fonts', 'favicon']);
 // gulp.task('build', ['compile', 'images', 'production']);
