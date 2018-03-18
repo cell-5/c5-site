@@ -13,6 +13,7 @@ deploy:
   skip_cleanup: true
   region: "eu-west-1"
   local_dir: dist
+  upload-dir: .
   cache_control: no-cache
   acl: public_read
   secret_access_key:
