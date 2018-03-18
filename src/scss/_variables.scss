@@ -1,0 +1,66 @@
+$brand-color: #4c0827;
+$brand-font-family: 'Montserrat', sans-serif;
+$brand-font-size: 1.2rem;
+$brand-logo-width: 72px;
+$brand-logo-height: 72px;
+$gray: #e1e1e1;
+
+$tagline-primary-color: #fefffe;
+$tagline-primary-bg-color: #2c302e;
+$tagline-active-text-color: #d64933;
+$tagline-primary-font-family: 'Montserrat', sans-serif;
+$tagline-primary-font-size: 10vmin;
+$tagline-primary-font-size-mobile-portrait: 12vmin;
+$tagline-primary-font-size-mobile-landscape: 12vmin;
+$tagline-primary-font-size-tablet-portrait: 12vmin;
+$tagline-primary-font-size-tablet-landscape: 12vmin;
+$tagline-primary-font-weight: 900;
+$tagline-top-margin: 0px;
+$tagline-text-animation-duration: 1s;
+$tagline-text-animation-delay: 0s;
+$tagline-text-animation-iteration-count: 1;
+$tagline-text-animation-direction: forwards;
+
+$dark-base-color: #2c302e;
+$light-base-color: #fefffe;
+$stand-out-base-color: #d64933;
+
+$headings-font-size: 6vmax;
+$headings-font-size-mobile-portrait: 6vmax;
+$headings-font-family: 'Montserrat', sans-serif;
+$headings-font-weight: 900;
+$content-font-family: 'Montserrat', sans-serif;
+
+$section-break-border-size: 0.8rem;
+$section-padding: 5rem 10vw;
+
+$transition-default: all 0.2s linear;
+
+// Breakpoints
+$large: 1200px;
+$medium-max: $large - 1;
+$medium-min: 992px;
+$tablet-max: $medium-min - 1;
+$tablet-min: 768px;
+$mobile-max: $tablet-min - 1;
+
+// expanded breakpoints
+$medium-only: $medium-min $medium-max;
+$tablet-only: $tablet-min $tablet-max;
+$mobile-only: max-width $mobile-max;
+
+$medium-below: max-width $medium-max;
+$tablet-below: max-width $tablet-max;
+
+// orientation
+$landscape-min: 481px;
+$portrait-max: $landscape-min - 1;
+
+$landscape: $landscape-min $mobile-max;
+$portrait: max-width $portrait-max;
+
+$mobile-portrait-only: (max-width $mobile-max) (orientation portrait);
+$mobile-landscape-only: (max-width $mobile-max) (orientation landscape);
+
+$tablet-portrait-only: (min-width $tablet-min) (max-width $tablet-max) (orientation portrait);
+$tablet-landscape-only: (min-width $tablet-min) (max-width $tablet-max) (orientation landscape);
