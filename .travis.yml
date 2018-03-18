@@ -10,6 +10,7 @@ script:
 before_deploy:
   pip install --user awscli
 deploy:
+  skip_cleanup: true
   provider: script
   script: ./scripts/travis-deploy.sh
   on:
