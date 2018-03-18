@@ -10,10 +10,8 @@ before_deploy:
   - cd dist
 deploy:
   provider: s3
-  edge: true
   bucket: "cell5.co.uk"
   region: "eu-west-1"
-  skip_cleanup: true
   cache_control: no-cache
   acl: public_read
   secret_access_key:
