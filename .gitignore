@@ -2,4 +2,5 @@ src/.sass-cache
 src/css
 src/vendor
 /dist
+/build
 /node_modules
