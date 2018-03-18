@@ -6,13 +6,14 @@ install:
   - bower install
 script:
   - npm run build
+before_deploy:
+  - cd dist
 deploy:
   provider: s3
   edge: true
   bucket: "cell5.co.uk"
   region: "eu-west-1"
   skip_cleanup: true
-  local_dir: dist
   cache_control: no-cache
   acl: public_read
   secret_access_key:
