@@ -23,7 +23,7 @@ class Home extends Component {
         </section>
         <section className="blurb">
           <div className="what-we-do">
-          Client-first digital solutions....</div>
+          Client-first digital solutions.</div>
           </section>
           <section className="home-banner-image" style={{backgroundImage: "url(" + Background2 + ")"}}/>
           <section className="blurb">
