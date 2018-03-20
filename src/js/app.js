@@ -1,27 +1,59 @@
 'use strict';
 
 $(document).ready(function() {
+    var SPEED = 15000;
+
     // Tagline
     $('.tagline-services').slick({
         autoplay: true,
-        autoplaySpeed: 15000,
+        autoplaySpeed: SPEED,
         slidesToShow: 1,
         arrows: false,
         focusOnSelect: true,
         fade: true,
+        dots: true,
         asNavFor: '.services-wrapper'
     })
 
     // Services
     $('.services-wrapper').slick({
         autoplay: true,
-        autoplaySpeed: 15000,
+        autoplaySpeed: SPEED,
         slidesToShow: 1,
         arrows: false,
         focusOnSelect: true,
         fade: true,
         asNavFor: '.tagline-services'
     });
+
+    // Services nav
+    var rollServicesNav = function() {
+        return setInterval(function() {
+            var active = $('.services-nav li.active');
+            var next = active.next();
+
+            active.removeClass('active');
+            if(next.length === 0) {
+                $('.services-nav li:first-child').addClass('active');
+            } else {
+                next.addClass('active');
+            }
+        }, SPEED);
+    }
+
+    var rollServicesNavInterval = rollServicesNav();
+
+    $('.services-nav a').on('click', function() {
+        var index = $('.services-nav a').index(this) + 1;
+        $('h2 .slick-dots li:nth-child(' + index + ')').click();
+
+        $('.services-nav li.active').removeClass('active');
+        $(this).parent('li').addClass('active');
+
+        clearInterval(rollServicesNavInterval);
+        rollServicesNavInterval = rollServicesNav();
+    });
+
 
     // To close nav dropdown when a nav link is clicked
     $('header .nav-link').on('click', animateSectionScroll);

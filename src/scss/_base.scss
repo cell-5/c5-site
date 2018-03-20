@@ -197,7 +197,39 @@ li.nav-item {
                 display: block;
 
                 p {
-                    padding: 1vmax 0;
+                    padding: 0.75vmin 0;
+                }
+            }
+
+            ul.slick-dots {
+                display: none !important;
+            }
+        }
+
+        ul.services-nav {
+            list-style: none;
+
+            li {
+                display: inline-block;
+                transition: $transition-default;
+
+                &.active a {
+                    color: $stand-out-base-color;
+                    transition: $transition-default;
+                }
+
+                &:first-child {
+                    display: none;
+                }
+            }
+
+            a {
+                padding-right: 0.75rem;
+
+                &:link, &:visited {
+                    color: $light-base-color;
+                    display: block;
+                    font-size: 0.9rem;
                 }
             }
         }
@@ -220,8 +252,8 @@ li.nav-item {
                 text-align: center;
 
                 img {
-                    width: 40vmin;
-                    height: 40vmin;
+                    width: 30vmin;
+                    height: 30vmin;
                     margin: 0 auto;
                     transition: $transition-default;
                 }
