@@ -408,6 +408,21 @@ li.nav-item {
                 }
             }
         }
+        &-social {
+            font-size: 2em;
+            list-style: none;
+            margin-bottom: 1em;
+            padding-left: 0;
+            & > li {
+                display: inline-block;
+                &:not(:last-of-type) {
+                    margin-right: 15px;
+                }
+                a {
+                    color: white;
+                }
+            }
+        }
     }
 }
 
@@ -415,11 +430,8 @@ li.nav-item {
     @include tablet-and-below() {
         display: none;
     }
-    bottom: 1em;
-    left: 50%;
-    position: absolute;
-    width: 50%;
-    z-index: 10;
+    margin: 2em auto 0;
+    max-width: 500px;
     &-slide {
         img {
             cursor: pointer;
@@ -445,18 +457,14 @@ li.nav-item {
     padding-top: 5vw;
     position: relative;
 
-    &-col1,
-    &-col2 {
+    &-col1 {
         @include mobile-only() {
             margin-bottom: 2em;
         }
-    }
-
-    &-col1 {
         ul {
             list-style: none;
             padding-left: 0;
-            font-size: 1.8em;
+            font-size: 1.6em;
             font-weight: bold;
             line-height: 1.4;
         }
@@ -468,20 +476,35 @@ li.nav-item {
         }
 
         img {
-            width: 165px;
+            width: 80px;
         }
 
         h5 {
             color: $stand-out-base-color;
-            font-size: 2.2em;
+            font-size: 1.8em;
             font-weight: bold;
-            margin: 12px 15px 10px 0;
+            margin: 12px 0 10px 0;
+            span {
+                display: inline-block;
+                margin-left: 2px;
+            }
         }
 
         h6 {
-            font-size: 2.2em;
+            font-size: 1.6em;
             font-weight: bold;
             margin-top: 0;
+        }
+
+        a {
+            color: white;
+            display: block;
+            font-weight: bold;
+            span {
+                border-bottom: 1px dotted;
+                display: inline-block;
+                padding-bottom: 3px;
+            }
         }
     }
 
@@ -524,16 +547,14 @@ li.nav-item {
 
     form {
 
-        h5 {
-            font-weight: bold;
-            margin-bottom: 1em;
-            text-transform: uppercase;
-        }
-
         input,
         textarea,
         button {
             border-radius: 0;
+        }
+
+        input {
+            height: 45px;
         }
 
         button {
@@ -546,6 +567,10 @@ li.nav-item {
             margin-top: 20px;
         }
     }
+}
+
+.form-group {
+    margin-bottom: 1.3em;
 }
 
 .contact {
@@ -625,4 +650,8 @@ li.nav-item {
         }
         right: 100%;
     }
+}
+
+.subtext {
+    margin-bottom: 3em;
 }

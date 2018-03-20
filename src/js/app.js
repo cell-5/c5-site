@@ -125,10 +125,9 @@ $(document).ready(function() {
     });
 
     $('.teamNav-slide').slick({
-        slidesToShow: 4,
+        slidesToShow: 3,
         arrows: false,
         asNavFor: '.team',
-        focusOnSelect: true
     });
 
     // Contact form submission
