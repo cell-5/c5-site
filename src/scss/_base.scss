@@ -156,6 +156,7 @@ li.nav-item {
     font-family: $tagline-primary-font-family;
     display: flex;
     height: 100vh;
+    margin: 0;
     margin-top: $tagline-top-margin;
     padding: 0 10vw;
     position: relative;
@@ -178,12 +179,41 @@ li.nav-item {
         line-height: 100%;
     }
 
+// ------------------- Tagline wrapper
+    div.tagline-wrapper {
+        @include breakpoint($mobile-portrait-only) {
+            display: inline-block !important;
+        }
+
+        position: relative;
+        top: 50%;
+        transform: translateY(-25%);
+
+        h2 {
+            text-align: left;
+
+            div.tagline-services {
+                color: $stand-out-base-color;
+                display: block;
+
+                p {
+                    padding: 1vmax 0;
+                }
+            }
+        }
+    }
+// ------------------- END Tagline wrapper
 // ------------------- Services wrapper
     div.services-wrapper {
+        @include breakpoint($mobile-portrait-only) {
+            // top: 0;
+            // transform: none;
+        }
+
         color: $light-base-color;
         position: relative;
-        top: 25vh;
-        width: 100%;
+        top: 50%;
+        transform: translateY(-25%);
 
         > div {
             figure {
@@ -215,7 +245,7 @@ li.nav-item {
                 margin: 1rem auto;
                 text-align: left !important;
                 line-height: 150%;
-                padding: 0 2rem;
+                // padding: 0 2rem;
             }
         }
 

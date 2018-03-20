@@ -1,13 +1,26 @@
 'use strict';
 
 $(document).ready(function() {
+    // Tagline
+    $('.tagline-services').slick({
+        autoplay: true,
+        autoplaySpeed: 15000,
+        slidesToShow: 1,
+        arrows: false,
+        focusOnSelect: true,
+        fade: true,
+        asNavFor: '.services-wrapper'
+    })
+
     // Services
     $('.services-wrapper').slick({
         autoplay: true,
-        autoplaySpeed: 30000,
+        autoplaySpeed: 15000,
         slidesToShow: 1,
-        arrows: true,
-        focusOnSelect: true
+        arrows: false,
+        focusOnSelect: true,
+        fade: true,
+        asNavFor: '.tagline-services'
     });
 
     // To close nav dropdown when a nav link is clicked
@@ -107,7 +120,7 @@ $(document).ready(function() {
             showMessage('danger', 'Please fill in the form correctly.');
             return;
         }
-        
+
         axios.post(form.prop('action'), data)
         .then(function (response) {
             showMessage('success', 'Message successfully sent!');
