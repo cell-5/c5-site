@@ -10,9 +10,8 @@ deploy:
   provider: s3
   edge: true
   bucket: "cell5.co.uk"
-  skip_cleanup: true
   region: "eu-west-1"
-  local_dir: dist
+  local-dir: build
   cache_control: no-cache
   acl: public_read
   secret_access_key:

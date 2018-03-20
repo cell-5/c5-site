@@ -20,7 +20,7 @@ gulp.task('dev', function() {
 gulp.task('production', function() {
     return connect.server({
         livereload: true,
-        root: 'dist',
+        root: 'build',
         port: 9000
     });
 });
@@ -55,22 +55,22 @@ gulp.task('watch', function() {
 gulp.task('images', function() {
     return gulp.src('src/img/**/*')
         .pipe(imagemin())
-        .pipe(gulp.dest('dist/img'));
+        .pipe(gulp.dest('build/img'));
 });
 
 gulp.task('fa:webfonts', function() {
     return gulp.src('src/vendor/fontawesome/web-fonts-with-css/webfonts/**/*')
-        .pipe(gulp.dest('dist/webfonts'));
+        .pipe(gulp.dest('build/webfonts'));
 });
 
 gulp.task('slick:fonts', function() {
     return gulp.src('src/vendor/slick-carousel/slick/fonts/**/*')
-        .pipe(gulp.dest('dist/css/fonts'));
+        .pipe(gulp.dest('build/css/fonts'));
 });
 
 gulp.task('favicon', function() {
     return gulp.src('src/favicon.ico')
-        .pipe(gulp.dest('dist'));
+        .pipe(gulp.dest('build'));
 });
 
 gulp.task('compile', function() {
@@ -79,7 +79,7 @@ gulp.task('compile', function() {
             .pipe(useref())
             .pipe(condition('*.js', uglify()))
             .pipe(condition('*.css', minifyCss()))
-            .pipe(gulp.dest('dist'));
+            .pipe(gulp.dest('build'));
     });
 });
 
