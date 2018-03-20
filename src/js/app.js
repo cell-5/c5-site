@@ -5,8 +5,8 @@ $(document).ready(function() {
 
     // Tagline
     $('.tagline-services').slick({
-        autoplay: true,
-        autoplaySpeed: SPEED,
+        // autoplay: true,
+        // autoplaySpeed: SPEED,
         slidesToShow: 1,
         arrows: false,
         focusOnSelect: true,
@@ -17,8 +17,8 @@ $(document).ready(function() {
 
     // Services
     $('.services-wrapper').slick({
-        autoplay: true,
-        autoplaySpeed: SPEED,
+        // autoplay: true,
+        // autoplaySpeed: SPEED,
         slidesToShow: 1,
         arrows: false,
         focusOnSelect: true,
@@ -34,9 +34,9 @@ $(document).ready(function() {
 
             active.removeClass('active');
             if(next.length === 0) {
-                $('.services-nav li:first-child').addClass('active');
+                $('.services-nav li:first-child').find('a').click();
             } else {
-                next.addClass('active');
+                next.find('a').click();
             }
         }, SPEED);
     }
