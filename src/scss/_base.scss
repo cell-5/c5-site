@@ -43,10 +43,10 @@ header {
 
 #logo {
     @include breakpoint($mobile-portrait-only) {
-        height: $brand-logo-height - ($brand-logo-height * 0.2);
+        height: $brand-logo-height - ($brand-logo-height * 0.25);
     }
     @include breakpoint($mobile-landscape-only) {
-        height: $brand-logo-height - ($brand-logo-height * 0.2);
+        height: $brand-logo-height - ($brand-logo-height * 0.25);
     }
     line-height: 100%;
     text-align: center;
@@ -60,11 +60,11 @@ header {
     }
 
     &.shrink {
-        height: $brand-logo-height - ($brand-logo-height * 0.2);
+        height: $brand-logo-height - ($brand-logo-height * 0.25);
         a {
             img {
-                height: $brand-logo-height - ($brand-logo-height * 0.4);
-                width: $brand-logo-height - ($brand-logo-height * 0.4);
+                height: $brand-logo-height - ($brand-logo-height * 0.5);
+                width: $brand-logo-height - ($brand-logo-height * 0.5);
                 transition: $transition-default;
             }
 
@@ -79,13 +79,13 @@ header {
 
         img {
             @include breakpoint($mobile-portrait-only) {
-                height: $brand-logo-height - ($brand-logo-height * 0.4);
-                width: $brand-logo-height - ($brand-logo-height * 0.4);
+                height: $brand-logo-height - ($brand-logo-height * 0.5);
+                width: $brand-logo-height - ($brand-logo-height * 0.5);
                 transition: $transition-default;
             }
             @include breakpoint($mobile-landscape-only) {
-                height: $brand-logo-height - ($brand-logo-height * 0.4);
-                width: $brand-logo-height - ($brand-logo-height * 0.4);
+                height: $brand-logo-height - ($brand-logo-height * 0.5);
+                width: $brand-logo-height - ($brand-logo-height * 0.5);
                 transition: $transition-default;
             }
             height: $brand-logo-height;
@@ -199,12 +199,12 @@ li.nav-item {
 
             h2 {
                 color: $light-base-color;
-                font-size: $tagline-primary-font-size;
                 text-align: left;
-                padding: 0 3vmax;
+                padding: 0 2rem;
 
                 span {
                     color: $stand-out-base-color;
+                    display: block;
                 }
             }
 
@@ -215,7 +215,7 @@ li.nav-item {
                 margin: 1rem auto;
                 text-align: left !important;
                 line-height: 150%;
-                padding: 0 3vmax;
+                padding: 0 2rem;
             }
         }
 
