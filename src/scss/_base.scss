@@ -43,15 +43,18 @@ header {
 
 #logo {
     @include breakpoint($mobile-portrait-only) {
-        height: $brand-logo-height - ($brand-logo-height * 0.25);
+        padding: 0 0.5rem;
+        transition: $transition-default;
     }
     @include breakpoint($mobile-landscape-only) {
-        height: $brand-logo-height - ($brand-logo-height * 0.25);
+        padding: 0 0.5rem;
+        transition: $transition-default;
     }
-    line-height: 100%;
+    line-height: 0;
     text-align: center;
     margin: 0;
-    padding: 0.5rem 0;
+    padding: 1.5rem;
+    transition: $transition-default;
 
     * {
         margin: 0;
@@ -60,16 +63,14 @@ header {
     }
 
     &.shrink {
-        height: $brand-logo-height - ($brand-logo-height * 0.25);
+        padding: 0 0.5rem;
+        transition: $transition-default;
+
         a {
             img {
                 height: $brand-logo-height - ($brand-logo-height * 0.5);
                 width: $brand-logo-height - ($brand-logo-height * 0.5);
                 transition: $transition-default;
-            }
-
-            p {
-                animation: shrinking-text 0.2s forwards;
             }
         }
     }
@@ -92,41 +93,11 @@ header {
             width: $brand-logo-width;
             transition: $transition-default;
         }
-
-        p {
-            @include breakpoint($mobile-portrait-only) {
-                animation: shrinking-text 0.2s forwards;
-            }
-            @include breakpoint($mobile-landscape-only) {
-                animation: shrinking-text 0.2s forwards;
-            }
-
-            font-family: $brand-font-family;
-            font-size: $brand-font-size;
-            height: $brand-font-size;
-            transition: $transition-default;
-
-            span {
-                margin-left: -0.25ch;
-            }
-        }
-    }
-
-    @keyframes shrinking-text {
-        from {
-            font-size: $brand-font-size;
-            height: $brand-font-size;
-        }
-
-        to {
-            font-size: 0;
-            height: 0;
-        }
     }
 }
 
 nav.navbar {
-    padding: 0rem 1rem;
+    padding: 0.5rem;
 }
 
 div.navbar-collapse {
@@ -135,7 +106,7 @@ div.navbar-collapse {
 
 li.nav-item {
     text-align: center;
-    padding: 0 1.2rem;
+    padding: 0 1rem;
     font-family: $content-font-family;
 
     &:hover {
@@ -161,6 +132,7 @@ li.nav-item {
     padding: 0 10vw;
     position: relative;
     transition: $transition-default;
+    overflow: hidden;
 
     &:after {
         content: '';
@@ -170,7 +142,7 @@ li.nav-item {
         height: $section-break-border-size;
         width: 50%;
         border-left: $section-break-border-size solid transparent;
-        border-bottom: $section-break-border-size solid white;
+        border-bottom: $section-break-border-size solid $light-base-color;
     }
 
     * {
@@ -181,18 +153,16 @@ li.nav-item {
 
 // ------------------- Tagline wrapper
     div.tagline-wrapper {
-        @include breakpoint($mobile-portrait-only) {
-            display: inline-block !important;
-        }
-
-        position: relative;
+        position: absolute;
         top: 50%;
-        transform: translateY(-25%);
+        transform: translateY(-50%);
 
         h2 {
+            font-size: $tagline-primary-font-size !important;
+            font-weight: 900;
             text-align: left;
 
-            div.tagline-services {
+            div.tagline-carousel {
                 color: $stand-out-base-color;
                 display: block;
 
@@ -235,32 +205,49 @@ li.nav-item {
         }
     }
 // ------------------- END Tagline wrapper
+}
+
+#services {
+    background-color: $light-base-color;
+    color: $dark-base-color;
+    padding: 5rem 0;
+    position: relative;
+
+    &:after {
+        content: '';
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        height: $section-break-border-size;
+        width: 50%;
+        border-left: $section-break-border-size solid transparent;
+        border-bottom: $section-break-border-size solid $dark-base-color;
+    }
+
+    h2 {
+        text-align: center;
+    }
 // ------------------- Services wrapper
     div.services-wrapper {
-        @include breakpoint($mobile-portrait-only) {
-            // top: 0;
-            // transform: none;
-        }
-
         color: $light-base-color;
+        padding: 1rem;
         position: relative;
-        top: 50%;
-        transform: translateY(-25%);
 
         > div {
+
             figure {
                 text-align: center;
 
                 img {
-                    width: 30vmin;
-                    height: 30vmin;
+                    width: 40vmin;
+                    height: 40vmin;
                     margin: 0 auto;
                     transition: $transition-default;
                 }
             }
 
             h2 {
-                color: $light-base-color;
+                color: $dark-base-color;
                 text-align: left;
                 padding: 0 2rem;
 
@@ -272,32 +259,31 @@ li.nav-item {
 
             p {
                 font-family: $content-font-family;
-                color: $light-base-color;
+                color: $dark-base-color;
                 font-size: 0.9rem;
                 margin: 1rem auto;
                 text-align: left !important;
                 line-height: 150%;
-                // padding: 0 2rem;
             }
         }
-
-        .slick-arrow {
-            height: 3rem;
-            width: 3rem;
-
-            &:before {
-                color: $light-base-color;
-                font-size: 3rem;
-                opacity: 1;
-            }
-        }
+        //
+        // .slick-arrow {
+        //     height: 3rem;
+        //     width: 3rem;
+        //
+        //     &:before {
+        //         color: $light-base-color;
+        //         font-size: 3rem;
+        //         opacity: 1;
+        //     }
+        // }
     }
 // ------------------- END Services wrapper
 }
 
 #testimonials {
-    background-color: #light-base-color;
-    color: $dark-base-color;
+    background-color: $dark-base-color;
+    color: $light-base-color;
     padding: 5rem 0;
     position: relative;
 
