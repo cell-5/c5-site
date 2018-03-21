@@ -167,7 +167,7 @@ li.nav-item {
                 display: block;
 
                 p {
-                    padding: 0.75vmin 0;
+                    padding: 0.75vmax 0;
                 }
             }
 
@@ -176,31 +176,22 @@ li.nav-item {
             }
         }
 
-        ul.services-nav {
-            list-style: none;
-
-            li {
+        a {
+            &:link, &visited {
                 display: inline-block;
-                transition: $transition-default;
-
-                &.active a {
-                    color: $stand-out-base-color;
-                    transition: $transition-default;
-                }
-
-                &:first-child {
-                    display: none;
-                }
+                background-color: $stand-out-base-color;
+                color: $light-base-color;
+                padding: 0.75rem 2rem;
+                margin-top: 0.5rem;
+                text-decoration: none;
             }
 
-            a {
-                padding-right: 0.75rem;
+            &:hover {
+                background-color: $stand-out-base-color / 0.9;
+            }
 
-                &:link, &:visited {
-                    color: $light-base-color;
-                    display: block;
-                    font-size: 0.9rem;
-                }
+            &:active {
+                background-color: $stand-out-base-color;
             }
         }
     }
@@ -233,7 +224,48 @@ li.nav-item {
         padding: 1rem;
         position: relative;
 
-        > div {
+        div.index-slide {
+            figure {
+                @include breakpoint($mobile-portrait-only) {
+                    padding: 0.5rem 0;
+                }
+                @include breakpoint($mobile-landscape-only) {
+                    padding: 0.5rem 0;
+                }
+                padding: 1rem 0;
+
+                a {
+                    &:link, &:visited {
+                        text-decoration: none;
+                    }
+
+                    &:hover, &:active {
+                        figcaption {
+                            font-weight: bold;
+                        }
+                    }
+
+                    img {
+                        width: 20vmin;
+                        height: 20vmin;
+                    }
+
+                    figcaption {
+                        @include breakpoint($mobile-portrait-only) {
+                            font-size: 0.75rem;
+                        }
+                        @include breakpoint($mobile-landscape-only) {
+                            font-size: 0.75rem;
+                        }
+                        color: $dark-base-color;
+                        font-size: 1rem;
+                        font-weight: normal;
+                    }
+                }
+            }
+        }
+
+        > div:not(.index-slide) {
 
             figure {
                 text-align: center;
@@ -243,6 +275,12 @@ li.nav-item {
                     height: 40vmin;
                     margin: 0 auto;
                     transition: $transition-default;
+                }
+
+                figcaption {
+                    color: $dark-base-color;
+                    font-size: $headings-font-size * 0.8;
+                    font-weight: bold;
                 }
             }
 
@@ -264,6 +302,17 @@ li.nav-item {
                 margin: 1rem auto;
                 text-align: left !important;
                 line-height: 150%;
+            }
+
+            a.return-to-index-slide {
+                &:link, &visited {
+                    color: $dark-base-color;
+                    text-decoration: underline;
+                }
+
+                &:hover, &:active {
+                    font-weight: bold;
+                }
             }
         }
         //

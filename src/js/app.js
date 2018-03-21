@@ -1,7 +1,7 @@
 'use strict';
 
 $(document).ready(function() {
-    var SPEED = 1000;
+    var SPEED = 15000;
 
     // Tagline
     $('.tagline-carousel').slick({
@@ -38,50 +38,41 @@ $(document).ready(function() {
     playSlickAnimation('.tagline-carousel');
 
     // Services nav
-    // var rollServicesNav = function() {
-    //     return setInterval(function() {
-    //         var active = $('.services-nav li.active');
-    //         var next = active.next();
-    //
-    //         active.removeClass('active');
-    //         if(next.length === 0) {
-    //             $('.services-nav li:first-child').find('a').click();
-    //         } else {
-    //             next.find('a').click();
-    //         }
-    //     }, SPEED);
-    // }
-    //
-    // var rollServicesNavInterval = rollServicesNav();
-    //
-    // $('.services-nav a').on('click', function() {
-    //     var index = $('.services-nav a').index(this) + 1;
-    //     $('h2 .slick-dots li:nth-child(' + index + ')').click();
-    //
-    //     $('.services-nav li.active').removeClass('active');
-    //     $(this).parent('li').addClass('active');
-    //
-    //     clearInterval(rollServicesNavInterval);
-    //     rollServicesNavInterval = rollServicesNav();
-    // });
+    $('.services-index-slide-nav').on('click', function(e) {
+        e.preventDefault();
+
+        var index = $('.services-index-slide-nav').index(this) + 2;
+        $('h2 .slick-dots li:nth-child(' + index + ')').click();
+    });
+
+    $('.return-to-index-slide').on('click', function(e) {
+        e.preventDefault();
+        $('h2 .slick-dots li:first-child').click();
+    });
 
 
     // To close nav dropdown when a nav link is clicked
-    $('header .nav-link').on('click', animateSectionScroll);
+    $('header .nav-link').on('click', animateSectionScroll(true));
     $('#logo a').on('click', animateTopScroll);
     $('.sitefooter-bottom a').on('click', animateTopScroll);
+    $('.learn-more-btn').on('click', function(e) {
+        pauseSlickAnimation('.tagline-carousel');
+        animateSectionScroll(false)(e);
+    });
 
-    function animateSectionScroll(e) {
-        e.preventDefault();
+    function animateSectionScroll(flag) {
+        return function(e) {
+            e.preventDefault();
 
-        if(window.innerWidth <= 767) {
-            $('.navbar-toggler').click();
-        }
+            if(flag && window.innerWidth <= 767) {
+                $('.navbar-toggler').click();
+            }
 
-        var section = $(this).attr('href');
-        $('html,body').animate({
-            scrollTop: section === '#home' || section === '#' ? 0 : $(section).offset().top
-        }, 500);
+            var section = $(e.target).attr('href');
+            $('html,body').animate({
+                scrollTop: section === '#home' || section === '#' ? 0 : $(section).offset().top
+            }, 500);
+        };
     }
 
     function animateTopScroll(e) {
