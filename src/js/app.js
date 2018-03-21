@@ -5,19 +5,19 @@ $(document).ready(function() {
 
     // Tagline
     $('.tagline-carousel').slick({
-        autoplay: true,
+        // autoplay: true,
         autoplaySpeed: SPEED,
         slidesToShow: 1,
         arrows: false,
         focusOnSelect: true,
         fade: true,
         dots: true,
-        asNavFor: '.services-wrapper'
+        asNavFor: '.services-carousel'
     })
 
     // Services
-    $('.services-wrapper').slick({
-        autoplay: true,
+    $('.services-carousel').slick({
+        // autoplay: true,
         autoplaySpeed: SPEED,
         slidesToShow: 1,
         arrows: false,
@@ -25,6 +25,17 @@ $(document).ready(function() {
         fade: true,
         asNavFor: '.tagline-carousel'
     });
+
+    var slickAnimation = function(action) {
+        return function(selector) {
+            $(selector).slick(action);
+        };
+    };
+
+    var pauseSlickAnimation = slickAnimation('slickPause');
+    var playSlickAnimation = slickAnimation('slickPlay');
+
+    playSlickAnimation('.tagline-carousel');
 
     // Services nav
     // var rollServicesNav = function() {
