@@ -1,63 +1,24 @@
 'use strict';
 
 $(document).ready(function() {
-    var SPEED = 15000;
+    var SPEED = 1500;
 
     // Tagline
-    $('.tagline-carousel').slick({
-        // autoplay: true,
-        autoplaySpeed: SPEED,
-        slidesToShow: 1,
-        arrows: false,
-        focusOnSelect: true,
-        fade: true,
-        dots: true,
-        asNavFor: '.services-carousel'
-    })
-
-    // Services
-    $('.services-carousel').slick({
-        // autoplay: true,
-        autoplaySpeed: SPEED,
-        slidesToShow: 1,
-        arrows: false,
-        focusOnSelect: true,
-        fade: true,
-        asNavFor: '.tagline-carousel'
+    $(".tagline-carousel").Morphext({
+        animation: "fadeIn",
+        separator: ",",
+        speed: SPEED,
+        complete: function () {
+            // TODO
+        }
     });
-
-    var slickAnimation = function(action) {
-        return function(selector) {
-            $(selector).slick(action);
-        };
-    };
-
-    var pauseSlickAnimation = slickAnimation('slickPause');
-    var playSlickAnimation = slickAnimation('slickPlay');
-
-    playSlickAnimation('.tagline-carousel');
-
-    // Services nav
-    $('.services-index-slide-nav').on('click', function(e) {
-        e.preventDefault();
-
-        var index = $('.services-index-slide-nav').index(this) + 2;
-        $('h2 .slick-dots li:nth-child(' + index + ')').click();
-    });
-
-    $('.return-to-index-slide').on('click', function(e) {
-        e.preventDefault();
-        $('h2 .slick-dots li:first-child').click();
-    });
-
 
     // To close nav dropdown when a nav link is clicked
     $('header .nav-link').on('click', animateSectionScroll(true));
     $('#logo a').on('click', animateTopScroll);
     $('.sitefooter-bottom a').on('click', animateTopScroll);
     $('.learn-more-btn').on('click', function(e) {
-        pauseSlickAnimation('.tagline-carousel');
-        animateSectionScroll(false)(e);
+        // TODO
     });
 
     function animateSectionScroll(flag) {

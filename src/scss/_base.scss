@@ -151,7 +151,6 @@ li.nav-item {
         line-height: 100%;
     }
 
-// ------------------- Tagline wrapper
     div.tagline-wrapper {
         position: absolute;
         top: 50%;
@@ -164,11 +163,7 @@ li.nav-item {
 
             div.tagline-carousel {
                 color: $stand-out-base-color;
-                display: block;
-
-                p {
-                    padding: 0.75vmax 0;
-                }
+                padding: 0.75vmax 0;
             }
 
             ul.slick-dots {
@@ -195,140 +190,80 @@ li.nav-item {
             }
         }
     }
-// ------------------- END Tagline wrapper
 }
 
-#services {
-    background-color: $light-base-color;
-    color: $dark-base-color;
-    padding: 5rem 0;
+
+
+
+section.solution {
     position: relative;
+    padding: 0;
+    margin: 0;
 
-    &:after {
-        content: '';
-        position: absolute;
-        right: 0;
-        bottom: 0;
-        height: $section-break-border-size;
-        width: 50%;
-        border-left: $section-break-border-size solid transparent;
-        border-bottom: $section-break-border-size solid $dark-base-color;
+    &:nth-child(odd) {
+        background-color: $dark-base-color;
+
+        &:after {
+            content: '';
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            height: $section-break-border-size;
+            width: 50%;
+            border-left: $section-break-border-size solid transparent;
+            border-bottom: $section-break-border-size solid $light-base-color;
+        }
+
+        p {
+            color: $light-base-color;
+        }
     }
 
-    h2 {
+    &:nth-child(even) {
+        background-color: $light-base-color;
+
+        &:after {
+            content: '';
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            height: $section-break-border-size;
+            width: 50%;
+            border-left: $section-break-border-size solid transparent;
+            border-bottom: $section-break-border-size solid $dark-base-color;
+        }
+
+        p {
+            color: $dark-base-color;
+        }
+    }
+
+    figure {
         text-align: center;
-    }
-// ------------------- Services wrapper
-    div.services-carousel {
-        color: $light-base-color;
-        padding: 1rem;
-        position: relative;
 
-        div.index-slide {
-            figure {
-                @include breakpoint($mobile-portrait-only) {
-                    padding: 0.5rem 0;
-                }
-                @include breakpoint($mobile-landscape-only) {
-                    padding: 0.5rem 0;
-                }
-                padding: 1rem 0;
-
-                a {
-                    &:link, &:visited {
-                        text-decoration: none;
-                    }
-
-                    &:hover, &:active {
-                        figcaption {
-                            font-weight: bold;
-                        }
-                    }
-
-                    img {
-                        width: 20vmin;
-                        height: 20vmin;
-                    }
-
-                    figcaption {
-                        @include breakpoint($mobile-portrait-only) {
-                            font-size: 0.75rem;
-                        }
-                        @include breakpoint($mobile-landscape-only) {
-                            font-size: 0.75rem;
-                        }
-                        color: $dark-base-color;
-                        font-size: 1rem;
-                        font-weight: normal;
-                    }
-                }
-            }
+        img {
+            width: 40vmin;
+            height: 40vmin;
+            margin: 0 auto;
+            transition: $transition-default;
         }
 
-        > div:not(.index-slide) {
-
-            figure {
-                text-align: center;
-
-                img {
-                    width: 40vmin;
-                    height: 40vmin;
-                    margin: 0 auto;
-                    transition: $transition-default;
-                }
-
-                figcaption {
-                    color: $dark-base-color;
-                    font-size: $headings-font-size * 0.8;
-                    font-weight: bold;
-                }
-            }
-
-            h2 {
-                color: $dark-base-color;
-                text-align: left;
-                padding: 0 2rem;
-
-                span {
-                    color: $stand-out-base-color;
-                    display: block;
-                }
-            }
-
-            p {
-                font-family: $content-font-family;
-                color: $dark-base-color;
-                font-size: 0.9rem;
-                margin: 1rem auto;
-                text-align: left !important;
-                line-height: 150%;
-            }
-
-            a.return-to-index-slide {
-                &:link, &visited {
-                    color: $dark-base-color;
-                    text-decoration: underline;
-                }
-
-                &:hover, &:active {
-                    font-weight: bold;
-                }
-            }
+        figcaption {
+            color: $dark-base-color;
+            font-size: $headings-font-size * 0.8;
+            font-weight: bold;
         }
-        //
-        // .slick-arrow {
-        //     height: 3rem;
-        //     width: 3rem;
-        //
-        //     &:before {
-        //         color: $light-base-color;
-        //         font-size: 3rem;
-        //         opacity: 1;
-        //     }
-        // }
     }
-// ------------------- END Services wrapper
+
+    p {
+        font-family: $content-font-family;
+        font-size: 0.9rem;
+        margin: 1rem auto;
+        text-align: left !important;
+        line-height: 150%;
+    }
 }
+
 
 #testimonials {
     background-color: $dark-base-color;
