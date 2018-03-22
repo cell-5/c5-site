@@ -44,7 +44,7 @@ $(document).ready(function() {
     }
 
     var
-        servicesYOffset = Math.floor($('#services').offset().top),
+        servicesYOffset = Math.floor($('#digital').offset().top),
         testimonialsYOffset = Math.floor($('#testimonials').offset().top),
         profilesYOffset = Math.floor($('#profiles').offset().top),
         contactUsYOffset = Math.floor($('#contact-us').offset().top);
