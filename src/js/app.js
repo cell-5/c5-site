@@ -1,31 +1,78 @@
 'use strict';
 
 $(document).ready(function() {
-    // Services
-    $('.services-wrapper').slick({
-        autoplay: true,
-        autoplaySpeed: 30000,
+    var SPEED = 15000;
+
+    // Tagline
+    $('.tagline-carousel').slick({
+        // autoplay: true,
+        autoplaySpeed: SPEED,
         slidesToShow: 1,
-        arrows: true,
-        focusOnSelect: true
+        arrows: false,
+        focusOnSelect: true,
+        fade: true,
+        dots: true,
+        asNavFor: '.services-carousel'
+    })
+
+    // Services
+    $('.services-carousel').slick({
+        // autoplay: true,
+        autoplaySpeed: SPEED,
+        slidesToShow: 1,
+        arrows: false,
+        focusOnSelect: true,
+        fade: true,
+        asNavFor: '.tagline-carousel'
     });
 
-    // To close nav dropdown when a nav link is clicked
-    $('header .nav-link').on('click', animateSectionScroll);
-    $('#logo a').on('click', animateTopScroll);
-    $('.sitefooter-bottom a').on('click', animateTopScroll);
+    var slickAnimation = function(action) {
+        return function(selector) {
+            $(selector).slick(action);
+        };
+    };
 
-    function animateSectionScroll(e) {
+    var pauseSlickAnimation = slickAnimation('slickPause');
+    var playSlickAnimation = slickAnimation('slickPlay');
+
+    playSlickAnimation('.tagline-carousel');
+
+    // Services nav
+    $('.services-index-slide-nav').on('click', function(e) {
         e.preventDefault();
 
-        if(window.innerWidth <= 767) {
-            $('.navbar-toggler').click();
-        }
+        var index = $('.services-index-slide-nav').index(this) + 2;
+        $('h2 .slick-dots li:nth-child(' + index + ')').click();
+    });
 
-        var section = $(this).attr('href');
-        $('html,body').animate({
-            scrollTop: section === '#home' || section === '#' ? 0 : $(section).offset().top
-        }, 500);
+    $('.return-to-index-slide').on('click', function(e) {
+        e.preventDefault();
+        $('h2 .slick-dots li:first-child').click();
+    });
+
+
+    // To close nav dropdown when a nav link is clicked
+    $('header .nav-link').on('click', animateSectionScroll(true));
+    $('#logo a').on('click', animateTopScroll);
+    $('.sitefooter-bottom a').on('click', animateTopScroll);
+    $('.learn-more-btn').on('click', function(e) {
+        pauseSlickAnimation('.tagline-carousel');
+        animateSectionScroll(false)(e);
+    });
+
+    function animateSectionScroll(flag) {
+        return function(e) {
+            e.preventDefault();
+
+            if(flag && window.innerWidth <= 767) {
+                $('.navbar-toggler').click();
+            }
+
+            var section = $(e.target).attr('href');
+            $('html,body').animate({
+                scrollTop: section === '#home' || section === '#' ? 0 : $(section).offset().top
+            }, 500);
+        };
     }
 
     function animateTopScroll(e) {
@@ -36,21 +83,24 @@ $(document).ready(function() {
     }
 
     var
+        servicesYOffset = Math.floor($('#services').offset().top),
         testimonialsYOffset = Math.floor($('#testimonials').offset().top),
         profilesYOffset = Math.floor($('#profiles').offset().top),
         contactUsYOffset = Math.floor($('#contact-us').offset().top);
 
     $(window).on('scroll', function() {
         var yOffset = window.pageYOffset,
-            childNum = 4;
+            childNum = 5;
 
         // To change active nav link
-        if (yOffset >= 0 && yOffset < testimonialsYOffset) {
+        if (yOffset >= 0 && yOffset < servicesYOffset) {
             childNum = 1;
-        } else if (yOffset >= testimonialsYOffset && yOffset < profilesYOffset) {
+        } else if (yOffset >= servicesYOffset && yOffset < testimonialsYOffset) {
             childNum = 2;
-        } else if (yOffset >= profilesYOffset && yOffset < contactUsYOffset) {
+        } else if (yOffset >= testimonialsYOffset && yOffset < profilesYOffset) {
             childNum = 3;
+        } else if (yOffset >= profilesYOffset && yOffset < contactUsYOffset) {
+            childNum = 4;
         }
 
         $('header .nav-item.active').removeClass('active');
@@ -80,10 +130,9 @@ $(document).ready(function() {
     });
 
     $('.teamNav-slide').slick({
-        slidesToShow: 4,
+        slidesToShow: 3,
         arrows: false,
         asNavFor: '.team',
-        focusOnSelect: true
     });
 
     // Contact form submission
@@ -107,7 +156,7 @@ $(document).ready(function() {
             showMessage('danger', 'Please fill in the form correctly.');
             return;
         }
-        
+
         axios.post(form.prop('action'), data)
         .then(function (response) {
             showMessage('success', 'Message successfully sent!');
