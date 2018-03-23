@@ -1,7 +1,7 @@
 'use strict';
 
 $(document).ready(function() {
-    var SPEED = 1500;
+    var SPEED = 15000;
 
     // Tagline
     $(".tagline-carousel").Morphext({
