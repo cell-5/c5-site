@@ -193,10 +193,23 @@ li.nav-item {
 }
 
 #solutions {
+    @include breakpoint($mobile-portrait-only) {
+        height: auto;
+    }
+    @include breakpoint($mobile-landscape-only) {
+        height: auto;
+    }
+    @include breakpoint($tablet-portrait-only) {
+        height: auto;
+    }
+    @include breakpoint($tablet-landscape-only) {
+        height: auto;
+    }
     background-color: $light-base-color;
     color: $dark-base-color;
-    padding: 5rem 0;
     position: relative;
+    height: 100vh;
+    padding: 5rem 0;
 
     &:after {
         content: '';
@@ -208,9 +221,84 @@ li.nav-item {
         border-left: $section-break-border-size solid transparent;
         border-bottom: $section-break-border-size solid $dark-base-color;
     }
+
+    div.solutions-wrapper {
+        @include breakpoint($mobile-portrait-only) {
+            position: relative;
+            top: 0;
+            transform: none;
+        }
+        @include breakpoint($mobile-landscape-only) {
+            position: relative;
+            top: 0;
+            transform: none;
+        }
+        @include breakpoint($tablet-portrait-only) {
+            position: relative;
+            top: 0;
+            transform: none;
+        }
+        @include breakpoint($tablet-landscape-only) {
+            position: relative;
+            top: 0;
+            transform: none;
+        }
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    h2 {
+        text-align: center;
+    }
+
+    div.solutions-nav {
+        margin: 0;
+        padding: 0;
+
+        a {
+            display: inline-block !important;
+            text-align: center;
+            margin: 0;
+            padding: 1rem;
+            transition: $transition-default;
+
+            &:link, &visited {
+                color: $dark-base-color;
+                text-decoration: none;
+            }
+
+            &:hover {
+                font-weight: bold;
+                transition: $transition-default;
+            }
+
+            img {
+                width: 18vmin;
+                height: 18vmin;
+            }
+
+            p {
+                font-size: 1.2rem;
+                text-align: center;
+            }
+        }
+    }
 }
 
 section.solution {
+    @include breakpoint($mobile-portrait-only) {
+        height: auto;
+    }
+    @include breakpoint($mobile-landscape-only) {
+        height: auto;
+    }
+    @include breakpoint($tablet-portrait-only) {
+        height: auto;
+    }
+    @include breakpoint($tablet-landscape-only) {
+        height: auto;
+    }
     position: relative;
     padding: 5rem 1rem;
     margin: 0;
@@ -255,6 +343,26 @@ section.solution {
     }
 
     div.solution-wrapper {
+        @include breakpoint($mobile-portrait-only) {
+            position: relative;
+            top: auto;
+            transform: none;
+        }
+        @include breakpoint($mobile-landscape-only) {
+            position: relative;
+            top: auto;
+            transform: none;
+        }
+        @include breakpoint($tablet-portrait-only) {
+            position: relative;
+            top: auto;
+            transform: none;
+        }
+        @include breakpoint($tablet-landscape-only) {
+            position: relative;
+            top: auto;
+            transform: none;
+        }
         position: absolute;
         padding: 0;
         margin: 0;
@@ -267,8 +375,8 @@ section.solution {
         text-align: center;
 
         img {
-            width: 60vmin;
-            height: 60vmin;
+            width: 50vmin;
+            height: 50vmin;
             margin: 0 auto;
             transition: $transition-default;
         }
@@ -284,10 +392,27 @@ section.solution {
         @include breakpoint($mobile-portrait-only) {
             font-size: 1.5rem;
             text-align: center;
+            transition: $transition-default;
+        }
+        @include breakpoint($mobile-landscape-only) {
+            font-size: 1.5rem;
+            text-align: center;
+            transition: $transition-default;
+        }
+        @include breakpoint($tablet-portrait-only) {
+            font-size: 1.5rem;
+            text-align: center;
+            transition: $transition-default;
+        }
+        @include breakpoint($tablet-landscape-only) {
+            font-size: 1.5rem;
+            text-align: center;
+            transition: $transition-default;
         }
         font-size: 2rem;
         font-weight: bold;
         font-family: $headings-font-family;
+        transition: $transition-default;
     }
 
     p {
@@ -348,7 +473,7 @@ section.solution {
 
 #profiles {
     @include mobile-only() {
-        padding: 3em 0;
+        padding: 5rem 0;
     }
     background: $stand-out-base-color;
     color: white;
@@ -453,7 +578,7 @@ section.solution {
 
 .contact {
     @include mobile-only() {
-        padding: 3em 0;
+        padding: 5rem 0;
     }
     background: $dark-base-color;
     color: white;

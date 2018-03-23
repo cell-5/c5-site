@@ -1,7 +1,7 @@
 'use strict';
 
 $(document).ready(function() {
-    var SPEED = 15000;
+    var SPEED = 5000;
 
     // Tagline
     $(".tagline-carousel").Morphext({
@@ -9,7 +9,8 @@ $(document).ready(function() {
         separator: ",",
         speed: SPEED,
         complete: function () {
-            // TODO
+            var section = $('.tagline-carousel').text().replace(' ', '-').replace(/\./g, '');
+            $('.learn-more-btn').attr('href', '#' + (section === 'digital' ? 'solutions' : section));
         }
     });
 
@@ -17,9 +18,8 @@ $(document).ready(function() {
     $('header .nav-link').on('click', animateSectionScroll(true));
     $('#logo a').on('click', animateTopScroll);
     $('.sitefooter-bottom a').on('click', animateTopScroll);
-    $('.learn-more-btn').on('click', function(e) {
-        // TODO
-    });
+    $('.learn-more-btn').on('click', animateSectionScroll(false));
+    $('.solutions-nav a').on('click', animateSectionScroll(false));
 
     function animateSectionScroll(flag) {
         return function(e) {
@@ -29,7 +29,7 @@ $(document).ready(function() {
                 $('.navbar-toggler').click();
             }
 
-            var section = $(e.target).attr('href');
+            var section = $(this).attr('href');
             $('html,body').animate({
                 scrollTop: section === '#home' || section === '#' ? 0 : $(section).offset().top
             }, 500);
