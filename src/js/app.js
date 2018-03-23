@@ -44,7 +44,7 @@ $(document).ready(function() {
     }
 
     var
-        servicesYOffset = Math.floor($('#services').offset().top),
+        solutionsYOffset = Math.floor($('#solutions').offset().top),
         testimonialsYOffset = Math.floor($('#testimonials').offset().top),
         profilesYOffset = Math.floor($('#profiles').offset().top),
         contactUsYOffset = Math.floor($('#contact-us').offset().top);
@@ -54,9 +54,9 @@ $(document).ready(function() {
             childNum = 5;
 
         // To change active nav link
-        if (yOffset >= 0 && yOffset < servicesYOffset) {
+        if (yOffset >= 0 && yOffset < solutionsYOffset) {
             childNum = 1;
-        } else if (yOffset >= servicesYOffset && yOffset < testimonialsYOffset) {
+        } else if (yOffset >= solutionsYOffset && yOffset < testimonialsYOffset) {
             childNum = 2;
         } else if (yOffset >= testimonialsYOffset && yOffset < profilesYOffset) {
             childNum = 3;

@@ -192,15 +192,12 @@ li.nav-item {
     }
 }
 
-
-
-
 section.solution {
     position: relative;
-    padding: 0;
+    padding: 5rem 1rem;
     margin: 0;
 
-    &:nth-child(odd) {
+    &:nth-child(even) {
         background-color: $dark-base-color;
 
         &:after {
@@ -214,12 +211,12 @@ section.solution {
             border-bottom: $section-break-border-size solid $light-base-color;
         }
 
-        p {
+        p, h3 {
             color: $light-base-color;
         }
     }
 
-    &:nth-child(even) {
+    &:nth-child(odd) {
         background-color: $light-base-color;
 
         &:after {
@@ -233,17 +230,18 @@ section.solution {
             border-bottom: $section-break-border-size solid $dark-base-color;
         }
 
-        p {
+        p, h3 {
             color: $dark-base-color;
         }
     }
 
     figure {
+        margin: 0 auto 1rem;
         text-align: center;
 
         img {
-            width: 40vmin;
-            height: 40vmin;
+            width: 50vmin;
+            height: 50vmin;
             margin: 0 auto;
             transition: $transition-default;
         }
@@ -255,9 +253,19 @@ section.solution {
         }
     }
 
+    h3 {
+        @include breakpoint($mobile-portrait-only) {
+            font-size: 1.5rem;
+            text-align: center;
+        }
+        font-size: 2rem;
+        font-weight: bold;
+        font-family: $headings-font-family;
+    }
+
     p {
         font-family: $content-font-family;
-        font-size: 0.9rem;
+        font-size: 1rem;
         margin: 1rem auto;
         text-align: left !important;
         line-height: 150%;
@@ -266,8 +274,8 @@ section.solution {
 
 
 #testimonials {
-    background-color: $dark-base-color;
-    color: $light-base-color;
+    background-color: $light-base-color;
+    color: $dark-base-color;
     padding: 5rem 0;
     position: relative;
 
