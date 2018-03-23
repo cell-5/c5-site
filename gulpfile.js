@@ -84,10 +84,26 @@ gulp.task('favicon', function() {
         .pipe(gulp.dest('build'));
 });
 
-gulp.task('cacheBust', function() {
+gulp.task('cacheBust:js', function() {
+    return gulp.src('build/js/*.js')
+        .pipe(bust.resources())
+        .pipe(gulp.dest('build/js'));
+});
+
+gulp.task('cacheBust:css', function() {
+    return gulp.src('build/css/*.css')
+        .pipe(bust.resources())
+        .pipe(gulp.dest('build/css'));
+});
+
+gulp.task('cacheBust:html', function() {
     return gulp.src('build/index.html')
-        .pipe(cacheBust())
+        .pipe(bust.references())
         .pipe(gulp.dest('build'));
+});
+
+gulp.task('cacheBust', ['cacheBust:js', 'cacheBust:css'], function() {
+    return gulp.start('cacheBust:html');
 });
 
 gulp.task('compile', function() {
@@ -101,10 +117,12 @@ gulp.task('compile', function() {
     });
 });
 
-gulp.task('clean:src', function() {
+gulp.task('clean', function() {
     return del([
         'src/css',
-        'src/vendor'
+        'src/vendor',
+        'build/css/all.css',
+        'build/js/all.js'
     ]);
 });
 

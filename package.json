@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "gulp",
     "build": "gulp build",
-    "postbuild": "gulp clean:src && gulp cacheBust"
+    "postbuild": "gulp cacheBust && gulp clean"
   },
   "devDependencies": {
     "bower": "^1.8.2",
