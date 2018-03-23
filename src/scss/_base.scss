@@ -323,9 +323,9 @@ section.solution {
     @include mobile-only() {
         padding: 3em 0;
     }
-    background: #d64933;
+    background: $stand-out-base-color;
     color: white;
-    padding: 5vw 0;
+    padding: 6vw 0;
     position: relative;
 
     &:before {
@@ -382,8 +382,8 @@ section.solution {
             img {
                 @include tablet-and-below() {
                     border: 4px solid $gray;
-                    border-radius: 50%;
                 }
+                border-radius: 50%;
             }
         }
         &-social {
@@ -424,104 +424,14 @@ section.solution {
     }
 }
 
-.sitefooter {
+.contact {
     @include mobile-only() {
         padding: 3em 0;
-        text-align: center;
     }
     background: $dark-base-color;
     color: white;
-    padding-bottom: 3vw;
-    padding-top: 5vw;
+    padding: 6vw 0;
     position: relative;
-
-    &-col1 {
-        @include mobile-only() {
-            margin-bottom: 2em;
-        }
-        ul {
-            list-style: none;
-            padding-left: 0;
-            font-size: 1.6em;
-            font-weight: bold;
-            line-height: 1.4;
-        }
-    }
-
-    &-col2 {
-        @include tablet-and-up() {
-            text-align: right;
-        }
-
-        img {
-            width: 80px;
-        }
-
-        h5 {
-            color: $stand-out-base-color;
-            font-size: 1.8em;
-            font-weight: bold;
-            margin: 12px 0 10px 0;
-            span {
-                display: inline-block;
-                margin-left: 2px;
-            }
-        }
-
-        h6 {
-            font-size: 1.6em;
-            font-weight: bold;
-            margin-top: 0;
-        }
-
-        a {
-            color: white;
-            display: block;
-            font-weight: bold;
-            span {
-                border-bottom: 1px dotted;
-                display: inline-block;
-                padding-bottom: 3px;
-            }
-        }
-    }
-
-    &-bottom {
-        @include clearfix;
-        border-top: 1px dashed transparentize(white, 0.8);
-        margin-top: 30px;
-        padding-top: 30px;
-
-        address {
-            float: left;
-            font-size: 1em;
-            font-style: italic;
-            font-weight: bold;
-
-            span {
-                color: $stand-out-base-color;
-            }
-        }
-
-        a {
-            color: white;
-            float: right;
-            transition: 0.4s;
-
-            &:hover,
-            &:focus {
-                color: $stand-out-base-color;
-                text-decoration: none;
-            }
-        }
-
-        address,
-        a {
-            @include mobile-only() {
-                float: none;
-            }
-        }
-    }
 
     form {
 
@@ -547,54 +457,59 @@ section.solution {
     }
 }
 
-.form-group {
-    margin-bottom: 1.3em;
-}
-
-.contact {
+.sitefooter {
     @include mobile-only() {
-        font-size: 1.7em;
-        margin-bottom: 1em;
+        padding: 3em 0;
+        text-align: center;
     }
-    font-size: 2em;
-    line-height: 1.1;
-    margin-top: 0.5em;
+    background: black;
+    color: white;
+    padding-bottom: 2em;
+    padding-top: 2em;
 
-    &--right {
-        @include tablet-and-up() {
-            text-align: right;
+    [class*=col-md-3] {
+        &:not(:last-of-type) {
+            @include tablet-and-up() {
+                border-right: 1px dashed transparentize(white, 0.8);
+            }
         }
     }
 
-    &-name {
-        font-size: 1em;
-        display: block;
-        font-weight: bold;
-        margin-bottom: 10px;
+    &-meta {
+        max-width: 80%;
+        margin: 2em auto 0;
+
+        i {
+            display: block;
+            font-size: 1.4em;
+            margin-bottom: 15px;
+        }
+
+        address,
+        span,
+        a {
+            display: block;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        address {
+            margin-bottom: 0;
+        }
+
+        span,
+        a {
+            font-size: 1.2em;
+        }
     }
 
     a {
         color: white;
-        font-size: 0.8em;
-        display: inline-block;
-        text-decoration: none;
-
-        &:after {
-            content: "";
-            background: transparent;
-            height: 3px;
-            display: block;
-            margin-top: 5px;
-            transition: 0.1s;
-        }
-
-        &:hover,
-        &:focus {
-            &:after {
-                background: $stand-out-base-color;
-            }
-        }
     }
+}
+
+.form-group {
+    margin-bottom: 1.3em;
 }
 
 .mobile-border {
@@ -632,4 +547,12 @@ section.solution {
 
 .subtext {
     margin-bottom: 3em;
+}
+
+.text-orange {
+    color: $stand-out-base-color;
+}
+
+.text-green {
+    color: $green;
 }

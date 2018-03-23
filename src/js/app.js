@@ -94,6 +94,7 @@ $(document).ready(function() {
         slidesToShow: 3,
         arrows: false,
         asNavFor: '.team',
+        focusOnSelect: true
     });
 
     // Contact form submission

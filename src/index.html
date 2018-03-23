@@ -19,7 +19,7 @@
     <!-- endbuild -->
 </head>
 <body>
-    <header>
+    <header role="banner">
         <nav class="navbar navbar-expand-md bg-dark navbar-dark">
             <h1 id="logo">
                 <a class="navbar-brand" href="#">
@@ -329,67 +329,76 @@
                 </div>
             </div>
         </section>
+
+        <section id="contact-us" class="contact">
+            <div class="container">
+                <div class="text-center">
+                    <h2>Get In Touch</h2>
+                    <p class="subtext">We offer a FREE, no obligations consultation session, that we think is win-win!</p>
+                </div>
+                <div class="row">
+                    <div class="col-md-8 offset-md-2">
+                        <form id="contact-form" action="https://mqm5eum67i.execute-api.us-east-2.amazonaws.com/dev/contactUsHandler" method="post">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="name" class="sr-only">Name</label>
+                                        <input required type="text" class="form-control" name="name" id="name" placeholder="Name">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="email" class="sr-only">Email</label>
+                                        <input required type="email" class="form-control" name="email" id="email" placeholder="Email">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="message" class="sr-only">Message</label>
+                                <textarea required name="message" rows="5" class="form-control" id="message" placeholder="Message"></textarea>
+                            </div>
+                            <button type="submit" class="btn">Send</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <footer id="contact-us" class="sitefooter" role="contentinfo">
+    <footer class="sitefooter" role="contentinfo">
         <div class="container">
-            <div class="text-center">
-                <h2>Get In Touch</h2>
-                <p class="subtext">We offer a FREE, no obligations consultation session, that we think is win-win!</p>
-            </div>
             <div class="row">
                 <div class="col-md-3">
-                    <div class="sitefooter-col1">
-                        <ul>
-                            <li>web</li>
-                            <li>mobile</li>
-                            <li>design</li>
-                            <li>cloud</li>
-                            <li>social media</li>
-                            <li>s.e.o</li>
-                            <li>legacy code uplift</li>
-                            <li>start-up growth</li>
-                        </ul>
+                    <div class="sitefooter-meta">
+                        <i class="fas fa-map-marker text-orange"></i>
+                        Address
+                        <address>
+                            London, England /<br>
+                            San Fernando City, PH
+                        </address>
                     </div>
-                    <div class="mobile-border"></div>
-                </div>
-                <div class="col-md-6">
-                    <form id="contact-form" action="https://mqm5eum67i.execute-api.us-east-2.amazonaws.com/dev/contactUsHandler" method="post">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="name" class="sr-only">Name</label>
-                                    <input pattern=".{2}" title="Minimum of 2 characters" required type="text" class="form-control" name="name" id="name" placeholder="Name">
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="email" class="sr-only">Email</label>
-                                    <input required type="email" class="form-control" name="email" id="email" placeholder="Email">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="message" class="sr-only">Message</label>
-                            <textarea required name="message" rows="5" class="form-control" id="message" placeholder="Message"></textarea>
-                        </div>
-                        <button type="submit" class="btn">Send</button>
-                    </form>
-                    <div class="mobile-border"></div>
                 </div>
                 <div class="col-md-3">
-                    <div class="sitefooter-col2">
-                        <img src="img/logo-white.svg" alt="Cell5 Company Logo">
-                        <h5>cell<span>5</span></h5>
-                        <h6>client-first <br>digital solutions</h6>
-                        <a href="tel:07871 410 885"><span>07871 410 885</span></a>
-                        <a href="mailto:hello@cell5.co.uk"><span>hello@cell5.co.uk</span></a>
+                    <div class="sitefooter-meta">
+                        <i class="fas fa-phone text-green"></i>
+                        Tel. No
+                        <a href="tel:07871 410 885">07871 410 885</a>
                     </div>
                 </div>
-            </div>
-            <div class="sitefooter-bottom">
-                <address><span class="fa fa-map-marker-alt"></span> Ground Floor, 2 Woodberry Grove, London, England, N12 0DR. &copy; 2018 cell 5</address>
-                <a href="#"><span class="fa fa-arrow-circle-up"></span> Back to top</a>
+                <div class="col-md-3">
+                    <div class="sitefooter-meta">
+                        <i class="fas fa-envelope"></i>
+                        E-mail Address
+                        <a href="mailto:hello@cell5.co.uk">hello@cell5.co.uk</a>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="sitefooter-meta">
+                        <img src="img/logo-white.svg" alt="Cell 5 company logo">
+                        <strong class="text-orange">cell 5</strong>
+                        <span>client-first digital solution</span>
+                    </div>
+                </div>
             </div>
         </div>
     </footer>
