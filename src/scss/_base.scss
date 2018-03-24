@@ -24,6 +24,17 @@ h2 {
     transition: $transition-default;
 }
 
+h3 {
+    @include breakpoint($mobile-portrait-only) {
+        font-size: $subheadings-font-size-mobile-portrait;
+        transition: $transition-default;
+    }
+    font-family: $subheadings-font-family;
+    font-size: $subheadings-font-size;
+    font-weight: $subheadings-font-weight;
+    transition: $transition-default;
+}
+
 .container {
     position: relative;
 }
@@ -158,7 +169,7 @@ li.nav-item {
 
         h2 {
             font-size: $tagline-primary-font-size !important;
-            font-weight: 900;
+            font-weight: $tagline-primary-font-weight;
             text-align: left;
 
             div.tagline-carousel {
@@ -274,8 +285,8 @@ li.nav-item {
             }
 
             img {
-                width: 18vmin;
-                height: 18vmin;
+                width: 8vmin;
+                height: 8vmin;
             }
 
             p {
@@ -318,7 +329,7 @@ section.solution {
             border-bottom: $section-break-border-size solid $light-base-color;
         }
 
-        p, h3 {
+        p, h3, li {
             color: $light-base-color;
         }
     }
@@ -337,10 +348,11 @@ section.solution {
             border-bottom: $section-break-border-size solid $dark-base-color;
         }
 
-        p, h3 {
+        p, h3, li {
             color: $dark-base-color;
         }
     }
+
 
     div.solution-wrapper {
         @include breakpoint($mobile-portrait-only) {
@@ -375,8 +387,8 @@ section.solution {
         text-align: center;
 
         img {
-            width: 50vmin;
-            height: 50vmin;
+            width: 25vmin;
+            height: 25vmin;
             margin: 0 auto;
             transition: $transition-default;
         }
@@ -585,6 +597,28 @@ section.solution {
     padding: 6vw 0;
     position: relative;
 
+    strong{
+        color: $green;
+        font-weight: bolder;
+    }
+
+    p {
+      font-size: 2em;   
+    }
+
+    li{
+        list-style: none;
+        text-align: center;
+
+        .fa-check{
+            font-size: 1.5em;
+        }
+
+        p{
+            font-size: 1.5em;    
+        }
+    }
+
     form {
 
         input,
@@ -611,25 +645,39 @@ section.solution {
 
 .sitefooter {
     @include mobile-only() {
-        padding: 3em 0;
+        padding: 0em 0;
         text-align: center;
     }
     background: black;
     color: white;
     padding-bottom: 2em;
     padding-top: 2em;
+    text-align: center;
 
-    [class*=col-md-3] {
+    [class*=col-lg-3] {
         &:not(:last-of-type) {
-            @include tablet-and-up() {
+            @include medium-screen-and-up() {
                 border-right: 1px dashed transparentize(white, 0.8);
+            }
+        }
+        &:nth-child(-n+2){
+            @include tablet-and-below() {
+                padding-bottom: 10px;
+                border-bottom: 1px dashed transparentize(white, 0.8);
+            }
+        }
+        &:not(:last-of-type) {
+            @include mobile-only() {
+                    padding-bottom: 10px;
+                    border-bottom: 1px dashed transparentize(white, 0.8);
             }
         }
     }
 
+
     &-meta {
         max-width: 80%;
-        margin: 2em auto 0;
+        margin: 1em auto 0;
 
         i {
             display: block;
@@ -653,6 +701,10 @@ section.solution {
         a {
             font-size: 1.2em;
         }
+    }
+    img{
+        height: 25px;
+        width:25px;
     }
 
     a {
@@ -701,8 +753,16 @@ section.solution {
     margin-bottom: 3em;
 }
 
+span.text-orange{
+    margin: 0px;
+    padding:0px;
+    line-height: 1.2ch;
+    display: inline;
+    
+}
 .text-orange {
     color: $stand-out-base-color;
+    
 }
 
 .text-green {

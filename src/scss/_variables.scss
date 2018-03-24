@@ -9,13 +9,13 @@ $green: #269E4A;
 $tagline-primary-color: #fefffe;
 $tagline-primary-bg-color: #2c302e;
 $tagline-active-text-color: #d64933;
-$tagline-primary-font-family: 'Montserrat', sans-serif;
+$tagline-primary-font-family: $brand-font-family;
 $tagline-primary-font-size: 6vmax;
 $tagline-primary-font-size-mobile-portrait: 12vmin;
 $tagline-primary-font-size-mobile-landscape: 12vmin;
 $tagline-primary-font-size-tablet-portrait: 12vmin;
 $tagline-primary-font-size-tablet-landscape: 12vmin;
-$tagline-primary-font-weight: 900;
+$tagline-primary-font-weight: 700;
 $tagline-top-margin: 0px;
 $tagline-text-animation-duration: 1s;
 $tagline-text-animation-delay: 0s;
@@ -28,9 +28,14 @@ $stand-out-base-color: #d64933;
 
 $headings-font-size: 4vmax;
 $headings-font-size-mobile-portrait: 4vmax;
-$headings-font-family: 'Montserrat', sans-serif;
-$headings-font-weight: 600;
-$content-font-family: 'Montserrat', sans-serif;
+$headings-font-family: $brand-font-family;
+$headings-font-weight: 500;
+$content-font-family: $brand-font-family;
+
+$subheadings-font-size: 3vmax;
+$subheadings-font-size-mobile-portrait: 3vmax;
+$subheadings-font-family: $brand-font-family;
+$subheadings-font-weight: 500;
 
 $section-break-border-size: 0.8rem;
 $section-padding: 5rem 10vw;
