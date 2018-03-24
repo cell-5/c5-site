@@ -9,11 +9,14 @@
       <polygon points="35.63 178.13 35.63 118.75 154 118.75 154 106.88 23.75 106.88 23.75 190 154 190 154 178.13 35.63 178.13"/>
     </g>
   </g>
+  
   <g id="Layer_2" data-name="Layer 2" style="fill: #fefffe">
+    <rect x="169.66" y="101" width="28.79" height="23.56" style="fill: #d64933;stroke: #d64933;stroke-miterlimit: 10;stroke-width: 6px"/>
+    <rect style="fill: #2c302e;" x="187.99" y="110.16" width="5.24" height="5.24"/>
+    <rect style="fill: #2c302e;" x="174.9" y="110.16" width="5.24" height="5.24"/>
+  </g>
+  <g id="Layer_3" data-name="Layer 3" style="fill: #fefffe">
     <rect x="162" y="124.56" width="44" height="53.66"/>
     <rect x="162" y="166.44" width="44" height="23.56" rx="9" ry="9"/>
-    <rect x="169.66" y="101" width="28.79" height="23.56" style="fill: none;stroke: #fefffe;stroke-miterlimit: 10;stroke-width: 6px"/>
-    <rect x="187.99" y="110.16" width="5.24" height="5.24"/>
-    <rect x="174.9" y="110.16" width="5.24" height="5.24"/>
   </g>
 </svg>
