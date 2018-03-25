@@ -20,6 +20,7 @@ $(document).ready(function() {
     $('.sitefooter-bottom a').on('click', animateTopScroll);
     $('.learn-more-btn').on('click', animateSectionScroll(false));
     $('.solutions-nav a').on('click', animateSectionScroll(false));
+    $('.contact-us-link').on('click', animateSectionScroll(false));
 
     function animateSectionScroll(flag) {
         return function(e) {

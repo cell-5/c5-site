@@ -13,10 +13,6 @@ body {
     height: 100%;
 }
 
-p {
-    font-size: 2rem;   
-  }
-
 h2 {
     @include breakpoint($mobile-portrait-only) {
         font-size: $headings-font-size-mobile-portrait;
@@ -192,7 +188,7 @@ li.nav-item {
 
         a {
             display: block;
-            
+
             &:link, &:visited {
                 color: $stand-out-base-color;
                 text-decoration: none;
@@ -203,13 +199,13 @@ li.nav-item {
             &:active {
                 color: $stand-out-base-color;
             }
-            &:visited:active { 
+            &:visited:active {
                 color: $stand-out-base-color;
             }
         }
     }
 
- 
+
 
     a.learn-more-btn {
 
@@ -239,22 +235,9 @@ li.nav-item {
     }}
 
 #solutions {
-    @include breakpoint($mobile-portrait-only) {
-        height: auto;
-    }
-    @include breakpoint($mobile-landscape-only) {
-        height: auto;
-    }
-    @include breakpoint($tablet-portrait-only) {
-        height: auto;
-    }
-    @include breakpoint($tablet-landscape-only) {
-        height: auto;
-    }
     background-color: $light-base-color;
     color: $dark-base-color;
     position: relative;
-    height: 100vh;
     padding: 5rem 0;
 
     &:after {
@@ -268,34 +251,19 @@ li.nav-item {
         border-bottom: $section-break-border-size solid $dark-base-color;
     }
 
-    div.solutions-wrapper {
-        @include breakpoint($mobile-portrait-only) {
-            position: relative;
-            top: 0;
-            transform: none;
-        }
-        @include breakpoint($mobile-landscape-only) {
-            position: relative;
-            top: 0;
-            transform: none;
-        }
-        @include breakpoint($tablet-portrait-only) {
-            position: relative;
-            top: 0;
-            transform: none;
-        }
-        @include breakpoint($tablet-landscape-only) {
-            position: relative;
-            top: 0;
-            transform: none;
-        }
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-    }
-
     h2 {
         text-align: center;
+    }
+
+    p {
+        @include breakpoint($mobile-portrait-only) {
+            font-size: 3.5vmax;
+        }
+        @include breakpoint($mobile-landscape-only) {
+            font-size: 3.5vmax;
+        }
+
+        font-size: 3vmax;
     }
 
     div.solutions-nav {
@@ -469,6 +437,16 @@ section.solution {
         text-align: left !important;
         line-height: 150%;
     }
+
+    a.contact-us-link {
+        &:link, &:visited, &:active {
+            color: $highlight;
+        }
+
+        &:hover {
+            color: $highlight / 0.9;
+        }
+    }
 }
 
 
@@ -638,7 +616,7 @@ section.solution {
     }
 
     p {
-      font-size: 2rem;   
+      font-size: 2rem;
     }
 
     li{
@@ -650,7 +628,7 @@ section.solution {
         }
 
         p{
-            font-size: 1.5rem;    
+            font-size: 1.5rem;
         }
     }
 
@@ -793,11 +771,11 @@ span.text-orange{
     padding:0px;
     line-height: 1.2ch;
     display: inline;
-    
+
 }
 .text-orange {
     color: $stand-out-base-color;
-    
+
 }
 
 .text-highlight {
