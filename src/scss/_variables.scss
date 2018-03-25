@@ -4,7 +4,7 @@ $brand-font-size: 1.2rem;
 $brand-logo-width: 100px;
 $brand-logo-height: 100px;
 $gray: #e1e1e1;
-$green: #269E4A;
+$highlight: rgb(34, 143, 66);
 
 $tagline-primary-color: #fefffe;
 $tagline-primary-bg-color: #2c302e;
@@ -37,7 +37,8 @@ $subheadings-font-size-mobile-portrait: 3vmax;
 $subheadings-font-family: $brand-font-family;
 $subheadings-font-weight: 500;
 
-$section-break-border-size: 0.8rem;
+$section-break-border-size: 50px;
+$section-break-half-size: 30px;
 $section-padding: 5rem 10vw;
 
 $transition-default: all 0.2s linear;

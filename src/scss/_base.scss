@@ -172,36 +172,56 @@ li.nav-item {
             font-weight: $tagline-primary-font-weight;
             text-align: left;
 
-            div.tagline-carousel {
-                color: $stand-out-base-color;
-                padding: 0.75vmax 0;
-            }
-
             ul.slick-dots {
                 display: none !important;
             }
         }
 
         a {
-            &:link, &visited {
-                display: inline-block;
-                background-color: $stand-out-base-color;
-                color: $light-base-color;
-                padding: 0.75rem 2rem;
-                margin-top: 0.5rem;
+            display: block;
+            
+            &:link, &:visited {
+                color: $stand-out-base-color;
                 text-decoration: none;
             }
-
             &:hover {
-                background-color: $stand-out-base-color / 0.9;
+                color: $stand-out-base-color;
             }
-
             &:active {
-                background-color: $stand-out-base-color;
+                color: $stand-out-base-color;
+            }
+            &:visited:active { 
+                color: $stand-out-base-color;
             }
         }
     }
-}
+
+    a.learn-more-btn {
+
+            position: absolute;
+            bottom: $section-break-half-size;
+            right: 14%;
+            z-index: 2;
+
+            &:link, &:visited {
+            display: inline-block;
+            background-color: $highlight;
+            color: white;
+            padding: 0.75rem 2rem;
+            margin-top: 0.5rem;
+            text-decoration: none;
+        }
+
+        &:hover {
+            background-color: $highlight / 0.9;
+            color: white;
+        }
+
+        &:active {
+            background-color: $highlight;
+            color: white;
+        }
+    }}
 
 #solutions {
     @include breakpoint($mobile-portrait-only) {
@@ -274,7 +294,7 @@ li.nav-item {
             padding: 1rem;
             transition: $transition-default;
 
-            &:link, &visited {
+            &:link, &:visited {
                 color: $dark-base-color;
                 text-decoration: none;
             }
@@ -285,8 +305,8 @@ li.nav-item {
             }
 
             img {
-                width: 8vmin;
-                height: 8vmin;
+                width: 12vmin;
+                height: 12vmin;
             }
 
             p {
@@ -598,7 +618,7 @@ section.solution {
     position: relative;
 
     strong{
-        color: $green;
+        color: $highlight;
         font-weight: bolder;
     }
 
@@ -765,6 +785,6 @@ span.text-orange{
     
 }
 
-.text-green {
-    color: $green;
+.text-highlight {
+    color: $highlight;
 }

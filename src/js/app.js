@@ -10,7 +10,7 @@ $(document).ready(function() {
         speed: SPEED,
         complete: function () {
             var section = $('.tagline-carousel').text().replace(' ', '-').replace(/\./g, '');
-            $('.learn-more-btn').attr('href', '#' + (section === 'digital' ? 'solutions' : section));
+            $('.tagline-carousel').attr('href', '#' + (section === 'digital' ? 'solutions' : section));
         }
     });
 
@@ -32,7 +32,7 @@ $(document).ready(function() {
             var section = $(this).attr('href');
             $('html,body').animate({
                 scrollTop: section === '#home' || section === '#' ? 0 : $(section).offset().top
-            }, 500);
+            },150);
         };
     }
 
