@@ -218,7 +218,7 @@ li.nav-item {
             display: inline-block;
             background-color: $highlight;
             color: white;
-            padding: 0.75rem 2rem;
+            padding: 1rem 3rem;
             margin-top: 0.5rem;
             text-decoration: none;
         }
@@ -263,7 +263,7 @@ li.nav-item {
             font-size: 3.5vmax;
         }
 
-        font-size: 3vmax;
+        font-size: 2vmax;
     }
 
     div.solutions-nav {
@@ -781,3 +781,4 @@ span.text-orange{
 .text-highlight {
     color: $highlight;
 }
+
