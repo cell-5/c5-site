@@ -356,6 +356,11 @@ section.solution {
         }
     }
 
+    div.icon-wrapper {
+        display: flex; 
+        flex-direction: column;
+        justify-content: center;
+    }
 
     div.solution-wrapper {
         @include breakpoint($mobile-portrait-only) {
