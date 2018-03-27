@@ -82,6 +82,7 @@ gulp.task('slick', ['slick:fonts', 'slick:ajaxloader']);
 
 gulp.task('favicon', function() {
     return gulp.src('src/favicon.ico')
+        .pipe(bust.resources())
         .pipe(gulp.dest('build'));
 });
 
