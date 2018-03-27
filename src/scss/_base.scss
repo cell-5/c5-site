@@ -35,6 +35,16 @@ h3 {
     transition: $transition-default;
 }
 
+a.contact-us-link {
+    &:link, &:visited, &:active {
+        color: $highlight;
+    }
+
+    &:hover {
+        color: $highlight / 0.9;
+    }
+}
+
 .container {
     position: relative;
 }
@@ -133,9 +143,6 @@ li.nav-item {
 }
 
 .call-to-action{
-    background-color: $highlight;
-    color: white;
-    padding: 0.75rem 2rem;
     margin-top: 0.5rem;
     text-decoration: none;
 }
@@ -357,7 +364,7 @@ section.solution {
     }
 
     div.icon-wrapper {
-        display: flex; 
+        display: flex;
         flex-direction: column;
         justify-content: center;
     }
@@ -367,6 +374,7 @@ section.solution {
             position: relative;
             top: auto;
             transform: none;
+            padding: 0;
         }
         @include breakpoint($mobile-landscape-only) {
             position: relative;
@@ -377,6 +385,7 @@ section.solution {
             position: relative;
             top: auto;
             transform: none;
+            padding: 0;
         }
         @include breakpoint($tablet-landscape-only) {
             position: relative;
@@ -384,7 +393,7 @@ section.solution {
             transform: none;
         }
         position: absolute;
-        padding: 0;
+        padding: 0 10vh;
         margin: 0;
         top: 50%;
         transform: translateY(-50%);
@@ -395,8 +404,8 @@ section.solution {
         text-align: center;
 
         img {
-            width: 25vmin;
-            height: 25vmin;
+            width: 50vmin;
+            height: 50vmin;
             margin: 0 auto;
             transition: $transition-default;
         }
@@ -442,16 +451,6 @@ section.solution {
         text-align: left !important;
         line-height: 150%;
     }
-
-    a.contact-us-link {
-        &:link, &:visited, &:active {
-            color: $highlight;
-        }
-
-        &:hover {
-            color: $highlight / 0.9;
-        }
-    }
 }
 
 
@@ -487,6 +486,18 @@ section.solution {
         text-align: center;
 
         blockquote {
+            @include breakpoint($mobile-portrait-only) {
+                padding: 0;
+            }
+            @include breakpoint($tablet-portrait-only) {
+                padding: 0;
+            }
+            @include breakpoint($mobile-landscape-only) {
+                padding: 0 10vh;
+            }
+            @include breakpoint($tablet-landscape-only) {
+                padding: 0 10vh;
+            }
             margin-top: 1rem;
             line-height: 150%;
         }
@@ -786,4 +797,3 @@ span.text-orange{
 .text-highlight {
     color: $highlight;
 }
-
