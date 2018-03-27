@@ -570,8 +570,10 @@ section.solution {
             @include tablet-and-below() {
                 margin-bottom: 2em;
             }
+            border-radius: 50%;
             margin: 0 auto;
-            max-width: 450px;
+            max-width: 350px;
+            overflow: hidden;
             img {
                 @include tablet-and-below() {
                     // border: 4px solid $gray;
