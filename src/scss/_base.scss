@@ -409,8 +409,13 @@ section.solution {
         text-align: center;
 
         img {
-            width: 50vmin;
-            height: 50vmin;
+          @include breakpoint($medium-only) {
+              width: 30vmin;
+              height: 30vmin;
+              transition: $transition-default;
+          }
+            width: 40vmin;
+            height: 40vmin;
             margin: 0 auto;
             transition: $transition-default;
         }
