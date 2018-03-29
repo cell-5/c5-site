@@ -53,6 +53,11 @@ a.contact-us-link {
     background-color: $dark-base-color !important;
 }
 
+.img-fluid {
+    max-width: 90% !important;
+    height: auto !important;
+}
+
 // To make the header stick on top
 header {
     position: fixed;
@@ -579,6 +584,10 @@ section.solution {
             margin: 0 auto;
             max-width: 350px;
             overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-top: 1rem;
             img {
                 @include tablet-and-below() {
                     // border: 4px solid $gray;
