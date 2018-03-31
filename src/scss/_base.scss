@@ -378,7 +378,7 @@ section.solution {
         justify-content: center;
     }
 
-    .body-wrapper{
+    .body-wrapper {
         display: flex;
         align-items: center;
         flex-direction: column;
@@ -395,14 +395,14 @@ section.solution {
           @include large-screen() {
               width: 55vmin;
               height: 55vmin;
-            
+
           }
 
           @include medium-screen-and-up() {
                 width: 50vmin;
                 height: 50vmin;
           }
-       
+
           @include medium-screen-only() {
             width: 50vmin;
             height: 50vmin;
@@ -453,6 +453,11 @@ section.solution {
         margin: 1rem auto;
         text-align: left !important;
         line-height: 150%;
+    }
+
+    ul li {
+        font-family: $content-font-family;
+        padding: 0.25rem 0;
     }
 }
 
@@ -677,7 +682,7 @@ section.solution {
 
             .fa-check,
             p {
-               
+
                     font-size: inherit;
             }
         }
@@ -851,7 +856,7 @@ ul {
 
         .fas,
         p {
-           
+
                 font-size: inherit;
         }
     }
