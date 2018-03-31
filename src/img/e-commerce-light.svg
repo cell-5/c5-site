@@ -1,8 +1,8 @@
-<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 219 164.25">
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 244 183.01">
   <title>e-commerce-light</title>
-  <polygon points="54.25 109.5 27.45 45.63 148.26 45.63 153.41 27.38 0 27.38 42.11 127.75 129 127.75 129 109.5 54.25 109.5" style="fill: #fefffe"/>
-  <path d="M98.56,182.88a13.69,13.69,0,1,0,13.69,13.69A13.69,13.69,0,0,0,98.56,182.88Z" transform="translate(-21 -46)" style="fill: #fefffe"/>
-  <path d="M143.56,182.88a13.69,13.69,0,1,0,13.69,13.69A13.69,13.69,0,0,0,143.56,182.88Z" transform="translate(-21 -46)" style="fill: #fefffe"/>
-  <polygon points="180.72 0 156.4 85.03 171.85 96.89 194.62 18.25 212.22 18.25 219 0 180.72 0" style="fill: #fefffe"/>
-  <path d="M154,118l51.33,39.4L183.58,161l13.65,27.84L184.72,195,171,166.9l-17,14.7Z" transform="translate(-21 -46)" style="fill: #d54832"/>
+  <polygon points="60.44 122 30.58 50.84 165.19 50.84 170.92 30.51 0 30.51 46.92 142.33 143.73 142.33 143.73 122 60.44 122" style="fill: #fefffe"/>
+  <path d="M92.41,186.51a15.25,15.25,0,1,0,15.25,15.25,15.25,15.25,0,0,0-15.25-15.25Z" transform="translate(-6 -34)" style="fill: #fefffe"/>
+  <path d="M142.55,186.51a15.25,15.25,0,1,0,15.25,15.25,15.25,15.25,0,0,0-15.25-15.25Z" transform="translate(-6 -34)" style="fill: #fefffe"/>
+  <polygon points="201.35 0 174.25 94.74 191.47 107.95 216.84 20.33 236.45 20.33 244 0 201.35 0" style="fill: #fefffe"/>
+  <path d="M154.18,114.22l57.19,43.9-24.23,4,15.21,31L188.41,200,173.12,168.7l-18.94,16.38Z" transform="translate(-6 -34)" style="fill: #d54832"/>
 </svg>
