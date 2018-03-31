@@ -4,3 +4,5 @@ src/vendor
 /dist
 /build
 /node_modules
+lambda
+contactUsHandler.zip
