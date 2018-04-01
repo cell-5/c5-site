@@ -374,14 +374,19 @@ section.solution {
 
     div.icon-wrapper {
         display: flex;
-        flex-direction: column;
+        // flex-direction: column;
+        align-items: center;
         justify-content: center;
     }
 
     .body-wrapper {
         display: flex;
-        align-items: center;
-        flex-direction: column;
+        justify-content: center;
+
+        div.solution-text {
+            display: flex;
+            flex-direction: column;
+        }
     }
 
     figure {
@@ -392,26 +397,25 @@ section.solution {
             transition: $transition-default;
             margin: 0 auto;
 
-          @include large-screen() {
-              width: 55vmin;
-              height: 55vmin;
+            @include large-screen() {
+                width: 55vmin;
+                height: 55vmin;
+            }
 
-          }
-
-          @include medium-screen-and-up() {
+            @include medium-screen-and-up() {
                 width: 50vmin;
                 height: 50vmin;
-          }
+            }
 
-          @include medium-screen-only() {
-            width: 50vmin;
-            height: 50vmin;
+            @include medium-screen-only() {
+                width: 50vmin;
+                height: 50vmin;
+            }
+            @include tablet-and-below() {
+                width: 50vmin;
+                height: 50vmin;
+            }
         }
-        @include tablet-and-below() {
-            width: 50vmin;
-            height: 50vmin;
-        }
-    }
 
         figcaption {
             color: $dark-base-color;
@@ -450,14 +454,19 @@ section.solution {
     p {
         font-family: $content-font-family;
         font-size: 1rem;
-        margin: 1rem auto;
-        text-align: left !important;
         line-height: 150%;
     }
 
-    ul li {
-        font-family: $content-font-family;
-        padding: 0.25rem 0;
+    ul {
+        text-indent: 1rem;
+
+        li {
+            @include breakpoint($mobile-portrait-only) {
+                font-size: 0.9rem;
+            }
+            font-family: $content-font-family;
+            padding: 0.25rem 0;
+        }
     }
 }
 
