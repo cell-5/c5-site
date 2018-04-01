@@ -2,7 +2,7 @@
 
 $(document).ready(function() {
     var SPEED = 5000;
-
+    var HEADER_SIZE = 55; //TODO if we can get the actual exact size plus padding.
     // Tagline
     $(".tagline-carousel").Morphext({
         animation: "fadeIn",
@@ -32,7 +32,7 @@ $(document).ready(function() {
 
             var section = $(this).attr('href');
             $('html,body').animate({
-                scrollTop: section === '#home' || section === '#' ? 0 : $(section).offset().top
+                scrollTop: section === '#home' || section === '#' ? 0 : $(section).offset().top - HEADER_SIZE
             },150);
         };
     }
@@ -46,23 +46,21 @@ $(document).ready(function() {
 
     var
         solutionsYOffset = Math.floor($('#solutions').offset().top),
-        testimonialsYOffset = Math.floor($('#testimonials').offset().top),
+       // testimonialsYOffset = Math.floor($('#testimonials').offset().top),
         profilesYOffset = Math.floor($('#profiles').offset().top),
         contactUsYOffset = Math.floor($('#contact-us').offset().top);
 
     $(window).on('scroll', function() {
-        var yOffset = window.pageYOffset,
-            childNum = 5;
+        var yOffset = window.pageYOffset +HEADER_SIZE,
+            childNum = 4;
 
         // To change active nav link
         if (yOffset >= 0 && yOffset < solutionsYOffset) {
             childNum = 1;
-        } else if (yOffset >= solutionsYOffset && yOffset < testimonialsYOffset) {
+        } else if (yOffset >= solutionsYOffset && yOffset < profilesYOffset) {
             childNum = 2;
-        } else if (yOffset >= testimonialsYOffset && yOffset < profilesYOffset) {
-            childNum = 3;
         } else if (yOffset >= profilesYOffset && yOffset < contactUsYOffset) {
-            childNum = 4;
+            childNum = 3;
         }
 
         $('header .nav-item.active').removeClass('active');
