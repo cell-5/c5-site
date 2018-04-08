@@ -329,6 +329,15 @@ section.solution {
     @include breakpoint($tablet-landscape-only) {
         height: auto;
     }
+
+
+    @include medium-screen-and-up() {
+        padding: 17rem 1rem;
+    }
+    @include large-screen() {
+        padding: 17rem 1rem;
+    }
+    
     position: relative;
     padding: 5rem 1rem;
     margin: 0;
@@ -398,22 +407,22 @@ section.solution {
             margin: 0 auto;
 
             @include large-screen() {
-                width: 55vmin;
-                height: 55vmin;
+                width: 40vmin;
+                height: 40vmin;
             }
 
             @include medium-screen-and-up() {
-                width: 50vmin;
-                height: 50vmin;
+                width: 40vmin;
+                height: 40vmin;
             }
 
             @include medium-screen-only() {
-                width: 50vmin;
-                height: 50vmin;
+                width: 40vmin;
+                height: 40vmin;
             }
             @include tablet-and-below() {
-                width: 50vmin;
-                height: 50vmin;
+                width: 40vmin;
+                height: 40vmin;
             }
         }
 
