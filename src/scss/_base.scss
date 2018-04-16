@@ -467,14 +467,26 @@ section.solution {
     }
 
     ul {
-        text-indent: 1rem;
+        @include breakpoint($landscape-min) {
+            text-indent: 1rem;
+        }
 
         li {
             @include breakpoint($mobile-portrait-only) {
                 font-size: 0.9rem;
+                position: relative;
+                padding-left: 1.5em;
             }
             font-family: $content-font-family;
             padding: 0.25rem 0;
+
+            i {
+                @include breakpoint($mobile-portrait-only) {
+                    position: absolute;
+                    left: 0;
+                    top: 7px;
+                }
+            }
         }
     }
 }
