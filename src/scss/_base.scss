@@ -480,7 +480,7 @@ section.solution {
             font-family: $content-font-family;
             padding: 0.25rem 0;
 
-            i {
+            i:first-of-type {
                 @include breakpoint($mobile-portrait-only) {
                     position: absolute;
                     left: 0;
