@@ -86,6 +86,15 @@ gulp.task('favicon', function() {
         .pipe(gulp.dest('build'));
 });
 
+gulp.task('seo', function() {
+    return gulp.src([
+        'src/BingSiteAuth.xml', 
+        'src/google048e4cb97d286796.html',
+        'src/robots.txt',
+        'src/sitemap.xml'
+    ]).pipe(gulp.dest('build'));
+});
+
 gulp.task('cacheBust:js', function() {
     return gulp.src('build/js/*.js')
         .pipe(bust.resources())
@@ -99,7 +108,7 @@ gulp.task('cacheBust:css', function() {
 });
 
 gulp.task('cacheBust:html', function() {
-    return gulp.src('build/index.html')
+    return gulp.src('build/*.html')
         .pipe(bust.references())
         .pipe(gulp.dest('build'));
 });
@@ -129,7 +138,7 @@ gulp.task('clean', function() {
 });
 
 gulp.task('default', ['css', 'dev', 'watch']);
-gulp.task('build', ['images', 'fa:webfonts', 'slick', 'favicon'], function() {
+gulp.task('build', ['images', 'fa:webfonts', 'slick', 'favicon', 'seo'], function() {
     return gulp.start('compile');
 });
 // gulp.task('build', ['compile', 'images', 'production']);

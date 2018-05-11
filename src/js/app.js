@@ -120,9 +120,10 @@ $(document).ready(function() {
 
         axios.post(form.prop('action'), data)
         .then(function (response) {
-            showMessage('success', 'Message successfully sent!');
-            // clear form
-            form[0].reset();
+            // showMessage('success', 'Message successfully sent!');
+            // // clear form
+            // form[0].reset();
+            window.location = window.location.origin + '/' + 'thank-you.html';
         })
         .catch(function (error) {
             showMessage('danger', 'Something went wrong. Please try again some other time.');
