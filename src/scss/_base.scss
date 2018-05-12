@@ -316,7 +316,10 @@ li.nav-item {
 }
 
 .solution {
-
+    .row{
+      margin-left: 0px;
+      margin-right: 0px;
+    }
     &-wrapper {
         @include medium-screen-and-up() {
             height: 100vh;
