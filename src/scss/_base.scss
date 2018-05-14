@@ -69,6 +69,13 @@ header {
     left: 0;
     width: 100%;
     z-index: 9999;
+    &.siteheader {
+        background: $tagline-primary-bg-color;
+    }
+    .navbar {
+        max-width: 1440px;
+        margin: 0 auto;
+    }
 }
 
 #logo {
@@ -187,10 +194,14 @@ li.nav-item {
     }
 
     div.tagline-wrapper {
-        position: absolute;
-        top: 50%;
         line-height: 1.75ch;
-        transform: translateY(-50%);
+        // position: absolute;
+        // top: 50%;
+        // line-height: 1.75ch;
+        // transform: translateY(-50%);
+        width: 100%;
+        max-width: 1440px;
+        margin: 0 auto;
 
         h2 {
             font-size: $tagline-primary-font-size !important;
@@ -322,6 +333,8 @@ li.nav-item {
             height: 100vh;
         }
         padding: 5rem 1rem;
+        max-width: 1440px;
+        margin: 0 auto;
     }
 
     position: relative;
