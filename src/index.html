@@ -27,6 +27,25 @@
     <link rel="stylesheet" href="vendor/slick-carousel/slick/slick.css">
     <link rel="stylesheet" href="vendor/slick-carousel/slick/slick-theme.css">
     <link rel="stylesheet" href="css/app.css" />
+    <link rel="stylesheet" type="text/css" href="plugins/cards/hipster_cards.css">
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" />  
+<style type="text/css">
+    #start-up.solution:after {
+      border-bottom: 50px solid #2c302e;
+    }
+    .col-centered {
+      float: none;
+      margin: 0 auto;
+    }
+    /* the slides */
+    .slick-slide {
+      margin: 0 27px;
+    }
+    /* the parent */
+    .slick-list {
+      margin: 0 -27px;
+    }
+</style>
     <!-- endbuild -->
 </head>
 
@@ -60,11 +79,11 @@
                             Solutions
                         </a>
                     </li>
-                   <!-- <li class="nav-item">
+                   <li class="nav-item">
                         <a class="nav-link" href="#testimonials">
                             Testimonials
                         </a>
-                    </li> -->
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#profiles">
                             The Team
@@ -564,36 +583,188 @@
             </div>
         </section>
 
-        <!--<section id="testimonials">
-            <h2>Testimonials</h2>
-            <article class="col-lg-8 col-md-10">
-                <img src="img/quote.svg" alt="quote" />
-                <blockquote cite="">
-                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                </blockquote>
-                <small class="author">-
-                    <span>Someone</span>, Somewhere</small>
-            </article>
-            <article class="col-lg-8 col-md-10">
-                <img src="img/quote.svg" alt="quote" />
-                <blockquote cite="">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                </blockquote>
-                <small class="author">-
-                    <span>Another One</span>, Somewhere Else</small>
-            </article>
-            <article class="col-lg-8 col-md-10">
-                <img src="img/quote.svg" alt="quote" />
-                <blockquote cite="">
-                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-                    dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                </blockquote>
-                <small class="author">-
-                    <span>Somebody</span>, Nowhere</small>
-            </article>
-        </section>-->
+        <section id="testimonials" class="testimonial">
+            <div class="container">
+                <h2>Testimonials</h2><br>
+                <div class="row">
+                    <div class="col-xs-12 col-md-12 col-centered">
+
+                        <div id="carousel" class="carousel">
+                            <div class="card-box">  
+                                <div class="card">                            
+                                    <div class="header">
+                                        <img src="https://images.pexels.com/photos/247322/pexels-photo-247322.jpeg?auto=compress&cs=tinysrgb&h=350" />
+
+                                        <div class="social-line social-line-visible" data-buttons="4">
+                                            <button class="btn btn-social btn-facebook">
+                                                <i class="fa fa-facebook"></i>
+                                            </button>
+                                            <button class="btn btn-social btn-twitter">
+                                                <i class="fa fa-twitter"></i>
+                                            </button>
+                                            <button class="btn btn-social btn-pinterest">
+                                                <i class="fa fa-pinterest"></i>
+                                            </button>
+                                            <button class="btn btn-social btn-google">
+                                                <i class="fa fa-google-plus"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <div class="content">
+                                        <h6 class="category">Google</h6>
+                                        <h4 class="title">Eliza Baine</h4>
+                                        <p class="description" style="color: #9A9A9A;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut ultrices tellus, id dignissim diam. Mauris sed auctor urna. Praesent sit amet metus urna. Mauris iaculis vehicula eleifend. Duis id dictum sapien, ac porttitor quam. Etiam neque mauris, varius id malesuada non, tincidunt at odio.</p>
+                                    </div>  
+                                </div> <!-- end card -->
+                            </div>
+                            <div class="card-box">  
+                                <div class="card">                            
+                                    <div class="header">
+                                        <img src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&h=350" />
+
+                                        <div class="social-line social-line-visible" data-buttons="4">
+                                            <button class="btn btn-social btn-facebook">
+                                                <i class="fa fa-facebook"></i>
+                                            </button>
+                                            <button class="btn btn-social btn-twitter">
+                                                <i class="fa fa-twitter"></i>
+                                            </button>
+                                            <button class="btn btn-social btn-pinterest">
+                                                <i class="fa fa-pinterest"></i>
+                                            </button>
+                                            <button class="btn btn-social btn-google">
+                                                <i class="fa fa-google-plus"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <div class="content">
+                                        <h6 class="category">Facebook</h6>
+                                        <h4 class="title">Scarlet Stevens</h4>
+                                        <p class="description" style="color: #9A9A9A;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut ultrices tellus, id dignissim diam. Mauris sed auctor urna. Praesent sit amet metus urna. Mauris iaculis vehicula eleifend. Duis id dictum sapien, ac porttitor quam. Etiam neque mauris, varius id malesuada non, tincidunt at odio.</p>
+                                    </div>  
+                                </div> <!-- end card -->
+                            </div>
+                            <div class="card-box">  
+                                <div class="card">                            
+                                    <div class="header">
+                                        <img src="https://images.pexels.com/photos/756453/pexels-photo-756453.jpeg?auto=compress&cs=tinysrgb&h=350" />
+
+                                        <div class="social-line social-line-visible" data-buttons="4">
+                                            <button class="btn btn-social btn-facebook">
+                                                <i class="fa fa-facebook"></i>
+                                            </button>
+                                            <button class="btn btn-social btn-twitter">
+                                                <i class="fa fa-twitter"></i>
+                                            </button>
+                                            <button class="btn btn-social btn-pinterest">
+                                                <i class="fa fa-pinterest"></i>
+                                            </button>
+                                            <button class="btn btn-social btn-google">
+                                                <i class="fa fa-google-plus"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <div class="content">
+                                        <h6 class="category">Twitter</h6>
+                                        <h4 class="title">Michelle Jhohanson</h4>
+                                        <p class="description" style="color: #9A9A9A;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut ultrices tellus, id dignissim diam. Mauris sed auctor urna. Praesent sit amet metus urna. Mauris iaculis vehicula eleifend. Duis id dictum sapien, ac porttitor quam. Etiam neque mauris, varius id malesuada non, tincidunt at odio.</p>
+                                    </div>  
+                                </div> <!-- end card -->
+                            </div>
+                            <div class="card-box">  
+                                <div class="card">                            
+                                    <div class="header">
+                                        <img src="https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&h=350" />
+
+                                        <div class="social-line social-line-visible" data-buttons="4">
+                                            <button class="btn btn-social btn-facebook">
+                                                <i class="fa fa-facebook"></i>
+                                            </button>
+                                            <button class="btn btn-social btn-twitter">
+                                                <i class="fa fa-twitter"></i>
+                                            </button>
+                                            <button class="btn btn-social btn-pinterest">
+                                                <i class="fa fa-pinterest"></i>
+                                            </button>
+                                            <button class="btn btn-social btn-google">
+                                                <i class="fa fa-google-plus"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <div class="content">
+                                        <h6 class="category">Flutter</h6>
+                                        <h4 class="title">Stephen Clark</h4>
+                                        <p class="description" style="color: #9A9A9A;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut ultrices tellus, id dignissim diam. Mauris sed auctor urna. Praesent sit amet metus urna. Mauris iaculis vehicula eleifend. Duis id dictum sapien, ac porttitor quam. Etiam neque mauris, varius id malesuada non, tincidunt at odio.</p>
+                                    </div>  
+                                </div> <!-- end card -->
+                            </div>
+                            <div class="card-box">  
+                                <div class="card">                            
+                                    <div class="header">
+                                        <img src="https://images.pexels.com/photos/736716/pexels-photo-736716.jpeg?auto=compress&cs=tinysrgb&h=350" />
+
+                                        <div class="social-line social-line-visible" data-buttons="4">
+                                            <button class="btn btn-social btn-facebook">
+                                                <i class="fa fa-facebook"></i>
+                                            </button>
+                                            <button class="btn btn-social btn-twitter">
+                                                <i class="fa fa-twitter"></i>
+                                            </button>
+                                            <button class="btn btn-social btn-pinterest">
+                                                <i class="fa fa-pinterest"></i>
+                                            </button>
+                                            <button class="btn btn-social btn-google">
+                                                <i class="fa fa-google-plus"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <div class="content">
+                                        <h6 class="category">Cleo</h6>
+                                        <h4 class="title">Joseph Korl</h4>
+                                        <p class="description" style="color: #9A9A9A;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut ultrices tellus, id dignissim diam. Mauris sed auctor urna. Praesent sit amet metus urna. Mauris iaculis vehicula eleifend. Duis id dictum sapien, ac porttitor quam. Etiam neque mauris, varius id malesuada non, tincidunt at odio.</p>
+                                    </div>  
+                                </div> <!-- end card -->
+                            </div>
+                            <div class="card-box">  
+                                <div class="card">                            
+                                    <div class="header">
+                                        <img src="https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&h=350" />
+
+                                        <div class="social-line social-line-visible" data-buttons="4">
+                                            <button class="btn btn-social btn-facebook">
+                                                <i class="fa fa-facebook"></i>
+                                            </button>
+                                            <button class="btn btn-social btn-twitter">
+                                                <i class="fa fa-twitter"></i>
+                                            </button>
+                                            <button class="btn btn-social btn-pinterest">
+                                                <i class="fa fa-pinterest"></i>
+                                            </button>
+                                            <button class="btn btn-social btn-google">
+                                                <i class="fa fa-google-plus"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <div class="content">
+                                        <h6 class="category">Instagram</h6>
+                                        <h4 class="title">Justin Hemmingway</h4>
+                                        <p class="description" style="color: #9A9A9A;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut ultrices tellus, id dignissim diam. Mauris sed auctor urna. Praesent sit amet metus urna. Mauris iaculis vehicula eleifend. Duis id dictum sapien, ac porttitor quam. Etiam neque mauris, varius id malesuada non, tincidunt at odio.</p>
+                                    </div>  
+                                </div> <!-- end card -->
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <section id="profiles">
             <div class="container">
@@ -832,6 +1003,8 @@
     <script src="vendor/slick-carousel/slick/slick.js"></script>
     <script src="vendor/axios/dist/axios.js"></script>
     <script src="js/app.js"></script>
+    <script type="text/javascript" src="plugins/cards/hipster-cards.js"></script>
+    <script type="text/javascript" charset="UTF-8" src="http://chs03.cookie-script.com/s/199541f9d9fa1a70b126e127f62bf161.js"></script>
     <!-- endbuild -->
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
