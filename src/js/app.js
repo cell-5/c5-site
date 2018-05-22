@@ -15,7 +15,11 @@ $(document).ready(function() {
     });
 
     // To close nav dropdown when a nav link is clicked
-    $('header .nav-link').on('click', animateSectionScroll(true));
+    // Disable menu item animated scrolling on standard pages.
+    if (! $(document.body).hasClass('page-standard')) {
+        $('header .nav-link').on('click', animateSectionScroll(true));
+    }
+
     $('#logo a').on('click', animateTopScroll);
     $('.sitefooter-bottom a').on('click', animateTopScroll);
     $('.learn-more-btn').on('click', animateSectionScroll(false));
@@ -77,6 +81,30 @@ $(document).ready(function() {
 
 (function ($) {
     "use strict";
+
+    $('.portfolio-images').slick({
+        autoplay: true,
+        autoplaySpeed: 4000,
+        fade: true,
+        dots: true,
+        arrows: true,
+        asNavFor: '.portfolio-content',
+        nextArrow: '<span class="slick-next-arrow" role="button"><i class="fa fa-angle-right"></i></span>',
+        prevArrow: '<span class="slick-prev-arrow" role="button"><i class="fa fa-angle-left"></i></span>',
+        responsive: [
+            {
+                breakpoint: 767,
+                settings: {
+                    arrows: false,
+                }
+            },
+        ]
+    });
+
+    $('.portfolio-content').slick({
+        asNavFor: '.portfolio-images',
+        arrows: false,
+    });
 
     // Team carousel
     $('.team').slick({
