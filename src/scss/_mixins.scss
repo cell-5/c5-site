@@ -10,6 +10,12 @@
 }
 
 // media queries
+@mixin uhd-width() {
+	@include breakpoint(3840px) {
+		@content;
+	}
+}
+
 @mixin large-screen() {
 	@include breakpoint($large) {
 		@content;

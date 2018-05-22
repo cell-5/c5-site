@@ -1,4 +1,7 @@
 html {
+    @include uhd-width() {
+        font-size: 34px;
+    }
     box-sizing: border-box;
     overflow-y: scroll;
     height: 100%;
@@ -50,6 +53,9 @@ a.contact-us-link {
 }
 
 .container {
+    @include uhd-width() {
+        max-width: 3072px;
+    }
     position: relative;
 }
 
@@ -73,6 +79,9 @@ header {
         background: $tagline-primary-bg-color;
     }
     .navbar {
+        @include uhd-width {
+            max-width: 3072px;
+        }
         max-width: 1440px;
         margin: 0 auto;
     }
@@ -194,16 +203,18 @@ li.nav-item {
     }
 
     div.tagline-wrapper {
+        @include uhd-width() {
+            max-width: 3072px;
+        }
         line-height: 1.75ch;
-        // position: absolute;
-        // top: 50%;
-        // line-height: 1.75ch;
-        // transform: translateY(-50%);
         width: 100%;
         max-width: 1440px;
         margin: 0 auto;
 
         h2 {
+            @include uhd-width() {
+                font-size: 5vmax !important;
+            }
             font-size: $tagline-primary-font-size !important;
             font-weight: $tagline-primary-font-weight;
             text-align: left;
@@ -329,6 +340,9 @@ li.nav-item {
 .solution {
 
     &-wrapper {
+        @include uhd-width() {
+            max-width: 3072px;
+        }
         @include medium-screen-and-up() {
             height: 100vh;
         }
@@ -580,6 +594,9 @@ li.nav-item {
 .team {
     margin-top: 4em;
     &-member {
+        @include uhd-width() {
+            max-width: 2048px !important;
+        }
         @include large-screen() {
             max-width: 1000px;
         }
@@ -615,6 +632,9 @@ li.nav-item {
             line-height: 1.8;
         }
         &-photo {
+            @include uhd-width() {
+                max-width: 700px;
+            }
             @include tablet-and-below() {
                 margin-bottom: 2em;
             }
@@ -655,6 +675,9 @@ li.nav-item {
 }
 
 .teamNav {
+    @include uhd-width() {
+        max-width: 1024px;
+    }
     @include tablet-and-below() {
         display: none;
     }
@@ -662,6 +685,10 @@ li.nav-item {
     max-width: 500px;
     &-slide {
         img {
+            @include uhd-width() {
+                height: 100px;
+                width: 100px;
+            }
             cursor: pointer;
             border: 4px solid $gray;
             background: white;
@@ -729,6 +756,10 @@ li.nav-item {
         }
 
         input {
+            @include uhd-width() {
+                height: 80px;
+                font-size: 1em;
+            }
             height: 45px;
         }
 
@@ -975,6 +1006,12 @@ ul {
 
         p {
             text-align: justify;
+        }
+    }
+
+    .container {
+        @include uhd-width() {
+            max-width: 2048px !important;
         }
     }
 
