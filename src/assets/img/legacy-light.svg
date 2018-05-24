@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 206 190">
+  <title>legacy</title>
+  <g id="Layer_1" data-name="Layer 1" style="fill: #fefffe">
+    <path style="fill: #fefffe" d="M65.63,213.13V189.38H41.88V46.88H172.51L208.13,82.5V126H220V82.5a11.75,11.75,0,0,0-.93-4.57,11.87,11.87,0,0,0-2.56-3.84l-35.6-35.6A12,12,0,0,0,172.5,35H30V225H184V213.13Zm-11.87,0H41.88V201.25H53.75Z" transform="translate(-30 -35)"/>
+    <g>
+      <path d="M160.63,35H53.75v83.13H160.63Zm-11.87,71.25H65.63V46.88h47.5V94.38h35.63Zm0-23.75H125V46.89h23.75Z" transform="translate(-30 -35)"/>
+      <rect x="47.5" y="130.63" width="95" height="11.88"/>
+      <rect x="47.5" y="154.38" width="95" height="11.88"/>
+      <polygon points="35.63 178.13 35.63 118.75 154 118.75 154 106.88 23.75 106.88 23.75 190 154 190 154 178.13 35.63 178.13"/>
+    </g>
+  </g>
+  
+  <g id="Layer_2" data-name="Layer 2" style="fill: #fefffe">
+    <rect x="169.66" y="101" width="28.79" height="23.56" style="fill: #d64933;stroke: #d64933;stroke-miterlimit: 10;stroke-width: 6px"/>
+    <rect style="fill: #2c302e;" x="187.99" y="110.16" width="5.24" height="5.24"/>
+    <rect style="fill: #2c302e;" x="174.9" y="110.16" width="5.24" height="5.24"/>
+  </g>
+  <g id="Layer_3" data-name="Layer 3" style="fill: #fefffe">
+    <rect x="162" y="124.56" width="44" height="53.66"/>
+    <rect x="162" y="166.44" width="44" height="23.56" rx="9" ry="9"/>
+  </g>
+</svg>
