@@ -8,6 +8,7 @@
       <MobileSection></MobileSection>
       <DesignSection></DesignSection>
       <CloudSection></CloudSection>
+      <MarketingSection></MarketingSection>
     </main>
   </div>
 </template>
@@ -20,6 +21,7 @@ import WebSection from './components/WebSection.vue'
 import MobileSection from './components/MobileSection.vue'
 import DesignSection from './components/DesignSection.vue'
 import CloudSection from './components/CloudSection.vue'
+import MarketingSection from './components/MarketingSection.vue'
 
 export default {
   name: 'app',
@@ -30,7 +32,8 @@ export default {
     WebSection,
     MobileSection,
     DesignSection,
-    CloudSection
+    CloudSection,
+    MarketingSection
   }
 }
 </script>
