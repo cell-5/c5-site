@@ -11,6 +11,7 @@
       <MarketingSection></MarketingSection>
       <EcommerceSection></EcommerceSection>
       <LegacyCodeSection></LegacyCodeSection>
+      <StartUpSection></StartUpSection>
     </main>
   </div>
 </template>
@@ -26,6 +27,7 @@ import CloudSection from './components/CloudSection.vue'
 import MarketingSection from './components/MarketingSection.vue'
 import EcommerceSection from './components/EcommerceSection.vue'
 import LegacyCodeSection from './components/LegacyCodeSection.vue'
+import StartUpSection from './components/StartUpSection.vue'
 
 export default {
   name: 'app',
@@ -39,7 +41,8 @@ export default {
     CloudSection,
     MarketingSection,
     EcommerceSection,
-    LegacyCodeSection
+    LegacyCodeSection,
+    StartUpSection
   }
 }
 </script>
