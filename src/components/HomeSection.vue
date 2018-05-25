@@ -13,6 +13,7 @@
     </section>
 </template>
 
+
 <style scoped>
 #home {
     background-color: #2c302e;
