@@ -12,6 +12,7 @@
       <EcommerceSection></EcommerceSection>
       <LegacyCodeSection></LegacyCodeSection>
       <StartUpSection></StartUpSection>
+      <ProfileSection></ProfileSection>
     </main>
   </div>
 </template>
@@ -28,6 +29,7 @@ import MarketingSection from './components/MarketingSection.vue'
 import EcommerceSection from './components/EcommerceSection.vue'
 import LegacyCodeSection from './components/LegacyCodeSection.vue'
 import StartUpSection from './components/StartUpSection.vue'
+import ProfileSection from './components/ProfileSection.vue'
 
 export default {
   name: 'app',
@@ -42,7 +44,8 @@ export default {
     MarketingSection,
     EcommerceSection,
     LegacyCodeSection,
-    StartUpSection
+    StartUpSection,
+    ProfileSection
   }
 }
 </script>
