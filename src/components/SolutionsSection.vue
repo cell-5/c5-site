@@ -48,3 +48,78 @@
     </section>
 </template>
 
+<style scoped>
+#solutions {
+    background-color: #fefffe;
+    color: #2c302e;
+    position: relative
+}
+
+#solutions:after {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 50px;
+    width: 50%;
+    border-left: 50px solid transparent;
+    border-bottom: 50px solid #2c302e
+}
+
+#solutions h2 {
+    text-align: center
+}
+
+#solutions p {
+    font-size: 2vmax
+}
+
+@media (max-width: 767px) and (orientation: portrait) {
+    #solutions p {
+        font-size: 3.5vmax
+    }
+}
+
+@media (max-width: 767px) and (orientation: landscape) {
+    #solutions p {
+        font-size: 3.5vmax
+    }
+}
+
+#solutions div.solutions-nav {
+    margin: 0;
+    padding: 0
+}
+
+#solutions div.solutions-nav a {
+    display: inline-block !important;
+    text-align: center;
+    margin: 0;
+    padding: 1rem;
+    -webkit-transition: all 0.2s linear;
+    transition: all 0.2s linear
+}
+
+#solutions div.solutions-nav a:link,
+#solutions div.solutions-nav a:visited {
+    color: #2c302e;
+    text-decoration: none
+}
+
+#solutions div.solutions-nav a:hover {
+    font-weight: bold;
+    -webkit-transition: all 0.2s linear;
+    transition: all 0.2s linear
+}
+
+#solutions div.solutions-nav a img {
+    width: 12vmin;
+    height: 12vmin
+}
+
+#solutions div.solutions-nav a p {
+    font-size: 1.2rem;
+    text-align: center
+}
+</style>
+

@@ -254,79 +254,6 @@ h3 {
     height: auto !important
 }
 
-#solutions {
-    background-color: #fefffe;
-    color: #2c302e;
-    position: relative
-}
-
-#solutions:after {
-    content: '';
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    height: 50px;
-    width: 50%;
-    border-left: 50px solid transparent;
-    border-bottom: 50px solid #2c302e
-}
-
-#solutions h2 {
-    text-align: center
-}
-
-#solutions p {
-    font-size: 2vmax
-}
-
-@media (max-width: 767px) and (orientation: portrait) {
-    #solutions p {
-        font-size: 3.5vmax
-    }
-}
-
-@media (max-width: 767px) and (orientation: landscape) {
-    #solutions p {
-        font-size: 3.5vmax
-    }
-}
-
-#solutions div.solutions-nav {
-    margin: 0;
-    padding: 0
-}
-
-#solutions div.solutions-nav a {
-    display: inline-block !important;
-    text-align: center;
-    margin: 0;
-    padding: 1rem;
-    -webkit-transition: all 0.2s linear;
-    transition: all 0.2s linear
-}
-
-#solutions div.solutions-nav a:link,
-#solutions div.solutions-nav a:visited {
-    color: #2c302e;
-    text-decoration: none
-}
-
-#solutions div.solutions-nav a:hover {
-    font-weight: bold;
-    -webkit-transition: all 0.2s linear;
-    transition: all 0.2s linear
-}
-
-#solutions div.solutions-nav a img {
-    width: 12vmin;
-    height: 12vmin
-}
-
-#solutions div.solutions-nav a p {
-    font-size: 1.2rem;
-    text-align: center
-}
-
 .solution {
     position: relative;
     margin: 0
@@ -543,6 +470,62 @@ h3 {
         left: 0;
         top: 7px
     }
+}
+
+a.contact-us-link:link,
+a.contact-us-link:visited,
+a.contact-us-link:active {
+    color: #228f42
+}
+
+a.contact-us-link:hover {
+    color: #269f49
+}
+
+.subtext {
+    margin-bottom: 3em
+}
+
+span.text-orange {
+    margin: 0px;
+    padding: 0px;
+    line-height: 1.2ch;
+    display: inline
+}
+
+.text-orange {
+    color: #d64933
+}
+
+.text-highlight {
+    color: #228f42
+}
+
+.text-highlight-star {
+    color: #fbeb00
+}
+
+ul {
+    padding-left: 0
+}
+
+ul li {
+    list-style: none;
+    text-align: left
+}
+
+ul li .fas {
+    font-size: 1.5rem;
+    margin-right: 0.5rem
+}
+
+ul li p {
+    font-size: 1.5rem
+}
+
+ul li .fas,
+ul li p {
+    font-size: inherit
 }
 
 </style>
