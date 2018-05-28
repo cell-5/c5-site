@@ -34,6 +34,7 @@ import StartUpSection from './components/StartUpSection.vue'
 import ProfileSection from './components/ProfileSection.vue'
 import ContactSection from './components/ContactSection.vue'
 import FooterSection from './components/FooterSection.vue'
+import base from './base.js'
 
 export default {
   name: 'app',
@@ -52,7 +53,8 @@ export default {
     ProfileSection,
     ContactSection,
     FooterSection
-  }
+  },
+  mounted () { base() }
 }
 </script>
 
