@@ -54,7 +54,9 @@ export default {
     ContactSection,
     FooterSection
   },
-  mounted () { base() }
+  mounted () {
+    base()
+  }
 }
 </script>
 

@@ -322,4 +322,28 @@
     transform: translate3d(0px, 0px, 0px) !important
 }
 </style>
-
+<style>
+.slick-next-arrow, .slick-prev-arrow {
+  cursor: pointer;
+  font-size: 2rem;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.slick-next-arrow {
+  left: 100%;
+}
+.slick-prev-arrow {
+  right: 100%;
+}
+@media (max-width: 767px) {
+  .slick-next-arrow {
+    left: auto;
+    right: 0;
+  }
+  .slick-prev-arrow {
+    left: 0;
+    right: auto;
+  }
+}
+</style>
