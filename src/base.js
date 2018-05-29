@@ -2,24 +2,27 @@ import $ from 'jquery'
 import 'slick-carousel'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
+import 'morphext/dist/morphext.css'
+import 'animate.css'
+import 'morphext/dist/morphext.js'
 import axios from 'axios'
 
 export default function base () {
   'use strict'
 
   $(document).ready(function () {
-    // var SPEED = 5000
+    var SPEED = 5000
     var HEADER_SIZE = 55
     // Tagline
-    // $('.tagline-carousel').Morphext({
-    //   animation: 'fadeIn',
-    //   separator: ',',
-    //   speed: SPEED,
-    //   complete: function () {
-    //     var section = $('.tagline-carousel').text().replace(' ', '-').replace(/\./g, '')
-    //     $('.tagline-carousel').attr('href', '#' + (section === 'digital' ? 'solutions' : section))
-    //   }
-    // })
+    $('.tagline-carousel').Morphext({
+      animation: 'fadeIn',
+      separator: ',',
+      speed: SPEED,
+      complete: function () {
+        var section = $('.tagline-carousel').text().replace(' ', '-').replace(/\./g, '')
+        $('.tagline-carousel').attr('href', '#' + (section === 'digital' ? 'solutions' : section))
+      }
+    })
 
     // To close nav dropdown when a nav link is clicked
     // Disable menu item animated scrolling on standard pages.

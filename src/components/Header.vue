@@ -56,14 +56,6 @@ export default {
     }
   }
 }
-
-$(window).on('scroll', function () {
-  if ($(window).scrollTop()) {
-    $('#logo').addClass('shrink')
-  } else {
-    $('#logo').removeClass('shrink')
-  }
-})
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
