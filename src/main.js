@@ -5,9 +5,7 @@ import BootstrapVue from 'bootstrap-vue'
 import App from './App'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
-import 'slick-carousel'
 import 'bootstrap'
-import 'axios'
 
 Vue.use(BootstrapVue)
 Vue.config.productionTip = false
