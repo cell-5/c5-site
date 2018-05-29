@@ -338,7 +338,10 @@ li.nav-item {
 }
 
 .solution {
-
+    .row{
+      margin-left: 0px;
+      margin-right: 0px;
+    }
     &-wrapper {
         @include uhd-width() {
             max-width: 3072px;
