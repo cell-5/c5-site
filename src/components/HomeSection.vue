@@ -16,6 +16,8 @@
 
 <style scoped>
 #home {
+    background-image:url('../assets/img/banner.jpg');
+    background-size:cover;
     background-color: #2c302e;
     color: #fefffe;
     font-family: "Montserrat", sans-serif;

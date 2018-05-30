@@ -69,7 +69,7 @@ header {
 }
 
 header.siteheader {
-    background: #2c302e
+    background: #2c302e;
 }
 
 header .navbar {
