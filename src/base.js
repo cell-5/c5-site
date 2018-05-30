@@ -13,7 +13,7 @@ export default function base () {
   $(document).ready(function () {
     var SPEED = 5000
     var HEADER_SIZE = 55
-    // Tagline
+
     $('.tagline-carousel').Morphext({
       animation: 'fadeIn',
       separator: ',',
