@@ -120,24 +120,20 @@
 }
 
 .contact form input {
-    height: 45px
-}
-
-@media (min-width: 3840px) {
-    .contact form input {
-        height: 80px;
-        font-size: 1em
-    }
+    height: 2.81rem;
+    font-size: 1em;
 }
 
 .contact form button {
     background: #d64933;
     color: white;
-    min-width: 100px
+    min-width: 100px;
+    text-transform: uppercase;
+    padding: 0.7em 1.3em;
 }
 
 .contact form .alert {
-    margin-top: 20px
+    margin-top: 1.2em;
 }
 
 </style>

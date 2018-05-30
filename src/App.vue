@@ -204,12 +204,37 @@ html {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     overflow-y: scroll;
-    height: 100%
+    height: 100%;
+    font-size: 100%;
+}
+
+@media (min-width: 1440px) {
+    html {
+        font-size: 19px
+    }
+}
+
+@media (min-width: 1920px) {
+    html {
+        font-size: 24px
+    }
+}
+
+@media (min-width: 2560px) {
+    html {
+        font-size: 29px
+    }
+}
+
+@media (min-width: 3200px) {
+    html {
+        font-size: 36px
+    }
 }
 
 @media (min-width: 3840px) {
     html {
-        font-size: 34px
+        font-size: 44px
     }
 }
 
@@ -267,13 +292,9 @@ h3 {
 }
 
 .container {
-    position: relative
-}
-
-@media (min-width: 3840px) {
-    .container {
-        max-width: 3072px
-    }
+    position: relative;
+    width: 90%;
+    max-width: none !important;
 }
 
 .bg-dark {
@@ -292,14 +313,8 @@ h3 {
 
 .solution-wrapper {
     padding: 5rem 1rem;
-    max-width: 1440px;
+    max-width: 90%;
     margin: 0 auto
-}
-
-@media (min-width: 3840px) {
-    .solution-wrapper {
-        max-width: 3072px
-    }
 }
 
 @media (min-width: 992px) {
@@ -317,10 +332,10 @@ h3 {
     position: absolute;
     right: 0;
     bottom: 0;
-    height: 50px;
+    height: 3.13rem;
     width: 50%;
-    border-left: 50px solid transparent;
-    border-bottom: 50px solid #fefffe
+    border-left: 3.13rem solid transparent;
+    border-bottom: 3.13rem solid #fefffe
 }
 
 .solution:nth-child(odd) p,
@@ -338,10 +353,10 @@ h3 {
     position: absolute;
     right: 0;
     bottom: 0;
-    height: 50px;
+    height: 3.13rem;
     width: 50%;
-    border-left: 50px solid transparent;
-    border-bottom: 50px solid #2c302e
+    border-left: 3.13rem solid transparent;
+    border-bottom: 3.13rem solid #2c302e
 }
 
 .solution:nth-child(even) p,

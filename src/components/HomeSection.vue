@@ -25,7 +25,6 @@
     height: 100vh;
     margin: 0;
     margin-top: 0px;
-    padding: 0 10vw;
     position: relative;
     -webkit-transition: all 0.2s linear;
     transition: all 0.2s linear;
@@ -37,10 +36,10 @@
     position: absolute;
     right: 0;
     bottom: 0;
-    height: 50px;
+    height: 3.13rem;
     width: 50%;
-    border-left: 50px solid transparent;
-    border-bottom: 50px solid #fefffe
+    border-left: 3.13rem solid transparent;
+    border-bottom: 3.13rem solid #fefffe
 }
 
 #home * {
@@ -52,26 +51,14 @@
 #home div.tagline-wrapper {
     line-height: 1.75ch;
     width: 100%;
-    max-width: 1440px;
+    max-width: 90%;
     margin: 0 auto
 }
 
-@media (min-width: 3840px) {
-    #home div.tagline-wrapper {
-        max-width: 3072px
-    }
-}
-
 #home div.tagline-wrapper h2 {
-    font-size: 6vmax !important;
+    font-size: 4.8em !important;
     font-weight: 700;
     text-align: left
-}
-
-@media (min-width: 3840px) {
-    #home div.tagline-wrapper h2 {
-        font-size: 5vmax !important
-    }
 }
 
 #home div.tagline-wrapper h2 ul.slick-dots {
@@ -102,7 +89,7 @@
 
 #home a.learn-more-btn {
     position: absolute;
-    bottom: 30px;
+    bottom: 1.88rem;
     right: 14%;
     z-index: 2
 }
