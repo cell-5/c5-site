@@ -13,17 +13,12 @@
                             <div class="portfolio-images">
                                 <div>
                                     <a href="#">
-                                        <img src="https://placehold.it/750x350" alt="Placeholder image" class="img-fluid mx-auto">
+                                        <img :src="MelissaTwiggImg" alt="Melissa Twigg Website" class="img-fluid mx-auto">
                                     </a>
                                 </div>
                                 <div>
                                     <a href="#">
-                                        <img src="https://placehold.it/750x350" alt="Placeholder image" class="img-fluid mx-auto">
-                                    </a>
-                                </div>
-                                <div>
-                                    <a href="#">
-                                        <img src="https://placehold.it/750x350" alt="Placeholder image" class="img-fluid mx-auto">
+                                        <img :src="PortlandImg" alt="Portland Website" class="img-fluid mx-auto">
                                     </a>
                                 </div>
                             </div>
@@ -38,12 +33,6 @@
                                     <article>
                                         <h2><a href="#">Portland</a></h2>
                                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla reprehenderit sequi alias quibusdam, similique quod laudantium aperiam.</p>
-                                    </article>
-                                </div>
-                                <div>
-                                    <article>
-                                        <h2><a href="#">That project named IDK</a></h2>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus, nobis maiores aut. Dolorum praesentium eaque reprehenderit quam, animi, ab necessitatibus.</p>
                                     </article>
                                 </div>
                             </div>
@@ -61,9 +50,16 @@
 import Header from './Header.vue'
 import ContactSection from './ContactSection.vue'
 import FooterSection from './FooterSection.vue'
+import MelissaTwiggImg from '../assets/img/mtwigg.svg'
+import PortlandImg from '../assets/img/portland.svg'
 
 export default {
   name: 'portfolio',
+  data () {
+    return {
+      MelissaTwiggImg, PortlandImg
+    }
+  },
   components: {
     Header,
     ContactSection,
@@ -71,26 +67,24 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-.portfolio {
-  background: white;
-  margin-top: 66px;
-}
-.portfolio-heading {
-  text-align: center;
-  max-width: 90%;
-  margin: 0 auto;
-}
-.portfolio-images {
-  margin-top: 40px;
-}
+<style>
 .portfolio-images .slick-next-arrow,
 .portfolio-images .slick-prev-arrow {
   color: white;
   background: #2c302e;
   padding-left: 5px;
   padding-right: 5px;
+  position: absolute;
+  top:50%;
+  transform: translateY(-50%);
+}
+.portfolio-images .slick-next-arrow {
+  right: 0;
+  left: auto;
+}
+.portfolio-images .slick-prev-arrow {
+  right: auto;
+  left: 0;
 }
 .portfolio-images .slick-dots {
   top: 100%;
@@ -99,6 +93,20 @@ export default {
 }
 .portfolio-images .slick-dots li button:before {
   font-size: 11px;
+}
+</style>
+<style scoped>
+.portfolio {
+  background: white;
+  margin-top: 10.2rem;
+}
+.portfolio-heading {
+  text-align: center;
+  max-width: 90%;
+  margin: 0 auto;
+}
+.portfolio-images {
+  margin-top: 40px;
 }
 .portfolio-content {
   max-width: 90%;
