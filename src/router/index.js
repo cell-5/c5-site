@@ -14,7 +14,7 @@ export default new Router({
       component: Landing
     },
     {
-      path: '/thankyou',
+      path: '/thank-you',
       name: 'ThankYouSection',
       component: ThankYouSection
     },
