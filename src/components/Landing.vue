@@ -15,7 +15,6 @@
       <ProfileSection></ProfileSection>
       <ContactSection></ContactSection>
       <FooterSection></FooterSection>
-      <ThankYouSection></ThankYouSection>
     </main>
   </div>
 </template>
@@ -35,7 +34,6 @@ import StartUpSection from './StartUpSection.vue'
 import ProfileSection from './ProfileSection.vue'
 import ContactSection from './ContactSection.vue'
 import FooterSection from './FooterSection.vue'
-import ThankYouSection from './ThankYouSection.vue'
 import base from '../base.js'
 
 export default {
@@ -54,8 +52,7 @@ export default {
     StartUpSection,
     ProfileSection,
     ContactSection,
-    FooterSection,
-    ThankYouSection
+    FooterSection
   },
   mounted () {
     base()

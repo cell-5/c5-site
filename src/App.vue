@@ -5,44 +5,10 @@
 </template>
 
 <script>
-import Header from './components/Header.vue'
-import HomeSection from './components/HomeSection.vue'
-import SolutionsSection from './components/SolutionsSection.vue'
-import WebSection from './components/WebSection.vue'
-import MobileSection from './components/MobileSection.vue'
-import DesignSection from './components/DesignSection.vue'
-import CloudSection from './components/CloudSection.vue'
-import MarketingSection from './components/MarketingSection.vue'
-import EcommerceSection from './components/EcommerceSection.vue'
-import LegacyCodeSection from './components/LegacyCodeSection.vue'
-import StartUpSection from './components/StartUpSection.vue'
-import ProfileSection from './components/ProfileSection.vue'
-import ContactSection from './components/ContactSection.vue'
-import FooterSection from './components/FooterSection.vue'
-import ThankYouSection from './components/ThankYouSection.vue'
-import base from './base.js'
 
 export default {
   name: 'app',
   components: {
-    Header,
-    HomeSection,
-    SolutionsSection,
-    WebSection,
-    MobileSection,
-    DesignSection,
-    CloudSection,
-    MarketingSection,
-    EcommerceSection,
-    LegacyCodeSection,
-    StartUpSection,
-    ProfileSection,
-    ContactSection,
-    FooterSection,
-    ThankYouSection
-  },
-  mounted () {
-    base()
   }
 }
 </script>
