@@ -7,7 +7,7 @@
                     </figure>
                     <br>
                     <h1>Thank you for contacting us!</h1>
-                    <p>We will get in touch with you soon! <a href="/">Back to Homepage</a></p>
+                    <p>We will get in touch with you soon! <router-link to="/">Back to Homepage</router-link></p>
                 </div>
             </div>
         </section>
@@ -16,6 +16,7 @@
 <script>
 export default {
   name: 'thankyou',
+  title: 'Thank You!',
   data () {
     return {
       msg: 'Thank You!!'
@@ -23,4 +24,33 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+#thank-you {
+  background: #2c302e;
+  height: 100vh;
+  position: relative;
+}
+#thank-you .container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#thank-you .container h1 {
+  color: #d64933;
+  margin-bottom: 2rem;
+}
+#thank-you .container img {
+  height: 11em;
+}
+#thank-you .container p {
+  color: white;
+  font-size: 1.1em;
+}
+#thank-you .container a {
+  color: white;
+  text-decoration: underline;
+}
+</style>
 
