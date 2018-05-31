@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Header from '@/components/Header'
+import Landing from '@/components/Landing'
+import ThankYouSection from '@/components/ThankYouSection'
 
 Vue.use(Router)
 
@@ -8,8 +9,13 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Header',
-      component: Header
+      name: 'Landing',
+      component: Landing
+    },
+    {
+      path: '/thankyou',
+      name: 'ThankYouSection',
+      component: ThankYouSection
     }
   ]
 })

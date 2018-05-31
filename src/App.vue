@@ -1,22 +1,6 @@
 <template>
   <div id="app">
-    <Header></Header>
-    <main role="main">
-      <HomeSection></HomeSection>
-      <SolutionsSection></SolutionsSection>
-      <WebSection></WebSection>
-      <MobileSection></MobileSection>
-      <DesignSection></DesignSection>
-      <CloudSection></CloudSection>
-      <MarketingSection></MarketingSection>
-      <EcommerceSection></EcommerceSection>
-      <LegacyCodeSection></LegacyCodeSection>
-      <StartUpSection></StartUpSection>
-      <ProfileSection></ProfileSection>
-      <ContactSection></ContactSection>
-      <FooterSection></FooterSection>
-      <ThankYouSection></ThankYouSection>
-    </main>
+    <router-view></router-view>
   </div>
 </template>
 
