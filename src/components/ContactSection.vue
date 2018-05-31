@@ -39,19 +39,19 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="name" class="sr-only">Name</label>
-                                        <input type="text" class="form-control" name="name" id="name" placeholder="Name" v-model="input.name">
+                                        <input required type="text" class="form-control" name="name" id="name" placeholder="Name" v-model="input.name">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="email" class="sr-only">Email</label>
-                                        <input type="email" class="form-control" name="email" id="email" placeholder="Email" v-model="input.email">
+                                        <input required type="email" class="form-control" name="email" id="email" placeholder="Email" v-model="input.email">
                                     </div>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="message" class="sr-only">Message</label>
-                                <textarea name="message" rows="5" class="form-control" id="message" placeholder="Message" v-model="input.message"></textarea>
+                                <textarea required name="message" rows="5" class="form-control" id="message" placeholder="Message" v-model="input.message"></textarea>
                             </div>
                             <button :disabled="loading" type="submit" class="btn">Send</button>
                         </form>
