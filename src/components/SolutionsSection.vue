@@ -60,10 +60,10 @@
     position: absolute;
     right: 0;
     bottom: 0;
-    height: 50px;
+    height: 3.13rem;
     width: 50%;
-    border-left: 50px solid transparent;
-    border-bottom: 50px solid #2c302e
+    border-left: 3.13rem solid transparent;
+    border-bottom: 3.13rem solid #2c302e
 }
 
 #solutions h2 {

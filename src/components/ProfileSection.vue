@@ -147,10 +147,10 @@
     position: absolute;
     right: 0;
     bottom: 0;
-    height: 50px;
+    height: 3.13rem;
     width: 50%;
-    border-left: 50px solid transparent;
-    border-bottom: 50px solid #2c302e
+    border-left: 3.13rem solid transparent;
+    border-bottom: 3.13rem solid #2c302e
 }
 
 #profiles h2 {
@@ -161,21 +161,9 @@
     margin-top: 4em
 }
 
-@media (min-width: 3840px) {
-    .team-member {
-        max-width: 2048px !important
-    }
-}
-
 @media (min-width: 1200px) {
     .team-member {
-        max-width: 1000px
-    }
-}
-
-@media (min-width: 992px) {
-    .team-member {
-        margin: 0 auto
+        max-width: 80%
     }
 }
 
@@ -185,16 +173,20 @@
     }
 }
 
+@media (min-width: 992px) {
+    .team-member {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .team-member-about {
+        margin-bottom: 9em
+    }
+}
+
 @media (max-width: 991px) {
     .team-member {
         margin: 0 30px;
         text-align: center
-    }
-}
-
-@media (min-width: 992px) {
-    .team-member-about {
-        margin-bottom: 9em
     }
 }
 
@@ -223,7 +215,7 @@
 .team-member-photo {
     border-radius: 50%;
     margin: 0 auto;
-    max-width: 350px;
+    max-width: 68%;
     overflow: hidden;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -235,12 +227,6 @@
     -ms-flex-align: center;
     align-items: center;
     padding-top: 1rem
-}
-
-@media (min-width: 3840px) {
-    .team-member-photo {
-        max-width: 700px
-    }
 }
 
 @media (max-width: 991px) {
@@ -286,7 +272,7 @@
 
 .teamNav {
     margin: 2em auto 0;
-    max-width: 500px
+    max-width: 31.25rem
 }
 
 @media (min-width: 3840px) {
@@ -306,15 +292,8 @@
     border: 4px solid #e1e1e1;
     background: white;
     border-radius: 50%;
-    width: 70px;
-    height: 70px
-}
-
-@media (min-width: 3840px) {
-    .teamNav-slide img {
-        height: 100px;
-        width: 100px
-    }
+    width: 4.38em;
+    height: 4.38em;
 }
 
 .teamNav .slick-track {

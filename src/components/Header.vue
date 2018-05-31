@@ -73,21 +73,15 @@ header.siteheader {
 }
 
 header .navbar {
-    max-width: 1440px;
+    max-width: 90%;
     margin: 0 auto
-}
-
-@media (min-width: 3840px) {
-    header .navbar {
-        max-width: 3072px
-    }
 }
 
 #logo {
     line-height: 0;
     text-align: center;
     margin: 0;
-    padding: 1.5rem;
+    padding: 1.5rem 1.5rem 1.5rem 0;
     -webkit-transition: all 0.2s linear;
     transition: all 0.2s linear
 }
@@ -121,8 +115,8 @@ header .navbar {
 }
 
 #logo.shrink a img {
-    height: 50px;
-    width: 50px;
+    height: 3.13rem;
+    width: 3.13rem;
     -webkit-transition: all 0.2s linear;
     transition: all 0.2s linear
 }
@@ -132,16 +126,16 @@ header .navbar {
 }
 
 #logo a img {
-    height: 100px;
-    width: 100px;
+    height: 6.25rem;
+    width: 6.25rem;
     -webkit-transition: all 0.2s linear;
     transition: all 0.2s linear
 }
 
 @media (max-width: 767px) and (orientation: portrait) {
     #logo a img {
-        height: 50px;
-        width: 50px;
+        height: 3.13rem;
+        width: 3.13rem;
         -webkit-transition: all 0.2s linear;
         transition: all 0.2s linear
     }

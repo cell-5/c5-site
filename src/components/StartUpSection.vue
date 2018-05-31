@@ -56,3 +56,9 @@
             </div>
     </section>
 </template>
+
+<style scoped>
+    .solution:nth-child(even):after {
+        border-bottom-color: #d64933;
+    }
+</style>
