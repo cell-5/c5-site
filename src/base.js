@@ -5,7 +5,7 @@ import 'slick-carousel/slick/slick-theme.css'
 import 'morphext/dist/morphext.css'
 import 'animate.css'
 import 'morphext/dist/morphext.js'
-import axios from 'axios'
+// import axios from 'axios'
 
 export default function base () {
   'use strict'
@@ -70,59 +70,5 @@ export default function base () {
       asNavFor: '.team',
       focusOnSelect: true
     })
-
-    // Contact form submission
-    var form = $('#contact-form')
-    var name = $('#name')
-    var email = $('#email')
-    var message = $('#message')
-
-    form.submit(function (e) {
-      e.preventDefault()
-
-      var data = {
-        name: name.val(),
-        email: email.val(),
-        message: message.val()
-      }
-
-      var errors = validate(data)
-
-      if (errors) {
-        showMessage('danger', 'Please fill in the form correctly.')
-        return
-      }
-
-      axios.post(form.prop('action'), data)
-        .then(function (response) {
-          // showMessage('success', 'Message successfully sent!')
-          // // clear form
-          // form[0].reset()
-          window.location = window.location.origin + '/' + 'thank-you.html'
-        })
-        .catch(function (error) {
-          console.log(error)
-          showMessage('danger', 'Something went wrong. Please try again some other time.')
-        })
-    })
-
-    function validate (data) {
-      var errors = false
-
-      var emailReg = /^([a-zA-Z0-9\\.]+)@([a-zA-Z0-9\\-\\_\\.]+)\.([a-zA-Z0-9]+)$/i
-
-      if (data.name === '' || !emailReg.test(data.email) || data.message === '') {
-        return !errors
-      }
-
-      return errors
-    }
-
-    function showMessage (alertType, message) {
-      var markup = '<div class="alert alert-' + alertType + '">' + message + '<div>'
-
-      $('.alert').remove()
-      form.append(markup)
-    }
   })
 }
