@@ -12,7 +12,6 @@ export default function base () {
 
   $(document).ready(function () {
     var SPEED = 5000
-    var HEADER_SIZE = 55
 
     $('.tagline-carousel').Morphext({
       animation: 'fadeIn',
@@ -24,60 +23,7 @@ export default function base () {
       }
     })
 
-    // To close nav dropdown when a nav link is clicked
-    // Disable menu item animated scrolling on standard pages.
-    if (!$(document.body).hasClass('page-standard')) {
-      $('header .nav-link').on('click', animateSectionScroll(true))
-    }
-
-    $('#logo a').on('click', animateTopScroll)
-    $('.sitefooter-bottom a').on('click', animateTopScroll)
-    $('.learn-more-btn').on('click', animateSectionScroll(false))
-    $('.solutions-nav a').on('click', animateSectionScroll(false))
-    $('.contact-us-link').on('click', animateSectionScroll(false))
-
-    function animateSectionScroll (flag) {
-      return function (e) {
-        e.preventDefault()
-
-        if (flag && window.innerWidth <= 767) {
-          $('.navbar-toggler').click()
-        }
-
-        var section = $(this).attr('href')
-        $('html,body').animate({
-          scrollTop: section === '#home' || section === '#' ? 0 : $(section).offset().top - HEADER_SIZE
-        }, 150)
-      }
-    }
-
-    function animateTopScroll (e) {
-      e.preventDefault()
-      $('html,body').animate({
-        scrollTop: 0
-      }, 500)
-    }
-
-    var solutionsYOffset = Math.floor($('#solutions').offset().top)
-    var profilesYOffset = Math.floor($('#profiles').offset().top)
-    var contactUsYOffset = Math.floor($('#contact-us').offset().top)
-
     $(window).on('scroll', function () {
-      var yOffset = window.pageYOffset + HEADER_SIZE
-      var childNum = 4
-
-      // To change active nav link
-      if (yOffset >= 0 && yOffset < solutionsYOffset) {
-        childNum = 1
-      } else if (yOffset >= solutionsYOffset && yOffset < profilesYOffset) {
-        childNum = 2
-      } else if (yOffset >= profilesYOffset && yOffset < contactUsYOffset) {
-        childNum = 3
-      }
-
-      $('header .nav-item.active').removeClass('active')
-      $('header .nav-item:nth-child(' + childNum + ')').addClass('active')
-
       // To shrink nav on scroll
       if ($(window).scrollTop()) {
         $('#logo').addClass('shrink')
