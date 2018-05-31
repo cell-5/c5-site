@@ -5,10 +5,14 @@
 </template>
 
 <script>
+import base from './base.js'
 
 export default {
   name: 'app',
   components: {
+  },
+  mounted () {
+    base()
   }
 }
 </script>
