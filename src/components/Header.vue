@@ -13,7 +13,7 @@
 
             <div class="collapse navbar-collapse" id="collapsible-navbar">
                 <ul class="navbar-nav">
-                    <li class="nav-item active">
+                    <li class="nav-item">
                         <a class="nav-link" href="#home">
                             Home
                         </a>
@@ -23,11 +23,6 @@
                             Solutions
                         </a>
                     </li>
-                   <!-- <li class="nav-item">
-                        <a class="nav-link" href="#testimonials">
-                            Testimonials
-                        </a>
-                    </li> -->
                     <li class="nav-item">
                         <a class="nav-link" href="#profiles">
                             The Team
