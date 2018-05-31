@@ -36,7 +36,6 @@ export default function base () {
       autoplay: true,
       autoplaySpeed: 4000,
       fade: true,
-      dots: true,
       arrows: true,
       asNavFor: '.portfolio-content',
       nextArrow: '<span class="slick-next-arrow" role="button"><i class="fa fa-angle-right"></i></span>',
