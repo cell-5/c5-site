@@ -72,3 +72,60 @@ export default {
 }
 </script>
 
+<style scoped>
+.portfolio {
+  background: white;
+  margin-top: 66px;
+}
+.portfolio-heading {
+  text-align: center;
+  max-width: 90%;
+  margin: 0 auto;
+}
+.portfolio-images {
+  margin-top: 40px;
+}
+.portfolio-images .slick-next-arrow,
+.portfolio-images .slick-prev-arrow {
+  color: white;
+  background: #2c302e;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.portfolio-images .slick-dots {
+  top: 100%;
+  bottom: auto;
+  margin-top: 10px;
+}
+.portfolio-images .slick-dots li button:before {
+  font-size: 11px;
+}
+.portfolio-content {
+  max-width: 90%;
+  margin: 50px auto 0;
+}
+.portfolio-content h2 {
+  font-size: 1em;
+  font-weight: bold;
+  text-align: center;
+}
+.portfolio-content h2 a {
+  color: inherit;
+}
+.portfolio-content h2 a:hover, .portfolio-content h2 a:focus {
+  color: #d64933;
+  text-decoration: none;
+}
+.portfolio-content p {
+  text-align: justify;
+}
+.portfolio .row {
+  padding-top: 4em;
+  padding-bottom: 4em;
+}
+@media (min-width: 1440px) {
+  .portfolio .row {
+    height: 100vh;
+  }
+}
+</style>
