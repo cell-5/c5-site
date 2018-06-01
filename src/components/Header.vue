@@ -2,9 +2,9 @@
   <header class="siteheader" role="banner">
         <nav class="navbar navbar-expand-md bg-dark navbar-dark">
             <h1 id="logo">
-                <a class="navbar-brand" href="/">
+                <router-link to="/" class="navbar-brand">
                     <img src="../assets/img/logo-white.svg" alt="cell5 logo">
-                </a>
+                </router-link>
             </h1>
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsible-navbar">
@@ -23,6 +23,9 @@
                             Solutions
                         </a>
                     </li>
+                    <!-- <router-link to="portfolio" tag="li" exact class="nav-item">
+                        <a class="nav-link">Portfolio</a>
+                    </router-link> -->
                     <li class="nav-item">
                         <a class="nav-link" href="#profiles">
                             The Team
@@ -40,15 +43,71 @@
 </template>
 
 <script>
-
-const $ = require('jquery')
-window.$ = $
-export default {
-  name: 'hello',
-  data () {
-    return {
-      msg: 'Welcome to Your Vue.js App'
+import $ from 'jquery'
+function highlightMenu ($window, $menuItem) {
+  var top = $window.scrollTop()
+  var items = $menuItem.map(function () {
+    var target = $(this).attr('href')
+    if (top >= $(target).offset().top) {
+      return target
     }
+  })
+
+  var current = items[items.length - 1]
+
+  $menuItem.parent()
+    .removeClass('active')
+    .end()
+    .filter('a[href="' + current + '"]')
+    .parent()
+    .addClass('active')
+}
+
+function animateSectionScroll (flag) {
+  return function (e) {
+    e.preventDefault()
+
+    if (flag && window.innerWidth <= 767) {
+      $('.navbar-toggler').click()
+    }
+
+    var section = $(this).attr('href')
+    $('html,body').animate({
+      scrollTop: section === '#home' || section === '#' ? 0 : $(section).offset().top
+    }, 150)
+  }
+}
+
+function animateTopScroll (e) {
+  e.preventDefault()
+  $('html,body').animate({
+    scrollTop: 0
+  }, 500)
+}
+
+function menuEffects () {
+  $('header .nav-link').on('click', animateSectionScroll(true))
+  $('#logo a').on('click', animateTopScroll)
+  $('.sitefooter-bottom a').on('click', animateTopScroll)
+  $('.learn-more-btn').on('click', animateSectionScroll(false))
+  $('.solutions-nav a').on('click', animateSectionScroll(false))
+  $('.contact-us-link').on('click', animateSectionScroll(false))
+
+  var $menuItem = $('.navbar-nav li a')
+
+  $(window).on('scroll', function () {
+    highlightMenu($(this), $menuItem)
+    // shrink menu
+    if ($(window).scrollTop()) {
+      $('#logo').addClass('shrink')
+    } else {
+      $('#logo').removeClass('shrink')
+    }
+  })
+}
+export default {
+  mounted () {
+    menuEffects()
   }
 }
 </script>

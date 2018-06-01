@@ -127,7 +127,34 @@
             </div>
     </section>
 </template>
-
+<script>
+import $ from 'jquery'
+import 'slick-carousel'
+import 'slick-carousel/slick/slick.css'
+import 'slick-carousel/slick/slick-theme.css'
+function teamCarousel () {
+  $('.team').slick({
+    autoplay: true,
+    autoplaySpeed: 4000,
+    fade: true,
+    asNavFor: '.teamNav-slide',
+    arrows: true,
+    nextArrow: '<span class="slick-next-arrow" role="button"><i class="fa fa-angle-right"></i></span>',
+    prevArrow: '<span class="slick-prev-arrow" role="button"><i class="fa fa-angle-left"></i></span>'
+  })
+  $('.teamNav-slide').slick({
+    slidesToShow: 3,
+    arrows: false,
+    asNavFor: '.team',
+    focusOnSelect: true
+  })
+}
+export default {
+  mounted () {
+    teamCarousel()
+  }
+}
+</script>
 <style scoped>
 #profiles {
     background: #d64933;
