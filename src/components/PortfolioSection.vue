@@ -109,8 +109,8 @@
   .portfolio-images .slick-prev-arrow {
     color: white;
     background: #2c302e;
-    padding-left: 5px;
-    padding-right: 5px;
+    padding: 0.2em;
+    font-size: 1.7em;
     position: absolute;
     top:50%;
     transform: translateY(-50%);
@@ -123,14 +123,6 @@
     right: auto;
     left: 0;
   }
-  .portfolio-images .slick-dots {
-    top: 100%;
-    bottom: auto;
-    margin-top: 10px;
-  }
-  .portfolio-images .slick-dots li button:before {
-    font-size: 11px;
-  }
 </style>
 <style scoped>
   .portfolio {
@@ -139,18 +131,22 @@
   }
   .portfolio-heading {
     text-align: center;
-    max-width: 90%;
+    max-width: 80%;
     margin: 0 auto;
+  }
+  .portfolio-heading p {
+    line-height: 1.8;
   }
   .portfolio-images {
     margin-top: 40px;
   }
   .portfolio-content {
-    max-width: 90%;
+    max-width: 80%;
     margin: 50px auto 0;
   }
   .portfolio-content h2 {
-    font-size: 1em;
+    font-size: 1.5em;
+    margin-bottom: 0.7em;
     font-weight: bold;
     text-align: center;
   }
@@ -162,7 +158,8 @@
     text-decoration: none;
   }
   .portfolio-content p {
-    text-align: justify;
+    text-align: center;
+    line-height: 1.8;
   }
   .portfolio .row {
     padding-top: 4em;
