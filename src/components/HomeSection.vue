@@ -89,6 +89,12 @@
     text-align: left
   }
 
+  @media (max-width: 576px) {
+    #home div.tagline-wrapper h2 {
+      font-size: 3em !important;
+    }
+  }
+
   #home div.tagline-wrapper h2 ul.slick-dots {
     display: none !important
   }

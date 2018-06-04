@@ -240,7 +240,7 @@ h3 {
 
 .container {
     position: relative;
-    width: 90%;
+    width: 90% !important;
     max-width: none !important;
 }
 
@@ -261,7 +261,7 @@ h3 {
 .solution-wrapper {
     padding: 5rem 1rem;
     max-width: 90%;
-    margin: 0 auto
+    margin: 0 auto !important;
 }
 
 @media (min-width: 992px) {

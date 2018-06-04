@@ -1,6 +1,6 @@
 <template>
   <header class="siteheader" role="banner">
-        <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+        <nav class="navbar navbar-expand-md navbar-dark">
             <h1 id="logo">
                 <router-link to="/" class="navbar-brand">
                     <img src="../assets/img/logo-white.svg" alt="cell5 logo">
@@ -208,6 +208,8 @@ nav.navbar {
     padding: 0.5rem
 }
 
+.navbar-toggler
+
 div.navbar-collapse {
     position: relative
 }
@@ -220,6 +222,18 @@ li.nav-item {
 
 li.nav-item:hover {
     background-color: none
+}
+
+li.nav-item a {
+    color: white !important;
+    opacity: 0.7;
+    transition: 0.4s;
+}
+
+li.nav-item.active a,
+li.nav-item a:hover,
+li.nav-item a:focus {
+    opacity: 1;
 }
 
 @media only screen and (min-width: 768px) {
