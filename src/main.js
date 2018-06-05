@@ -13,7 +13,7 @@ Vue.use(BootstrapVue)
 Vue.use(VueProgressBar, {
   color: '#228f42',
   failedColor: '#874b4b',
-  thickness: '5px',
+  thickness: '0.4rem',
   transition: {
     speed: '0.4s',
     termination: 300
