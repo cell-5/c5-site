@@ -33,7 +33,7 @@
                         <a class="nav-link unscrollable">Portfolio</a>
                       </router-link>
                     </template>
-                    <li class="nav-item" :class="ctaClass">
+                    <li class="nav-item" :class="{ 'nav-cta': !isHomepage }">
                       <a class="nav-link" href="#contact-us">
                         Contact Us
                       </a>
@@ -116,11 +116,6 @@ export default {
   computed: {
     isHomepage () {
       return this.$route.path === '/'
-    },
-    ctaClass () {
-      if (!this.isHomepage) {
-        return 'nav-cta'
-      }
     }
   },
   mounted () {
@@ -136,7 +131,7 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 9999
+    z-index: 10
 }
 
 header.siteheader {
