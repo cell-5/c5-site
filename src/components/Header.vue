@@ -114,6 +114,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+
 header {
     position: fixed;
     top: 0;
@@ -123,7 +124,7 @@ header {
 }
 
 header.siteheader {
-    background: #2c302e;
+    background-color: rgba(0,0,0,0.5);
 }
 
 header .navbar {
