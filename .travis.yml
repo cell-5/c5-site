@@ -1,0 +1,18 @@
+language: node_js
+node_js:
+  - '7'
+install:
+  - npm install
+script:
+  - npm run build
+before_deploy: pip install --user awscli
+deploy:
+  skip_cleanup: true
+  provider: script
+  script: "./scripts/travis-deploy.sh"
+  on:
+    branch: master
+env:
+  global:
+  - secure: MV42VjQI1d0eK8I6O9qWapcBG80A1eJb8JoKYtn6/mqOHNi+7Jm9KYUn9rtlDSHRLuGGIYmNOn3AhmxTJ3V3Iz+6UDAm72EngxW3jvFuoM3LVZAZlvJ6Flbdqk7+z0BB2KMEGcXwpgpk343FMIvU/rByJP7BlTh6Awmn4yv6mjq577UZfUqjK3Z8KazZuwLbfdXik0HUZKz8cASIqzYCKlGNPT6Z9atkELySFqZNEv8CLRxSsrSe/tM381ctkCzpU581lcJTo/CBLxARcFdmk73JRJUC/ogA/TP9WjXwVDaL6Fal/oP8K5z1H2yI47lMTPjcW1psXxUGKYTYq7mB7bR/rjW8v1Q+3G7em/LhStYs7oFqJj1GpfH1K1lVziqQMQXt9pbJzr6C3BIs4FHlDOwX4E2eF4c1nr6L6Z/Ng0BhU1ojo1Zmzso01vQou9xOLT2hKYZa28WRcGbje5KXuKRjMke8d9WR+G0yPoZfSo8yv++ZsxwftTPOwO5m2nJVmaBcMp5IM3VZc98YM8nSlGv2Gk5JJGveNIbl2eE6XmsfgSZ/zviVSBJjx/EHKqL/2CKmvqb7rOncs1dMUcMkX833HMxQaSFpuEjtZZBYidqDbWy53sFpmHyOgDmZivXuM9p67PEx9tGgzjr5aR1bx2MbxmZvtVZ7ejS/ubppirY=
+  - secure: B+UsN9IkXT3+XPmYNWxh2q8jTWV11Pe0ky90TTSKt4ya6a0rEK2LCyZzVa1g/Xxht1fByPEzwoKBP3Wtn1OhjXrWK1tr+EU+rcNIeHBvuqJMN9icGrhg5X0D2atHJfGxSVnDhD5s9KNE+BtBOUcb830rQEVWFdKEw8GoQQG/uLmB4MY4Ihfddn/aMhAB8CCD9zP3ie1M3ciFkB1VQwtvpm27kpURoS6ZkEB20bjyzcZs4A2f7ZqZD/bOqKM411g4opPXm/rLVl9VyvNRlzlwV2Xg4ZLu4O/UIRP2C5xmUsM8sEcHMvX/pTYqq8GqnBz+Dz3QrIQ9MPNvxcPww0+BV9NkNlkXbmQFCqQixGkb8QOLlxTRh+1bRDt8w30U8OedM/llgu4u+jNoch+yCdx2biL0uCTyK5irtTrJHldTCOqVglXCJtndOSnFfeWesvnFXwAIxAHxxAQ18+FHBKOo1XAOCI8G8MugTLwDB2K9DShpeTB9m2XJeUQehW3W26b1tXrHgy8YEY/tiFFTTt+CfZ94Oll5aj6CJViVPXkcIZ6lTi2mNQbyXO2rGJNRXollZzyTMVtwtPTEHZp87WjWeC9Pfhn/b7uFNuT4qLEtTwxGV5qlVihm6Sha/mvQw2ivv18G+odlZx/vs93I0GEgmrUQFFN9vS5TNt6uDxQ+gs8=
