@@ -41,8 +41,8 @@
   import Header from './Header.vue'
   import ContactSection from './ContactSection.vue'
   import FooterSection from './FooterSection.vue'
-  import MelissaTwiggImg from '../assets/img/mtwigg.jpg'
-  import PortlandImg from '../assets/img/portland.jpg'
+  import MelissaTwiggImg from '../assets/img/mtwigg-screenshot.jpg'
+  import PortlandImg from '../assets/img/portland-screenshot.jpg'
   import $ from 'jquery'
 
   function backToTop () {
