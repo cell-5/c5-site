@@ -13,31 +13,18 @@
 
             <div class="collapse navbar-collapse" id="collapsible-navbar">
                 <ul class="navbar-nav">
-                		<template v-if="isHomepage">
-	                    <li class="nav-item">
-	                      <a class="nav-link" href="#home">
-	                        Home
-	                      </a>
-	                    </li>
-	                    <li class="nav-item">
-	                     	<a class="nav-link" href="#solutions">
-	                        Solutions
-	                     	</a>
-	                    </li>
-	                    <li class="nav-item">
-	                      <a class="nav-link" href="#profiles">
-	                        The Team
-	                      </a>
-	                    </li>
-                      <router-link to="portfolio" tag="li" class="nav-item">
-                        <a class="nav-link unscrollable">Portfolio</a>
-                      </router-link>
-                    </template>
-                    <li class="nav-item" :class="{ 'nav-cta': !isHomepage }">
-                      <a class="nav-link" href="#contact-us">
-                        Contact Us
-                      </a>
-                    </li>
+	                <li class="nav-item"><a @click="scrollOrRedirect" class="nav-link" href="#home">Home</a></li>
+	                <li class="nav-item"><a @click="scrollOrRedirect" class="nav-link" href="#solutions">Solutions</a></li>
+	                <li class="nav-item"><a @click="scrollOrRedirect" class="nav-link" href="#profiles">The Team</a></li>
+                  <template v-if="isPortfolioPage">
+                    <li class="nav-item"><a id="portfolio-link" class="nav-link" href="#portfolio">Portfolio</a></li>
+                  </template>
+                  <template v-else>
+                    <router-link to="portfolio" tag="li" class="nav-item">
+                      <a class="nav-link">Portfolio</a>
+                    </router-link>
+                  </template>
+                  <li class="nav-item"><a id="contact-link" class="nav-link" href="#contact-us">Contact Us</a></li>
                 </ul>
             </div>
         </nav>
@@ -46,10 +33,35 @@
 
 <script>
 import $ from 'jquery'
+function scrollToSection (selector) {
+  if (window.innerWidth <= 767) {
+    $('.navbar-toggler').click()
+  }
+
+  var $section = $(selector)
+
+  if (!$section.length) {
+    return
+  }
+  $('html,body').animate({
+    scrollTop: selector === '#home' || selector === '#' ? 0 : $section.offset().top
+  }, 150)
+}
+function animateSectionScroll () {
+  var selector = $(this).attr('href')
+  scrollToSection(selector)
+  return false
+}
+function animateTopScroll (e) {
+  e.preventDefault()
+  $('html,body').animate({
+    scrollTop: 0
+  }, 500)
+}
 function highlightMenu ($window, $menuItem) {
   var top = $window.scrollTop()
   var items = $menuItem.map(function () {
-    var selector = $(this).attr('href')
+    var selector = $(this).attr('href').replace('/', '#')
     var $target = $(selector)
     if ($target.length && top >= $target.offset().top) {
       return selector
@@ -65,43 +77,15 @@ function highlightMenu ($window, $menuItem) {
     .parent()
     .addClass('active')
 }
-
-function animateSectionScroll (flag) {
-  return function (e) {
-    e.preventDefault()
-
-    if (flag && window.innerWidth <= 767) {
-      $('.navbar-toggler').click()
-    }
-
-    var selector = $(this).attr('href')
-    var $section = $(selector)
-
-    if (!$section.length) {
-      return
-    }
-    $('html,body').animate({
-      scrollTop: selector === '#home' || selector === '#' ? 0 : $section.offset().top
-    }, 150)
-  }
-}
-
-function animateTopScroll (e) {
-  e.preventDefault()
-  $('html,body').animate({
-    scrollTop: 0
-  }, 500)
-}
-
 function menuEffects () {
-  $('header .nav-link:not(.unscrollable)').on('click', animateSectionScroll(true))
+  $('#portfolio-link, #contact-link').on('click', animateSectionScroll)
   $('#logo a').on('click', animateTopScroll)
   $('.sitefooter-bottom a').on('click', animateTopScroll)
-  $('.learn-more-btn').on('click', animateSectionScroll(false))
-  $('.solutions-nav a').on('click', animateSectionScroll(false))
-  $('.contact-us-link').on('click', animateSectionScroll(false))
+  $('.learn-more-btn').on('click', animateSectionScroll)
+  $('.solutions-nav a').on('click', animateSectionScroll)
+  $('.contact-us-link').on('click', animateSectionScroll)
 
-  var $menuItem = $('.navbar-nav li a:not(.unscrollable)')
+  var $menuItem = $('.navbar-nav li a')
 
   $(window).on('scroll', function () {
     highlightMenu($(this), $menuItem)
@@ -116,9 +100,25 @@ export default {
   computed: {
     isHomepage () {
       return this.$route.path === '/'
+    },
+    isPortfolioPage () {
+      return this.$route.path === '/portfolio'
+    }
+  },
+  methods: {
+    scrollOrRedirect (e) {
+      let href = e.currentTarget.getAttribute('href')
+      if (this.isHomepage) {
+        e.preventDefault()
+        scrollToSection(href)
+      } else {
+        this.$router.push({path: '/' + href})
+      }
     }
   },
   mounted () {
+    scrollToSection(window.location.hash)
+    window.location.hash = ''
     menuEffects()
   }
 }
@@ -245,12 +245,6 @@ li.nav-item a:hover,
 li.nav-item a:focus {
     opacity: 1;
 }
-
-li.nav-item.nav-cta a {
-  background: #d64933 !important;
-  padding: 0.8em 1.5em;
-}
-
 @media only screen and (min-width: 768px) {
     ul.navbar-nav {
         position: absolute;
