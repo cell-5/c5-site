@@ -2,7 +2,7 @@
   <div id="portfolio">
     <Header></Header>
     <main role="main">
-      <section id="portfolio" class="portfolio">
+      <section class="portfolio">
         <div class="container">
           <div class="row justify-content-md-center align-items-center">
             <div class="col-lg-11">
@@ -69,10 +69,12 @@
   }
 </script>
 <style scoped>
-  #portfolio {
+  .portfolio {
     position: relative;
+    background: white;
+    margin-top: 10.2rem;
   }
-  #portfolio:before {
+  .portfolio:before {
     content: '';
     position: absolute;
     right: 0;
@@ -81,10 +83,6 @@
     width: 50%;
     border-left: 3.13rem solid transparent;
     border-bottom: 3.13rem solid #2c302e
-  }
-  .portfolio {
-    background: white;
-    margin-top: 10.2rem;
   }
   .portfolio-heading {
     text-align: center;
