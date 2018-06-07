@@ -2,35 +2,29 @@
   <div id="portfolio">
     <Header></Header>
     <main role="main">
-      <section class="portfolio">
+      <section id="portfolio" class="portfolio">
         <div class="container">
           <div class="row justify-content-md-center align-items-center">
-            <div class="col-md-7 col-lg-9">
+            <div class="col-lg-11">
               <div class="portfolio-heading">
                 <h1>Portfolio</h1>
               </div>
-              <div class="portfolio-images">
-                <div>
-                  <a href="http://melissatwigg.co.uk.s3-website-eu-west-1.amazonaws.com/#/" target="_blank">
-                    <img :src="MelissaTwiggImg" alt="Melissa Twigg Website" class="img-fluid mx-auto">
+              <div class="row justify-content-md-center">
+                <div class="col-md-6">
+                  <a class="portfolio-link" target="_blank" href="http://melissatwigg.co.uk.s3-website-eu-west-1.amazonaws.com/#/">
+                    <figure>
+                      <img :src="MelissaTwiggImg" class="img-fluid mx-auto" alt="Melissa Twigg Portfolio Site">
+                    </figure>
+                    <h2>Melissa Twigg</h2>
                   </a>
                 </div>
-                <div>
-                  <a href="http://portlanddecorating.co.uk/" target="_blank">
-                    <img :src="PortlandImg" alt="Portland Decorating and Design Website" class="img-fluid mx-auto">
+                <div class="col-md-6">
+                  <a class="portfolio-link" target="_blank" href="http://portlanddecorating.co.uk/">
+                    <figure>
+                      <img :src="PortlandImg" class="img-fluid mx-auto" alt="Portland Decorating and Design Website">
+                    </figure>
+                    <h2>Portland Decorating and Design</h2>
                   </a>
-                </div>
-              </div>
-              <div class="portfolio-content">
-                <div>
-                  <article>
-                    <h2><a href="http://melissatwigg.co.uk.s3-website-eu-west-1.amazonaws.com/#/" target="_blank">Melissa Twigg</a></h2>
-                  </article>
-                </div>
-                <div>
-                  <article>
-                    <h2><a target="_blank" href="http://portlanddecorating.co.uk/">Portland Decorating and Design</a></h2>
-                  </article>
                 </div>
               </div>
             </div>
@@ -50,32 +44,6 @@
   import MelissaTwiggImg from '../assets/img/mtwigg.jpg'
   import PortlandImg from '../assets/img/portland.jpg'
   import $ from 'jquery'
-  import 'slick-carousel'
-  import 'slick-carousel/slick/slick.css'
-  import 'slick-carousel/slick/slick-theme.css'
-
-  function portfolio () {
-    $('.portfolio-images').slick({
-      autoplay: true,
-      autoplaySpeed: 4000,
-      fade: true,
-      arrows: true,
-      asNavFor: '.portfolio-content',
-      nextArrow: '<span class="slick-next-arrow" role="button"><i class="fa fa-angle-right"></i></span>',
-      prevArrow: '<span class="slick-prev-arrow" role="button"><i class="fa fa-angle-left"></i></span>',
-      responsive: [{
-        breakpoint: 767,
-        settings: {
-          arrows: false
-        }
-      } ]
-    })
-
-    $('.portfolio-content').slick({
-      asNavFor: '.portfolio-images',
-      arrows: false
-    })
-  }
 
   function backToTop () {
     $('html,body').animate({
@@ -97,31 +65,23 @@
     },
     mounted () {
       backToTop()
-      portfolio()
     }
   }
 </script>
-<style>
-  .portfolio-images .slick-next-arrow,
-  .portfolio-images .slick-prev-arrow {
-    color: white;
-    background: #2c302e;
-    padding: 0.2em;
-    font-size: 1.7em;
-    position: absolute;
-    top:50%;
-    transform: translateY(-50%);
-  }
-  .portfolio-images .slick-next-arrow {
-    right: 0;
-    left: auto;
-  }
-  .portfolio-images .slick-prev-arrow {
-    right: auto;
-    left: 0;
-  }
-</style>
 <style scoped>
+  #portfolio {
+    position: relative;
+  }
+  #portfolio:before {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 3.13rem;
+    width: 50%;
+    border-left: 3.13rem solid transparent;
+    border-bottom: 3.13rem solid #2c302e
+  }
   .portfolio {
     background: white;
     margin-top: 10.2rem;
@@ -134,29 +94,21 @@
   .portfolio-heading p {
     line-height: 1.8;
   }
-  .portfolio-images {
-    margin-top: 40px;
+  .portfolio-link {
+    display: block;
+    margin-bottom: 2em;
   }
-  .portfolio-content {
-    max-width: 80%;
-    margin: 50px auto 0;
+  .portfolio-link img {
+    display: block;
   }
-  .portfolio-content h2 {
-    font-size: 1.5em;
-    margin-bottom: 0.7em;
-    font-weight: bold;
-    text-align: center;
-  }
-  .portfolio-content h2 a {
-    color: inherit;
-  }
-  .portfolio-content h2 a:hover, .portfolio-content h2 a:focus {
-    color: #d64933;
+  .portfolio-link:hover,
+  .portfolio-link:focus {
     text-decoration: none;
   }
-  .portfolio-content p {
+  .portfolio-link h2 {
     text-align: center;
-    line-height: 1.8;
+    font-size: 1.2rem;
+    color: #2c302e;
   }
   .portfolio .row {
     padding-top: 4em;
