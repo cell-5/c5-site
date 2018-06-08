@@ -102,13 +102,14 @@ function menuEffects () {
   $('.contact-us-link').on('click', animateSectionScroll(false))
 
   var $menuItem = $('.navbar-nav li a:not(.unscrollable)')
+  $('#logo').addClass('shrink')
 
   $(window).on('scroll', function () {
     highlightMenu($(this), $menuItem)
     if ($(window).scrollTop()) {
       $('#logo').addClass('shrink')
     } else {
-      $('#logo').removeClass('shrink')
+      $('#logo').addClass('shrink')
     }
   })
 }
