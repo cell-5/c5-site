@@ -42,7 +42,7 @@
 
 <style scoped>
   #home {
-    background-image:url('../assets/img/banner.jpg');
+    background-image:url('../assets/img/header.jpg');
     background-size:cover;
     background-color: #2c302e;
     color: #fefffe;
