@@ -9,7 +9,7 @@
         solutions
       </h2>
     </div>
-    <a href="#solutions" class="learn-more-btn call-to-action">Learn more</a>
+    <a href="#solutions" class="learn-more-btn call-to-action">Learn More</a>
   </section>
 </template>
 
@@ -131,8 +131,9 @@
   #home a.learn-more-btn:link,
   #home a.learn-more-btn:visited {
     display: inline-block;
-    background-color: #228f42;
+    background-color: #34b95b;
     color: white;
+    border-radius: 8px;
     padding: 1rem 3rem;
     margin-top: 0.5rem;
     text-decoration: none
