@@ -13,28 +13,30 @@
 
             <div class="collapse navbar-collapse" id="collapsible-navbar">
                 <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#home">
-                            Home
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#solutions">
-                            Solutions
-                        </a>
-                    </li>
-                    <!-- <router-link to="portfolio" tag="li" exact class="nav-item">
-                        <a class="nav-link">Portfolio</a>
-                    </router-link> -->
-                    <li class="nav-item">
-                        <a class="nav-link" href="#profiles">
-                            The Team
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact-us">
-                            Contact Us
-                        </a>
+                		<template v-if="isHomepage">
+	                    <li class="nav-item">
+	                      <a class="nav-link" href="#home">
+	                        Home
+	                      </a>
+	                    </li>
+	                    <li class="nav-item">
+	                     	<a class="nav-link" href="#solutions">
+	                        Solutions
+	                     	</a>
+	                    </li>
+	                    <li class="nav-item">
+	                      <a class="nav-link" href="#profiles">
+	                        The Team
+	                      </a>
+	                    </li>
+                      <router-link to="portfolio" tag="li" class="nav-item">
+                        <a class="nav-link unscrollable">Portfolio</a>
+                      </router-link>
+                    </template>
+                    <li class="nav-item" :class="{ 'nav-cta': !isHomepage }">
+                      <a class="nav-link" href="#contact-us">
+                        Contact Us
+                      </a>
                     </li>
                 </ul>
             </div>
@@ -47,9 +49,10 @@ import $ from 'jquery'
 function highlightMenu ($window, $menuItem) {
   var top = $window.scrollTop()
   var items = $menuItem.map(function () {
-    var target = $(this).attr('href')
-    if (top >= $(target).offset().top) {
-      return target
+    var selector = $(this).attr('href')
+    var $target = $(selector)
+    if ($target.length && top >= $target.offset().top) {
+      return selector
     }
   })
 
@@ -71,9 +74,14 @@ function animateSectionScroll (flag) {
       $('.navbar-toggler').click()
     }
 
-    var section = $(this).attr('href')
+    var selector = $(this).attr('href')
+    var $section = $(selector)
+
+    if (!$section.length) {
+      return
+    }
     $('html,body').animate({
-      scrollTop: section === '#home' || section === '#' ? 0 : $(section).offset().top
+      scrollTop: selector === '#home' || selector === '#' ? 0 : $section.offset().top
     }, 150)
   }
 }
@@ -86,18 +94,17 @@ function animateTopScroll (e) {
 }
 
 function menuEffects () {
-  $('header .nav-link').on('click', animateSectionScroll(true))
+  $('header .nav-link:not(.unscrollable)').on('click', animateSectionScroll(true))
   $('#logo a').on('click', animateTopScroll)
   $('.sitefooter-bottom a').on('click', animateTopScroll)
   $('.learn-more-btn').on('click', animateSectionScroll(false))
   $('.solutions-nav a').on('click', animateSectionScroll(false))
   $('.contact-us-link').on('click', animateSectionScroll(false))
 
-  var $menuItem = $('.navbar-nav li a')
+  var $menuItem = $('.navbar-nav li a:not(.unscrollable)')
 
   $(window).on('scroll', function () {
     highlightMenu($(this), $menuItem)
-    // shrink menu
     if ($(window).scrollTop()) {
       $('#logo').addClass('shrink')
     } else {
@@ -106,6 +113,11 @@ function menuEffects () {
   })
 }
 export default {
+  computed: {
+    isHomepage () {
+      return this.$route.path === '/'
+    }
+  },
   mounted () {
     menuEffects()
   }
@@ -120,7 +132,7 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 9999
+    z-index: 10
 }
 
 header.siteheader {
@@ -209,8 +221,6 @@ nav.navbar {
     padding: 0.5rem
 }
 
-.navbar-toggler
-
 div.navbar-collapse {
     position: relative
 }
@@ -235,6 +245,11 @@ li.nav-item.active a,
 li.nav-item a:hover,
 li.nav-item a:focus {
     opacity: 1;
+}
+
+li.nav-item.nav-cta a {
+  background: #d64933 !important;
+  padding: 0.8em 1.5em;
 }
 
 @media only screen and (min-width: 768px) {

@@ -1,12 +1,30 @@
 <template>
   <div id="app">
+    <vue-progress-bar></vue-progress-bar>
     <router-view></router-view>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'app'
+  name: 'app',
+  mounted () {
+    this.$Progress.finish()
+  },
+  created () {
+    this.$Progress.start()
+    this.$router.beforeEach((to, from, next) => {
+      if (to.meta.progress !== undefined) {
+        let meta = to.meta.progress
+        this.$Progress.parseMeta(meta)
+      }
+      this.$Progress.start()
+      next()
+    })
+    this.$router.afterEach((to, from) => {
+      this.$Progress.finish()
+    })
+  }
 }
 </script>
 
@@ -155,34 +173,16 @@ html {
     font-size: 100%;
 }
 
-@media (min-width: 1440px) {
-    html {
-        font-size: 19px
-    }
+/* Fluid Typography */
+@media screen and (min-width: 1440px) {
+  html {
+    font-size: calc(1.0416666667vw + 4px);
+  }
 }
-
-@media (min-width: 1920px) {
-    html {
-        font-size: 24px
-    }
-}
-
-@media (min-width: 2560px) {
-    html {
-        font-size: 29px
-    }
-}
-
-@media (min-width: 3200px) {
-    html {
-        font-size: 36px
-    }
-}
-
-@media (min-width: 3840px) {
-    html {
-        font-size: 44px
-    }
+@media screen and (min-width: 3840px) {
+  html {
+    font-size: 44px;
+  }
 }
 
 *,

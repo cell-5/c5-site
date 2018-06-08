@@ -100,8 +100,8 @@
 }
 
 .sitefooter img {
-    height: 25px;
-    width: 25px
+    height: 1.5em;
+    width: 1.5em;
 }
 
 .sitefooter a {

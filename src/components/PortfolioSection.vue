@@ -7,32 +7,29 @@
           <div class="row justify-content-md-center align-items-center">
             <div class="col-md-7 col-lg-9">
               <div class="portfolio-heading">
-                <h1 class="text-uppercase">Portfolio</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis eveniet id minima consequatur rem totam hic qui.</p>
+                <h1>Portfolio</h1>
               </div>
               <div class="portfolio-images">
                 <div>
-                  <a href="#">
+                  <a href="http://melissatwigg.co.uk.s3-website-eu-west-1.amazonaws.com/#/" target="_blank">
                     <img :src="MelissaTwiggImg" alt="Melissa Twigg Website" class="img-fluid mx-auto">
                   </a>
                 </div>
                 <div>
-                  <a href="#">
-                    <img :src="PortlandImg" alt="Portland Website" class="img-fluid mx-auto">
+                  <a href="http://portlanddecorating.co.uk/" target="_blank">
+                    <img :src="PortlandImg" alt="Portland Decorating and Design Website" class="img-fluid mx-auto">
                   </a>
                 </div>
               </div>
               <div class="portfolio-content">
                 <div>
                   <article>
-                    <h2><a href="#">Melissa Twigg</a></h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing  elit. Natus qui maiores, hic blanditiis asperiores. Excepturi quae deserunt hic molestias optio dignissimos soluta perspiciatis.</p>
+                    <h2><a href="http://melissatwigg.co.uk.s3-website-eu-west-1.amazonaws.com/#/" target="_blank">Melissa Twigg</a></h2>
                   </article>
                 </div>
                 <div>
                   <article>
-                    <h2><a href="#">Portland</a></h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla reprehenderit sequi alias quibusdam, similique quod laudantium aperiam.</p>
+                    <h2><a target="_blank" href="http://portlanddecorating.co.uk/">Portland Decorating and Design</a></h2>
                   </article>
                 </div>
               </div>
