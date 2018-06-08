@@ -2,11 +2,17 @@
   <section id="home" class="align-items-center">
     <div class="tagline-wrapper">
       <h2 id="tagline">
-        client-first
-        <a href="#solutions" class="tagline-carousel">
-          digital, web, mobile, design, cloud, marketing, e-commerce, legacy code, start-up
-        </a>
-        solutions
+        <div class="row">
+          <p class="top-bottom">client-first</p>
+        </div>
+        <div class="row">
+          <a href="#solutions" class="tagline-carousel middle">
+            digital, web, mobile, design, cloud, marketing, e-commerce, legacy code, start-up
+          </a>
+        </div>
+        <div class="row">
+          <p class="top-bottom">solutions</p>
+        </div>
       </h2>
     </div>
     <a href="#solutions" class="learn-more-btn call-to-action">Learn More</a>
@@ -105,20 +111,20 @@
 
   #home div.tagline-wrapper a:link,
   #home div.tagline-wrapper a:visited {
-    color: #d64933;
+    color: #ffffff;
     text-decoration: none
   }
 
   #home div.tagline-wrapper a:hover {
-    color: #d64933
+    color: #ffffff
   }
 
   #home div.tagline-wrapper a:active {
-    color: #d64933
+    color: #ffffff
   }
 
   #home div.tagline-wrapper a:visited:active {
-    color: #d64933
+    color: #ffffff
   }
 
   #home a.learn-more-btn {
@@ -147,6 +153,20 @@
   #home a.learn-more-btn:active {
     background-color: #228f42;
     color: white
+  }
+
+  .middle {
+    display: inline;
+    background: #2c302f;
+    padding: 20px 10px;
+    word-wrap: break-word;
+  }
+
+  .top-bottom {
+    display: inline;
+    background: #d64a31;
+    padding: 20px 10px;
+    word-wrap: break-word;
   }
 
 </style>
