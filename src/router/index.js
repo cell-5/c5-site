@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Landing from '@/components/Landing'
 import ThankYouSection from '@/components/ThankYouSection'
-import PortFolioSection from '@/components/PortfolioSection'
+import PortfolioSection from '@/components/PortfolioSection'
 
 Vue.use(Router)
 
@@ -22,7 +22,7 @@ export default new Router({
     {
       path: '/portfolio',
       name: 'PortfolioSection',
-      component: PortFolioSection
+      component: PortfolioSection
     }
   ]
 })

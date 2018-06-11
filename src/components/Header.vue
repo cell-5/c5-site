@@ -84,15 +84,15 @@ function menuEffects () {
   $('.learn-more-btn').on('click', animateSectionScroll)
   $('.solutions-nav a').on('click', animateSectionScroll)
   $('.contact-us-link').on('click', animateSectionScroll)
-
-  var $menuItem = $('.navbar-nav li a')
+  var $menuItem = $('.navbar-nav li a:not(.unscrollable)')
+  $('#logo').addClass('shrink')
 
   $(window).on('scroll', function () {
     highlightMenu($(this), $menuItem)
     if ($(window).scrollTop()) {
       $('#logo').addClass('shrink')
     } else {
-      $('#logo').removeClass('shrink')
+      $('#logo').addClass('shrink')
     }
   })
 }
@@ -126,6 +126,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+
 header {
     position: fixed;
     top: 0;
@@ -135,7 +136,7 @@ header {
 }
 
 header.siteheader {
-    background: #2c302e;
+    background-color: rgba(0,0,0,0.5);
 }
 
 header .navbar {
