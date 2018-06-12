@@ -20,16 +20,6 @@
                                                 <span class="fab fa-linkedin"></span>
                                             </a>
                                         </li>
-                                        <!-- <li>
-                                            <a href="#" target="_blank">
-                                                <span class="fab fa-facebook"></span>
-                                            </a>
-                                        </li> -->
-                                        <!-- <li>
-                                            <a href="#" target="_blank">
-                                                <span class="fas fa-file-pdf"></span>
-                                            </a>
-                                        </li> -->
                                     </ul>
                                     <p class="team-member-bio">Peter is our Cloud specialist. He has 15 years experience building all sizes of web, mobile and cloud solutions.
                                     These days he is focused on AWS cloud architectures, but also on consulting on general IT strategy and DevOps.</p>
@@ -59,11 +49,6 @@
                                                 <span class="fab fa-twitter"></span>
                                             </a>
                                         </li>
-                                        <!-- <li>
-                                            <a href="#" target="_blank">
-                                                <span class="fas fa-file-pdf"></span>
-                                            </a>
-                                        </li> -->
                                     </ul>
                                     <p class="team-member-bio">Harry is the team hacker. He is just as comfortable working in legacy codebases as
                                         a new shiny Javascript framework. Currently passionate about VueJs but tech agnostic at heart and always working in the
@@ -91,19 +76,36 @@
                                                     <span class="fab fa-linkedin"></span>
                                                 </a>
                                             </li>
+                                        </ul>
+                                        <p class="team-member-bio">
+                                            Pat is the newest member to Cell 5. He's specialized in REST API development and integration but can put his hands in just about anything. Always get the job done.
+                                        </p>
+                                    </article>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="team-member">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <figure class="team-member-photo">
+                                        <img src="../assets/img/nic-vector.png" alt="Johnnica Castro" class="img-fluid">
+                                    </figure>
+                                </div>
+                                <div class="col-lg-6">
+                                    <article class="team-member-about">
+                                        <h3 class="team-member-name">Johnnica Castro</h3>
+                                        <h4 class="team-member-title">Graphic Designer</h4>
+                                        <ul class="team-member-social">
                                             <!-- <li>
-                                                <a href="#" target="_blank">
-                                                    <span class="fab fa-facebook"></span>
-                                                </a>
-                                            </li> -->
-                                            <!-- <li>
-                                                <a href="#" target="_blank">
-                                                    <span class="fas fa-file-pdf"></span>
+                                                <a href="https://www.linkedin.com/in/pat-bautista/" target="_blank">
+                                                    <span class="fab fa-linkedin"></span>
                                                 </a>
                                             </li> -->
                                         </ul>
                                         <p class="team-member-bio">
-                                            Pat is the newest member to Cell 5. He's specialized in REST API development and integration but can put his hands in just about anything. Always get the job done.
+                                            She is a skilled designer who is passionate about arts. She's interested in different kinds of visuals and focuses in UI/UX designing.
                                         </p>
                                     </article>
                                 </div>
@@ -121,6 +123,9 @@
                         </div>
                         <div>
                             <img src="../assets/img/pat-vector.svg" alt="Pat Bautista">
+                        </div>
+                        <div>
+                            <img src="../assets/img/nic-vector.png" alt="Johnnica Castro">
                         </div>
                     </div>
                 </div>
@@ -143,7 +148,7 @@ function teamCarousel () {
     prevArrow: '<span class="slick-prev-arrow" role="button"><i class="fa fa-angle-left"></i></span>'
   })
   $('.teamNav-slide').slick({
-    slidesToShow: 3,
+    slidesToShow: 4,
     arrows: false,
     asNavFor: '.team',
     focusOnSelect: true
