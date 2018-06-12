@@ -5,10 +5,7 @@
                 <div class="col-lg-3 col-sm-6">
                     <div class="sitefooter-meta">
                         <img src="../assets/img/logo-white.svg" alt="Cell 5 company logo">
-                        <span>client-first
-                            <br/>
-                            <span class="text-orange">digital</span>
-                            <br/>solutions</span>
+                        <span id="mantra">client-first<span class="text-orange">digital</span>solutions</span>
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
@@ -40,6 +37,11 @@
     </footer>
 </template>
 <style scoped>
+#mantra span {
+    display: block;
+    line-height: 1.6;
+    margin-top: 0;
+}
 .sitefooter {
     background: black;
     color: white;
