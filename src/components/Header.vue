@@ -144,6 +144,12 @@ header .navbar {
     margin: 0 auto
 }
 
+@media (min-width: 3840px) {
+  header .navbar {
+    max-width: 3000px;
+  }
+}
+
 #logo {
     line-height: 0;
     text-align: center;

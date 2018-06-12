@@ -244,6 +244,12 @@ h3 {
     max-width: none !important;
 }
 
+@media (min-width: 3840px) {
+  .container {
+    max-width: 3000px !important;
+  }
+}
+
 .bg-dark {
     background-color: #2c302e !important
 }
@@ -262,6 +268,12 @@ h3 {
     padding: 5rem 1rem;
     max-width: 90%;
     margin: 0 auto !important;
+}
+
+@media (min-width: 3840px) {
+  .solution-wrapper {
+    max-width: 3000px;
+  }
 }
 
 @media (min-width: 992px) {

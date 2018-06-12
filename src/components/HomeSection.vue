@@ -89,6 +89,12 @@
     margin: 0 auto
   }
 
+  @media (min-width: 3840px) {
+    #home div.tagline-wrapper {
+      max-width: 3000px;
+    }
+  }
+
   #home div.tagline-wrapper h2 {
     font-size: 4.8em !important;
     font-weight: 700;
