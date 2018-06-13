@@ -98,10 +98,16 @@
   #home div.tagline-wrapper h2 {
     font-size: 4.8em !important;
     font-weight: 700;
-    text-align: left
+    text-align: left;
   }
 
-  @media (max-width: 576px) {
+  @media (max-width: 991px) and (orientation: landscape) {
+    #home div.tagline-wrapper h2 {
+      font-size: 12vh !important;
+    }
+  }
+
+  @media (max-width: 767px) and (orientation: portrait) {
     #home div.tagline-wrapper h2 {
       font-size: 3em !important;
     }
@@ -162,16 +168,17 @@
   }
 
   .middle {
-    display: inline;
     background: #2c302f;
-    padding: 20px 10px;
-    word-wrap: break-word;
   }
 
   .top-bottom {
-    display: inline;
     background: #d64a31;
-    padding: 20px 10px;
+  }
+
+  .middle,
+  .top-bottom {
+    display: inline-block;
+    padding: 7px !important;
     word-wrap: break-word;
   }
 
