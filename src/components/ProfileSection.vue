@@ -98,11 +98,11 @@
                                         <h3 class="team-member-name">Johnnica Castro</h3>
                                         <h4 class="team-member-title">Graphic Designer</h4>
                                         <ul class="team-member-social">
-                                            <!-- <li>
-                                                <a href="https://www.linkedin.com/in/pat-bautista/" target="_blank">
+                                            <li>
+                                                <a href="https://www.linkedin.com/in/johnnica-castro-723451163" target="_blank">
                                                     <span class="fab fa-linkedin"></span>
                                                 </a>
-                                            </li> -->
+                                            </li>
                                         </ul>
                                         <p class="team-member-bio">
                                             She is a skilled designer who is passionate about arts. She's interested in different kinds of visuals and focuses in UI/UX designing.
