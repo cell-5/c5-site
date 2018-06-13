@@ -340,6 +340,7 @@ export default {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
+  z-index: 99;
 }
 .slick-next-arrow {
   left: 100%;
