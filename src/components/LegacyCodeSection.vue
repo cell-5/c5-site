@@ -17,7 +17,7 @@
                                 <i class="fas fa-check text-highlight"></i>Java monolith to clojure microservices
                             </li>
                             <li>
-                                <i class="fas fa-check text-highlight"></i>Wordpres reverse engineering and revitalization
+                                <i class="fas fa-check text-highlight"></i>Wordpress reverse engineering and revitalization
                             </li>
                             <li>
                                 <i class="fas fa-check text-highlight"></i>Cobol mainframe to Java Spring services
