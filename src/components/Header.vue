@@ -7,7 +7,7 @@
                 </router-link>
             </h1>
 
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsible-navbar">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsible-navbar" aria-controls="collapsible-navbar" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
@@ -34,10 +34,6 @@
 <script>
 import $ from 'jquery'
 function scrollToSection (selector) {
-  if (window.innerWidth <= 767) {
-    $('.navbar-toggler').click()
-  }
-
   var $section = $(selector)
 
   if (!$section.length) {
