@@ -13,7 +13,7 @@
 
             <div class="collapse navbar-collapse" id="collapsible-navbar">
                 <ul class="navbar-nav">
-	                <li class="nav-item"><a @click="scrollOrRedirect" class="nav-link" href="#home">Home</a></li>
+	                <li class="nav-item active"><a @click="scrollOrRedirect" class="nav-link" href="#home">Home</a></li>
 	                <li class="nav-item"><a @click="scrollOrRedirect" class="nav-link" href="#solutions">Solutions</a></li>
 	                <li class="nav-item"><a @click="scrollOrRedirect" class="nav-link" href="#profiles">The Team</a></li>
                   <template v-if="isPortfolioPage">
