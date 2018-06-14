@@ -21,7 +21,7 @@
                   </template>
                   <template v-else>
                     <router-link to="portfolio" tag="li" class="nav-item">
-                      <a class="nav-link">Portfolio</a>
+                      <a class="nav-link" data-toggle="collapse" data-target="#collapsible-navbar">Portfolio</a>
                     </router-link>
                   </template>
                   <li class="nav-item"><a id="contact-link" class="nav-link" href="#contact-us">Contact Us</a></li>
@@ -90,6 +90,10 @@ function menuEffects () {
     } else {
       $('#logo').addClass('shrink')
     }
+  })
+
+  $('.navbar-nav>li>a').on('click', function () {
+    $('.navbar-collapse').collapse('hide')
   })
 }
 export default {
