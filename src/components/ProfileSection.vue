@@ -301,7 +301,8 @@ export default {
 .team-member-social>li a {
     color: white
 }
-
+</style>
+<style>
 .teamNav {
     margin: 2em auto 0;
     max-width: 31.25rem
@@ -332,8 +333,6 @@ export default {
     -webkit-transform: translate3d(0px, 0px, 0px) !important;
     transform: translate3d(0px, 0px, 0px) !important
 }
-</style>
-<style>
 .slick-next-arrow, .slick-prev-arrow {
   cursor: pointer;
   font-size: 2rem;
