@@ -12,7 +12,8 @@ export default new Router({
     {
       path: '/',
       name: 'Landing',
-      component: Landing
+      component: Landing,
+      alias: '/index.html'
     },
     {
       path: '/thank-you',
