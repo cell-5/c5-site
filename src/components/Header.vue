@@ -24,7 +24,7 @@
                       <a class="nav-link" data-toggle="collapse" data-target="#collapsible-navbar">Portfolio</a>
                     </router-link>
                   </template>
-                  <li class="nav-item"><a id="contact-link" class="nav-link" href="#contact-us">Contact Us</a></li>
+                  <li class="nav-item"><a @click="scrollOrRedirect" class="nav-link" href="#contact-us">Contact Us</a></li>
                 </ul>
             </div>
         </nav>
@@ -74,7 +74,7 @@ function highlightMenu ($window, $menuItem) {
     .addClass('active')
 }
 function menuEffects () {
-  $('#portfolio-link, #contact-link').on('click', animateSectionScroll)
+  $('#portfolio-link').on('click', animateSectionScroll)
   $('#logo a').on('click', animateTopScroll)
   $('.sitefooter-bottom a').on('click', animateTopScroll)
   $('.learn-more-btn').on('click', animateSectionScroll)

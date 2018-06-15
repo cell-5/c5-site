@@ -29,9 +29,11 @@
               </div>
             </div>
           </div>
+          <div id="cta" class="text-center">
+            <router-link to="/#solutions" class="learn-more-btn call-to-action">Learn More</router-link>
+          </div>
         </div>
       </section>
-      <ContactSection></ContactSection>
       <FooterSection></FooterSection>
     </main>
   </div>
@@ -39,7 +41,6 @@
 
 <script>
   import Header from './Header.vue'
-  import ContactSection from './ContactSection.vue'
   import FooterSection from './FooterSection.vue'
   import MelissaTwiggImg from '../assets/img/mtwigg-screenshot.jpg'
   import PortlandImg from '../assets/img/portland-screenshot.jpg'
@@ -60,7 +61,6 @@
     },
     components: {
       Header,
-      ContactSection,
       FooterSection
     },
     mounted () {
@@ -72,7 +72,7 @@
   .portfolio {
     position: relative;
     background: white;
-    margin-top: 10.2rem;
+    margin-top: 4.1rem;
   }
   .portfolio:before {
     content: '';
@@ -82,7 +82,10 @@
     height: 3.13rem;
     width: 50%;
     border-left: 3.13rem solid transparent;
-    border-bottom: 3.13rem solid #2c302e
+    border-bottom: 3.13rem solid black
+  }
+  .portfolio .container {
+    padding-bottom: 5em;
   }
   .portfolio-heading {
     text-align: center;
@@ -94,7 +97,6 @@
   }
   .portfolio-link {
     display: block;
-    margin-bottom: 2em;
   }
   .portfolio-link img {
     display: block;
@@ -109,12 +111,27 @@
     color: #2c302e;
   }
   .portfolio .row {
-    padding-top: 4em;
-    padding-bottom: 4em;
+    padding-top: 2em;
+    padding-bottom: 2em;
   }
-  @media (min-width: 1440px) {
-    .portfolio .row {
-      height: 100vh;
-    }
+  .portfolio a.learn-more-btn:link,
+  .portfolio a.learn-more-btn:visited {
+    display: inline-block;
+    background-color: #34b95b;
+    color: white;
+    border-radius: 8px;
+    padding: 1rem 3rem;
+    margin-top: 0.5rem;
+    text-decoration: none
+  }
+
+  .portfolio a.learn-more-btn:hover {
+    background-color: #269f49;
+    color: white
+  }
+
+  .portfolio a.learn-more-btn:active {
+    background-color: #228f42;
+    color: white
   }
 </style>
