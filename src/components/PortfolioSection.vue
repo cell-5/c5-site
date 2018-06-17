@@ -112,16 +112,7 @@
     background: white;
     margin-top: 4.1rem;
   }
-  .portfolio:before {
-    content: '';
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    height: 3.13rem;
-    width: 50%;
-    border-left: 3.13rem solid transparent;
-    border-bottom: 3.13rem solid black
-  }
+
   .portfolio .container {
     padding-bottom: 5em;
   }
