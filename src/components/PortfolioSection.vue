@@ -7,23 +7,36 @@
           <div class="row justify-content-md-center align-items-center">
             <div class="col-lg-11">
               <div class="portfolio-heading">
-                <h1>Portfolio</h1>
               </div>
               <div class="row justify-content-md-center">
-                <div class="col-md-6">
+
+                <div class="client col-md-6">
                   <a class="portfolio-link" target="_blank" href="http://melissatwigg.co.uk.s3-website-eu-west-1.amazonaws.com/#/">
+
                     <figure>
                       <img :src="MelissaTwiggImg" class="img-fluid mx-auto" alt="Melissa Twigg Portfolio Site">
                     </figure>
-                    <h2>Melissa Twigg</h2>
+
+                    <div class="overlay">
+                      <p>Meliss Twigg</p>
+                      <p>
+                        Website and hosting
+                      </p>
+                    </div>
                   </a>
                 </div>
-                <div class="col-md-6">
+
+                <div class="client col-md-6">
                   <a class="portfolio-link" target="_blank" href="http://portlanddecorating.co.uk/">
                     <figure>
                       <img :src="PortlandImg" class="img-fluid mx-auto" alt="Portland Decorating and Design Website">
                     </figure>
-                    <h2>Portland Decorating and Design</h2>
+                    <div class="overlay">
+                      <p>Portland</p>
+                      <p>
+                        Web rescue
+                      </p>
+                    </div>
                   </a>
                 </div>
               </div>
@@ -134,4 +147,24 @@
     background-color: #228f42;
     color: white
   }
+.client{
+  padding: 15px;
+}
+  .client:hover .overlay {
+  opacity: 0.3;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color:  black;
+}
+
+
 </style>
