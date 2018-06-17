@@ -13,7 +13,7 @@
                                 </div>
                                 <div class="col-lg-6">
                                     <h3 class="team-member-name">Peter Barry</h3>
-                                    <h4 class="team-member-title">Fullstack Developer</h4>
+                                    <h4 class="team-member-title">Cloud Architect</h4>
                                     <ul class="team-member-social">
                                         <li>
                                             <a href="https://uk.linkedin.com/in/peterbarry/" target="_blank">
@@ -21,8 +21,8 @@
                                             </a>
                                         </li>
                                     </ul>
-                                    <p class="team-member-bio">Peter is our Cloud specialist. He has 15 years experience building all sizes of web, mobile and cloud solutions.
-                                    These days he is focused on AWS cloud architectures, but also on consulting on general IT strategy and DevOps.</p>
+                                    <p class="team-member-bio">Peter is our Cloud specialist. He has 15 years experience building web, mobile and cloud solutions.
+                                    He is passionate about cost-effective and scalable cloud architectures and consults on general I.T. strategy and DevOps.</p>
                                 </div>
                             </div>
                         </div>
@@ -37,7 +37,7 @@
                                 </div>
                                 <div class="col-lg-6">
                                     <h3 class="team-member-name">Harry Wynn-Williams</h3>
-                                    <h4 class="team-member-title">Fullstack Developer</h4>
+                                    <h4 class="team-member-title">Fullstack</br>(front-end specialist)</h4>
                                     <ul class="team-member-social">
                                         <li>
                                             <a href="https://www.linkedin.com/in/harry-wynn-williams-59b89040/" target="_blank">
@@ -69,7 +69,7 @@
                                 <div class="col-lg-6">
                                     <article class="team-member-about">
                                         <h3 class="team-member-name">Pat Bautista</h3>
-                                        <h4 class="team-member-title">Back-end Developer</h4>
+                                        <h4 class="team-member-title">Fullstack</br>(back-end specialist)</h4>
                                         <ul class="team-member-social">
                                             <li>
                                                 <a href="https://www.linkedin.com/in/pat-bautista/" target="_blank">
@@ -78,7 +78,7 @@
                                             </li>
                                         </ul>
                                         <p class="team-member-bio">
-                                            Pat is the newest member to Cell 5. He's specialized in REST API development and integration but can put his hands in just about anything. Always get the job done.
+                                            Pat specializes in REST API development and integration. He has already built a reputation in the team for being able to solve any problem he is given.
                                         </p>
                                     </article>
                                 </div>
@@ -105,7 +105,7 @@
                                             </li>
                                         </ul>
                                         <p class="team-member-bio">
-                                            She is a skilled designer who is passionate about arts. She's interested in different kinds of visuals and focuses in UI/UX designing.
+                                            She is a skilled designer who is passionate about arts. She's interested in different kinds of visuals and focuses on UI/UX designing.
                                         </p>
                                     </article>
                                 </div>
@@ -236,7 +236,8 @@ export default {
 
 .team-member-title {
     margin: 0 0 20px;
-    text-transform: uppercase
+    text-transform: uppercase;
+    font-size: 1rem
 }
 
 .team-member-bio {
