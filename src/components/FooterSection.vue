@@ -5,7 +5,7 @@
                 <div class="col-lg-3 col-sm-6">
                     <div class="sitefooter-meta">
                         <img src="../assets/img/logo-white.svg" alt="Cell 5 company logo">
-                        <span id="mantra">client-first<span class="text-orange">digital</span>solutions</span>
+                        <span id="mantra">client-first</span>&nbsp;<span class="text-orange">digital</span>&nbsp;<span>solutions</span>
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
@@ -23,18 +23,14 @@
                 </div>
                 <div class="col-lg-3 col-sm-6">
                     <div class="sitefooter-meta">
-                        <i class="fas fa-map-marker text-orange"></i>
-                        <address>
-                            Fulham &amp; Chelmsford, UK<br>
-                            San Fernando City, PH
-                        </address>
+                        <i class="fas fa-map-marker text-orange"></i> England & Philippines
                     </div>
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12"><br>
-                    <p class="footer-cell">Cell 5 Limited (1188558) - Incorporated 6 Feb 2018 - Registered Address:
-Ground Floor, 2 Woodberry Grove, London, England, N12 0DR</p>
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <div class="footer-cell">Cell 5 Limited (1188558) - 6 Feb 2018 - Registered Address:<address>
+Ground Floor, 2 Woodberry Grove, London, England, N12 0DR</address></div>
                 </div>
             </div>
         </div>
@@ -42,8 +38,17 @@ Ground Floor, 2 Woodberry Grove, London, England, N12 0DR</p>
 </template>
 <style scoped>
 .footer-cell {
-    font-size: 12px;
-    color: #E0E0E0;
+  margin-top: 1.2em;
+    font-size: 0.75em;
+    color: #888888;
+}
+
+img {
+  height: 20px;
+}
+
+address{
+    display: inline-block;
 }
 
 #mantra span {
@@ -54,9 +59,10 @@ Ground Floor, 2 Woodberry Grove, London, England, N12 0DR</p>
 .sitefooter {
     background: black;
     color: white;
-    padding-bottom: 2em;
-    padding-top: 2em;
-    text-align: center
+    padding-bottom: 1em;
+    padding-top: 1em;
+    text-align: center;
+    line-height: 1em;
 }
 
 @media (max-width: 767px) {
@@ -68,55 +74,28 @@ Ground Floor, 2 Woodberry Grove, London, England, N12 0DR</p>
 
 @media (min-width: 992px) {
     .sitefooter [class*=col-lg-3]:not( last-of-type) {
-        border-right: 1px dashed rgba(255, 255, 255, 0.2)
+        border-right: 1px dashed rgba(255, 255, 255, 0.2);
     }
 }
 
 @media (max-width: 991px) {
     .sitefooter [class*=col-lg-3]:nth-child(-n+2) {
-        padding-bottom: 10px;
-        border-bottom: 1px dashed rgba(255, 255, 255, 0.2)
+        border-bottom: 1px dashed rgba(255, 255, 255, 0.2);
     }
 }
 
 @media (max-width: 767px) {
     .sitefooter [class*=col-lg-3]:not( last-of-type) {
-        padding-bottom: 10px;
-        border-bottom: 1px dashed rgba(255, 255, 255, 0.2)
+        border-bottom: 1px dashed rgba(255, 255, 255, 0.2);
     }
-}
-
-.sitefooter-meta {
-    max-width: 80%;
-    margin: 1em auto 0
-}
-
-.sitefooter-meta i {
-    display: block;
-    font-size: 1.4rem;
-    margin-bottom: 15px
-}
-
-.sitefooter-meta address,
-.sitefooter-meta span,
-.sitefooter-meta a {
-    display: block;
-    font-weight: bold;
-    margin-top: 10px
-}
-
-.sitefooter-meta span,
-.sitefooter-meta a {
-    font-size: 1.2rem
-}
-
-.sitefooter img {
-    height: 1.5em;
-    width: 1.5em;
 }
 
 .sitefooter a {
     color: white
+}
+.sitefooter-meta{
+    margin-top: 0.3em;
+     margin-bottom: 0.3em;
 }
 </style>
 
