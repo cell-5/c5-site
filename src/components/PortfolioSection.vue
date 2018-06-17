@@ -6,10 +6,7 @@
         <div class="container">
           <div class="row justify-content-md-center align-items-center">
             <div class="col-lg-11">
-              <div class="portfolio-heading">
-              </div>
               <div class="row justify-content-md-center">
-
                 <div class="client col-md-6">
                   <a class="portfolio-link" target="_blank" href="http://melissatwigg.co.uk.s3-website-eu-west-1.amazonaws.com/#/">
 
@@ -39,6 +36,32 @@
                     </div>
                   </a>
                 </div>
+                <div class="client col-md-6">
+                  <a class="portfolio-link" target="_blank" href="http://good2rent.co.uk/">
+                    <figure>
+                      <img :src="Good2RentImg" class="img-fluid mx-auto" alt="good2rent website">
+                    </figure>
+                    <div class="overlay">
+                      <p>good2Rent</p>
+                      <p>
+                        Cloud migration & start-up app dev
+                      </p>
+              </div>
+                  </a>
+            </div>
+                <div class="client col-md-6">
+                  <a class="portfolio-link" target="_blank" href="http://myval.co.uk/">
+                    <figure>
+                      <img :src="MyValImg" class="img-fluid mx-auto" alt="myVal website">
+                    </figure>
+                    <div class="overlay">
+                      <p>myVal</p>
+                      <p>
+                        Web rescue & API integrations
+                      </p>
+          </div>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -57,6 +80,8 @@
   import FooterSection from './FooterSection.vue'
   import MelissaTwiggImg from '../assets/img/mtwigg-screenshot.jpg'
   import PortlandImg from '../assets/img/portland-screenshot.jpg'
+  import Good2RentImg from '../assets/img/good2rent-screenshot.jpg'
+  import MyValImg from '../assets/img/myval-screenshot.jpg'
   import $ from 'jquery'
 
   function backToTop () {
@@ -69,7 +94,7 @@
     name: 'portfolio',
     data () {
       return {
-        MelissaTwiggImg, PortlandImg
+        MelissaTwiggImg, PortlandImg, Good2RentImg, MyValImg
       }
     },
     components: {
@@ -152,6 +177,11 @@
 }
   .client:hover .overlay {
   opacity: 0.3;
+}
+
+.img-fluid{
+  height: 100%;
+  width: 100%;
 }
 .overlay {
   position: absolute;
