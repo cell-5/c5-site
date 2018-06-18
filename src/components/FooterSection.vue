@@ -25,17 +25,27 @@
                     <div class="sitefooter-meta">
                         <i class="fas fa-map-marker text-orange"></i>
                         <address>
-                            Ground Floor, 2 Woodberry Grove, London, England, N12 0DR<br>
                             Fulham &amp; Chelmsford, UK<br>
                             San Fernando City, PH
                         </address>
                     </div>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12"><br>
+                    <p class="footer-cell">Cell 5 Limited (1188558) - Incorporated 6 Feb 2018 - Registered Address:
+Ground Floor, 2 Woodberry Grove, London, England, N12 0DR</p>
+                </div>
+            </div>
         </div>
     </footer>
 </template>
 <style scoped>
+.footer-cell {
+    font-size: 12px;
+    color: #E0E0E0;
+}
+
 #mantra span {
     display: block;
     line-height: 1.6;
