@@ -34,7 +34,7 @@
                         <img class="title-break" src="../assets/img/cell-5-logo-black.svg" alt="cell5">
                       </figure>
                       <p>
-                        Web rescue
+                        Web rescue & On-site SEO
                       </p>
                     </div>
                   </a>
