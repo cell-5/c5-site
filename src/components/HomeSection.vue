@@ -1,5 +1,5 @@
 <template>
-  <section id="home" class="align-items-center">
+  <section id="home" class="align-items-center"> 
     <div class="tagline-wrapper">
       <h2 id="tagline">
         <div class="row">
@@ -48,7 +48,7 @@
 
 <style scoped>
   #home {
-    background-image:url('../assets/img/header-opt.jpg');
+    background-image:url('../assets/img/header-progressive.jpg');
     background-size:cover;
     background-color: #2c302e;
     color: #fefffe;
