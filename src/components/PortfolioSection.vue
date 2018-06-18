@@ -9,27 +9,30 @@
               <div class="row justify-content-md-center">
                 <div class="client col-md-6">
                   <a class="portfolio-link" target="_blank" href="http://melissatwigg.co.uk.s3-website-eu-west-1.amazonaws.com/#/">
-
-                    <figure>
+                    <figure class="client-image">
                       <img :src="MelissaTwiggImg" class="img-fluid mx-auto" alt="Melissa Twigg Portfolio Site">
                     </figure>
-
                     <div class="overlay">
-                      <p>Meliss Twigg</p>
+                      <h5>Melissa Twigg</h5>
+                      <figure>
+                        <img class="title-break" src="../assets/img/cell-5-logo-black.svg" alt="cell5">
+                      </figure>
                       <p>
-                        Website and hosting
+                        Website & Hosting
                       </p>
                     </div>
                   </a>
                 </div>
-
                 <div class="client col-md-6">
                   <a class="portfolio-link" target="_blank" href="http://portlanddecorating.co.uk/">
-                    <figure>
+                    <figure class="client-image">
                       <img :src="PortlandImg" class="img-fluid mx-auto" alt="Portland Decorating and Design Website">
                     </figure>
                     <div class="overlay">
-                      <p>Portland</p>
+                      <h5>Portland Decorating & Design</h5>
+                       <figure>
+                        <img class="title-break" src="../assets/img/cell-5-logo-black.svg" alt="cell5">
+                      </figure>
                       <p>
                         Web rescue
                       </p>
@@ -38,28 +41,34 @@
                 </div>
                 <div class="client col-md-6">
                   <a class="portfolio-link" target="_blank" href="http://good2rent.co.uk/">
-                    <figure>
+                    <figure class="client-image">
                       <img :src="Good2RentImg" class="img-fluid mx-auto" alt="good2rent website">
                     </figure>
                     <div class="overlay">
-                      <p>good2Rent</p>
+                      <h5>good2rent</h5>
+                      <figure>
+                        <img class="title-break" src="../assets/img/cell-5-logo-black.svg" alt="cell5">
+                      </figure>
                       <p>
                         Cloud migration & start-up app dev
                       </p>
-              </div>
+                    </div>
                   </a>
-            </div>
+                </div>
                 <div class="client col-md-6">
                   <a class="portfolio-link" target="_blank" href="http://myval.co.uk/">
-                    <figure>
+                    <figure class="client-image">
                       <img :src="MyValImg" class="img-fluid mx-auto" alt="myVal website">
                     </figure>
                     <div class="overlay">
-                      <p>myVal</p>
+                      <h5>myVal</h5>
+                         <figure>
+                        <img class="title-break" src="../assets/img/cell-5-logo-black.svg" alt="cell5">
+                      </figure>
                       <p>
                         Web rescue & API integrations
                       </p>
-          </div>
+                    </div>
                   </a>
                 </div>
               </div>
@@ -78,7 +87,7 @@
 <script>
   import Header from './Header.vue'
   import FooterSection from './FooterSection.vue'
-  import MelissaTwiggImg from '../assets/img/mtwigg-screenshot.jpg'
+  import MelissaTwiggImg from '../assets/img/mtwigg-screenshot-2.jpg'
   import PortlandImg from '../assets/img/portland-screenshot.jpg'
   import Good2RentImg from '../assets/img/good2rent-screenshot.jpg'
   import MyValImg from '../assets/img/myval-screenshot.jpg'
@@ -165,9 +174,13 @@
   }
 .client{
   padding: 15px;
+  text-align: center;
+  border-radius: 25px;
 }
-  .client:hover .overlay {
-  opacity: 0.3;
+.client:hover .overlay {
+  opacity: .7;
+  color: black
+  
 }
 
 .img-fluid{
@@ -175,6 +188,8 @@
   width: 100%;
 }
 .overlay {
+  padding-top: 2em;
+  padding-bottom: 2em;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -184,8 +199,22 @@
   width: 100%;
   opacity: 0;
   transition: .5s ease;
-  background-color:  black;
+  background-color:  white;
 }
 
+.client-image{
+   border-radius: 97px;
 
+}
+.overlay .title-break{
+  height: 16px;
+  display: inline;
+}
+@media (hover:none){
+
+ .client:hover { 
+    /* suppress hover effect on devices that don't support hover fully */
+ background: none;
+  }
+}
 </style>
