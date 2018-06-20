@@ -184,7 +184,7 @@
 
   @media (max-width: 767px) and (orientation: portrait) {
     #home {
-      background-image:url('../assets/img/header-mobile.jpg');
+      background-image:url('../assets/img/header-mobile-progressive.jpg');
     }
 }
 
