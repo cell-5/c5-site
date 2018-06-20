@@ -50,9 +50,8 @@
                                             </a>
                                         </li>
                                     </ul>
-                                    <p class="team-member-bio">Harry is the team hacker. He is just as comfortable working in legacy codebases as
-                                        a new shiny Javascript framework. Currently passionate about VueJs but tech agnostic at heart and always working in the
-                                        client's best interest. Get in touch if you need our resident web doctor to give your site an MOT.
+                                    <p class="team-member-bio"> Harry is the team hacker. He has experience of building web and mobile apps at an investment bank and in the gaming industry. 
+                                        He loves building complex UIs, especially when it's with Vue.js.
                                     </p>
                                 </div>
                             </div>

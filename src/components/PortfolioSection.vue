@@ -34,7 +34,7 @@
                         <img class="title-break" src="../assets/img/cell-5-logo-black.svg" alt="cell5">
                       </figure>
                       <p>
-                        Web rescue
+                        Web rescue & On-site SEO
                       </p>
                     </div>
                   </a>
@@ -172,21 +172,18 @@
     background-color: #228f42;
     color: white
   }
+
 .client{
   padding: 15px;
   text-align: center;
   border-radius: 25px;
 }
+
 .client:hover .overlay {
   opacity: .7;
   color: black
-  
 }
 
-.img-fluid{
-  height: 100%;
-  width: 100%;
-}
 .overlay {
   padding-top: 2em;
   padding-bottom: 2em;
@@ -201,6 +198,11 @@
   transition: .5s ease;
   background-color:  white;
 }
+.img-fluid{
+  height: 100%;
+  width: 100%;
+}
+
 
 .client-image{
    border-radius: 97px;
@@ -210,11 +212,12 @@
   height: 16px;
   display: inline;
 }
-@media (hover:none){
-
- .client:hover { 
-    /* suppress hover effect on devices that don't support hover fully */
- background: none;
+@media screen and (max-width: 600px) {
+  .overlay {
+    visibility: hidden;
+    display: none;
   }
 }
+
+
 </style>
