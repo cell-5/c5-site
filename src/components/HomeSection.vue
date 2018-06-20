@@ -182,5 +182,11 @@
     word-wrap: break-word;
   }
 
+  @media (max-width: 767px) and (orientation: portrait) {
+    #home {
+      background-image:url('../assets/img/header-mobile.jpg');
+    }
+}
+
 </style>
 
