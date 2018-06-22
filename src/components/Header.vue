@@ -165,6 +165,10 @@ header .navbar {
         -webkit-transition: all 0.2s linear;
         transition: all 0.2s linear
     }
+
+    header.siteheader {
+        background-color: rgba(0,0,0);
+    }
 }
 
 @media (max-width: 767px) and (orientation: landscape) {
@@ -172,6 +176,10 @@ header .navbar {
         padding: 0 0.5rem;
         -webkit-transition: all 0.2s linear;
         transition: all 0.2s linear
+    }
+
+    header.siteheader {
+        background-color: rgba(0,0,0);
     }
 }
 
@@ -212,6 +220,10 @@ header .navbar {
         -webkit-transition: all 0.2s linear;
         transition: all 0.2s linear
     }
+
+    header.siteheader {
+        background-color: rgba(0,0,0);
+    }
 }
 
 @media (max-width: 767px) and (orientation: landscape) {
@@ -220,6 +232,10 @@ header .navbar {
         width: 50px;
         -webkit-transition: all 0.2s linear;
         transition: all 0.2s linear
+    }
+
+    header.siteheader {
+        background-color: rgba(0,0,0);
     }
 }
 
@@ -256,6 +272,10 @@ li.nav-item a:focus {
     ul.navbar-nav {
         position: absolute;
         right: 0
+    }
+
+    header.siteheader {
+        background-color: rgba(0,0,0);
     }
 }
 </style>
