@@ -8,7 +8,7 @@
             <div class="col-lg-11">
               <div class="row justify-content-md-center">
                 <div class="client col-md-6">
-                  <a class="portfolio-link" target="_blank" href="http://melissatwigg.co.uk.s3-website-eu-west-1.amazonaws.com/#/">
+                  <a class="portfolio-link" target="_blank" href="http://melissatwigg.co.uk">
                     <figure class="client-image">
                       <img :src="MelissaTwiggImg" class="img-fluid mx-auto" alt="Melissa Twigg Portfolio Site">
                     </figure>
