@@ -166,9 +166,11 @@ header .navbar {
         transition: all 0.2s linear
     }
 
-    header.siteheader {
+    .navbar-collapse {
         background-color: rgba(0,0,0);
     }
+
+    .navbar > .container { max-width: 100%; padding: 0; }
 }
 
 @media (max-width: 767px) and (orientation: landscape) {
@@ -178,9 +180,11 @@ header .navbar {
         transition: all 0.2s linear
     }
 
-    header.siteheader {
+    .navbar-collapse {
         background-color: rgba(0,0,0);
     }
+
+    .navbar > .container { max-width: 100%; padding: 0; }
 }
 
 #logo * {
@@ -221,9 +225,11 @@ header .navbar {
         transition: all 0.2s linear
     }
 
-    header.siteheader {
+    .navbar-collapse {
         background-color: rgba(0,0,0);
     }
+
+    .navbar > .container { max-width: 100%; padding: 0; }
 }
 
 @media (max-width: 767px) and (orientation: landscape) {
@@ -234,9 +240,11 @@ header .navbar {
         transition: all 0.2s linear
     }
 
-    header.siteheader {
+    .navbar-collapse {
         background-color: rgba(0,0,0);
     }
+
+    .navbar > .container { max-width: 100%; padding: 0; }
 }
 
 nav.navbar {
@@ -274,8 +282,10 @@ li.nav-item a:focus {
         right: 0
     }
 
-    header.siteheader {
+    .navbar-collapse {
         background-color: rgba(0,0,0);
     }
+
+    .navbar > .container { max-width: 100%; padding: 0; }
 }
 </style>
