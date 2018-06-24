@@ -170,7 +170,7 @@ header .navbar {
         background-color: rgba(0,0,0);
     }
 
-    .navbar > .container { max-width: 100%; padding: 0; }
+    .navbar > .container { max-width: 100%; padding: 0 }
 }
 
 @media (max-width: 767px) and (orientation: landscape) {
@@ -218,6 +218,10 @@ header .navbar {
 }
 
 @media (max-width: 767px) and (orientation: portrait) {
+
+    header.siteheader {
+         background-color: black;
+    }
     #logo a img {
         height: 3.13rem;
         width: 3.13rem;
@@ -233,6 +237,11 @@ header .navbar {
 }
 
 @media (max-width: 767px) and (orientation: landscape) {
+
+    header.siteheader {
+        background-color: black;
+    }
+
     #logo a img {
         height: 50px;
         width: 50px;
