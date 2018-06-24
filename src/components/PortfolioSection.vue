@@ -9,67 +9,95 @@
               <div class="row justify-content-md-center">
                 <div class="client col-md-6">
                   <a class="portfolio-link" target="_blank" href="http://melissatwigg.co.uk">
-                    <figure class="client-image">
-                      <img :src="MelissaTwiggImg" class="img-fluid mx-auto" alt="Melissa Twigg Portfolio Site">
+                    <figure>
+                      <img class="client-image img-fluid mx-auto" :src="melissa.image" alt="Melissa Twigg Portfolio Site">
                     </figure>
                     <div class="overlay">
-                      <h5>Melissa Twigg</h5>
+                      <h5>{{ melissa.title }}</h5>
                       <figure>
                         <img class="title-break" src="../assets/img/cell-5-logo-black.svg" alt="cell5">
                       </figure>
                       <p>
-                        Website & Hosting
+                        {{ melissa.service }}
                       </p>
                     </div>
                   </a>
+                  <div class="mobile-caption">
+                    <h5>{{ melissa.title }}</h5>
+                    <p>{{ melissa.service }}</p>
+                       <div>
+                        <img class="title-break" src="../assets/img/cell-5-logo-black.svg" alt="cell5">
+                      </div>
+                  </div>
                 </div>
                 <div class="client col-md-6">
                   <a class="portfolio-link" target="_blank" href="http://portlanddecorating.co.uk/">
-                    <figure class="client-image">
-                      <img :src="PortlandImg" class="img-fluid mx-auto" alt="Portland Decorating and Design Website">
+                    <figure>
+                      <img :src="portland.image" class="img-fluid mx-auto client-image" alt="Portland Decorating and Design Website">
                     </figure>
                     <div class="overlay">
-                      <h5>Portland Decorating & Design</h5>
+                      <h5>{{ portland.title }}</h5>
                        <figure>
                         <img class="title-break" src="../assets/img/cell-5-logo-black.svg" alt="cell5">
                       </figure>
                       <p>
-                        Web rescue & On-site SEO
+                        {{ portland.service }}
                       </p>
                     </div>
                   </a>
+                  <div class="mobile-caption">
+                    <h5>{{ portland.title }}</h5>
+                    <p>{{ portland.service }}</p>
+                       <div>
+                        <img class="title-break" src="../assets/img/cell-5-logo-black.svg" alt="cell5">
+                      </div>
+                  </div>
                 </div>
                 <div class="client col-md-6">
                   <a class="portfolio-link" target="_blank" href="http://good2rent.co.uk/">
-                    <figure class="client-image">
-                      <img :src="Good2RentImg" class="img-fluid mx-auto" alt="good2rent website">
+                    <figure>
+                      <img :src="g2r.image" class="img-fluid mx-auto client-image" alt="good2rent website">
                     </figure>
                     <div class="overlay">
-                      <h5>good2rent</h5>
+                      <h5>{{g2r.title}}</h5>
                       <figure>
                         <img class="title-break" src="../assets/img/cell-5-logo-black.svg" alt="cell5">
                       </figure>
                       <p>
-                        Cloud migration & start-up app dev
+                        {{g2r.service}}
                       </p>
                     </div>
                   </a>
+                   <div class="mobile-caption">
+                    <h5>{{ g2r.title }}</h5>
+                    <p>{{ g2r.service }}</p>
+                       <div>
+                        <img class="title-break" src="../assets/img/cell-5-logo-black.svg" alt="cell5">
+                      </div>
+                  </div>
                 </div>
                 <div class="client col-md-6">
                   <a class="portfolio-link" target="_blank" href="http://myval.co.uk/">
-                    <figure class="client-image">
-                      <img :src="MyValImg" class="img-fluid mx-auto" alt="myVal website">
+                    <figure>
+                      <img :src="myVal.image" class="img-fluid mx-auto client-image" alt="myVal website">
                     </figure>
                     <div class="overlay">
-                      <h5>myVal</h5>
-                         <figure>
-                        <img class="title-break" src="../assets/img/cell-5-logo-black.svg" alt="cell5">
-                      </figure>
+                      <h5>{{ myVal.title }}</h5>
+                        <figure>
+                          <img class="title-break" src="../assets/img/cell-5-logo-black.svg" alt="cell5">
+                        </figure>
                       <p>
-                        Web rescue & API integrations
+                        {{ myVal.service }}
                       </p>
                     </div>
                   </a>
+                  <div class="mobile-caption">
+                    <h5>{{ myVal.title }}</h5>
+                    <p>{{ myVal.service }}</p>
+                       <div>
+                        <img class="title-break" src="../assets/img/cell-5-logo-black.svg" alt="cell5">
+                      </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -103,7 +131,26 @@
     name: 'portfolio',
     data () {
       return {
-        MelissaTwiggImg, PortlandImg, Good2RentImg, MyValImg
+        melissa: {
+          image: MelissaTwiggImg,
+          title: 'Melissa Twigg',
+          service: 'Website & Hosting'
+        },
+        portland: {
+          image: PortlandImg,
+          title: 'Portland Decorating & Design',
+          service: 'Web rescue & On-site SEO'
+        },
+        g2r: {
+          image: Good2RentImg,
+          title: 'good2rent',
+          service: 'Cloud migration & start-up app dev'
+        },
+        myVal: {
+          image: MyValImg,
+          title: 'myVal',
+          service: 'Web rescue & API integrations'
+        }
       }
     },
     components: {
@@ -173,10 +220,14 @@
     color: white
   }
 
-.client{
+.client {
   padding: 15px;
   text-align: center;
-  border-radius: 25px;
+  /* border-radius: 25px; */
+}
+
+.client-image {
+  border-radius: 7px;
 }
 
 .client:hover .overlay {
@@ -203,19 +254,25 @@
   width: 100%;
 }
 
-
-.client-image{
-   border-radius: 97px;
-
-}
-.overlay .title-break{
+.title-break {
   height: 16px;
+}
+.overlay .title-break {
   display: inline;
+}
+.mobile-caption{
+  visibility: hidden;
+  display: none;
 }
 @media screen and (max-width: 600px) {
   .overlay {
     visibility: hidden;
     display: none;
+  }
+  .mobile-caption{
+    visibility: visible;
+    display: inline;
+
   }
 }
 
