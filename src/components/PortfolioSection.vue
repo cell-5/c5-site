@@ -94,9 +94,9 @@
                   <div class="mobile-caption">
                     <h5>{{ myVal.title }}</h5>
                     <p>{{ myVal.service }}</p>
-                       <div>
+                       <!-- <div>
                         <img class="title-break" src="../assets/img/cell-5-logo-black.svg" alt="cell5">
-                      </div>
+                      </div> -->
                   </div>
                 </div>
               </div>
@@ -264,7 +264,7 @@
   visibility: hidden;
   display: none;
 }
-@media screen and (max-width: 600px) {
+@media (max-width: 767px) and (orientation: landscape)  {
   .overlay {
     visibility: hidden;
     display: none;
@@ -276,5 +276,16 @@
   }
 }
 
+@media (max-width: 767px) and (orientation: portrait) {
+  .overlay {
+    visibility: hidden;
+    display: none;
+  }
+  .mobile-caption{
+    visibility: visible;
+    display: inline;
+
+  }
+}
 
 </style>
