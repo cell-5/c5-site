@@ -221,7 +221,7 @@
   }
 
 .client {
-  padding: 5px;
+  padding: 15px;
   text-align: center;
   /* border-radius: 25px; */
 }
@@ -236,7 +236,7 @@
 }
 
 .overlay {
-  padding-top: 2em;
+  padding-top: 5em;
   padding-bottom: 2em;
   position: absolute;
   top: 0;
@@ -264,7 +264,10 @@
   visibility: hidden;
   display: none;
 }
-@media (max-width: 767px) and (orientation: landscape)  {
+.row {
+    padding-top: 1em !important;
+}
+@media screen and (max-width: 600px) {
   .overlay {
     visibility: hidden;
     display: none;

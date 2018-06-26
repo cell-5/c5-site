@@ -8,7 +8,8 @@
                 </div>
                 <div class="body-wrapper col-lg-7">
                     <div class="solution-text">
-                        <h3>web</h3>
+                        <!-- <transition name="fade"> -->
+                            <h3>web</h3>
                         <p><strong>Our design &amp; build package starts <span class="text-orange">from £350</span> and includes</strong></p>:
                             <ul>
                                 <li>
@@ -41,8 +42,18 @@
                         <p class="section-lead-in">
                             <strong>We can tailor the package based on your requirements,  <a href="#contact-us" class="contact-us-link">call us</a> to discuss.</strong>
                         </p>
+                                                <!-- </transition> -->
+
                     </div>
                 </div>
             </div>
     </section>
 </template>
+<style>
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
+</style>
