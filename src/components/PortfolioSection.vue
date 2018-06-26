@@ -221,7 +221,7 @@
   }
 
 .client {
-  padding: 15px;
+  padding: 5px;
   text-align: center;
   /* border-radius: 25px; */
 }
