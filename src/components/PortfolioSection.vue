@@ -221,7 +221,7 @@
   }
 
 .client {
-  padding: 5px;
+  padding: 15px;
   text-align: center;
   /* border-radius: 25px; */
 }
@@ -263,6 +263,9 @@
 .mobile-caption{
   visibility: hidden;
   display: none;
+}
+.row {
+    padding-top: 1em !important;
 }
 @media screen and (max-width: 600px) {
   .overlay {
