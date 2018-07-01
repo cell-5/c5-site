@@ -97,6 +97,8 @@ export default {
       return this.$route.path === '/'
     },
     isPortfolioPage () {
+      $('.team').slick('slickPause')
+      $('.teamNav-slide').slick('slickPause')
       return this.$route.path === '/portfolio'
     }
   },
