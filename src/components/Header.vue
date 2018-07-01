@@ -85,11 +85,6 @@ function menuEffects () {
 
   $(window).on('scroll', function () {
     highlightMenu($(this), $menuItem)
-    if ($(window).scrollTop()) {
-      $('#logo').addClass('shrink')
-    } else {
-      $('#logo').addClass('shrink')
-    }
   })
 
   $('.navbar-nav>li>a').on('click', function () {
