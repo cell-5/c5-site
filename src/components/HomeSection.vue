@@ -108,6 +108,10 @@
   }
 
   @media (max-width: 767px) and (orientation: portrait) {
+    #home {
+      background-image:url('../assets/img/header-mobile-progressive.jpg');
+    }
+
     #home div.tagline-wrapper h2 {
       font-size: 3em !important;
     }
@@ -181,12 +185,6 @@
     padding: 7px !important;
     word-wrap: break-word;
   }
-
-  @media (max-width: 767px) and (orientation: portrait) {
-    #home {
-      background-image:url('../assets/img/header-mobile-progressive.jpg');
-    }
-}
 
 </style>
 

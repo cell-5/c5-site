@@ -3,110 +3,25 @@
             <div class="container">
                 <h2>Meet The Team</h2>
                 <div class="team">
-                    <div>
+                    <div id="teamList" v-for="member of members">
                         <div class="team-member">
                             <div class="row">
                                 <div class="col-lg-6">
                                     <figure class="team-member-photo">
-                                        <img src="../assets/img/peter-vector.svg" alt="Peter Barry" class="img-fluid">
+                                        <img :src="member.img" alt="Peter Barry" class="img-fluid">
                                     </figure>
                                 </div>
                                 <div class="col-lg-6">
-                                    <h3 class="team-member-name">Peter Barry</h3>
-                                    <h4 class="team-member-title">Cloud Architect</h4>
+                                    <h3 class="team-member-name">{{ member.name }}</h3>
+                                    <h4 class="team-member-title">{{ member.title }}</h4>
                                     <ul class="team-member-social">
                                         <li>
-                                            <a href="https://uk.linkedin.com/in/peterbarry/" target="_blank">
+                                            <a :href="member.linkedin" target="_blank">
                                                 <span class="fab fa-linkedin"></span>
                                             </a>
                                         </li>
                                     </ul>
-                                    <p class="team-member-bio">Peter is our Cloud specialist. He has 15 years experience building web, mobile and cloud solutions.
-                                    He is passionate about cost-effective and scalable cloud architectures and consults on general I.T. strategy and DevOps.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="team-member">
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <figure class="team-member-photo">
-                                        <img src="../assets/img/harry-vector.svg" alt="Harry Wynn-Williams" class="img-fluid">
-                                    </figure>
-                                </div>
-                                <div class="col-lg-6">
-                                    <h3 class="team-member-name">Harry Wynn-Williams</h3>
-                                    <h4 class="team-member-title">Fullstack</br>(front-end specialist)</h4>
-                                    <ul class="team-member-social">
-                                        <li>
-                                            <a href="https://www.linkedin.com/in/harry-wynn-williams-59b89040/" target="_blank">
-                                                <span class="fab fa-linkedin"></span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="https://twitter.com/harrywinmillion" target="_blank">
-                                                <span class="fab fa-twitter"></span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                    <p class="team-member-bio"> Harry has experience of building web and mobile apps at an investment bank and in the gaming industry. 
-                                        He loves building complex UIs, especially when it's with Vue.js.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="team-member">
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <figure class="team-member-photo">
-                                        <img src="../assets/img/pat-vector.svg" alt="Pat Bautista" class="img-fluid">
-                                    </figure>
-                                </div>
-                                <div class="col-lg-6">
-                                    <article class="team-member-about">
-                                        <h3 class="team-member-name">Pat Bautista</h3>
-                                        <h4 class="team-member-title">Fullstack</br>(back-end specialist)</h4>
-                                        <ul class="team-member-social">
-                                            <li>
-                                                <a href="https://www.linkedin.com/in/pat-bautista/" target="_blank">
-                                                    <span class="fab fa-linkedin"></span>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                        <p class="team-member-bio">
-                                            Pat specializes in REST API development and integration. He has already built a reputation in the team for being able to solve any problem he is given.
-                                        </p>
-                                    </article>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="team-member">
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <figure class="team-member-photo">
-                                        <img src="../assets/img/nic-vector.png" alt="Johnnica Castro" class="img-fluid">
-                                    </figure>
-                                </div>
-                                <div class="col-lg-6">
-                                    <article class="team-member-about">
-                                        <h3 class="team-member-name">Johnnica Castro</h3>
-                                        <h4 class="team-member-title">Graphic Designer</h4>
-                                        <ul class="team-member-social">
-                                            <li>
-                                                <a href="https://www.linkedin.com/in/johnnica-castro-723451163" target="_blank">
-                                                    <span class="fab fa-linkedin"></span>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                        <p class="team-member-bio">
-                                            She is a skilled designer who is passionate about arts. She's interested in different kinds of visuals and focuses on UI/UX designing.
-                                        </p>
-                                    </article>
+                                    <p class="team-member-bio">{{ member.bio }}</p>
                                 </div>
                             </div>
                         </div>
@@ -136,6 +51,10 @@ import $ from 'jquery'
 import 'slick-carousel'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
+import PeterImg from '../assets/img/peter-vector.svg'
+import HarryImg from '../assets/img/harry-vector.svg'
+import PatImg from '../assets/img/pat-vector.svg'
+import NicImg from '../assets/img/nic-vector.png'
 function teamCarousel () {
   $('.team').slick({
     autoplay: true,
@@ -154,6 +73,44 @@ function teamCarousel () {
   })
 }
 export default {
+  data () {
+    return {
+      members: [
+        {
+          name: 'Peter Barry',
+          img: PeterImg,
+          title: 'Cloud Architect',
+          linkedin: 'https://uk.linkedin.com/in/peterbarry/',
+          twitter: '',
+          bio: 'Peter is our Cloud specialist. He has 15 years experience building web, mobile and cloud solutions. He is passionate about cost-effective and scalable cloud architectures and consults on general I.T. strategy and DevOps.'
+        },
+        {
+          name: 'Harry Wynn-Williams',
+          img: HarryImg,
+          title: 'Fullstack (front-end specialist)',
+          linkedin: 'https://www.linkedin.com/in/harry-wynn-williams-59b89040/',
+          twitter: 'https://twitter.com/harrywinmillion',
+          bio: "Harry has experience of building web and mobile apps at an investment bank and in the gaming industry. He loves building complex UIs, especially when it's with Vue.js."
+        },
+        {
+          name: 'Pat Bautista',
+          img: PatImg,
+          title: 'Fullstack (back-end specialist)',
+          linkedin: 'https://www.linkedin.com/in/pat-bautista/',
+          twitter: '',
+          bio: 'Pat specializes in REST API development and integration. He has already built a reputation in the team for being able to solve any problem he is given.'
+        },
+        {
+          name: 'Johnnica Castro',
+          img: NicImg,
+          title: 'Graphic Designer',
+          linkedin: 'https://www.linkedin.com/in/johnnica-castro-723451163/',
+          twitter: '',
+          bio: "She is a skilled designer who is passionate about arts. She's interested in different kinds of visuals and focuses on UI/UX designing."
+        }
+      ]
+    }
+  },
   mounted () {
     teamCarousel()
   }
