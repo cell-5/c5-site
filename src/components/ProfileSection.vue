@@ -50,7 +50,7 @@
                                             </a>
                                         </li>
                                     </ul>
-                                    <p class="team-member-bio"> Harry is the team hacker. He has experience of building web and mobile apps at an investment bank and in the gaming industry. 
+                                    <p class="team-member-bio"> Harry has experience of building web and mobile apps at an investment bank and in the gaming industry. 
                                         He loves building complex UIs, especially when it's with Vue.js.
                                     </p>
                                 </div>
