@@ -5,98 +5,29 @@
       <section class="portfolio">
         <div class="container">
           <div class="row justify-content-md-center align-items-center">
-            <div class="col-lg-11">
-              <div class="row justify-content-md-center">
-                <div class="client col-md-6">
-                  <a class="portfolio-link" target="_blank" href="http://melissatwigg.co.uk">
+            <div class="col-lg-11 row">
+              <div v-for="(portfolioItem, index) in this.portfolio" :key="index" class="justify-content-md-center client col-md-6">
+                <div>
+                  <a class="portfolio-link" target="_blank" :href="portfolioItem.link">
                     <figure>
-                      <img class="client-image img-fluid mx-auto" :src="melissa.image" alt="Melissa Twigg Portfolio Site">
+                      <img class="client-image img-fluid mx-auto" :src="portfolioItem.image" :alt="portfolioItem.alt">
                     </figure>
                     <div class="overlay">
-                      <h5>{{ melissa.title }}</h5>
+                      <h5>{{ portfolioItem.title }}</h5>
                       <figure>
                         <img class="title-break" src="../assets/img/cell-5-logo-black.svg" alt="cell5">
                       </figure>
                       <p>
-                        {{ melissa.service }}
+                        {{ portfolioItem.service }}
                       </p>
                     </div>
                   </a>
                   <div class="mobile-caption">
-                    <h5>{{ melissa.title }}</h5>
-                    <p>{{ melissa.service }}</p>
-                       <div>
-                        <img class="title-break" src="../assets/img/cell-5-logo-black.svg" alt="cell5">
-                      </div>
-                  </div>
-                </div>
-                <div class="client col-md-6">
-                  <a class="portfolio-link" target="_blank" href="http://portlanddecorating.co.uk/">
-                    <figure>
-                      <img :src="portland.image" class="img-fluid mx-auto client-image" alt="Portland Decorating and Design Website">
-                    </figure>
-                    <div class="overlay">
-                      <h5>{{ portland.title }}</h5>
-                       <figure>
-                        <img class="title-break" src="../assets/img/cell-5-logo-black.svg" alt="cell5">
-                      </figure>
-                      <p>
-                        {{ portland.service }}
-                      </p>
+                    <h5>{{ portfolioItem.title }}</h5>
+                    <p>{{ portfolioItem.service }}</p>
+                    <div>
+                      <img class="title-break" src="../assets/img/cell-5-logo-black.svg" alt="cell5">
                     </div>
-                  </a>
-                  <div class="mobile-caption">
-                    <h5>{{ portland.title }}</h5>
-                    <p>{{ portland.service }}</p>
-                       <div>
-                        <img class="title-break" src="../assets/img/cell-5-logo-black.svg" alt="cell5">
-                      </div>
-                  </div>
-                </div>
-                <div class="client col-md-6">
-                  <a class="portfolio-link" target="_blank" href="http://good2rent.co.uk/">
-                    <figure>
-                      <img :src="g2r.image" class="img-fluid mx-auto client-image" alt="good2rent website">
-                    </figure>
-                    <div class="overlay">
-                      <h5>{{g2r.title}}</h5>
-                      <figure>
-                        <img class="title-break" src="../assets/img/cell-5-logo-black.svg" alt="cell5">
-                      </figure>
-                      <p>
-                        {{g2r.service}}
-                      </p>
-                    </div>
-                  </a>
-                   <div class="mobile-caption">
-                    <h5>{{ g2r.title }}</h5>
-                    <p>{{ g2r.service }}</p>
-                       <div>
-                        <img class="title-break" src="../assets/img/cell-5-logo-black.svg" alt="cell5">
-                      </div>
-                  </div>
-                </div>
-                <div class="client col-md-6">
-                  <a class="portfolio-link" target="_blank" href="http://myval.co.uk/">
-                    <figure>
-                      <img :src="myVal.image" class="img-fluid mx-auto client-image" alt="myVal website">
-                    </figure>
-                    <div class="overlay">
-                      <h5>{{ myVal.title }}</h5>
-                        <figure>
-                          <img class="title-break" src="../assets/img/cell-5-logo-black.svg" alt="cell5">
-                        </figure>
-                      <p>
-                        {{ myVal.service }}
-                      </p>
-                    </div>
-                  </a>
-                  <div class="mobile-caption">
-                    <h5>{{ myVal.title }}</h5>
-                    <p>{{ myVal.service }}</p>
-                       <!-- <div>
-                        <img class="title-break" src="../assets/img/cell-5-logo-black.svg" alt="cell5">
-                      </div> -->
                   </div>
                 </div>
               </div>
@@ -119,6 +50,7 @@
   import PortlandImg from '../assets/img/portland-screenshot.jpg'
   import Good2RentImg from '../assets/img/good2rent-screenshot.jpg'
   import MyValImg from '../assets/img/myval-screenshot.jpg'
+  import Cell5BlackLogo from '../assets/img/cell-5-logo-black.svg'
   import $ from 'jquery'
 
   function backToTop () {
@@ -131,26 +63,35 @@
     name: 'portfolio',
     data () {
       return {
-        melissa: {
+        portfolio: [{
           image: MelissaTwiggImg,
           title: 'Melissa Twigg',
-          service: 'Website & Hosting'
+          service: 'Website & Hosting',
+          href: 'http://melissatwigg.co.uk',
+          alt: 'Melissa Twigg Portfolio Site'
         },
-        portland: {
+        {
           image: PortlandImg,
           title: 'Portland Decorating & Design',
-          service: 'Web rescue & On-site SEO'
+          service: 'Web rescue & On-site SEO',
+          link: 'http://portlanddecorating.co.uk/',
+          alt: 'Portland Decorating and Design Website'
         },
-        g2r: {
+        {
           image: Good2RentImg,
           title: 'good2rent',
-          service: 'Cloud migration & start-up app dev'
+          service: 'Cloud migration & start-up app dev',
+          link: 'http://good2rent.co.uk/',
+          alt: 'good2rent website'
         },
-        myVal: {
+        {
           image: MyValImg,
           title: 'myVal',
-          service: 'Web rescue & API integrations'
-        }
+          service: 'Web rescue & API integrations',
+          link: 'http://myval.co.uk/',
+          alt: 'myVal website'
+        }],
+        cell5logo: Cell5BlackLogo
       }
     },
     components: {
