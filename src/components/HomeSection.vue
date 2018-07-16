@@ -7,7 +7,7 @@
         </div>
         <div class="row">
           <a href="#solutions" class="tagline-carousel middle">
-            digital, web, mobile, design, cloud, marketing, e-commerce, legacy code, start-up
+            digital, web, mobile, cloud, start-up
           </a>
         </div>
         <div class="row">
