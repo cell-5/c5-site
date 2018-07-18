@@ -1,20 +1,38 @@
 <template>
   <section id="home" class="align-items-center"> 
-    <div class="tagline-wrapper">
-      <h2 id="tagline">
-        <div class="row">
-          <p class="top-bottom">client-first</p>
-        </div>
-        <div class="row">
-          <a href="#solutions" class="tagline-carousel middle">
-            digital, web, mobile, design, cloud, marketing, e-commerce, legacy code, start-up
-          </a>
-        </div>
-        <div class="row">
-          <p class="top-bottom">solutions</p>
-        </div>
-      </h2>
+<div  class="particles"> 
+        <vue-particles  color="#dedede"
+        :particleOpacity="0.7"
+        :particlesNumber="130"
+        shapeType="circle"
+        :particleSize="4"
+        linesColor="#dedede"
+        :linesWidth="1"
+        :lineLinked="true"
+        :lineOpacity="0.4"
+        :linesDistance="150"
+        :moveSpeed="3"
+        :hoverEffect="true"
+        hoverMode="grab"
+        :clickEffect="true"
+        clickMode="push">    </vue-particles>
+       </div>
+           <div class="tagline-wrapper">
+        <h2 id="tagline">
+            <div class="row">
+                <p class="top-bottom">client-first</p>
+            </div>
+            <div class="row">
+                <a href="#solutions" class="tagline-carousel middle">
+                    digital, web, mobile, design, cloud, marketing, e-commerce, legacy code, start-up
+                </a>
+            </div>
+            <div class="row">
+                <p class="top-bottom">solutions</p>
+            </div>
+        </h2>
     </div>
+  
     <a href="#solutions" class="learn-more-btn call-to-action">Learn More</a>
   </section>
 </template>
@@ -48,9 +66,7 @@
 
 <style scoped>
   #home {
-    background-image:url('../assets/img/header-progressive.jpg');
     background-size:cover;
-    background-color: #2c302e;
     color: #fefffe;
     font-family: "Montserrat", sans-serif;
     display: -webkit-box;
@@ -64,6 +80,14 @@
     transition: all 0.2s linear;
     overflow: hidden
   }
+
+  .particles{
+    position: absolute;
+    background: linear-gradient(to bottom right, red, yellow);
+    width: 100%;
+    height: 100%;
+  }
+
 
   #home:after {
     content: '';
@@ -86,7 +110,8 @@
     line-height: 1.75ch;
     width: 100%;
     max-width: 90%;
-    margin: 0 auto
+    margin: 0 auto;
+    z-index: 3;
   }
 
   @media (min-width: 3840px) {
@@ -108,9 +133,9 @@
   }
 
   @media (max-width: 767px) and (orientation: portrait) {
-    #home {
+    /* #home {
       background-image:url('../assets/img/header-mobile-progressive.jpg');
-    }
+    } */
 
     #home div.tagline-wrapper h2 {
       font-size: 3em !important;
@@ -172,7 +197,8 @@
   }
 
   .middle {
-    background: #2c302f;
+    /* background: #2c302f; */
+    color: black
   }
 
   .top-bottom {
