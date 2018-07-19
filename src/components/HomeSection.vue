@@ -1,8 +1,10 @@
 <template>
   <section id="home"
            class="align-items-center">
+    <!-- <welcome text="sdsdsdsdsdsdcsdc"></welcome> -->
     <div class="particles">
-      <vue-particles color="#dedede"
+      <vue-particles class="d-none d-sm-block"
+                     color="#dedede"
                      :particleOpacity="0.7"
                      :particlesNumber="130"
                      shapeType="polygon"
@@ -19,23 +21,24 @@
                      clickMode="push">
       </vue-particles>
     </div>
-
-    <div class="tagline-wrapper">
-      <h2 id="tagline">
-        <div class="row">
-          <p class="top-bottom">client-first</p>
-        </div>
-        <div class="row">
-          <a href="#solutions"
-             class="tagline-carousel middle">
-            digital, web, mobile,cloud, start-up
-          </a>
-        </div>
-        <div class="row">
-          <p class="top-bottom">solutions</p>
-        </div>
-      </h2>
-    </div>
+    <transition name="fade">
+      <div class="tagline-wrapper">
+        <h2 id="tagline">
+          <div class="row">
+            <p class="top-bottom">client-first</p>
+          </div>
+          <div class="row">
+            <a href="#solutions"
+               class="tagline-carousel middle">
+              digital, web, mobile, cloud, start-up
+            </a>
+          </div>
+          <div class="row">
+            <p class="top-bottom">solutions</p>
+          </div>
+        </h2>
+      </div>
+    </transition>
     <a href="#solutions"
        class="learn-more-btn call-to-action">Learn More</a>
   </section>
@@ -46,6 +49,7 @@ import $ from "jquery";
 import "morphext/dist/morphext.css";
 import "animate.css";
 import "morphext/dist/morphext.js";
+import Welcome from "./Home/Cell5Welcome.vue";
 
 function rotateText() {
   "use strict";
@@ -68,6 +72,9 @@ function rotateText() {
 }
 
 export default {
+  components: {
+    Welcome
+  },
   mounted() {
     rotateText();
   }
@@ -218,6 +225,13 @@ export default {
   display: inline-block;
   padding: 7px !important;
   word-wrap: break-word;
+}
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
 }
 </style>
 
