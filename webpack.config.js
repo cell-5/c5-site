@@ -23,11 +23,7 @@ module.exports = function(env, options) {
             main: entryPoint,
             vendor: [
                 'axios',
-                // 'marked',
-                // 'mixitup',
                 'vue',
-                // 'vue-lazyload',
-                // 'vue-progressbar',
                 'vue-router',
                 'slick-carousel'
             ]
