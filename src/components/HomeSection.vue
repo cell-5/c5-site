@@ -1,215 +1,223 @@
 <template>
-  <section id="home" class="align-items-center"> 
-<div  class="particles"> 
-        <vue-particles  color="#dedede"
-        :particleOpacity="0.7"
-        :particlesNumber="130"
-        shapeType="polygon"
-        :particleSize="4"
-        linesColor="#dedede"
-        :linesWidth="1"
-        :lineLinked="true"
-        :lineOpacity="0.4"
-        :linesDistance="150"
-        :moveSpeed="3"
-        :hoverEffect="true"
-        hoverMode="grab"
-        :clickEffect="true"
-        clickMode="push">    </vue-particles>
-       </div>
-           <div class="tagline-wrapper">
-        <h2 id="tagline">
-            <div class="row">
-                <p class="top-bottom">client-first</p>
-            </div>
-            <div class="row">
-                <a href="#solutions" class="tagline-carousel middle">
-                    digital, web, mobile, design, cloud, marketing, e-commerce, legacy code, start-up
-                </a>
-            </div>
-            <div class="row">
-                <p class="top-bottom">solutions</p>
-            </div>
-        </h2>
+  <section id="home"
+           class="align-items-center">
+    <div class="particles">
+      <vue-particles color="#dedede"
+                     :particleOpacity="0.7"
+                     :particlesNumber="130"
+                     shapeType="polygon"
+                     :particleSize="4"
+                     linesColor="#dedede"
+                     :linesWidth="1"
+                     :lineLinked="true"
+                     :lineOpacity="0.4"
+                     :linesDistance="150"
+                     :moveSpeed="3"
+                     :hoverEffect="true"
+                     hoverMode="grab"
+                     :clickEffect="true"
+                     clickMode="push">
+      </vue-particles>
     </div>
-  
-    <a href="#solutions" class="learn-more-btn call-to-action">Learn More</a>
+
+    <div class="tagline-wrapper">
+      <h2 id="tagline">
+        <div class="row">
+          <p class="top-bottom">client-first</p>
+        </div>
+        <div class="row">
+          <a href="#solutions"
+             class="tagline-carousel middle">
+            digital, web, mobile,cloud, start-up
+          </a>
+        </div>
+        <div class="row">
+          <p class="top-bottom">solutions</p>
+        </div>
+      </h2>
+    </div>
+    <a href="#solutions"
+       class="learn-more-btn call-to-action">Learn More</a>
   </section>
 </template>
 
 <script>
-  import $ from 'jquery'
-  import 'morphext/dist/morphext.css'
-  import 'animate.css'
-  import 'morphext/dist/morphext.js'
+import $ from "jquery";
+import "morphext/dist/morphext.css";
+import "animate.css";
+import "morphext/dist/morphext.js";
 
-  function rotateText () {
-    'use strict'
-    const SPEED = 5000
-    $('.tagline-carousel').Morphext({
-      animation: 'fadeIn',
-      separator: ',',
-      speed: SPEED,
-      complete: function () {
-        var section = $('.tagline-carousel').text().replace(' ', '-').replace(/\./g, '')
-        $('.tagline-carousel').attr('href', '#' + (section === 'digital' ? 'solutions' : section))
-      }
-    })
-  }
-
-  export default {
-    mounted () {
-      rotateText()
+function rotateText() {
+  "use strict";
+  const SPEED = 5000;
+  $(".tagline-carousel").Morphext({
+    animation: "fadeIn",
+    separator: ",",
+    speed: SPEED,
+    complete: function() {
+      var section = $(".tagline-carousel")
+        .text()
+        .replace(" ", "-")
+        .replace(/\./g, "");
+      $(".tagline-carousel").attr(
+        "href",
+        "#" + (section === "digital" ? "solutions" : section)
+      );
     }
+  });
+}
+
+export default {
+  mounted() {
+    rotateText();
   }
+};
 </script>
 
 <style scoped>
-  #home {
-    /* background-size:cover; */
-    color: #fefffe;
-    font-family: "Montserrat", sans-serif;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    height: 100vh;
-    margin: 0;
-    margin-top: 0px;
-    position: relative;
-    -webkit-transition: all 0.2s linear;
-    transition: all 0.2s linear;
-    overflow: hidden
-  }
+#home {
+  /* background-size:cover; */
+  color: #fefffe;
+  font-family: "Montserrat", sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100vh;
+  margin: 0;
+  margin-top: 0px;
+  position: relative;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+  overflow: hidden;
+}
 
-  .particles{
-    position: absolute;
-    background: linear-gradient(to bottom right, red, yellow);
-    width: 100%;
-    height: 100%;
-  }
+.particles {
+  position: absolute;
+  background: linear-gradient(to bottom right, red, yellow);
+  width: 100%;
+  height: 100%;
+}
 
+#home:after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  height: 3.13rem;
+  width: 50%;
+  border-left: 3.13rem solid transparent;
+  border-bottom: 3.13rem solid #fefffe;
+}
 
-  #home:after {
-    content: '';
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    height: 3.13rem;
-    width: 50%;
-    border-left: 3.13rem solid transparent;
-    border-bottom: 3.13rem solid #fefffe
-  }
+#home * {
+  margin: 0;
+  padding: 0;
+  line-height: 100%;
+}
 
-  #home * {
-    margin: 0;
-    padding: 0;
-    line-height: 100%
-  }
+#home div.tagline-wrapper {
+  line-height: 1.75ch;
+  width: 100%;
+  max-width: 90%;
+  margin: 0 auto;
+  z-index: 3;
+}
 
+@media (min-width: 3840px) {
   #home div.tagline-wrapper {
-    line-height: 1.75ch;
-    width: 100%;
-    max-width: 90%;
-    margin: 0 auto;
-    z-index: 3;
+    max-width: 3000px;
   }
+}
 
-  @media (min-width: 3840px) {
-    #home div.tagline-wrapper {
-      max-width: 3000px;
-    }
-  }
+#home div.tagline-wrapper h2 {
+  font-size: 4.8em !important;
+  font-weight: 700;
+  text-align: left;
+}
 
+@media (max-width: 991px) and (orientation: landscape) {
   #home div.tagline-wrapper h2 {
-    font-size: 4.8em !important;
-    font-weight: 700;
-    text-align: left;
+    font-size: 12vh !important;
   }
+}
 
-  @media (max-width: 991px) and (orientation: landscape) {
-    #home div.tagline-wrapper h2 {
-      font-size: 12vh !important;
-    }
-  }
-
-  @media (max-width: 767px) and (orientation: portrait) {
-    /* #home {
+@media (max-width: 767px) and (orientation: portrait) {
+  /* #home {
       background-image:url('../assets/img/header-mobile-progressive.jpg');
     } */
 
-    #home div.tagline-wrapper h2 {
-      font-size: 3em !important;
-    }
+  #home div.tagline-wrapper h2 {
+    font-size: 3em !important;
   }
+}
 
-  #home div.tagline-wrapper h2 ul.slick-dots {
-    display: none !important
-  }
+#home div.tagline-wrapper h2 ul.slick-dots {
+  display: none !important;
+}
 
-  #home div.tagline-wrapper a {
-    display: block
-  }
+#home div.tagline-wrapper a {
+  display: block;
+}
 
-  #home div.tagline-wrapper a:link,
-  #home div.tagline-wrapper a:visited {
-    color: #ffffff;
-    text-decoration: none
-  }
+#home div.tagline-wrapper a:link,
+#home div.tagline-wrapper a:visited {
+  color: #ffffff;
+  text-decoration: none;
+}
 
-  #home div.tagline-wrapper a:hover {
-    color: #ffffff
-  }
+#home div.tagline-wrapper a:hover {
+  color: #ffffff;
+}
 
-  #home div.tagline-wrapper a:active {
-    color: #ffffff
-  }
+#home div.tagline-wrapper a:active {
+  color: #ffffff;
+}
 
-  #home div.tagline-wrapper a:visited:active {
-    color: #ffffff
-  }
+#home div.tagline-wrapper a:visited:active {
+  color: #ffffff;
+}
 
-  #home a.learn-more-btn {
-    position: absolute;
-    bottom: 1.88rem;
-    right: 14%;
-    z-index: 2
-  }
+#home a.learn-more-btn {
+  position: absolute;
+  bottom: 1.88rem;
+  right: 14%;
+  z-index: 2;
+}
 
-  #home a.learn-more-btn:link,
-  #home a.learn-more-btn:visited {
-    display: inline-block;
-    background-color: #34b95b;
-    color: white;
-    border-radius: 8px;
-    padding: 1rem 3rem;
-    margin-top: 0.5rem;
-    text-decoration: none
-  }
+#home a.learn-more-btn:link,
+#home a.learn-more-btn:visited {
+  display: inline-block;
+  background-color: #34b95b;
+  color: white;
+  border-radius: 8px;
+  padding: 1rem 3rem;
+  margin-top: 0.5rem;
+  text-decoration: none;
+}
 
-  #home a.learn-more-btn:hover {
-    background-color: #269f49;
-    color: white
-  }
+#home a.learn-more-btn:hover {
+  background-color: #269f49;
+  color: white;
+}
 
-  #home a.learn-more-btn:active {
-    background-color: #228f42;
-    color: white
-  }
+#home a.learn-more-btn:active {
+  background-color: #228f42;
+  color: white;
+}
 
-  .middle {
-    color: black
-  }
+.middle {
+  color: black;
+}
 
-  .top-bottom {
-    background: black;
-  }
+.top-bottom {
+  background: black;
+}
 
-  .middle,
-  .top-bottom {
-    display: inline-block;
-    padding: 7px !important;
-    word-wrap: break-word;
-  }
-
+.middle,
+.top-bottom {
+  display: inline-block;
+  padding: 7px !important;
+  word-wrap: break-word;
+}
 </style>
 
