@@ -67,7 +67,7 @@
           image: MelissaTwiggImg,
           title: 'Melissa Twigg',
           service: 'Website & Hosting',
-          href: 'http://melissatwigg.co.uk',
+          link: 'http://melissatwigg.co.uk',
           alt: 'Melissa Twigg Portfolio Site'
         },
         {

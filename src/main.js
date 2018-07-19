@@ -4,12 +4,15 @@ import Vue from 'vue'
 import VueProgressBar from 'vue-progressbar'
 import BootstrapVue from 'bootstrap-vue'
 import router from './router'
-import App from './App'
+import App from './App.vue'
+import VueParticles from 'vue-particles'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import 'bootstrap'
 
 Vue.use(BootstrapVue)
+Vue.use(VueParticles)
+
 Vue.use(VueProgressBar, {
   color: '#228f42',
   failedColor: '#874b4b',
