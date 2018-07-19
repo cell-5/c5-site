@@ -3,7 +3,7 @@
 <div  class="particles"> 
         <vue-particles  color="#dedede"
         :particleOpacity="0.7"
-        :particlesNumber="300"
+        :particlesNumber="130"
         shapeType="polygon"
         :particleSize="4"
         linesColor="#dedede"
