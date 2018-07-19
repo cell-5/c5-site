@@ -142,14 +142,17 @@ module.exports = function(env, options) {
         }
     };
 
-    // if (isProduction) {
-    //     config.plugins.push(
-    //         new CompressionPlugin({
-    //             include: /\.(html|css|js)$/i,
-    //             asset: '[path]'
-    //         })
-    //     );
-    // }
+    if (isProduction) {
+        config.plugins.push(
+            new CompressionPlugin({
+                asset: "[path].gz[query]",
+                algorithm: "gzip",
+                test: /\.js$|\.css$|\.html$/,
+                threshold: 10240,
+                minRatio: 0.8
+            })
+        );
+    }
 
     return config;
 };
