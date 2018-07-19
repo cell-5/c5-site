@@ -3,8 +3,8 @@
 <div  class="particles"> 
         <vue-particles  color="#dedede"
         :particleOpacity="0.7"
-        :particlesNumber="130"
-        shapeType="circle"
+        :particlesNumber="300"
+        shapeType="polygon"
         :particleSize="4"
         linesColor="#dedede"
         :linesWidth="1"
@@ -66,7 +66,7 @@
 
 <style scoped>
   #home {
-    background-size:cover;
+    /* background-size:cover; */
     color: #fefffe;
     font-family: "Montserrat", sans-serif;
     display: -webkit-box;
@@ -202,7 +202,7 @@
   }
 
   .top-bottom {
-    background: #d64a31;
+    background: black;
   }
 
   .middle,
