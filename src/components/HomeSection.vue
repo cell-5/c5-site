@@ -197,7 +197,6 @@
   }
 
   .middle {
-    /* background: #2c302f; */
     color: black
   }
 
