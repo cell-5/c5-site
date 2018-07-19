@@ -30,6 +30,9 @@
                                 </li>
                             </ul>
                             <span v-html="section.lead"></span>
+                        <div id="cta" class="text-center">
+                            <router-link to="portfolio" class="learn-more-btn call-to-action">View our Portfolio</router-link>
+                        </div>
                         </div>
                     </div>
                     <div v-if="section.even" class="icon-wrapper col-lg-5 d-none d-lg-flex">
@@ -270,15 +273,33 @@
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
   opacity: 0;
 }
+
+.solution a.learn-more-btn:link,
+.solution a.learn-more-btn:visited {
+display: inline-block;
+background-color: #34b95b;
+color: white;
+border-radius: 8px;
+padding: 1rem 3rem;
+margin-top: 0.5rem;
+text-decoration: none
+}
+
+.solution a.learn-more-btn:hover {
+background-color: #269f49;
+color: white
+}
+
+.solution a.learn-more-btn:active {
+background-color: #228f42;
+color: white
+}
+
 </style>
 <script>
 import WebImg from '../assets/img/web-light.svg'
 import MobileImg from '../assets/img/mobile-dark.svg'
-import DesignImg from '../assets/img/design-light.svg'
-import CloudImg from '../assets/img/cloud-dark.svg'
-import MarketingImg from '../assets/img/social-light.svg'
-import ECommerceImg from '../assets/img/e-commerce-dark.svg'
-import LegacyImg from '../assets/img/legacy-light.svg'
+import CloudImg from '../assets/img/cloud-light.svg'
 import StartUpImg from '../assets/img/start-up-dark.svg'
 export default {
   data () {
@@ -297,11 +318,11 @@ export default {
             {text: '<i class="fas fa-check text-highlight"></i> web analytics &amp; on-site s.e.o.'},
             {text: '<i class="fas fa-check text-highlight"></i> completely collaborative approach'}
           ],
-          highlightsubtext: '<p><strong>Our design &amp; build package starts <span class="text-orange">from £350</span> and includes:</strong></p>',
+          highlightsubtext: '<p><strong>Our design &amp; build package includes:</strong></p>',
           stars: [
-            {text: '<i class="fas fa-star text-highlight-star"></i>  Basic Webmaster training<strong> - <span class="text-orange">£50&nbsp;once</span></strong>'},
-            {text: '<i class="fas fa-star text-highlight-star"></i>  Monthly upkeep + Annual freshen-up<strong> - <span class="text-orange">£5&nbsp;a&nbsp;month</span></strong>'},
-            {text: '<i class="fas fa-star text-highlight-star"></i>  Optimized hosting<strong> - <span class="text-orange">£5&nbsp;a&nbsp;month</span></strong>'}
+            // {text: '<i class="fas fa-star text-highlight-star"></i>  Basic Webmaster training<strong> - <span class="text-orange">£50&nbsp;once</span></strong>'},
+            {text: '<i class="fas fa-star text-highlight-star"></i>  Monthly upkeep'},
+            {text: '<i class="fas fa-star text-highlight-star"></i>  Optimized hosting'}
           ],
           starssubtext: '<p><strong>This package can be extended with these <em>optional extras:</em></strong></p>',
           lead: '<p class="section-lead-in"><strong>We can tailor the package based on your requirements,  <a href="#contact-us" class="contact-us-link">call us</a> to discuss.</strong></p>'
@@ -334,36 +355,11 @@ export default {
           lead: '<p><strong><a href="#contact-us" class="contact-us-link">Call us</a> and let us talk about your idea.</strong></p>'
         },
         {
-          id: 'design',
-          title: 'design',
+          id: 'cloud',
+          title: 'cloud',
           class: 'icon-wrapper col-lg-5',
           style: 'solution odd',
           even: false,
-          img: DesignImg,
-          highlights: [
-              {text: '<i class="fas fa-check text-highlight"></i>User Experience Design - <a href="#contact-us" class="contact-us-link">request a quote</a>'},
-              {text: '<i class="fas fa-check text-highlight"></i>Web Design - <a href="#contact-us" class="contact-us-link">request a quote</a>'},
-              {text: '<i class="fas fa-check text-highlight"></i>Mobile UI design - <a href="#contact-us" class="contact-us-link">request a quote</a>'},
-              {text: '<i class="fas fa-check text-highlight"></i>Logos - <span class="text-orange">from £50</span>'},
-              {text: '<i class="fas fa-check text-highlight"></i>Web banners - <span class="text-orange">from £250</span>'},
-              {text: '<i class="fas fa-check text-highlight"></i>Ad designs - <span class="text-orange">from £150</span>'},
-              {text: '<i class="fas fa-check text-highlight"></i>Business card design - <span class="text-orange">from £50</span>'},
-              {text: '<i class="fas fa-check text-highlight"></i>Animations - <span class="text-orange">from £200</span>'}
-          ],
-          highlightsubtext: '<p><strong>We offer the following digital services:</strong></p>',
-          stars: [
-              {text: '<i class="fas fa-star text-highlight-star"></i>Omni-channel ad campaigns'},
-              {text: '<i class="fas fa-star text-highlight-star"></i>Omni-channel branding'}
-          ],
-          starssubtext: '<p><strong>Designers work with our team on multi-disciplinary work like:</strong></p>',
-          lead: '<p><strong>If you have a design project in mind - <a href="#contact-us" class="contact-us-link">get in touch</a>!</strong></p>'
-        },
-        {
-          id: 'cloud',
-          title: 'cloud',
-          class: 'icon-wrapper col d-block d-lg-none',
-          style: 'solution even',
-          even: true,
           img: CloudImg,
           highlights: [
               {text: '<i class="fas fa-check text-highlight"></i>On-premises to cloud native migrations'},
@@ -376,69 +372,10 @@ export default {
               {text: '<i class="fas fa-star text-highlight-star"></i><abbr title="Amazon Web Services">AWS</abbr> Cloud Computing Services'},
               {text: '<i class="fas fa-star text-highlight-star"></i>Packer and Terraform <abbr title="Infrastructure as Code">IAC</abbr>'},
               {text: '<i class="fas fa-star text-highlight-star"></i>Docker and Kubernetes containerization'},
-              {text: '<i class="fas fa-star text-highlight-star"></i>Jenkins, Gitlab and CodePipeline continuous delivery pipelines'},
-              {text: '<i class="fas fa-star text-highlight-star"></i>Monolithic to microservice migrations'}
+              {text: '<i class="fas fa-star text-highlight-star"></i>Jenkins, Gitlab and CodePipeline continuous delivery pipelines'}
           ],
           starssubtext: '<p><strong>Specific areas we are experts in:</strong></p>',
           lead: '<p class="section-lead-in"><strong> To discuss how we can help you make the most of cloud,  <a href="#contact-us" class="contact-us-link">call us</a></strong>.</p>'
-        },
-        {
-          id: 'marketing',
-          title: 'marketing',
-          class: 'icon-wrapper col-lg-5',
-          style: 'solution odd',
-          even: false,
-          img: MarketingImg,
-          highlights: [
-              {text: '<i class="fas fa-check text-highlight"></i>Content Marketing'},
-              {text: '<i class="fas fa-check text-highlight"></i>Customer Journey Analysis'},
-              {text: '<i class="fas fa-check text-highlight"></i>Social Media Marketing ( SMM )'},
-              {text: '<i class="fas fa-check text-highlight"></i>Search Engine Marketing ( SEM )'},
-              {text: '<i class="fas fa-check text-highlight"></i>Search Engine Optimization ( SEO )'}
-          ],
-          highlightsubtext: '<p><strong>We offer data-driven marketing services which include:</strong></p>',
-          lead: '<p class="section-lead-in"><strong>If you would like to learn more <a href="#contact-us" class="contact-us-link">call us</a></strong>.</p>'
-        },
-        {
-          id: 'e-commerce',
-          title: 'e-commerce',
-          class: 'icon-wrapper col d-block d-lg-none',
-          style: 'solution even',
-          even: true,
-          img: ECommerceImg,
-          highlights: [
-              {text: '<i class="fas fa-check text-highlight"></i>Bespoke E-Commerce Development'},
-              {text: '<i class="fas fa-check text-highlight"></i>Shopify E-Commerce Solutions'},
-              {text: '<i class="fas fa-check text-highlight"></i>Shopify Theme customization'},
-              {text: '<i class="fas fa-check text-highlight"></i>Shopify Design and SEO'},
-              {text: '<i class="fas fa-check text-highlight"></i>Shopify Training'}
-          ],
-          highlightsubtext: '<p><strong>We provide bespoke and <u>Shopify</u> specialist services:</strong></p>',
-          lead: '<p class="section-lead-in"><strong><a href="#contact-us" class="contact-us-link">Call us</a> to find out more.</strong></p>'
-        },
-        {
-          id: 'legacy-code',
-          title: 'legacy code uplift',
-          class: 'icon-wrapper col-lg-5',
-          style: 'solution odd',
-          even: false,
-          img: LegacyImg,
-          highlights: [
-              {text: '<i class="fas fa-check text-highlight"></i>Java monolith to clojure microservices'},
-              {text: '<i class="fas fa-check text-highlight"></i>Wordpress reverse engineering and revitalization'},
-              {text: '<i class="fas fa-check text-highlight"></i>Cobol mainframe to Java Spring services'},
-              {text: '<i class="fas fa-check text-highlight"></i>Proprietary version control to git'},
-              {text: '<i class="fas fa-check text-highlight"></i>On-prem tooling to cloud tooling'},
-              {text: '<i class="fas fa-check text-highlight"></i>Legacy JavaScript to modern frameworks'}
-          ],
-          highlightsubtext: '<p><strong>We embrace working with existing code. Examples of our uplifts include:</strong></p>',
-          stars: [
-              {text: '<i class="fas fa-star text-highlight-star"></i>The previous developers did the best they could at the time they did it'},
-              {text: '<i class="fas fa-star text-highlight-star"></i>We break things up in small parts and keep things working as we go'},
-              {text: '<i class="fas fa-star text-highlight-star"></i>We do things safely, guided by tests and automation'}
-          ],
-          starssubtext: '<p><strong>Our principles and approaches when working with legacy are:</strong></p>',
-          lead: '<p><strong>If you are stuck with something legacy and need a hand then <a href="#contact-us" class="contact-us-link">we are here to help!</a></strong></p>'
         },
         {
           id: 'start-up',
