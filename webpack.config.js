@@ -142,14 +142,14 @@ module.exports = function(env, options) {
         }
     };
 
-    if (isProduction) {
-        config.plugins.push(
-            new CompressionPlugin({
-                include: /\.(html|css|js)$/i,
-                asset: '[path]'
-            })
-        );
-    }
+    // if (isProduction) {
+    //     config.plugins.push(
+    //         new CompressionPlugin({
+    //             include: /\.(html|css|js)$/i,
+    //             asset: '[path]'
+    //         })
+    //     );
+    // }
 
     return config;
 };
