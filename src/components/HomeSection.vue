@@ -1,7 +1,7 @@
 <template>
   <section id="home"
            class="align-items-center">
-    <welcome text="sdsdsdsdsdsdcsdc"></welcome>
+    <!-- <welcome text="sdsdsdsdsdsdcsdc"></welcome> -->
     <div class="particles">
       <vue-particles class="d-none d-sm-block"
                      color="#dedede"

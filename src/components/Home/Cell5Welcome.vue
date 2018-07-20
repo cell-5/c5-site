@@ -1,10 +1,13 @@
 <template>
     <div class="msg">
         <span>{{text}}</span>
+        <img :src="Cell5Logo" alt="">
     </div>
 </template>
 
 <script>
+import Cell5Logo from "./..src/assets/img/cell-5-logo.svg";
+
 export default {
   name: "Message",
   props: ["text"]
