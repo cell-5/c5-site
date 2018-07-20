@@ -1,7 +1,7 @@
 <template>
   <section id="home"
            class="align-items-center">
-    <!-- <welcome text="sdsdsdsdsdsdcsdc"></welcome> -->
+    <welcome text="sdsdsdsdsdsdcsdc"></welcome>
     <div class="particles">
       <vue-particles class="d-none d-sm-block"
                      color="#dedede"
@@ -100,7 +100,7 @@ export default {
 
 .particles {
   position: absolute;
-  background: linear-gradient(to bottom right, red, yellow);
+  background: linear-gradient(to bottom right, red, blue);
   width: 100%;
   height: 100%;
 }
