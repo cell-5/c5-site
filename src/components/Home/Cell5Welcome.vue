@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import Cell5Logo from "./..src/assets/img/cell-5-logo.svg";
+// import Cell5Logo from "./..src/assets/img/cell-5-logo.svg";
 
 export default {
   name: "Message",
