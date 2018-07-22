@@ -3,12 +3,13 @@
            class="align-items-center">
     <!-- <welcome text="sdsdsdsdsdsdcsdc"></welcome> -->
     <div class="particles">
-      <vue-particles class="d-none d-sm-block"
+      <vue-particles ref="particles"
+                     class="d-none d-sm-block"
                      color="#dedede"
                      :particleOpacity="0.7"
                      :particlesNumber="130"
                      shapeType="polygon"
-                     :particleSize="4"
+                     :particleSize="2"
                      linesColor="#dedede"
                      :linesWidth="1"
                      :lineLinked="true"
@@ -27,10 +28,22 @@
           <div class="row">
             <p class="top-bottom">client-first</p>
           </div>
-          <div class="row">
-            <a href="#solutions"
-               class="tagline-carousel middle">
-              digital, web, mobile, cloud, start-up
+          <div class="row middle">
+
+            <a :href="hrefSolution">
+
+              <vue-typer @typed="typed"
+                         :text='["digital","web","mobile","cloud","start-up"]'
+                         :repeat='Infinity'
+                         :shuffle='false'
+                         initial-action='typing'
+                         :pre-type-delay='70'
+                         :type-delay='80'
+                         :pre-erase-delay='2000'
+                         :erase-delay='300'
+                         erase-style='select-all'
+                         :erase-on-complete='false'
+                         caret-animation='blink'></vue-typer>
             </a>
           </div>
           <div class="row">
@@ -45,39 +58,54 @@
 </template>
 
 <script>
-import $ from "jquery";
-import "morphext/dist/morphext.css";
-import "animate.css";
-import "morphext/dist/morphext.js";
-import Welcome from "./Home/Cell5Welcome.vue";
 
-function rotateText() {
-  "use strict";
-  const SPEED = 5000;
-  $(".tagline-carousel").Morphext({
-    animation: "fadeIn",
-    separator: ",",
-    speed: SPEED,
-    complete: function() {
-      var section = $(".tagline-carousel")
-        .text()
-        .replace(" ", "-")
-        .replace(/\./g, "");
-      $(".tagline-carousel").attr(
-        "href",
-        "#" + (section === "digital" ? "solutions" : section)
-      );
-    }
-  });
-}
+import Welcome from "./Home/Cell5Welcome.vue";
+import { VueTyper } from "vue-typer";
+
 
 export default {
   components: {
-    Welcome
+    Welcome,
+    VueTyper
+  },
+  data: () => {
+    return {
+      selectedText: ""
+    };
+  },
+  methods: {
+    typed: function(typedString) {
+      this.selectedText = typedString;
+      console.log(typedString);
+    }
+  },
+  computed: {
+    hrefSolution() {
+      return `#${this.selectedText}`;
+    }
   },
   mounted() {
     rotateText();
   }
+  // updated() {
+  //   while (x < 30) {
+  //     x++;
+  //     document
+  //       .querySelector("canvas.particles-js-canvas-el")
+  //       .dispatchEvent(new Event("click")); // Fire event
+  //     console.log("called");
+  //   }
+  //   this.$nextTick(function() {
+  //     var x = 1;
+  //     while (x < 30) {
+  //       x++;
+  //       document
+  //         .querySelector("canvas.particles-js-canvas-el")
+  //         .dispatchEvent(new Event("click")); // Fire event
+  //       console.log("called");
+  //     }
+  //   });
+  // }
 };
 </script>
 
@@ -213,11 +241,16 @@ export default {
 }
 
 .middle {
-  color: black;
+  color: white;
+  padding: 8px 0px 8px;
 }
 
 .top-bottom {
   background: black;
+}
+
+.vue-typer .custom.char.typed {
+  color: white;
 }
 
 .middle,
