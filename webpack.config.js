@@ -25,7 +25,6 @@ module.exports = function(env, options) {
                 'axios',
                 'vue',
                 'vue-router',
-                'slick-carousel'
             ]
         },
         context: path.resolve(__dirname, 'src'),

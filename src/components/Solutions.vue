@@ -15,26 +15,10 @@
                             <img src="../assets/img/mobile-dark.svg" alt="Mobile icon">
                             <p class="call-to-action">mobile</p>
                         </a>
-                        <!-- <a href="#design" class="col-md-6 col-6">
-                            <img src="../assets/img/design-dark.svg" alt="Design icon">
-                            <p class="call-to-action">design</p>
-                        </a> -->
                         <a href="#cloud" class="col-md-6 col-6">
                             <img src="../assets/img/cloud-dark.svg" alt="Cloud icon">
                             <p class="call-to-action">cloud</p>
                         </a>
-                        <!-- <a href="#marketing" class="col-md-6 col-6">
-                            <img src="../assets/img/social-dark.svg" alt="Marketing icon">
-                            <p class="call-to-action">marketing</p>
-                        </a> -->
-                        <!-- <a href="#e-commerce" class="col-md-6 col-6">
-                            <img src="../assets/img/e-commerce-dark.svg" alt="E-commerce icon">
-                            <p class="call-to-action">e-commerce</p>
-                        </a> -->
-                        <!-- <a href="#legacy-code" class="col-md-6 col-6">
-                            <img src="../assets/img/legacy-dark.svg" alt="Legacy code uplift icon">
-                            <p class="call-to-action">legacy code</p>
-                        </a> -->
                         <a href="#start-up" class="col-md-6 col-6">
                             <img src="../assets/img/start-up-dark.svg" alt="Start-up growth icon">
                             <p class="call-to-action">start-up</p>

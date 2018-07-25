@@ -1,76 +1,77 @@
 <template>
   <section id="home"
            class="align-items-center">
-    <!-- <welcome text="sdsdsdsdsdsdcsdc"></welcome> -->
     <div class="particles">
-      <vue-particles ref="particles"
-                     class="d-none d-sm-block"
-                     color="#dedede"
-                     :particleOpacity="0.7"
-                     :particlesNumber="130"
-                     shapeType="polygon"
-                     :particleSize="2"
-                     linesColor="#dedede"
-                     :linesWidth="1"
-                     :lineLinked="true"
-                     :lineOpacity="0.4"
-                     :linesDistance="150"
-                     :moveSpeed="3"
-                     :hoverEffect="true"
-                     hoverMode="grab"
-                     :clickEffect="true"
-                     clickMode="push">
-      </vue-particles>
+      <transition name="fade">
+
+        <vue-particles ref="particles"
+                       class="d-none d-sm-block"
+                       color="#dedede"
+                       :particleOpacity="0.7"
+                       :particlesNumber="130"
+                       shapeType="polygon"
+                       :particleSize="2"
+                       linesColor="#dedede"
+                       :linesWidth="1"
+                       :lineLinked="true"
+                       :lineOpacity="0.4"
+                       :linesDistance="150"
+                       :moveSpeed="3"
+                       :hoverEffect="false"
+                       hoverMode="grab"
+                       :clickEffect="true"
+                       clickMode="push">
+        </vue-particles>
+      </transition>
+
     </div>
-    <transition name="fade">
-      <div class="tagline-wrapper">
-        <h2 id="tagline">
-          <div class="row">
-            <p class="top-bottom">client-first</p>
-          </div>
-          <div class="row middle">
+    <div class="tagline-wrapper">
+      <h2 id="tagline">
+        <div class="row">
+          <p class="top-bottom">client-first</p>
+        </div>
+        <div class="row middle">
 
-            <a :href="hrefSolution">
+          <a :href="hrefSolution">
 
-              <vue-typer @typed="typed"
-                         :text='["digital","web","mobile","cloud","start-up"]'
-                         :repeat='Infinity'
-                         :shuffle='false'
-                         initial-action='typing'
-                         :pre-type-delay='70'
-                         :type-delay='80'
-                         :pre-erase-delay='2000'
-                         :erase-delay='300'
-                         erase-style='select-all'
-                         :erase-on-complete='false'
-                         caret-animation='blink'></vue-typer>
-            </a>
-          </div>
-          <div class="row">
-            <p class="top-bottom">solutions</p>
-          </div>
-        </h2>
-      </div>
-    </transition>
+            <vue-typer @typed="typed"
+                       :text='["digital","web","mobile","cloud","start-up"]'
+                       :repeat='Infinity'
+                       :shuffle='false'
+                       initial-action='typing'
+                       :pre-type-delay='70'
+                       :type-delay='80'
+                       :pre-erase-delay='2000'
+                       :erase-delay='300'
+                       erase-style='clear'
+                       :erase-on-complete='false'
+                       caret-animation='blink'></vue-typer>
+          </a>
+        </div>
+        <div class="row">
+          <p class="top-bottom">solutions</p>
+        </div>
+      </h2>
+    </div>
     <a href="#solutions"
        class="learn-more-btn call-to-action">Learn More</a>
   </section>
 </template>
 
 <script>
-
-import Welcome from "./Home/Cell5Welcome.vue";
 import { VueTyper } from "vue-typer";
-
+import { FadeTransition } from "vue2-transitions";
 
 export default {
   components: {
-    Welcome,
-    VueTyper
+    // Welcome,
+    VueTyper,
+    FadeTransition
   },
   data: () => {
     return {
-      selectedText: ""
+      selectedText: "",
+      dur: 1000
     };
   },
   methods: {
@@ -84,24 +85,26 @@ export default {
       return `#${this.selectedText}`;
     }
   },
-  mounted() {
-    rotateText();
-  }
-  // updated() {
-  //   while (x < 30) {
-  //     x++;
-  //     document
-  //       .querySelector("canvas.particles-js-canvas-el")
-  //       .dispatchEvent(new Event("click")); // Fire event
-  //     console.log("called");
-  //   }
+
+  // mounted() {
+  //   var x = 1
+  //   // while (x < 30) {
+  //   //   x++;
+  //   //   document
+  //   //     .querySelector("canvas.particles-js-canvas-el")
+  //   //     .dispatchEvent(new Event("click")); // Fire event
+  //   //   console.log("called");
+  //   // } var x = 1;
   //   this.$nextTick(function() {
-  //     var x = 1;
-  //     while (x < 30) {
+     
+  //     while (x < 50) {
   //       x++;
+  //       console.log(        document
+  //         .querySelector("canvas.particles-js-canvas-el"))
+  //       // document
   //       document
-  //         .querySelector("canvas.particles-js-canvas-el")
-  //         .dispatchEvent(new Event("click")); // Fire event
+  //  .elementFromPoint(50, 50).click();
+  //         // .dispatchEvent(new Event("click")); // Fire event
   //       console.log("called");
   //     }
   //   });
@@ -109,7 +112,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 #home {
   /* background-size:cover; */
   color: #fefffe;
@@ -146,7 +149,6 @@ export default {
 
 #home * {
   margin: 0;
-  padding: 0;
   line-height: 100%;
 }
 
@@ -250,9 +252,10 @@ export default {
 }
 
 .vue-typer .custom.char.typed {
-  color: white;
+  color: white !important;
 }
 
+char custom typed
 .middle,
 .top-bottom {
   display: inline-block;
