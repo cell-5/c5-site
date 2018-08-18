@@ -32,6 +32,34 @@
     </section>
 </template>
 
+<script>
+
+import $ from 'jquery'
+
+function scrollToSection (selector) {
+  var $section = $(selector)
+
+  if (!$section.length) {
+    return
+  }
+  $('html,body').animate({
+    scrollTop: selector === '#home' || selector === '#' ? 0 : $section.offset().top
+  }, 1000)
+}
+
+export default {
+  methods: {
+    scrollOrRedirect (e) {
+        
+        let href = e.currentTarget.getAttribute('href')
+        e.preventDefault()
+        scrollToSection(href)
+
+    }
+  }
+}
+</script>
+
 <style scoped>
 #solutions {
     background-color: #fefffe;
