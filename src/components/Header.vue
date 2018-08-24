@@ -24,6 +24,7 @@
                       <a class="nav-link" data-toggle="collapse" data-target="#collapsible-navbar">Portfolio</a>
                     </router-link>
                   </template>
+                  <li class="nav-item"><a @click="scrollOrRedirect" class="nav-link" href="#careers">Careers</a></li>
                   <li class="nav-item"><a @click="scrollOrRedirect" class="nav-link" href="#contact-us">Contact Us</a></li>
                 </ul>
             </div>
@@ -35,7 +36,7 @@
 import $ from 'jquery'
 function scrollToSection (selector) {
   var $section = $(selector)
-
+  
   if (!$section.length) {
     return
   }
@@ -99,6 +100,8 @@ export default {
     isPortfolioPage () {
       $('.team').slick('slickPause')
       $('.teamNav-slide').slick('slickPause')
+      $('.career').slick('slickPause')
+      $('.careerNav-slide').slick('slickPause')
       return this.$route.path === '/portfolio'
     }
   },

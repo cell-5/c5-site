@@ -7,6 +7,7 @@
       <Solutions></Solutions>
       <Sections></Sections>
       <ProfileSection></ProfileSection>
+      <CareerSection></CareerSection>
       <ContactSection></ContactSection>
       <FooterSection></FooterSection>
     </main>
@@ -19,6 +20,7 @@ import HomeSection from './HomeSection.vue'
 import Solutions from './Solutions.vue'
 import Sections from './Sections.vue'
 import ProfileSection from './ProfileSection.vue'
+import CareerSection from './CareersSection.vue'
 import ContactSection from './ContactSection.vue'
 import FooterSection from './FooterSection.vue'
 import Welcome from "./Home/Cell5Welcome.vue";
@@ -32,6 +34,7 @@ export default {
     Solutions,
     Sections,
     ProfileSection,
+    CareerSection,
     ContactSection,
     FooterSection
   }
