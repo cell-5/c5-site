@@ -1,34 +1,34 @@
 <template>
-    <section id="profiles">
+    <section id="careers">
             <div class="container">
-                <h2>Meet The Team</h2>
-                <div class="team">
-                    <div id="teamList" v-for="member of members">
+                <h2>Careers</h2>
+                <div class="career">
+                    <div id="teamList" v-for="career of careers">
                         <div class="team-member">
                             <div class="row">
                                 <div class="col-lg-6">
                                     <figure class="team-member-photo">
-                                        <img :src="member.img" alt="Peter Barry" class="img-fluid">
+                                        <img :src="career.job_img" :alt="career.job_title" class="img-fluid">
                                     </figure>
                                 </div>
                                 <div class="col-lg-6">
-                                    <h3 class="team-member-name">{{ member.name }}</h3>
-                                    <h4 class="team-member-title">{{ member.title }}</h4>
+                                    <h3 class="team-member-name">{{ career.job_title }}</h3>
+                                    <h4 class="team-member-title"></h4>
                                     <ul class="team-member-social">
                                         <li>
-                                            <a :href="member.linkedin" target="_blank">
-                                                <span class="fab fa-linkedin"></span>
+                                            <a href="#" target="_blank">
+                                                Apply
                                             </a>
                                         </li>
                                     </ul>
-                                    <p class="team-member-bio">{{ member.bio }}</p>
+                                    <p class="team-member-bio">{{ career.job_description }}</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="teamNav">
-                    <div class="teamNav-slide">
+                <div class="careerNav">
+                    <div class="careerNav-slide">
                         <div>
                             <img src="../assets/img/peter-vector.svg" alt="Peter Barry">
                         </div>
@@ -55,82 +55,70 @@ import PeterImg from '../assets/img/peter-vector.svg'
 import HarryImg from '../assets/img/harry-vector.svg'
 import PatImg from '../assets/img/pat-vector.svg'
 import NicImg from '../assets/img/nic-vector.png'
-function teamCarousel () {
-  $('.team').slick({
+function careerCarousel () {
+  $('.career').slick({
     autoplay: true,
     autoplaySpeed: 4000,
     fade: true,
-    asNavFor: '.teamNav-slide',
+    asNavFor: '.careerNav-slide',
     arrows: true,
     nextArrow: '<span class="slick-next-arrow" role="button"><i class="fa fa-angle-right"></i></span>',
     prevArrow: '<span class="slick-prev-arrow" role="button"><i class="fa fa-angle-left"></i></span>'
   })
-  $('.teamNav-slide').slick({
+  $('.careerNav-slide').slick({
     slidesToShow: 4,
     arrows: false,
-    asNavFor: '.team',
+    asNavFor: '.career',
     focusOnSelect: true
   })
 }
 export default {
   data () {
     return {
-      members: [
+      careers: [
         {
-          name: 'Peter Barry',
-          img: PeterImg,
-          title: 'Cloud Architect',
-          linkedin: 'https://uk.linkedin.com/in/peterbarry/',
-          twitter: '',
-          bio: 'Peter is our Cloud specialist. He has 15 years experience building web, mobile and cloud solutions. He is passionate about cost-effective and scalable cloud architectures and consults on general I.T. strategy and DevOps.'
+          job_title: 'Junior Programmer',
+          job_description: 'Provide support to design, development, implementation and maintenance of the applications that they developed for their clients.',
+          job_img: PatImg,
         },
         {
-          name: 'Harry Wynn-Williams',
-          img: HarryImg,
-          title: 'Fullstack (front-end specialist)',
-          linkedin: 'https://www.linkedin.com/in/harry-wynn-williams-59b89040/',
-          twitter: 'https://twitter.com/harrywinmillion',
-          bio: "Harry has experience of building web and mobile apps at an investment bank and in the gaming industry. He loves building complex UIs, especially when it's with Vue.js."
+          job_title: 'Cloud Architect',
+          job_description: 'Responsible for deploying overseeing a company\'s cloud computing strategy. This includes cloud adoption plans, cloud application design, and cloud management and monitoring. Cloud architects oversee application architecture and deployment in cloud environments.',
+          job_img: PeterImg, 
         },
         {
-          name: 'Pat Bautista',
-          img: PatImg,
-          title: 'Fullstack (back-end specialist)',
-          linkedin: 'https://www.linkedin.com/in/pat-bautista/',
-          twitter: '',
-          bio: 'Pat specializes in REST API development and integration. He has already built a reputation in the team for being able to solve any problem he is given.'
+          job_title: 'Full Stack Developer',
+          job_description: 'Responsible for front and back-end web development. Usually, good full stack developers will understand several how to work with several languages and databases including PHP, HTML, CSS, JavaScript and everything in between.',
+          job_img: HarryImg, 
         },
         {
-          name: 'Johnnica Castro',
-          img: NicImg,
-          title: 'Graphic Designer',
-          linkedin: 'https://www.linkedin.com/in/johnnica-castro-723451163/',
-          twitter: '',
-          bio: "She is a skilled designer who is passionate about arts. She's interested in different kinds of visuals and focuses on UI/UX designing."
+          job_title: 'Graphic Designer',
+          job_description: 'Create visual concepts, by hand or using computer software, to communicate ideas that inspire, inform, or captivate consumers. They develop the overall layout and production design for advertisements, brochures, magazines, and corporate reports.',
+          job_img: NicImg, 
         }
       ]
     }
   },
   mounted () {
-    teamCarousel()
+    careerCarousel()
   }
 }
 </script>
 <style scoped>
-#profiles {
-    background: #d64933;
-    color: white;
+#careers {
+    background: #fff;
+    color: #000;
     padding: 6vw 0;
     position: relative
 }
 
 @media (max-width: 767px) {
-    #profiles {
+    #careers {
         padding: 5rem 0
     }
 }
 
-#profiles:before {
+#careers:before {
     content: '';
     position: absolute;
     right: 0;
@@ -138,14 +126,14 @@ export default {
     height: 3.13rem;
     width: 50%;
     border-left: 3.13rem solid transparent;
-    border-bottom: 3.13rem solid #fff
+    border-bottom: 3.13rem solid #2c302e
 }
 
-#profiles h2 {
+#careers h2 {
     text-align: center
 }
 
-.team {
+.career {
     margin-top: 4em
 }
 
@@ -260,24 +248,24 @@ export default {
 }
 </style>
 <style>
-.teamNav {
+.careerNav {
     margin: 2em auto 0;
     max-width: 31.25rem
 }
 
 @media (min-width: 3840px) {
-    .teamNav {
+    .careerNav {
         max-width: 1024px
     }
 }
 
 @media (max-width: 991px) {
-    .teamNav {
+    .careerNav {
         display: none
     }
 }
 
-.teamNav-slide img {
+.careerNav-slide img {
     cursor: pointer;
     border: 4px solid #e1e1e1;
     background: white;
@@ -286,7 +274,7 @@ export default {
     height: 4.38em;
 }
 
-.teamNav .slick-track {
+.careerNav .slick-track {
     -webkit-transform: translate3d(0px, 0px, 0px) !important;
     transform: translate3d(0px, 0px, 0px) !important
 }
