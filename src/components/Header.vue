@@ -13,9 +13,9 @@
 
             <div class="collapse navbar-collapse" id="collapsible-navbar">
                 <ul class="navbar-nav">
-	                <li class="nav-item active"><a @click="scrollOrRedirect" class="nav-link" href="#home">Home</a></li>
-	                <li class="nav-item"><a @click="scrollOrRedirect" class="nav-link" href="#solutions">Solutions</a></li>
-	                <li class="nav-item"><a @click="scrollOrRedirect" class="nav-link" href="#profiles">The Team</a></li>
+	                <li class="nav-item active"><a v-scroll-to="'#home'" class="nav-link" href="#home">Home</a></li>
+	                <li class="nav-item"><a v-scroll-to="'#solutions'" class="nav-link" href="#solutions">Solutions</a></li>
+	                <li class="nav-item"><a v-scroll-to="'#profiles'" class="nav-link" href="#profiles">The Team</a></li>
                   <template v-if="isPortfolioPage">
                     <li class="nav-item"><a id="portfolio-link" class="nav-link" href="#portfolio">Portfolio</a></li>
                   </template>
@@ -24,7 +24,7 @@
                       <a class="nav-link" data-toggle="collapse" data-target="#collapsible-navbar">Portfolio</a>
                     </router-link>
                   </template>
-                  <li class="nav-item"><a @click="scrollOrRedirect" class="nav-link" href="#contact-us">Contact Us</a></li>
+                  <li class="nav-item"><a v-scroll-to="'#contact-us'" class="nav-link" href="#contact-us">Contact Us</a></li>
                 </ul>
             </div>
         </nav>
