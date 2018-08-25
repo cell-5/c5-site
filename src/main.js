@@ -9,6 +9,7 @@ import VueParticles from 'vue-particles'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import 'bootstrap'
+import VueScrollTo from 'vue-scrollto'
 
 Vue.use(BootstrapVue)
 Vue.use(VueParticles)
@@ -22,6 +23,20 @@ Vue.use(VueProgressBar, {
     termination: 300
   }
 })
+
+Vue.use(VueScrollTo, {
+    container: "body",
+    duration: 500,
+    easing: "ease",
+    offset: 0,
+    cancelable: true,
+    onStart: false,
+    onDone: false,
+    onCancel: false,
+    x: false,
+    y: true
+})
+
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
