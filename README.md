@@ -1,9 +1,21 @@
-Cell 5 site
+# Cell 5 Site
+> Old build
 
-checkout the `master` branch
+## Set Up
+These set up instructions are for Windows machine.
 
-run `npm install`
+### Requirements
+- Git Bash
+- Docker and Docker Compose _(install Docker Toolbox for Windows 7)_
 
-run `bower install`
+### Environment and Dependecies
+Run this command when setting up for the first time or when installing dependencies:
+```
+$ ./setup.sh
+```
 
-run `npm run start`
+### Start
+Run this command to start the app with live reloading:
+```
+$ ./start.sh
+```
