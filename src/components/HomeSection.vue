@@ -64,7 +64,6 @@ import { FadeTransition } from "vue2-transitions";
 
 export default {
   components: {
-    // Welcome,
     VueTyper,
     FadeTransition
   },
@@ -77,7 +76,6 @@ export default {
   methods: {
     typed: function(typedString) {
       this.selectedText = typedString;
-      console.log(typedString);
     }
   },
   computed: {

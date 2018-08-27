@@ -9,7 +9,9 @@ import VueParticles from 'vue-particles'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import 'bootstrap'
+import VueIsInView from 'vue-is-in-view';
 
+Vue.use(VueIsInView);
 Vue.use(BootstrapVue)
 Vue.use(VueParticles)
 

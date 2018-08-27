@@ -24,6 +24,7 @@
     "popper.js": "^1.12.9",
     "slick-carousel": "^1.8.1",
     "vue": "^2.5.2",
+    "vue-is-in-view": "^1.0.7",
     "vue-router": "^3.0.1",
     "vue-typer": "^1.2.0",
     "vue2-transitions": "^0.2.3",

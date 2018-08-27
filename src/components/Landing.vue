@@ -2,7 +2,7 @@
   <div id="app">
     <Header></Header>
     <main role="main">
-      <!-- <welcome></welcome> -->
+      <!-- <welcome v-show="show"></welcome> -->
       <HomeSection></HomeSection>
       <Solutions></Solutions>
       <Sections></Sections>
@@ -14,17 +14,17 @@
 </template>
 
 <script>
-import Header from './Header.vue'
-import HomeSection from './HomeSection.vue'
-import Solutions from './Solutions.vue'
-import Sections from './Sections.vue'
-import ProfileSection from './ProfileSection.vue'
-import ContactSection from './ContactSection.vue'
-import FooterSection from './FooterSection.vue'
+import Header from "./Header.vue";
+import HomeSection from "./HomeSection.vue";
+import Solutions from "./Solutions.vue";
+import Sections from "./Sections.vue";
+import ProfileSection from "./ProfileSection.vue";
+import ContactSection from "./ContactSection.vue";
+import FooterSection from "./FooterSection.vue";
 import Welcome from "./Home/Cell5Welcome.vue";
 
 export default {
-  name: 'app',
+  name: "app",
   components: {
     Welcome,
     Header,
@@ -34,6 +34,17 @@ export default {
     ProfileSection,
     ContactSection,
     FooterSection
+  },
+  data: () => {
+    return {
+      show: true,
+    };
+  },
+
+  created() {
+    setTimeout(() => {
+      this.show = false;
+    }, 2000);
   }
-}
+};
 </script>
