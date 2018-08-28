@@ -2,7 +2,8 @@ version: '2'
 services:
   app:
     build: .
-    image: node_bower:dev
+    container_name: cell5site
+    image: node_bower_gulp:dev
     command: npm start
     tty: true
     volumes:

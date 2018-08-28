@@ -1,17 +1,15 @@
 root=$(pwd)
 
-docker run \
-    --user $(id -u):$(id -g) \
+MSYS_NO_PATHCONV=1 docker run \
     --rm \
     -v ${root}:/app \
     -w /app \
-    node:8.11 /bin/bash -c "npm install"
+    node:8.11 /bin/bash -c "npm install --no-bin-links"
 
 docker-compose build
 
-docker run \
-    --user $(id -u):$(id -g) \
+MSYS_NO_PATHCONV=1 docker run \
     --rm \
     -v ${root}:/app \
     -w /app \
-    node_bower:dev /bin/bash -c "bower install"
+    node_bower_gulp:dev /bin/bash -c "bower install --allow-root"
