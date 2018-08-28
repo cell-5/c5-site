@@ -169,10 +169,10 @@ export default {
 }
 
 .contact-highlight {
-  -webkit-transition: all 3s ease-out;
-  -moz-transition: all 3s ease-out;
-  -o-transition: all 3s ease-out;
-  transition: all 3s ease-out;
+  -webkit-transition: all 2s ease-out;
+  -moz-transition: all 2s ease-out;
+  -o-transition: all 2s ease-out;
+  transition: all 2s ease-out;
   background-color: white;
   color: rgb(8, 7, 7);
   padding: 6vw 0;
