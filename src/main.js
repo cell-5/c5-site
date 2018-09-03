@@ -5,7 +5,7 @@ import VueProgressBar from 'vue-progressbar'
 import BootstrapVue from 'bootstrap-vue'
 import router from './router'
 import App from './App.vue'
-//import VueParticles from 'vue-particles'
+import VueParticles from 'vue-particles'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import 'bootstrap'
@@ -13,7 +13,7 @@ import VueIsInView from 'vue-is-in-view';
 
 Vue.use(VueIsInView);
 Vue.use(BootstrapVue)
-//Vue.use(VueParticles)
+Vue.use(VueParticles)
 
 Vue.use(VueProgressBar, {
   color: '#228f42',
