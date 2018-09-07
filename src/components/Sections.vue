@@ -298,9 +298,9 @@ color: white
 </style>
 <script>
 import WebImg from '../assets/img/web-light.svg'
-const MobileImg = import('../assets/img/mobile-dark.svg')
+import MobileImg from '../assets/img/web-light.svg' //mobile-dark.svg
 import CloudImg from '../assets/img/cloud-light.svg'
-const StartUpImg = import('../assets/img/start-up-dark.svg')
+import StartUpImg from '../assets/img/web-light.svg' //start-up dark.svg
 export default {
   data () {
     return {
