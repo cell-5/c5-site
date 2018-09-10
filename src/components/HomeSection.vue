@@ -8,7 +8,7 @@
                        class="d-none d-sm-block"
                        color="#dedede"
                        :particleOpacity="0.7"
-                       :particlesNumber="130"
+                       :particlesNumber="80"
                        shapeType="polygon"
                        :particleSize="2"
                        linesColor="#dedede"
