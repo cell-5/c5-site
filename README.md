@@ -17,13 +17,6 @@ npm run build
 # build for production and view the bundle analyzer report
 npm run build --report
 ```
-## Errors and Fixes
-
-> Error 1
-``` bash
-When running npm start you may encounter this error:
-# Cannot read property 'add' of undefined
-```
 SOLUTION:
 https://github.com/parcel-bundler/parcel/issues/659#issuecomment-361271531
 
