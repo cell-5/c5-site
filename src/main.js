@@ -9,7 +9,9 @@ import VueParticles from 'vue-particles'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import 'bootstrap'
+import VueScrollactive  from 'vue-scrollactive'
 
+Vue.use(VueScrollactive)
 Vue.use(BootstrapVue)
 Vue.use(VueParticles)
 
