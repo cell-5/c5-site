@@ -297,10 +297,10 @@ color: white
 
 </style>
 <script>
+import MobileImg from '../assets/img/mobile-dark-1.svg' //mobile-dark.svg
 import WebImg from '../assets/img/web-light.svg'
-import MobileImg from '../assets/img/web-light.svg' //mobile-dark.svg
 import CloudImg from '../assets/img/cloud-light.svg'
-import StartUpImg from '../assets/img/web-light.svg' //start-up dark.svg
+import StartUpImg from '../assets/img/start-up-dark-1.svg' //start-up dark.svg
 export default {
   data () {
     return {
