@@ -1,5 +1,5 @@
 # cell5-vue-website
-
+[![Build Status](https://travis-ci.org/cell-5/cell-5-site.svg?branch=master)](https://travis-ci.org/cell-5/cell-5-site)
 > Cell 5 Website
 
 ## Build Setup
