@@ -8,19 +8,19 @@
 
                     <div class="solutions-nav row">
                         <a href="#web" class="col-md-6 col-6">
-                            <img src="../assets/img/web-dark.svg" alt="Web icon">
+                            <img :src="WebImg" alt="Web icon">
                             <p style="margin-left:10px;margin-right:10px;" class="call-to-action">web</p>
                         </a>
                         <a href="#mobile" class="col-md-6 col-6">
-                            <img src="../assets/img/mobile-dark.svg" alt="Mobile icon">
+                            <img :src="MobileImg" alt="Mobile icon">
                             <p class="call-to-action">mobile</p>
                         </a>
                         <a href="#cloud" class="col-md-6 col-6">
-                            <img src="../assets/img/cloud-dark.svg" alt="Cloud icon">
+                            <img :src="CloudImg" alt="Cloud icon">
                             <p class="call-to-action">cloud</p>
                         </a>
                         <a href="#start-up" class="col-md-6 col-6">
-                            <img src="../assets/img/start-up-dark.svg" alt="Start-up growth icon">
+                            <img :src="StartUpImg" alt="Start-up growth icon">
                             <p class="call-to-action">start-up</p>
                         </a>
                     </div>
@@ -106,4 +106,22 @@
     text-align: center
 }
 </style>
+<script>
+import MobileImg from '../assets/img/mobile-dark.svg'
+import WebImg from '../assets/img/web-dark.svg'
+import CloudImg from '../assets/img/cloud-dark.svg'
+import StartUpImg from '../assets/img/start-up-dark.svg'
+
+export default {
+    data () {
+        return {
+            MobileImg,
+            WebImg,
+            CloudImg,
+            StartUpImg
+        }
+    }
+}
+</script>
+
 

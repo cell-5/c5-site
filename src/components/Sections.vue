@@ -297,8 +297,8 @@ color: white
 
 </style>
 <script>
-import WebImg from '../assets/img/web-light.svg'
 import MobileImg from '../assets/img/mobile-dark.svg'
+import WebImg from '../assets/img/web-light.svg'
 import CloudImg from '../assets/img/cloud-light.svg'
 import StartUpImg from '../assets/img/start-up-dark.svg'
 export default {

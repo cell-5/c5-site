@@ -138,7 +138,7 @@ export default {
     height: 3.13rem;
     width: 50%;
     border-left: 3.13rem solid transparent;
-    border-bottom: 3.13rem solid #2c302e
+    /* border-bottom: 3.13rem solid #2c302e */
 }
 
 #profiles h2 {

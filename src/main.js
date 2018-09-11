@@ -10,8 +10,10 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import 'bootstrap'
 import VueScrollactive  from 'vue-scrollactive'
+import VueIsInView from 'vue-is-in-view'
 
 Vue.use(VueScrollactive)
+Vue.use(VueIsInView)
 Vue.use(BootstrapVue)
 Vue.use(VueParticles)
 

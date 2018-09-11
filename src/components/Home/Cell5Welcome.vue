@@ -1,39 +1,51 @@
 <template>
-    <div class="msg">
-        <span>{{text}}</span>
-        <img :src="logo" alt="">
+  <transition name="fade">
+    <div id="welcome-wrapper">
+      <div id="welcome">
+        <img :src="logo"
+             alt="">
+      </div>
     </div>
+  </transition>
 </template>
 
+
+
 <script>
-import Cell5Logo from "../../assets/img/cell-5-logo.svg";
+import Cell5Logo from "../../assets/img/cell-5-logo-white.svg";
 
 export default {
   name: "Message",
   props: ["text"],
   data: () => {
-   return { logo: Cell5Logo}
+    return {
+      logo: Cell5Logo
+    };
   }
 };
 </script>
 
 <style scoped>
-.msg {
+#welcome-wrapper {
   width: 100%;
   height: 100%;
   position: fixed;
-  background: white;
+  background: black;
   color: black;
   z-index: 100;
   left: 0;
   top: 0;
   line-height: 100%;
 }
-.msg span {
-  position: absolute;
+
+#welcome {
+  position: relative;
   top: 50%;
-  font-size: 30px;
-  width: 100%;
-  text-align: center;
+  transform: translateY(-50%);
+}
+#welcome img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 </style>
