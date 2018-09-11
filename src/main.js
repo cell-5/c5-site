@@ -12,8 +12,8 @@ import 'bootstrap'
 import VueIsInView from 'vue-is-in-view'
 import VueScrollactive  from 'vue-scrollactive'
 
-Vue.use(VueIsInView)
 Vue.use(VueScrollactive)
+Vue.use(VueIsInView)
 Vue.use(BootstrapVue)
 Vue.use(VueParticles)
 
