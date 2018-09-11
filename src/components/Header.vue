@@ -1,8 +1,8 @@
 <template>
   <header class="siteheader" role="banner">
         <scrollactive  class="navbar navbar-expand-md navbar-dark" 
-          active-class="active" :offset="55">
-            <h1 id="logo">
+          active-class="active" :offset="55" :duration="1500">
+            <h1 id="logo" class="shrink">
                 <router-link to="/" class="navbar-brand">
                     <img src="../assets/img/logo-white.svg" alt="cell5 logo">
                 </router-link>
@@ -14,7 +14,7 @@
 
             <div class="collapse navbar-collapse" id="collapsible-navbar">
                 <ul class="navbar-nav">
-	                <li class="nav-item active"><a @click="scrollOrRedirect" class="nav-link scrollactive-item" href="#home">Home</a></li>
+	                <li class="nav-item"><a @click="scrollOrRedirect" class="nav-link scrollactive-item" href="#home">Home</a></li>
 	                <li class="nav-item"><a @click="scrollOrRedirect" class="nav-link scrollactive-item" href="#solutions">Solutions</a></li>
 	                <li class="nav-item"><a @click="scrollOrRedirect" class="nav-link scrollactive-item" href="#profiles">The Team</a></li>
                   <template v-if="isPortfolioPage">
@@ -33,6 +33,8 @@
 </template>
 
 <script>
+import $ from 'jquery'
+
 function scrollToSection (selector) {
   var $section = $(selector)
 
