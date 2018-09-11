@@ -1,7 +1,8 @@
 <template>
   <header class="siteheader" role="banner">
-        <nav class="navbar navbar-expand-md navbar-dark">
-            <h1 id="logo">
+        <scrollactive  class="navbar navbar-expand-md navbar-dark" 
+          active-class="active" :offset="55" :duration="1500">
+            <h1 id="logo" class="shrink">
                 <router-link to="/" class="navbar-brand">
                     <img src="../assets/img/logo-white.svg" alt="cell5 logo">
                 </router-link>
@@ -13,26 +14,27 @@
 
             <div class="collapse navbar-collapse" id="collapsible-navbar">
                 <ul class="navbar-nav">
-	                <li class="nav-item active"><a @click="scrollOrRedirect" class="nav-link" href="#home">Home</a></li>
-	                <li class="nav-item"><a @click="scrollOrRedirect" class="nav-link" href="#solutions">Solutions</a></li>
-	                <li class="nav-item"><a @click="scrollOrRedirect" class="nav-link" href="#profiles">The Team</a></li>
+	                <li class="nav-item"><a @click="scrollOrRedirect" class="nav-link scrollactive-item" href="#home">Home</a></li>
+	                <li class="nav-item"><a @click="scrollOrRedirect" class="nav-link scrollactive-item" href="#solutions">Solutions</a></li>
+	                <li class="nav-item"><a @click="scrollOrRedirect" class="nav-link scrollactive-item" href="#profiles">The Team</a></li>
                   <template v-if="isPortfolioPage">
-                    <li class="nav-item"><a id="portfolio-link" class="nav-link" href="#portfolio">Portfolio</a></li>
+                    <li class="nav-item"><a id="portfolio-link" class="nav-link scrollactive-item" href="#portfolio">Portfolio</a></li>
                   </template>
                   <template v-else>
                     <router-link to="portfolio" tag="li" class="nav-item">
                       <a class="nav-link" data-toggle="collapse" data-target="#collapsible-navbar">Portfolio</a>
                     </router-link>
                   </template>
-                  <li class="nav-item"><a @click="scrollOrRedirect" class="nav-link" href="#contact-us">Contact Us</a></li>
+                  <li class="nav-item"><a @click="scrollOrRedirect" class="nav-link scrollactive-item" href="#contact-us">Contact Us</a></li>
                 </ul>
             </div>
-        </nav>
+        </scrollactive>
     </header>
 </template>
 
 <script>
 import $ from 'jquery'
+
 function scrollToSection (selector) {
   var $section = $(selector)
 
@@ -42,54 +44,6 @@ function scrollToSection (selector) {
   $('html,body').animate({
     scrollTop: selector === '#home' || selector === '#' ? 0 : $section.offset().top
   }, 150)
-}
-function animateSectionScroll () {
-  var selector = $(this).attr('href')
-  scrollToSection(selector)
-  return false
-}
-function animateTopScroll (e) {
-  e.preventDefault()
-  $('html,body').animate({
-    scrollTop: 0
-  }, 500)
-}
-function highlightMenu ($window, $menuItem) {
-  var top = $window.scrollTop()
-  var items = $menuItem.map(function () {
-    var selector = $(this).attr('href').replace('/', '#')
-    var $target = $(selector)
-    if ($target.length && top >= $target.offset().top) {
-      return selector
-    }
-  })
-
-  var current = items[items.length - 1]
-
-  $menuItem.parent()
-    .removeClass('active')
-    .end()
-    .filter('a[href="' + current + '"]')
-    .parent()
-    .addClass('active')
-}
-function menuEffects () {
-  $('#portfolio-link').on('click', animateSectionScroll)
-  $('#logo a').on('click', animateTopScroll)
-  $('.sitefooter-bottom a').on('click', animateTopScroll)
-  $('.learn-more-btn').on('click', animateSectionScroll)
-  $('.solutions-nav a').on('click', animateSectionScroll)
-  $('.contact-us-link').on('click', animateSectionScroll)
-  var $menuItem = $('.navbar-nav li a:not(.unscrollable)')
-  $('#logo').addClass('shrink')
-
-  $(window).on('scroll', function () {
-    highlightMenu($(this), $menuItem)
-  })
-
-  $('.navbar-nav>li>a').on('click', function () {
-    $('.navbar-collapse').collapse('hide')
-  })
 }
 export default {
   computed: {
@@ -107,7 +61,6 @@ export default {
       let href = e.currentTarget.getAttribute('href')
       if (this.isHomepage) {
         e.preventDefault()
-        scrollToSection(href)
       } else {
         this.$router.push({path: '/' + href})
       }
@@ -116,13 +69,17 @@ export default {
   mounted () {
     scrollToSection(window.location.hash)
     window.location.hash = ''
-    menuEffects()
   }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+
+.navbar-nav li a.active {
+  color:#fff;
+  opacity: 1;
+}
 
 header {
     position: fixed;
