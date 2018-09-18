@@ -23,7 +23,7 @@
     "vue-hot-reload-api": "^2.3.0",
     "vue-is-in-view": "^1.0.7",
     "vue-router": "^3.0.1",
-    "vue-scrollactive": "^0.6.1",
+    "vue-scrollactive": "^0.7.0",
     "vue-typer": "^1.2.0",
     "vue2-transitions": "^0.2.3"
   },
