@@ -1,7 +1,4 @@
 <template>
-  <div id="portfolio">
-    <Header></Header>
-    <main role="main">
       <section class="portfolio">
         <div class="container">
           <div class="row justify-content-md-center align-items-center">
@@ -38,14 +35,10 @@
           </div>
         </div>
       </section>
-      <FooterSection></FooterSection>
-    </main>
-  </div>
 </template>
 
 <script>
   import Header from './Header.vue'
-  import FooterSection from './FooterSection.vue'
   import MelissaTwiggImg from '~/assets/img/mtwigg-screenshot-2.jpg'
   import PortlandImg from '~/assets/img/portland-screenshot.jpg'
   import Good2RentImg from '~/assets/img/good2rent-screenshot.jpg'
@@ -95,8 +88,7 @@
       }
     },
     components: {
-      Header,
-      FooterSection
+      Header
     },
     mounted () {
       backToTop()

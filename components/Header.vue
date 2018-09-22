@@ -14,18 +14,18 @@
 
             <div class="collapse navbar-collapse" id="collapsible-navbar">
                 <ul class="navbar-nav">
-	                <li class="nav-item"><a @click="scrollOrRedirect" class="nav-link scrollactive-item" href="#home">Home</a></li>
-	                <li class="nav-item"><a @click="scrollOrRedirect" class="nav-link scrollactive-item" href="#solutions">Solutions</a></li>
-	                <li class="nav-item"><a @click="scrollOrRedirect" class="nav-link scrollactive-item" href="#profiles">The Team</a></li>
+	                <li class="nav-item"><a @click="scrollOrRedirect" class="nav-link" href="#home">Home</a></li>
+	                <li class="nav-item"><a @click="scrollOrRedirect" class="nav-link" href="#solutions">Solutions</a></li>
+	                <li class="nav-item"><a @click="scrollOrRedirect" class="nav-link" href="#profiles">The Team</a></li>
                   <template v-if="isPortfolioPage">
-                    <li class="nav-item"><a id="portfolio-link" class="nav-link scrollactive-item" href="#portfolio">Portfolio</a></li>
+                    <li class="nav-item"><a id="portfolio-link" class="nav-link" href="#portfolio">Portfolio</a></li>
                   </template>
                   <template v-else>
                     <router-link to="portfolio" tag="li" class="nav-item">
                       <a class="nav-link" data-toggle="collapse" data-target="#collapsible-navbar">Portfolio</a>
                     </router-link>
                   </template>
-                  <li class="nav-item"><a @click="scrollOrRedirect" class="nav-link scrollactive-item" href="#contact-us">Contact Us</a></li>
+                  <li class="nav-item"><a @click="scrollOrRedirect" class="nav-link" href="#contact-us">Contact Us</a></li>
                 </ul>
             </div>
         </nav>
@@ -51,7 +51,10 @@ function scrollToSection (selector) {
 export default {
   computed: {
     isHomepage () {
+        if (process.BROWSER_BUILD) {
+   const $ = require('jquery')
       return this.$route.path === '/'
+        }
     },
     isPortfolioPage () {
         if (process.BROWSER_BUILD) {
@@ -65,12 +68,15 @@ export default {
   },
   methods: {
     scrollOrRedirect (e) {
+        if (process.BROWSER_BUILD) {
+        const $ = require('jquery')
       let href = e.currentTarget.getAttribute('href')
       if (this.isHomepage) {
         e.preventDefault()
       } else {
         this.$router.push({path: '/' + href})
       }
+        }
     }
   },
   mounted () {
