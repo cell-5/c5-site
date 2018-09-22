@@ -1,6 +1,6 @@
 <template>
   <header class="siteheader" role="banner">
-        <scrollactive  class="navbar navbar-expand-md navbar-dark" 
+        <nav  class="navbar navbar-expand-md navbar-dark" 
           active-class="active" :offset="55" :duration="1500">
             <h1 id="logo" class="shrink">
                 <router-link to="/" class="navbar-brand">
@@ -28,7 +28,7 @@
                   <li class="nav-item"><a @click="scrollOrRedirect" class="nav-link scrollactive-item" href="#contact-us">Contact Us</a></li>
                 </ul>
             </div>
-        </scrollactive>
+        </nav>
     </header>
 </template>
 
