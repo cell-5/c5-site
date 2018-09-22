@@ -33,7 +33,7 @@
         <div class="row middle">
 
           <a :href="hrefSolution">
-
+            <no-ssr>
             <vue-typer @typed="typed"
                        :text='["digital","web","mobile","cloud","start-up"]'
                        :repeat='Infinity'
@@ -45,7 +45,7 @@
                        :erase-delay='300'
                        erase-style='clear'
                        :erase-on-complete='false'
-                       caret-animation='blink'></vue-typer>
+                       caret-animation='blink'></vue-typer></no-ssr>
           </a>
         </div>
         <div class="row">
@@ -59,7 +59,9 @@
 </template>
 
 <script>
-import { VueTyper } from "vue-typer";
+if (process.browser) {
+  var VueTyper = require('vue-typer').VueTyper
+}
 import { FadeTransition } from "vue2-transitions";
 
 export default {

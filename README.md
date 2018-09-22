@@ -1,19 +1,22 @@
-# cell5-vue-website
-[![Build Status](https://travis-ci.org/cell-5/cell-5-site.svg?branch=master)](https://travis-ci.org/cell-5/cell-5-site) [![Greenkeeper badge](https://badges.greenkeeper.io/cell-5/cell-5-site.svg)](https://greenkeeper.io/)
-> Cell 5 Website
+# cell5-nuxt
+
+> My stupendous Nuxt.js project
 
 ## Build Setup
 
 ``` bash
 # install dependencies
-npm install
+$ npm install
 
-# serve with hot reload at localhost:1234
-npm start
+# serve with hot reload at localhost:3000
+$ npm run dev
 
-# build for production with minification
-npm run build
+# build for production and launch server
+$ npm run build
+$ npm start
 
-# build for production and view the bundle analyzer report
-npm run build --report
+# generate static project
+$ npm run generate
 ```
+
+For detailed explanation on how things work, checkout [Nuxt.js docs](https://nuxtjs.org).

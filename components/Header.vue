@@ -4,7 +4,7 @@
           active-class="active" :offset="55" :duration="1500">
             <h1 id="logo" class="shrink">
                 <router-link to="/" class="navbar-brand">
-                    <img src="../assets/img/logo-white.svg" alt="cell5 logo">
+                    <img src="~/assets/img/logo-white.svg" alt="cell5 logo">
                 </router-link>
             </h1>
 
@@ -33,7 +33,9 @@
 </template>
 
 <script>
-import $ from 'jquery'
+if (process.BROWSER_BUILD) {
+   const $ = require('jquery')
+}
 
 function scrollToSection (selector) {
   var $section = $(selector)
@@ -41,6 +43,7 @@ function scrollToSection (selector) {
   if (!$section.length) {
     return
   }
+  
   $('html,body').animate({
     scrollTop: selector === '#home' || selector === '#' ? 0 : $section.offset().top
   }, 150)
@@ -51,9 +54,13 @@ export default {
       return this.$route.path === '/'
     },
     isPortfolioPage () {
+        if (process.BROWSER_BUILD) {
+   const $ = require('jquery')
+
       $('.team').slick('slickPause')
       $('.teamNav-slide').slick('slickPause')
       return this.$route.path === '/portfolio'
+        }
     }
   },
   methods: {
