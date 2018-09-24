@@ -1,10 +1,10 @@
 <template>
   <header class="siteheader" role="banner">
-        <scrollactive  class="navbar navbar-expand-md navbar-dark" 
+        <nav  class="navbar navbar-expand-md navbar-dark" 
           active-class="active" :offset="55" :duration="1500">
             <h1 id="logo" class="shrink">
                 <router-link to="/" class="navbar-brand">
-                    <img src="../assets/img/logo-white.svg" alt="cell5 logo">
+                    <img src="~/assets/img/logo-white.svg" alt="cell5 logo">
                 </router-link>
             </h1>
 
@@ -14,26 +14,28 @@
 
             <div class="collapse navbar-collapse" id="collapsible-navbar">
                 <ul class="navbar-nav">
-	                <li class="nav-item"><a @click="scrollOrRedirect" class="nav-link scrollactive-item" href="#home">Home</a></li>
-	                <li class="nav-item"><a @click="scrollOrRedirect" class="nav-link scrollactive-item" href="#solutions">Solutions</a></li>
-	                <li class="nav-item"><a @click="scrollOrRedirect" class="nav-link scrollactive-item" href="#profiles">The Team</a></li>
+	                <li class="nav-item"><a @click="scrollOrRedirect" class="nav-link" href="/#home">Home</a></li>
+	                <li class="nav-item"><a @click="scrollOrRedirect" class="nav-link" href="/#solutions">Solutions</a></li>
+	                <li class="nav-item"><a @click="scrollOrRedirect" class="nav-link" href="/#profiles">The Team</a></li>
                   <template v-if="isPortfolioPage">
-                    <li class="nav-item"><a id="portfolio-link" class="nav-link scrollactive-item" href="#portfolio">Portfolio</a></li>
+                    <li class="nav-item"><a id="portfolio-link" class="nav-link" href="#portfolio">Portfolio</a></li>
                   </template>
                   <template v-else>
                     <router-link to="portfolio" tag="li" class="nav-item">
                       <a class="nav-link" data-toggle="collapse" data-target="#collapsible-navbar">Portfolio</a>
                     </router-link>
                   </template>
-                  <li class="nav-item"><a @click="scrollOrRedirect" class="nav-link scrollactive-item" href="#contact-us">Contact Us</a></li>
+                  <li class="nav-item"><a @click="scrollOrRedirect" class="nav-link" href="/#contact-us">Contact Us</a></li>
                 </ul>
             </div>
-        </scrollactive>
+        </nav>
     </header>
 </template>
 
 <script>
-import $ from 'jquery'
+if (process.BROWSER_BUILD) {
+   const $ = require('jquery')
+}
 
 function scrollToSection (selector) {
   var $section = $(selector)
@@ -41,6 +43,7 @@ function scrollToSection (selector) {
   if (!$section.length) {
     return
   }
+  
   $('html,body').animate({
     scrollTop: selector === '#home' || selector === '#' ? 0 : $section.offset().top
   }, 150)
@@ -48,22 +51,32 @@ function scrollToSection (selector) {
 export default {
   computed: {
     isHomepage () {
+        if (process.BROWSER_BUILD) {
+   const $ = require('jquery')
       return this.$route.path === '/'
+        }
     },
     isPortfolioPage () {
+        if (process.BROWSER_BUILD) {
+   const $ = require('jquery')
+
       $('.team').slick('slickPause')
       $('.teamNav-slide').slick('slickPause')
-      return this.$route.path === '/portfolio'
+      //return this.$route.path === '/portfolio'
+        }
     }
   },
   methods: {
     scrollOrRedirect (e) {
+        if (process.BROWSER_BUILD) {
+        const $ = require('jquery')
       let href = e.currentTarget.getAttribute('href')
       if (this.isHomepage) {
         e.preventDefault()
       } else {
         this.$router.push({path: '/' + href})
       }
+        }
     }
   },
   mounted () {

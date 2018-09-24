@@ -107,10 +107,10 @@
 }
 </style>
 <script>
-import MobileImg from '../assets/img/mobile-dark-gradient.svg'
-import WebImg from '../assets/img/web-dark-gradient.svg'
-import CloudImg from '../assets/img/cloud-dark-gradient.svg'
-import StartUpImg from '../assets/img/start-up-dark-gradient.svg'
+import MobileImg from '~/assets/img/mobile-dark-gradient.svg'
+import WebImg from '~/assets/img/web-dark-gradient.svg'
+import CloudImg from '~/assets/img/cloud-dark-gradient.svg'
+import StartUpImg from '~/assets/img/start-up-dark-gradient.svg'
 
 export default {
     data () {

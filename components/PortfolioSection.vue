@@ -1,7 +1,4 @@
 <template>
-  <div id="portfolio">
-    <Header></Header>
-    <main role="main">
       <section class="portfolio">
         <div class="container">
           <div class="row justify-content-md-center align-items-center">
@@ -15,7 +12,7 @@
                     <div class="overlay">
                       <h5>{{ portfolioItem.title }}</h5>
                       <figure>
-                        <img class="title-break" src="../assets/img/cell-5-logo-black.svg" alt="cell5">
+                        <img class="title-break" src="~/assets/img/cell-5-logo-black.svg" alt="cell5">
                       </figure>
                       <p>
                         {{ portfolioItem.service }}
@@ -26,7 +23,7 @@
                     <h5>{{ portfolioItem.title }}</h5>
                     <p>{{ portfolioItem.service }}</p>
                     <div>
-                      <img class="title-break" src="../assets/img/cell-5-logo-black.svg" alt="cell5">
+                      <img class="title-break" src="~/assets/img/cell-5-logo-black.svg" alt="cell5">
                     </div>
                   </div>
                 </div>
@@ -38,19 +35,15 @@
           </div>
         </div>
       </section>
-      <FooterSection></FooterSection>
-    </main>
-  </div>
 </template>
 
 <script>
   import Header from './Header.vue'
-  import FooterSection from './FooterSection.vue'
-  import MelissaTwiggImg from '../assets/img/mtwigg-screenshot-2.jpg'
-  import PortlandImg from '../assets/img/portland-screenshot.jpg'
-  import Good2RentImg from '../assets/img/good2rent-screenshot.jpg'
-  import MyValImg from '../assets/img/myval-screenshot.jpg'
-  import Cell5BlackLogo from '../assets/img/cell-5-logo-black.svg'
+  import MelissaTwiggImg from '~/assets/img/mtwigg-screenshot-2.jpg'
+  import PortlandImg from '~/assets/img/portland-screenshot.jpg'
+  import Good2RentImg from '~/assets/img/good2rent-screenshot.jpg'
+  import MyValImg from '~/assets/img/myval-screenshot.jpg'
+  import Cell5BlackLogo from '~/assets/img/cell-5-logo-black.svg'
   import $ from 'jquery'
 
   function backToTop () {
@@ -95,8 +88,7 @@
       }
     },
     components: {
-      Header,
-      FooterSection
+      Header
     },
     mounted () {
       backToTop()
