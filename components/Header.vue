@@ -14,9 +14,9 @@
 
             <div class="collapse navbar-collapse" id="collapsible-navbar">
                 <ul class="navbar-nav">
-	                <li class="nav-item"><a @click="scrollOrRedirect" class="nav-link" href="#home">Home</a></li>
-	                <li class="nav-item"><a @click="scrollOrRedirect" class="nav-link" href="#solutions">Solutions</a></li>
-	                <li class="nav-item"><a @click="scrollOrRedirect" class="nav-link" href="#profiles">The Team</a></li>
+	                <li class="nav-item"><a @click="scrollOrRedirect" class="nav-link" href="/#home">Home</a></li>
+	                <li class="nav-item"><a @click="scrollOrRedirect" class="nav-link" href="/#solutions">Solutions</a></li>
+	                <li class="nav-item"><a @click="scrollOrRedirect" class="nav-link" href="/#profiles">The Team</a></li>
                   <template v-if="isPortfolioPage">
                     <li class="nav-item"><a id="portfolio-link" class="nav-link" href="#portfolio">Portfolio</a></li>
                   </template>
@@ -25,7 +25,7 @@
                       <a class="nav-link" data-toggle="collapse" data-target="#collapsible-navbar">Portfolio</a>
                     </router-link>
                   </template>
-                  <li class="nav-item"><a @click="scrollOrRedirect" class="nav-link" href="#contact-us">Contact Us</a></li>
+                  <li class="nav-item"><a @click="scrollOrRedirect" class="nav-link" href="/#contact-us">Contact Us</a></li>
                 </ul>
             </div>
         </nav>
@@ -62,7 +62,7 @@ export default {
 
       $('.team').slick('slickPause')
       $('.teamNav-slide').slick('slickPause')
-      return this.$route.path === '/portfolio'
+      //return this.$route.path === '/portfolio'
         }
     }
   },
