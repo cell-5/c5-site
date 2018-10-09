@@ -30,8 +30,8 @@
       </p>
       <p class="text-center">
         <span class="text-orange">Call us: </span>
-        <a href="tel:0800 030 6674">
-          <strong>0800 030 6674</strong>
+        <a href="tel:020 3858 9959">
+          <strong>020 3858 9959</strong>
         </a>
       </p>
 
