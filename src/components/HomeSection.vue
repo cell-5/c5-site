@@ -1,11 +1,11 @@
 <template>
   <section id="home"
            class="align-items-center">
-    <div class="particles">
+   <!-- <div class="particles">-->
       <transition name="fade">
 
         <vue-particles ref="particles"
-                       class="d-none d-sm-block"
+                       class="particles"
                        color="#dedede"
                        :particleOpacity="0.7"
                        :particlesNumber="80"
@@ -24,7 +24,7 @@
         </vue-particles>
       </transition>
 
-    </div>
+  <!--  </div>-->
     <div class="tagline-wrapper">
       <h2 id="tagline">
         <div class="row">
@@ -267,5 +267,7 @@ char custom typed
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
   opacity: 0;
 }
+
+
 </style>
 
