@@ -5,7 +5,7 @@
       <transition name="fade">
 
         <vue-particles ref="particles"
-                       class="d-none d-sm-block"
+                       class=""
                        color="#dedede"
                        :particleOpacity="0.7"
                        :particlesNumber="80"
@@ -267,5 +267,14 @@ char custom typed
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
   opacity: 0;
 }
+
+div#particles-js{
+  top:0;
+  left:0;
+  position: absolute;
+  width:100%;
+  height:100%;
+}
+
 </style>
 
