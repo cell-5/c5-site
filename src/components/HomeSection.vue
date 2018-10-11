@@ -8,7 +8,7 @@
                        class=""
                        color="#dedede"
                        :particleOpacity="0.7"
-                       :particlesNumber="80"
+                       :particlesNumber="particleNumber"
                        shapeType="polygon"
                        :particleSize="2"
                        linesColor="#dedede"
@@ -58,6 +58,8 @@
   </section>
 </template>
 
+dynamicParticles();
+
 <script>
 import { VueTyper } from "vue-typer";
 import { FadeTransition } from "vue2-transitions";
@@ -70,12 +72,39 @@ export default {
   data: () => {
     return {
       selectedText: "",
-      dur: 1000
+      dur: 1000,
+      particleNumber: 80
     };
+  },
+  beforeDestroy: function () {
+    window.removeEventListener('resize', this.handleResize)
   },
   methods: {
     typed: function(typedString) {
       this.selectedText = typedString;
+    },
+    handleResize: function()
+    {
+      var newParticle = '';
+  
+        var isTablet = window.matchMedia("only screen and (max-width: 1024px)");
+        var isMobile = window.matchMedia("only screen and (max-width: 414px)");
+        
+        if (isMobile.matches)
+        {
+          var MobileParticle = 120;
+          newParticle = MobileParticle;
+        }
+        else if (isTablet.matches) {
+           var TabletParticles = 150;
+           newParticle = TabletParticles;
+        }
+        else
+        {
+          var DesktopParticle = 80;
+          newParticle = DesktopParticle;
+        }
+        this.particleNumber = newParticle;
     }
   },
   computed: {
@@ -83,6 +112,14 @@ export default {
       return `#${this.selectedText}`;
     }
   },
+  
+  mounted() {
+    this.$nextTick(() => {
+      window.addEventListener('resize', () => {
+        this.handleResize();
+      });
+    })
+  }
 
   // mounted() {
   //   var x = 1
@@ -277,4 +314,3 @@ div#particles-js{
 }
 
 </style>
-
