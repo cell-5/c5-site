@@ -5,10 +5,10 @@
       <transition name="fade">
 
         <vue-particles ref="particles"
-                       class="d-none d-sm-block"
+                       class=""
                        color="#dedede"
                        :particleOpacity="0.7"
-                       :particlesNumber="80"
+                       :particlesNumber="particlesCount"
                        shapeType="polygon"
                        :particleSize="2"
                        linesColor="#dedede"
@@ -70,12 +70,26 @@ export default {
   data: () => {
     return {
       selectedText: "",
-      dur: 1000
+      dur: 1000,
+      particlesCount: 80
     };
   },
+
   methods: {
     typed: function(typedString) {
       this.selectedText = typedString;
+    },
+    handleResize: function() {
+      let isTablet = window.matchMedia("only screen and (max-width: 1024px)");
+      let isMobile = window.matchMedia("only screen and (max-width: 414px)");
+      let mobileParticlesCount = 40;
+      let tabletParticlesCount = 60;
+      if (isMobile.matches) {
+        this.particlesCount = mobileParticlesCount;
+      } else if (isTablet.matches) {
+        this.particlesCount = tabletParticlesCount;
+      }
+      console.log("particle count: ", this.particlesCount)
     }
   },
   computed: {
@@ -83,7 +97,17 @@ export default {
       return `#${this.selectedText}`;
     }
   },
+  beforeDestroy: function() {
+    window.removeEventListener("resize", this.handleResize);
+  },
 
+  mounted() {
+    this.$nextTick(() => {
+      window.addEventListener("resize", () => {
+        this.handleResize();
+      });
+    });
+  }
   // mounted() {
   //   var x = 1
   //   // while (x < 30) {
@@ -94,7 +118,7 @@ export default {
   //   //   console.log("called");
   //   // } var x = 1;
   //   this.$nextTick(function() {
-     
+
   //     while (x < 50) {
   //       x++;
   //       console.log(        document
@@ -253,8 +277,7 @@ export default {
   color: white !important;
 }
 
-char custom typed
-.middle,
+char custom typed .middle,
 .top-bottom {
   display: inline-block;
   padding: 7px !important;
@@ -267,5 +290,12 @@ char custom typed
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
   opacity: 0;
 }
-</style>
 
+div#particles-js {
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+</style>
