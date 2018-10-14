@@ -8,7 +8,7 @@
                        class=""
                        color="#dedede"
                        :particleOpacity="0.7"
-                       :particlesNumber="particleNumber"
+                       :particlesNumber="particlesCount"
                        shapeType="polygon"
                        :particleSize="2"
                        linesColor="#dedede"
@@ -58,8 +58,6 @@
   </section>
 </template>
 
-dynamicParticles();
-
 <script>
 import { VueTyper } from "vue-typer";
 import { FadeTransition } from "vue2-transitions";
@@ -73,38 +71,25 @@ export default {
     return {
       selectedText: "",
       dur: 1000,
-      particleNumber: 80
+      particlesCount: 80
     };
   },
-  beforeDestroy: function () {
-    window.removeEventListener('resize', this.handleResize)
-  },
+
   methods: {
     typed: function(typedString) {
       this.selectedText = typedString;
     },
-    handleResize: function()
-    {
-      var newParticle = '';
-  
-        var isTablet = window.matchMedia("only screen and (max-width: 1024px)");
-        var isMobile = window.matchMedia("only screen and (max-width: 414px)");
-        
-        if (isMobile.matches)
-        {
-          var MobileParticle = 120;
-          newParticle = MobileParticle;
-        }
-        else if (isTablet.matches) {
-           var TabletParticles = 150;
-           newParticle = TabletParticles;
-        }
-        else
-        {
-          var DesktopParticle = 80;
-          newParticle = DesktopParticle;
-        }
-        this.particleNumber = newParticle;
+    handleResize: function() {
+      let isTablet = window.matchMedia("only screen and (max-width: 1024px)");
+      let isMobile = window.matchMedia("only screen and (max-width: 414px)");
+      let mobileParticlesCount = 40;
+      let tabletParticlesCount = 60;
+      if (isMobile.matches) {
+        this.particlesCount = mobileParticlesCount;
+      } else if (isTablet.matches) {
+        this.particlesCount = tabletParticlesCount;
+      }
+      console.log("particle count: ", this.particlesCount)
     }
   },
   computed: {
@@ -112,15 +97,17 @@ export default {
       return `#${this.selectedText}`;
     }
   },
-  
+  beforeDestroy: function() {
+    window.removeEventListener("resize", this.handleResize);
+  },
+
   mounted() {
     this.$nextTick(() => {
-      window.addEventListener('resize', () => {
+      window.addEventListener("resize", () => {
         this.handleResize();
       });
-    })
+    });
   }
-
   // mounted() {
   //   var x = 1
   //   // while (x < 30) {
@@ -131,7 +118,7 @@ export default {
   //   //   console.log("called");
   //   // } var x = 1;
   //   this.$nextTick(function() {
-     
+
   //     while (x < 50) {
   //       x++;
   //       console.log(        document
@@ -290,8 +277,7 @@ export default {
   color: white !important;
 }
 
-char custom typed
-.middle,
+char custom typed .middle,
 .top-bottom {
   display: inline-block;
   padding: 7px !important;
@@ -305,12 +291,11 @@ char custom typed
   opacity: 0;
 }
 
-div#particles-js{
-  top:0;
-  left:0;
+div#particles-js {
+  top: 0;
+  left: 0;
   position: absolute;
-  width:100%;
-  height:100%;
+  width: 100%;
+  height: 100%;
 }
-
 </style>
