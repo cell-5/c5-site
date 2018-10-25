@@ -32,7 +32,7 @@
     </header>
 </template>
 
-<script>
+<script defer>
 import $ from 'jquery'
 
 function scrollToSection (selector) {
@@ -44,6 +44,12 @@ function scrollToSection (selector) {
   $('html,body').animate({
     scrollTop: selector === '#home' || selector === '#' ? 0 : $section.offset().top
   }, 150)
+}
+
+function closeNavBar () {
+  $('.navbar-nav>li>a').on('click', function () {
+    $('.navbar-collapse').collapse('hide')
+  })
 }
 export default {
   computed: {
@@ -69,6 +75,7 @@ export default {
   mounted () {
     scrollToSection(window.location.hash)
     window.location.hash = ''
+    closeNavBar()
   }
 }
 </script>
