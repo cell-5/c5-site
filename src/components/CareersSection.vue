@@ -1,0 +1,99 @@
+<template>
+  <div id="careers">
+    <Header></Header>
+    <main role="main">
+      <section class="careers">
+        <div class="container">
+          <div class="row justify-content-md-center align-items-center">
+            <div class="col-lg-11 row careers-heading">
+              <h3>careers</h3>
+            </div>
+            <div class="col-lg-11 row">
+              <div v-for="(position, index) in this.positions" :key="index" class="justify-content-md-center client col-md-6">
+                <div class="careers-position">
+                  <div class="card">
+                    <div class="card-title">
+                      {{ position.title }}
+                    </div>
+                    <div class="card-body">
+                      <p>{{ position.description }}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <FooterSection></FooterSection>
+    </main>
+  </div>
+</template>
+
+<script>
+  import Header from './Header.vue'
+  import FooterSection from './FooterSection.vue'
+  import $ from 'jquery'
+
+  function backToTop () {
+    $('html,body').animate({
+      scrollTop: 0
+    }, 500)
+  }
+
+  export default {
+    name: 'careers',
+    data () {
+      return {
+        positions: [{
+          title: 'Back End Developer',
+          description: 'A back end web developer is responsible for server-side web application logic and integration of the work front-end developers do. Back-end developers are usually write the web services and APIs used by front-end developers and mobile application developers.'
+        },
+        {
+          title: 'Front End Developer',
+          description: 'A front-end web developer is responsible for implementing visual and interactive elements that users engage with through their web browser when using a web application. They are usually supported by back-end web developers.',
+        },
+        {
+          title: 'Web Designer',
+          description: 'A web designer creates the look, layout, and features of a website. The job involves understanding both graphic design and computer programming. Once a website is created, a designer helps with maintenance and additions to the website.',
+        }],
+      }
+    },
+    components: {
+      Header,
+      FooterSection
+    },
+    mounted () {
+      backToTop()
+    }
+  }
+</script>
+<style scoped>
+  .careers {
+    position: relative;
+    background: white;
+    margin-top: 4.1rem;
+  }
+
+  .careers .container {
+    padding-bottom: 5em;
+  }
+  .careers-heading {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  .careers-position {
+    margin-top: 14px;
+  }
+  .careers-position .card {
+    padding: 30px;
+  }
+  .careers-position .card-title {
+    text-align: center;
+  }
+  .careers-position .card-body {
+    font-size: 0.9em;
+  }
+
+</style>
