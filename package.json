@@ -29,16 +29,18 @@
   },
   "devDependencies": {
     "@vue/component-compiler-utils": "^2.2.0",
+    "babel-core": "^6.26.3",
     "babel-plugin-transform-runtime": "^6.22.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-stage-2": "^6.22.0",
     "css-loader": "^1.0.0",
-    "parcel-bundler": "^1.9.7",
+    "parcel-bundler": ">=1.10.0",
     "vue-loader": "^15.4.1",
     "vue-particles": "^1.0.9",
     "vue-progressbar": "^0.7.5",
     "vue-style-loader": "^4.1.2",
-    "vue-template-compiler": "^2.5.17"
+    "vue-template-compiler": "^2.5.17",
+    "webpack": "^4.23.1"
   },
   "browserslist": [
     "> 1%",
