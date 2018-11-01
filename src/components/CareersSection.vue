@@ -8,8 +8,9 @@
             <div class="col-lg-11 row careers-heading">
               <h3>careers</h3>
             </div>
-            <div class="col-lg-11 row">
-              <div v-for="(position, index) in this.positions" :key="index" class="justify-content-md-center client col-md-6">
+            
+              <transition-group name="list" tag="div" class="col-lg-11 row">>
+              <div v-for="(position, index) in this.items" :key="index" class="position-item justify-content-md-center client col-md-6">
                 <div class="careers-position">
                   <div class="card">
                     <div class="card-title">
@@ -21,7 +22,8 @@
                   </div>
                 </div>
               </div>
-            </div>
+              </transition-group>
+            
           </div>
         </div>
       </section>
@@ -45,6 +47,7 @@
     name: 'careers',
     data () {
       return {
+        items: [],
         positions: [{
           title: 'Back End Developer',
           description: 'A back end web developer is responsible for server-side web application logic and integration of the work front-end developers do. Back-end developers are usually write the web services and APIs used by front-end developers and mobile application developers.'
@@ -57,6 +60,7 @@
           title: 'Web Designer',
           description: 'A web designer creates the look, layout, and features of a website. The job involves understanding both graphic design and computer programming. Once a website is created, a designer helps with maintenance and additions to the website.',
         }],
+        counter: 0
       }
     },
     components: {
@@ -65,6 +69,19 @@
     },
     mounted () {
       backToTop()
+      this.populateList()
+    },
+    methods: {
+      populateList() {
+        var vm = this
+        setTimeout(function () {    
+              vm.items.push(vm.positions[vm.counter])        
+              vm.counter++;  
+              if (vm.counter < vm.positions.length) {             
+                 vm.populateList();             
+              }                        
+           }, 260)
+      }
     }
   }
 </script>
@@ -94,6 +111,17 @@
   }
   .careers-position .card-body {
     font-size: 0.9em;
+  }
+  .list-item {
+    display: inline-block;
+    margin-right: 10px;
+  }
+  .list-enter-active, .list-leave-active {
+    transition: all 1s;
+  }
+  .list-enter, .list-leave-to {
+    opacity: 0;
+    transform: translateY(30px);
   }
 
 </style>
