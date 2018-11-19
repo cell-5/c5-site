@@ -189,7 +189,7 @@ export default {
 }
 
 #home div.tagline-wrapper h2 {
-  font-size: 4.8em !important;
+  font-size: 4.8em;
   font-weight: 700;
   text-align: left;
 }
@@ -197,16 +197,6 @@ export default {
 @media (max-width: 991px) and (orientation: landscape) {
   #home div.tagline-wrapper h2 {
     font-size: 12vh !important;
-  }
-}
-
-@media (max-width: 767px) and (orientation: portrait) {
-  /* #home {
-      background-image:url('../assets/img/header-mobile-progressive.jpg');
-    } */
-
-  #home div.tagline-wrapper h2 {
-    font-size: 3em !important;
   }
 }
 
@@ -241,6 +231,20 @@ export default {
   bottom: 1.88rem;
   right: 14%;
   z-index: 2;
+}
+
+@media (max-width: 767px) and (orientation: portrait) {
+  /* #home {
+      background-image:url('../assets/img/header-mobile-progressive.jpg');
+    } */
+
+  #home div.tagline-wrapper h2 {
+    font-size: 3em;
+  }
+  #home a.learn-more-btn {
+    bottom: 5rem;
+    right: 20%;
+  }
 }
 
 #home a.learn-more-btn:link,

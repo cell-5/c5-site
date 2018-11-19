@@ -30,15 +30,15 @@
                                 </li>
                             </ul>
                             <span v-html="section.lead"></span>
-                        <div id="cta" class="text-center">
-                            <router-link to="portfolio" class="learn-more-btn call-to-action">View our Portfolio</router-link>
-                        </div>
                         </div>
                     </div>
-                    <div v-if="section.even" class="icon-wrapper col-lg-5 d-none d-lg-flex">
+                    <div v-if="section.even" class="row icon-wrapper col-lg-5 d-none d-lg-flex">
                         <figure>
                             <img :src="section.img" :alt="section.title" />
                         </figure>
+                        <div id="cta" class="text-center">
+                            <router-link to="portfolio" class="gradient-button call-to-action">View our Portfolio</router-link>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -293,6 +293,27 @@ color: white
 .solution a.learn-more-btn:active {
 background-color: #228f42;
 color: white
+}
+
+.gradient-button {
+    margin: 10px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding: 1rem 3rem;
+    background-size: 200% auto;
+    color: #FFF;
+    border-radius: 10px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    display: inline-block;
+    background-image: linear-gradient(to right, #00d2ff 0%, #3a7bd5 51%, #00d2ff 100%)
+}
+.gradient-button:hover{
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    margin: 8px 10px 12px;
+    background-position: right center;
+    text-decoration: none;
+    color: #fff;
 }
 
 </style>
