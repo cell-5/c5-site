@@ -184,12 +184,6 @@ export default {
     margin-bottom: 10px
 }
 
-@media (max-width: 767px) {
-    .team-member-name {
-        font-size: 2rem
-    }
-}
-
 .team-member-title {
     margin: 0 0 20px;
     text-transform: uppercase;
@@ -199,6 +193,19 @@ export default {
 .team-member-bio {
     font-size: 1.1rem;
     line-height: 1.8
+}
+
+@media (max-width: 767px) {
+    .team-member-name {
+        font-size: 1.3rem
+    }
+    .team-member-title {
+        font-size: .9rem;
+        margin-bottom: 0.5em
+    }
+    .team-member-bio {
+        font-size: .9rem
+    }
 }
 
 .team-member-photo {
@@ -220,7 +227,7 @@ export default {
 
 @media (max-width: 991px) {
     .team-member-photo {
-        margin-bottom: 2em
+        margin-bottom: 1em
     }
 }
 
@@ -243,8 +250,12 @@ export default {
 
 @media (max-width: 767px) {
     .team-member-social {
-        margin-bottom: 0.5em
+        margin-bottom: 0.3em
     }
+    .team-member-photo img {
+        width: 50%
+    }
+
 }
 
 .team-member-social>li {
