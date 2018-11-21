@@ -30,15 +30,17 @@
                                 </li>
                             </ul>
                             <span v-html="section.lead"></span>
-                        <div id="cta" class="text-center">
-                            <router-link to="portfolio" class="learn-more-btn call-to-action">View our Portfolio</router-link>
-                        </div>
                         </div>
                     </div>
-                    <div v-if="section.even" class="icon-wrapper col-lg-5 d-none d-lg-flex">
-                        <figure>
-                            <img :src="section.img" :alt="section.title" />
-                        </figure>
+                    <div v-if="section.even" class="row icon-wrapper col-lg-5 d-lg-flex">
+                        <div class="icon-wrapper d-none d-lg-flex">
+                            <figure>
+                                <img :src="section.img" :alt="section.title" />
+                            </figure>
+                        </div>
+                        <div id="cta" class="text-center">
+                            <router-link to="portfolio" class="gradient-button call-to-action">View Portfolio</router-link>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -295,6 +297,35 @@ background-color: #228f42;
 color: white
 }
 
+.gradient-button {
+    margin: 10px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding: .7rem 2.4rem;
+    background-size: 200% auto;
+    color: #FFF;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    display: inline-block;
+    background-image: linear-gradient(to right, #509bf6 0%, #e1304e 51%, #4d93e9 100%);
+}
+.gradient-button:hover{
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    margin: 8px 10px 12px;
+    background-position: right center;
+    text-decoration: none;
+    color: #fff;
+}
+@media (max-width: 767px) {
+    .gradient-button {
+        margin-left: 30px;
+        padding: .8rem 1.5rem;
+    }
+    .gradient-button:hover{
+        margin: 8px 10px 12px 30px;
+    }
+}
 </style>
 <script>
 import MobileImg from '../assets/img/mobile-dark-gradient.svg'
