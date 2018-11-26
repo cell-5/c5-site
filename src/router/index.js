@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Landing from '../components/Landing.vue'
 import ThankYouSection from '../components/ThankYouSection.vue'
 import PortfolioSection from '../components/PortfolioSection.vue'
+import CareersSection from '../components/CareersSection.vue'
 
 Vue.use(Router)
 
@@ -24,6 +25,11 @@ export default new Router({
       path: '/portfolio',
       name: 'PortfolioSection',
       component: PortfolioSection
+    },
+    {
+      path: '/careers',
+      name: 'CareersSection',
+      component: CareersSection
     }
   ]
 })
