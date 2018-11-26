@@ -61,6 +61,7 @@
 <script>
 import { VueTyper } from "vue-typer";
 import { FadeTransition } from "vue2-transitions";
+
 export default {
   components: {
     VueTyper,
@@ -73,6 +74,7 @@ export default {
       particlesCount: 80
     };
   },
+
   methods: {
     typed: function(typedString) {
       this.selectedText = typedString;
@@ -98,6 +100,7 @@ export default {
   beforeDestroy: function() {
     window.removeEventListener("resize", this.handleResize);
   },
+
   mounted() {
     this.$nextTick(() => {
       window.addEventListener("resize", () => {
@@ -115,6 +118,7 @@ export default {
   //   //   console.log("called");
   //   // } var x = 1;
   //   this.$nextTick(function() {
+
   //     while (x < 50) {
   //       x++;
   //       console.log(        document
@@ -146,12 +150,14 @@ export default {
   transition: all 0.2s linear;
   overflow: hidden;
 }
+
 .particles {
   position: absolute;
   background: linear-gradient(to bottom right, red, blue);
   width: 100%;
   height: 100%;
 }
+
 #home:after {
   content: "";
   position: absolute;
@@ -162,10 +168,12 @@ export default {
   border-left: 3.13rem solid transparent;
   border-bottom: 3.13rem solid #fefffe;
 }
+
 #home * {
   margin: 0;
   line-height: 100%;
 }
+
 #home div.tagline-wrapper {
   line-height: 1.75ch;
   width: 100%;
@@ -173,59 +181,68 @@ export default {
   margin: 0 auto;
   z-index: 3;
 }
+
 @media (min-width: 3840px) {
   #home div.tagline-wrapper {
     max-width: 3000px;
   }
 }
+
 #home div.tagline-wrapper h2 {
-  font-size: 4.8em;
+  font-size: 4.8em !important;
   font-weight: 700;
   text-align: left;
 }
+
 @media (max-width: 991px) and (orientation: landscape) {
   #home div.tagline-wrapper h2 {
     font-size: 12vh !important;
   }
 }
+
+@media (max-width: 767px) and (orientation: portrait) {
+  /* #home {
+      background-image:url('../assets/img/header-mobile-progressive.jpg');
+    } */
+
+  #home div.tagline-wrapper h2 {
+    font-size: 3em !important;
+  }
+}
+
 #home div.tagline-wrapper h2 ul.slick-dots {
   display: none !important;
 }
+
 #home div.tagline-wrapper a {
   display: block;
 }
+
 #home div.tagline-wrapper a:link,
 #home div.tagline-wrapper a:visited {
   color: #ffffff;
   text-decoration: none;
 }
+
 #home div.tagline-wrapper a:hover {
   color: #ffffff;
 }
+
 #home div.tagline-wrapper a:active {
   color: #ffffff;
 }
+
 #home div.tagline-wrapper a:visited:active {
   color: #ffffff;
 }
+
 #home a.learn-more-btn {
   position: absolute;
   bottom: 1.88rem;
   right: 14%;
   z-index: 2;
 }
-@media (max-width: 767px) and (orientation: portrait) {
-  /* #home {
-      background-image:url('../assets/img/header-mobile-progressive.jpg');
-    } */
-  #home div.tagline-wrapper h2 {
-    font-size: 3em;
-  }
-  #home a.learn-more-btn {
-    bottom: 5rem;
-    right: 20%;
-  }
-}
+
 #home a.learn-more-btn:link,
 #home a.learn-more-btn:visited {
   display: inline-block;
@@ -236,24 +253,30 @@ export default {
   margin-top: 0.5rem;
   text-decoration: none;
 }
+
 #home a.learn-more-btn:hover {
   background-color: #269f49;
   color: white;
 }
+
 #home a.learn-more-btn:active {
   background-color: #228f42;
   color: white;
 }
+
 .middle {
   color: white;
   padding: 8px 0px 8px;
 }
+
 .top-bottom {
   background: black;
 }
+
 .vue-typer .custom.char.typed {
   color: white !important;
 }
+
 char custom typed .middle,
 .top-bottom {
   display: inline-block;
@@ -267,6 +290,7 @@ char custom typed .middle,
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
   opacity: 0;
 }
+
 div#particles-js {
   top: 0;
   left: 0;
