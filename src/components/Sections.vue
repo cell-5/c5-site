@@ -30,15 +30,17 @@
                                 </li>
                             </ul>
                             <span v-html="section.lead"></span>
-                        <div id="cta" class="text-center">
-                            <router-link to="portfolio" class="learn-more-btn call-to-action">View our Portfolio</router-link>
-                        </div>
                         </div>
                     </div>
-                    <div v-if="section.even" class="icon-wrapper col-lg-5 d-none d-lg-flex">
-                        <figure>
-                            <img :src="section.img" :alt="section.title" />
-                        </figure>
+                    <div v-if="section.even" class="row icon-wrapper col-lg-5 d-lg-flex">
+                        <div class="icon-wrapper d-none d-lg-flex">
+                            <figure>
+                                <img :src="section.img" :alt="section.title" />
+                            </figure>
+                        </div>
+                        <div id="cta" class="text-center">
+                            <router-link to="portfolio" class="gradient-button call-to-action">View Portfolio</router-link>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -50,29 +52,24 @@
     position: relative;
     margin: 0
 }
-
 .solution-wrapper {
     padding: 5rem 1rem;
     max-width: 90%;
     margin: 0 auto !important;
 }
-
 @media (min-width: 3840px) {
   .solution-wrapper {
     max-width: 3000px;
   }
 }
-
 @media (min-width: 992px) {
     .solution-wrapper {
         height: 100vh
     }
 }
-
 .odd {
     background-color: #2c302e
 }
-
 .odd:after {
     content: '';
     position: absolute;
@@ -83,17 +80,14 @@
     border-left: 3.13rem solid transparent;
     border-bottom: 3.13rem solid #fefffe
 }
-
 .odd p,
 .odd h3,
 .odd li {
     color: #fefffe
 }
-
 .even {
     background-color: #fefffe
 }
-
 .even:after {
     content: '';
     position: absolute;
@@ -104,17 +98,14 @@
     border-left: 3.13rem solid transparent;
     border-bottom: 3.13rem solid #2c302e
 }
-
 .even p,
 .even h3,
 .even li {
     color: #2c302e
 }
-
 #start-up:after {
     border-bottom: 3.13rem solid #d64933;
 }
-
 .solution div.icon-wrapper {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -126,7 +117,6 @@
     -ms-flex-pack: center;
     justify-content: center
 }
-
 .solution .body-wrapper {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -135,7 +125,6 @@
     -ms-flex-pack: center;
     justify-content: center
 }
-
 .solution .body-wrapper div.solution-text {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -145,52 +134,44 @@
     -ms-flex-direction: column;
     flex-direction: column
 }
-
 .solution figure {
     margin: 0 auto 1rem;
     text-align: center
 }
-
 .solution figure img {
     -webkit-transition: all 0.2s linear;
     transition: all 0.2s linear;
     margin: 0 auto
 }
-
 @media (min-width: 1200px) {
     .solution figure img {
         width: 40vmin;
         height: 40vmin
     }
 }
-
 @media (min-width: 992px) {
     .solution figure img {
         width: 40vmin;
         height: 40vmin
     }
 }
-
 @media (min-width: 992px) and (max-width: 1199px) {
     .solution figure img {
         width: 40vmin;
         height: 40vmin
     }
 }
-
 @media (max-width: 991px) {
     .solution figure img {
         width: 40vmin;
         height: 40vmin
     }
 }
-
 .solution figure figcaption {
     color: #2c302e;
     font-size: 3.2vmax;
     font-weight: bold
 }
-
 .solution h3 {
     font-size: 2rem;
     font-weight: bold;
@@ -198,7 +179,6 @@
     -webkit-transition: all 0.2s linear;
     transition: all 0.2s linear
 }
-
 @media (max-width: 767px) and (orientation: portrait) {
     .solution h3 {
         font-size: 1.5rem;
@@ -207,7 +187,6 @@
         transition: all 0.2s linear
     }
 }
-
 @media (max-width: 767px) and (orientation: landscape) {
     .solution h3 {
         font-size: 1.5rem;
@@ -216,7 +195,6 @@
         transition: all 0.2s linear
     }
 }
-
 @media (min-width: 768px) and (max-width: 991px) and (orientation: portrait) {
     .solution h3 {
         font-size: 1.5rem;
@@ -225,7 +203,6 @@
         transition: all 0.2s linear
     }
 }
-
 @media (min-width: 768px) and (max-width: 991px) and (orientation: landscape) {
     .solution h3 {
         font-size: 1.5rem;
@@ -234,24 +211,20 @@
         transition: all 0.2s linear
     }
 }
-
 .solution p {
     font-family: "Montserrat", sans-serif;
     font-size: 1rem;
     line-height: 150%
 }
-
 @media (min-width: 481px) {
     .solution ul {
         text-indent: 1rem
     }
 }
-
 .solution ul li {
     font-family: "Montserrat", sans-serif;
     padding: 0.25rem 0
 }
-
 @media (max-width: 767px) and (orientation: portrait) {
     .solution ul li {
         font-size: 0.9rem;
@@ -259,7 +232,6 @@
         padding-left: 1.5em
     }
 }
-
 @media (max-width: 767px) and (orientation: portrait) {
     .solution ul li i:first-of-type {
         position: absolute;
@@ -273,7 +245,6 @@
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
   opacity: 0;
 }
-
 .solution a.learn-more-btn:link,
 .solution a.learn-more-btn:visited {
 display: inline-block;
@@ -284,17 +255,43 @@ padding: 1rem 3rem;
 margin-top: 0.5rem;
 text-decoration: none
 }
-
 .solution a.learn-more-btn:hover {
 background-color: #269f49;
 color: white
 }
-
 .solution a.learn-more-btn:active {
 background-color: #228f42;
 color: white
 }
-
+.gradient-button {
+    margin: 10px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding: .7rem 2.4rem;
+    background-size: 200% auto;
+    color: #FFF;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    display: inline-block;
+    background-image: linear-gradient(to right, #509bf6 0%, #e1304e 51%, #4d93e9 100%);
+}
+.gradient-button:hover{
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    margin: 8px 10px 12px;
+    background-position: right center;
+    text-decoration: none;
+    color: #fff;
+}
+@media (max-width: 767px) {
+    .gradient-button {
+        margin-left: 30px;
+        padding: .8rem 1.5rem;
+    }
+    .gradient-button:hover{
+        margin: 8px 10px 12px 30px;
+    }
+}
 </style>
 <script>
 import MobileImg from '../assets/img/mobile-dark-gradient.svg'
@@ -406,5 +403,3 @@ export default {
   }
 }
 </script>
-
-
