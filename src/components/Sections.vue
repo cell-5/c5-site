@@ -7,6 +7,9 @@
                         <figure>
                             <img :src="section.img" />
                         </figure>
+                        <div id="cta" class="text-center">
+                            <router-link to="portfolio" class="gradient-button call-to-action">View Portfolio</router-link>
+                        </div>
                     </div>
                     <div class="body-wrapper col-lg-7">
                         <div class="solution-text">
@@ -305,7 +308,7 @@ export default {
         {
           id: 'web',
           title: 'web',
-          class: 'icon-wrapper col-lg-5',
+          class: 'icon-wrapper col-lg-5 row',
           style: 'solution odd',
           even: false,
           img: WebImg,
@@ -354,7 +357,7 @@ export default {
         {
           id: 'cloud',
           title: 'cloud',
-          class: 'icon-wrapper col-lg-5',
+          class: 'icon-wrapper col-lg-5 row',
           style: 'solution odd',
           even: false,
           img: CloudImg,
