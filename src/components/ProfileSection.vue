@@ -19,6 +19,9 @@
                                             <a :href="member.linkedin" target="_blank">
                                                 <span class="fab fa-linkedin"></span>
                                             </a>
+                                            <a v-if="hasTwitter(member.twitter)" :href="member.twitter" target="_blank">
+                                               <span class="fab fa-twitter"></span>
+                                            </a>
                                         </li>
                                     </ul>
                                     <p class="team-member-bio">{{ member.bio }}</p>
@@ -109,6 +112,11 @@ export default {
           bio: "She is a skilled designer who is passionate about arts. She's interested in different kinds of visuals and focuses on UI/UX designing."
         }
       ]
+    }
+  },
+  methods:{
+    hasTwitter(twitter){
+      return twitter !== ''
     }
   },
   mounted () {
