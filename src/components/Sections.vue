@@ -277,34 +277,24 @@ color: white
     background-size: 200% auto;
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
     transition: all 0.5s cubic-bezier(.25,.8,.25,1);
-    border-style: solid;
-    border-width: 4px;
-    border-image: linear-gradient(to right, #509bf6 0%, #e1304e 60%) 1;
 }
 .odd .gradient-button {
     background: #2c302e;
     color: #fff;
+    border: 4px solid #fff;
 }
 .even .gradient-button {
     background: #fff;
     color: #2c302e;
+    border: 4px solid #2c302e;
 }
 .gradient-button:hover {
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-    margin: 8px 10px 12px;
     text-decoration: none;
-    color: #fff;
     border-radius: 0;
-}
-.odd .gradient-button:hover {
-    background: #2c302e;
-    color: #fff;
-    border: 4px solid #fff;
-}
-.even .gradient-button:hover {
-    background: #fff;
-    color: #2c302e;
-    border: 4px solid #2c302e;
+    border-style: solid;
+    border-width: 4px;
+    border-image: linear-gradient(to right, #509bf6 0%, #e1304e 60%) 1;
 }
 </style>
 <script>
