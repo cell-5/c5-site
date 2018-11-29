@@ -7,7 +7,7 @@
                         <figure>
                             <img :src="section.img" />
                         </figure>
-                        <div id="cta" class="text-center">
+                        <div id="cta" class="text-center d-none d-lg-flex">
                             <router-link to="portfolio" class="gradient-button call-to-action">View Portfolio</router-link>
                         </div>
                     </div>
@@ -41,9 +41,12 @@
                                 <img :src="section.img" :alt="section.title" />
                             </figure>
                         </div>
-                        <div id="cta" class="text-center">
+                        <div id="cta" class="text-center  d-none d-lg-flex">
                             <router-link to="portfolio" class="gradient-button call-to-action">View Portfolio</router-link>
                         </div>
+                    </div>
+                    <div id="cta" class="text-highlightcenter col-lg-12 d-lg-none d-flex justify-content-center">
+                        <router-link to="portfolio" class="gradient-button call-to-action">View Portfolio</router-link>
                     </div>
                 </div>
             </section>
@@ -272,28 +275,36 @@ color: white
     font-weight: bold;
     padding: .7rem 2.4rem;
     background-size: 200% auto;
-    color: #FFF;
-    border-radius: 5px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
-    display: inline-block;
-    background-image: linear-gradient(to right, #509bf6 0%, #e1304e 51%, #4d93e9 100%);
+    transition: all 0.5s cubic-bezier(.25,.8,.25,1);
+    border-style: solid;
+    border-width: 4px;
+    border-image: linear-gradient(to right, #509bf6 0%, #e1304e 60%) 1;
 }
-.gradient-button:hover{
-    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-    margin: 8px 10px 12px;
-    background-position: right center;
-    text-decoration: none;
+.odd .gradient-button {
+    background: #2c302e;
     color: #fff;
 }
-@media (max-width: 767px) {
-    .gradient-button {
-        margin-left: 30px;
-        padding: .8rem 1.5rem;
-    }
-    .gradient-button:hover{
-        margin: 8px 10px 12px 30px;
-    }
+.even .gradient-button {
+    background: #fff;
+    color: #2c302e;
+}
+.gradient-button:hover {
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    margin: 8px 10px 12px;
+    text-decoration: none;
+    color: #fff;
+    border-radius: 0;
+}
+.odd .gradient-button:hover {
+    background: #2c302e;
+    color: #fff;
+    border: 4px solid #fff;
+}
+.even .gradient-button:hover {
+    background: #fff;
+    color: #2c302e;
+    border: 4px solid #2c302e;
 }
 </style>
 <script>
