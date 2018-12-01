@@ -102,14 +102,6 @@ export default {
           linkedin: 'https://www.linkedin.com/in/pat-bautista/',
           twitter: '',
           bio: 'Pat specializes in REST API development and integration. He has already built a reputation in the team for being able to solve any problem he is given.'
-        },
-        {
-          name: 'Johnnica Castro',
-          img: NicImg,
-          title: 'Graphic Designer',
-          linkedin: 'https://www.linkedin.com/in/johnnica-castro-723451163/',
-          twitter: '',
-          bio: "She is a skilled designer who is passionate about arts. She's interested in different kinds of visuals and focuses on UI/UX designing."
         }
       ]
     }
