@@ -19,19 +19,12 @@
                           {{ portfolioItem.service }}
                         </p>
                         <div class="row justify-content-md-center">
-                          <div class="action-hover">
-                             READ MORE
-                          </div>
                           <a  :href="portfolioItem.link">
                             <div class="action-hover">
                               VISIT SITE
                             </div>
                           </a>
                         </div>
-                        <!--<figure>
-                          <img class="title-break" src="../assets/img/cell-5-logo-white.svg" alt="cell5">
-                        </figure>-->
-
                       </div>
                     </div>
                   </div>
