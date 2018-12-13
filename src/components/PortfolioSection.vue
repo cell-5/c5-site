@@ -4,43 +4,20 @@
     <main role="main">
       <section class="portfolio">
         <div class="container">
-          <div class="row justify-content-md-center align-items-center">
-            <div class="col-lg-11">
-              <div class="row">
-                <div v-for="(portfolioItem, index) in this.portfolio" :key="index" class="justify-content-md-center client col-md-4">
-                  <div class="portfolio-link" target="_blank">
-                    <figure>
-                      <img class="client-image img-fluid mx-auto" :src="portfolioItem.image" :alt="portfolioItem.alt">
-                    </figure>
-                    <div class="overlay">
-                      <div class="overlay-content">
-                        <h5>{{ portfolioItem.title }}</h5>
-                        <p>
-                          {{ portfolioItem.service }}
-                        </p>
-                        <div class="row justify-content-md-center">
-                          <a  :href="portfolioItem.link">
-                            <div class="action-hover">
-                              VISIT SITE
-                            </div>
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="mobile-caption">
-                    <h5>{{ portfolioItem.title }}</h5>
-                    <p>{{ portfolioItem.service }}</p>
-                    <div>
-                      <img class="title-break" src="../assets/img/cell-5-logo-black.svg" alt="cell5">
-                    </div>
-                  </div>
-                </div>
+          <div class="row justify-content-center align-items-center">
+            <div class="portfolio-heading">
+              <h3>Ready to Get Awesome?</h3>
+              <div id="cta" class="text-center">
+                <router-link to="/#solutions" class="learn-more-btn call-to-action">Learn More</router-link>
               </div>
             </div>
-          </div>
-          <div id="cta" class="text-center">
-            <router-link to="/#solutions" class="learn-more-btn call-to-action">Learn More</router-link>
+            <carousel-3d>
+              <slide v-for="(portfolioItem, index) in this.portfolio" :index="index" :key="index">
+                <template slot-scope="{ index, isCurrent, leftIndex, rightIndex }">
+                  <img :data-index="index" :class="{ current: isCurrent, onLeft: (leftIndex >= 0), onRight: (rightIndex >= 0) }" :src="portfolioItem.image">
+                </template>
+              </slide>
+            </carousel-3d>
           </div>
         </div>
       </section>
@@ -58,6 +35,7 @@ import Good2RentImg from '../assets/img/good2rent-screenshot.jpg'
 import MyValImg from '../assets/img/myval-screenshot.jpg'
 import WhiteSpiderMedia from '../assets/img/whitespider-screenshot.jpg'
 import Cell5BlackLogo from '../assets/img/cell-5-logo-black.svg'
+import { Carousel3d, Slide } from 'vue-carousel-3d';
 import $ from 'jquery'
 
 function backToTop() {
@@ -105,19 +83,14 @@ export default {
         link: 'https://pensive-mcclintock-1395fd.netlify.com/',
         alt: 'White Spider Media Website'
       }],
-      HoverButton: [{
-        text: 'READ MORE', 
-      },
-      {
-        text: 'VISIT SITE'
-      }
-      ],
       cell5logo: Cell5BlackLogo
     }
   },
   components: {
     Header,
-    FooterSection
+    FooterSection,
+    Carousel3d,
+    Slide
   },
   mounted () {
     backToTop()
@@ -125,19 +98,24 @@ export default {
 }
 </script>
 <style scoped>
+header.siteheader {
+  background: #000;
+}
 .portfolio {
   position: relative;
-  background: white;
+  background: #0e0e0e;
   margin-top: 4.1rem;
-}
-
-.portfolio .container {
-  padding-bottom: 5em;
 }
 .portfolio-heading {
   text-align: center;
   max-width: 80%;
   margin: 0 auto;
+  color: #fff;
+}
+.portfolio .text-center a.learn-more-btn:link {
+  border-radius: 3px;
+  margin: 1em 0 .5em;
+  padding: 0.8em 3em;
 }
 .portfolio-heading p {
   line-height: 1.8;
@@ -177,6 +155,11 @@ export default {
 .portfolio a.learn-more-btn:active {
   background-color: #228f42;
   color: white
+}
+
+.carousel-3d-slide {
+  border:none; 
+  height: auto !important;
 }
 
 .client {
