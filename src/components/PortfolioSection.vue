@@ -18,7 +18,7 @@
             </ul>
           </div>
           <div class="row justify-content-center align-items-center">
-            <carousel-3d :controls-visible="true" :style="{height:'450px'}" :autoplay="true" :autoplay-timeout="5000"  perspective="0">
+            <carousel-3d :controls-visible="true" :style="{height:'500px'}" :autoplay="false" :autoplay-timeout="5000"  perspective="0">
               <slide v-for="(portfolioItem, index) in this.portfolio" :index="index" :key="index">
                 <template slot-scope="{ isCurrent}" >
                   <img :data-index="index" :class="{ current: isCurrent }" :src="portfolioItem.image">
@@ -118,9 +118,9 @@ export default {
   }
 }
 </script>
-<style scoped>
+<style type="text/css">
 header.siteheader {
-  background: #000;
+  background: #000 !important;
 }
 #portfolio {
   position: relative;
@@ -132,7 +132,7 @@ header.siteheader {
   padding: 30px 0 40px;
   font-size: 0.7rem;
   letter-spacing: 0.05rem;
-  margin: 4.1rem 0 2rem;
+  margin: 4.1rem 0;
 }
 #portfolio-heading h1{
   font-weight: bold;
@@ -189,10 +189,10 @@ a.learn-more-btn:active {
   background: linear-gradient(to right, #11052b, #230930);
   color: #fff;
   font-size: 1.4rem;
-  padding: 50px 0 75px;
+  padding: 50px 0 70px;
 }
 .carousel-3d-slide {
-  border:none; 
+  border:none !important; 
   height: auto !important;
   background: #fff;
 }
@@ -202,20 +202,27 @@ a.learn-more-btn:active {
 .carousel-3d-slide img {
   box-shadow: 0px 15px 60px -20px rgba(0,0,0,1);
 }
+.carousel-3d-controls {
+  top: 35% !important;
+}
+.carousel-3d-controls .prev, .carousel-3d-controls .next {
+  border: 2px solid #e22571;
+  z-index: 999;
+  position: absolute;
+  line-height: 30px !important;
+  padding: 0 10px;;
+  color: #e22571 !important;
+}
 .carousel-3d-slide .show-description {
   background : #fff;
   display: block;
   color: #000;
   font-size: 0.8rem;
   text-align: center;
-  margin: 10px 0 0;
-  padding: 20px 0;
+  padding: 30px 0;
 }
 .carousel-3d-slide .hide {
   display: none;
-}
-.carousel-3d-controls[data-v-43e93932] {
-  background: #000 !important;
 }
 
 @media (max-width: 767px) and (orientation: portrait) {
