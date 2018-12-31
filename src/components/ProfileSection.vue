@@ -19,6 +19,9 @@
                                             <a :href="member.linkedin" target="_blank">
                                                 <span class="fab fa-linkedin"></span>
                                             </a>
+                                            <a v-if="hasTwitter(member.twitter)" :href="member.twitter" target="_blank">
+                                               <span class="fab fa-twitter"></span>
+                                            </a>
                                         </li>
                                     </ul>
                                     <p class="team-member-bio">{{ member.bio }}</p>
@@ -99,16 +102,13 @@ export default {
           linkedin: 'https://www.linkedin.com/in/pat-bautista/',
           twitter: '',
           bio: 'Pat specializes in REST API development and integration. He has already built a reputation in the team for being able to solve any problem he is given.'
-        },
-        {
-          name: 'Johnnica Castro',
-          img: NicImg,
-          title: 'Graphic Designer',
-          linkedin: 'https://www.linkedin.com/in/johnnica-castro-723451163/',
-          twitter: '',
-          bio: "She is a skilled designer who is passionate about arts. She's interested in different kinds of visuals and focuses on UI/UX designing."
         }
       ]
+    }
+  },
+  methods:{
+    hasTwitter(twitter){
+      return twitter !== ''
     }
   },
   mounted () {
@@ -123,13 +123,11 @@ export default {
     padding: 6vw 0;
     position: relative
 }
-
 @media (max-width: 767px) {
     #profiles {
         padding: 5rem 0
     }
 }
-
 #profiles:before {
     content: '';
     position: absolute;
@@ -140,27 +138,22 @@ export default {
     border-left: 3.13rem solid transparent;
     /* border-bottom: 3.13rem solid #2c302e */
 }
-
 #profiles h2 {
     text-align: center
 }
-
 .team {
     margin-top: 4em
 }
-
 @media (min-width: 1200px) {
     .team-member {
         max-width: 80%
     }
 }
-
 @media (min-width: 992px) and (max-width: 1199px) {
     .team-member {
         max-width: 700px
     }
 }
-
 @media (min-width: 992px) {
     .team-member {
         margin-left: auto;
@@ -170,37 +163,38 @@ export default {
         margin-bottom: 9em
     }
 }
-
 @media (max-width: 991px) {
     .team-member {
         margin: 0 30px;
         text-align: center
     }
 }
-
 .team-member-name {
     font-size: 2.6rem;
     font-weight: bold;
     margin-bottom: 10px
 }
-
-@media (max-width: 767px) {
-    .team-member-name {
-        font-size: 2rem
-    }
-}
-
 .team-member-title {
     margin: 0 0 20px;
     text-transform: uppercase;
     font-size: 1rem
 }
-
 .team-member-bio {
     font-size: 1.1rem;
     line-height: 1.8
 }
-
+@media (max-width: 767px) {
+    .team-member-name {
+        font-size: 1.3rem
+    }
+    .team-member-title {
+        font-size: .9rem;
+        margin-bottom: 0.5em
+    }
+    .team-member-bio {
+        font-size: .9rem
+    }
+}
 .team-member-photo {
     border-radius: 50%;
     margin: 0 auto;
@@ -217,44 +211,39 @@ export default {
     align-items: center;
     padding-top: 1rem
 }
-
 @media (max-width: 991px) {
     .team-member-photo {
-        margin-bottom: 2em
+        margin-bottom: 1em
     }
 }
-
 @media (max-width: 767px) {
     .team-member-photo {
         max-width: 230px
     }
 }
-
 .team-member-photo img {
     width: 100%
 }
-
 .team-member-social {
     font-size: 2rem;
     list-style: none;
     margin-bottom: 1em;
     padding-left: 0
 }
-
 @media (max-width: 767px) {
     .team-member-social {
-        margin-bottom: 0.5em
+        margin-bottom: 0.3em
+    }
+    .team-member-photo img {
+        width: 50%
     }
 }
-
 .team-member-social>li {
     display: inline-block
 }
-
 .team-member-social>li:not(:last-of-type) {
     margin-right: 15px
 }
-
 .team-member-social>li a {
     color: white
 }
@@ -264,19 +253,16 @@ export default {
     margin: 2em auto 0;
     max-width: 31.25rem
 }
-
 @media (min-width: 3840px) {
     .teamNav {
         max-width: 1024px
     }
 }
-
 @media (max-width: 991px) {
     .teamNav {
         display: none
     }
 }
-
 .teamNav-slide img {
     cursor: pointer;
     border: 4px solid #e1e1e1;
@@ -285,7 +271,6 @@ export default {
     width: 4.38em;
     height: 4.38em;
 }
-
 .teamNav .slick-track {
     -webkit-transform: translate3d(0px, 0px, 0px) !important;
     transform: translate3d(0px, 0px, 0px) !important
