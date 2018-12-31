@@ -41,9 +41,6 @@
                         <div>
                             <img src="../assets/img/pat-vector.svg" alt="Pat Bautista">
                         </div>
-                        <div>
-                            <img src="../assets/img/nic-vector.png" alt="Johnnica Castro">
-                        </div>
                     </div>
                 </div>
             </div>
