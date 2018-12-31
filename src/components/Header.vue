@@ -25,6 +25,14 @@
                       <a class="nav-link" data-toggle="collapse" data-target="#collapsible-navbar">Portfolio</a>
                     </router-link>
                   </template>
+                  <template v-if="isCareersPage">
+                    <li class="nav-item"><a id="career-link" class="nav-link scrollactive-item" href="#careers">Careers</a></li>
+                  </template>
+                  <template v-else>
+                    <router-link to="careers" tag="li" class="nav-item">
+                      <a class="nav-link" data-toggle="collapse" data-target="#collapsible-navbar">Careers</a>
+                    </router-link>
+                  </template>
                   <li class="nav-item"><a @click="scrollOrRedirect" class="nav-link scrollactive-item" href="#contact-us">Contact Us</a></li>
                 </ul>
             </div>
@@ -60,6 +68,9 @@ export default {
       $('.team').slick('slickPause')
       $('.teamNav-slide').slick('slickPause')
       return this.$route.path === '/portfolio'
+    },
+    isCareersPage () {
+      return this.$route.path === '/careers'
     }
   },
   methods: {
