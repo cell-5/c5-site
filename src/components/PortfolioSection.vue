@@ -3,21 +3,16 @@
     <Header></Header>
     <main role="main">
       <section id="portfolio-heading">
-        <div class="container">
-          <h1>PORTFOLIO</h1>
-          Here We Gathered Some Of Our Creative Work
-        </div>
       </section>
       <section id="portfolio">
         <div class="container">
           <div class="row justify-content-center align-items-center">
-            <carousel-3d :controls-visible="true" :width="carouselWidth" v-bind:display="itemCount" :autoplay="true" :autoplay-timeout="5000"  perspective="0">
+            <carousel-3d :controls-visible="true" :width="carouselWidth" v-bind:display="itemCount" :autoplay-timeout="5000" perspective="0">
               <slide v-for="(portfolioItem, index) in this.portfolio" :index="index" :key="index">                
                 <template slot-scope="{ isCurrent}">
                   <img :data-index="index" :class="{ current: isCurrent }" :src="portfolioItem.image">
                   <div  v-bind:class="{ 'show-description' : isCurrent, 'hide' : !isCurrent}">
                     <h6>{{portfolioItem.title}}</h6>
-                    {{portfolioItem.service}}
                     <div class="link"><a :href="portfolioItem.link">VISIT SITE</a></div>
                   </div>
                 </template>
@@ -110,13 +105,12 @@ export default {
   },
   methods: {
     handleResize() {
-      let path = this.$route.path;
       if (window.matchMedia("only screen and (max-width: 768px)").matches) {
           this.carouselWidth = 200;
       } else if (window.matchMedia("only screen and (max-width: 1024px)").matches) {
           this.carouselWidth = 300;
-      } else {
-          this.carouselWidth = 450;
+      } else {  
+          this.carouselWidth = 350;
       }
       if ( window.matchMedia("only screen and (max-width: 600px)").matches) {
         this.itemCount = 1;
@@ -141,23 +135,15 @@ header.siteheader {
   height: auto;
 }
 #portfolio-heading {
-  color: #fff;
   background: linear-gradient(to right, #232474, #aa245c);
-  padding: 30px 0 40px 150px;
-  font-size: 0.7rem;
-  letter-spacing: 0.05rem;
+  padding: 40px 0;
   margin: 4.1rem 0;
-  text-align: left;
-}
-#portfolio-heading h1{
-  font-weight: bold;
-  margin: 0;
 }
 #portfolio-heading:after {
   content: "";
   position: absolute;
   right: 0;
-  top: 100px;
+  top: 45px;
   height: 3.13rem;
   width: 50%;
   border-left: 3.13rem solid transparent;
@@ -206,9 +192,6 @@ a.learn-more-btn:active {
   font-size: 1rem;
   padding: 70px 0 60px;
 }
-.carousel-3d-container {
-  height: 620px !important;
-}
 .carousel-3d-slide {
   border:none !important; 
   height: auto !important;
@@ -218,21 +201,29 @@ a.learn-more-btn:active {
   box-shadow: 0px 15px 60px -20px rgba(0,0,0,1);
 }
 .carousel-3d-slide.current {
-  padding: 0;
+  background: transparent;
+  padding: 10px;
 }
 .carousel-3d-slide img {
-  box-shadow: 0px 15px 60px -20px rgba(0,0,0,1);
+  box-shadow: 0px 0px 10px 0px rgba(87,87,87,0.5);
 }
 .carousel-3d-controls {
   top: 35% !important;
 }
+.carousel-3d-container {
+  height: 350px !important;
+}
 .carousel-3d-controls .prev, .carousel-3d-controls .next {
-  border: 2px solid #e22571;
+  border: 2px solid #000;
+  color: #000 !important;
   z-index: 999;
+  height: 51px !important;
+  width: 51px !important;
   position: absolute;
-  line-height: 30px !important;
-  padding: 0 10px;;
-  color: #e22571 !important;
+  line-height: 26px !important;
+  text-align: center;
+  font-size: 70px !important;
+  padding: 0 11px;
 }
 .carousel-3d-slide .show-description {
   background : #fff;
@@ -248,7 +239,7 @@ a.learn-more-btn:active {
 .show-description a {
   border: 1px solid;
   font-size: 14px;
-  padding: 8px 20px;
+  padding: 6px 20px;
   text-decoration: none;
 }
 .show-description a:hover {
@@ -258,15 +249,6 @@ a.learn-more-btn:active {
   display: none;
 }
 @media (max-width: 1200px) {
-  #portfolio-heading {
-    padding: 30px 0 30px 80px;
-  }
-  #portfolio-heading:after {
-    top: 80px;
-  }
-  .carousel-3d-container {
-    height: 420px !important;
-  }
   .carousel-3d-controls .prev, .carousel-3d-controls .next {
     height: 30px !important;
     width: 30px !important;
@@ -276,16 +258,11 @@ a.learn-more-btn:active {
   }
 }
 @media (max-width: 991px) {
-  #portfolio-heading {
-    padding: 30px 0;
-    margin: 4.1rem 0 2rem;
-  }
-  #portfolio-heading:after {
-    top: 80px;
-    width: 45%;
-  }
   .carousel-3d-container {
-    height: 350px !important;
+    height: 300px !important;
+  }
+  .carousel-3d-slide.current {
+    margin: 15px 0 0;
   }
 }
 @media (max-width: 767px) {
@@ -298,18 +275,6 @@ a.learn-more-btn:active {
     line-height: 15px !important;
     padding: 0 6px;
     font-size: 40px !important;
-  }
-  #portfolio-heading {
-    padding: 20px 0 30px;
-    margin: 4.1rem 0 1rem;
-    text-align: center;
-  }
-  #portfolio-heading h1{
-    font-weight: bold;
-    margin: 0 0 5px 0;
-  }
-  #portfolio-heading:after {
-    content: none;
   }
 }
 </style>
