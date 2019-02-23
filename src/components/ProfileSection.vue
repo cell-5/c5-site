@@ -8,7 +8,7 @@
                             <div class="row">
                                 <div class="col-lg-6">
                                     <figure class="team-member-photo">
-                                        <img :src="member.img" alt="Peter Barry" class="img-fluid">
+                                        <img :src="member.img" :alt="member.name" class="img-fluid">
                                     </figure>
                                 </div>
                                 <div class="col-lg-6">
