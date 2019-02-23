@@ -32,15 +32,11 @@
                 </div>
                 <div class="teamNav">
                     <div class="teamNav-slide">
+                      <div id="teamList" v-for="member of members">
                         <div>
-                            <img src="../assets/img/peter-vector.svg" alt="Peter Barry">
+                            <img :src="member.img" :alt="member.name">
                         </div>
-                        <div>
-                            <img src="../assets/img/harry-vector.svg" alt="Harry Wynn-Williams">
-                        </div>
-                        <div>
-                            <img src="../assets/img/pat-vector.svg" alt="Pat Bautista">
-                        </div>
+                      </div>
                     </div>
                 </div>
             </div>
@@ -51,6 +47,11 @@ import $ from 'jquery'
 import 'slick-carousel'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
+import PeterImg from '../assets/img/peter-vector.svg'
+import HarryImg from '../assets/img/harry-vector.svg'
+import PatImg from '../assets/img/pat-vector.svg'
+import NicImg from '../assets/img/nic-vector.png'
+
 function teamCarousel () {
   $('.team').slick({
     autoplay: true,
@@ -75,7 +76,7 @@ export default {
       members: [
         {
           name: 'Peter Barry',
-          img: '../assets/img/peter-vector.svg',
+          img: PeterImg,
           title: 'Cloud Architect',
           linkedin: 'https://uk.linkedin.com/in/peterbarry/',
           twitter: '',
@@ -83,7 +84,7 @@ export default {
         },
         {
           name: 'Harry Wynn-Williams',
-          img: '../assets/img/harry-vector.svg',
+          img: HarryImg,
           title: 'Fullstack (front-end specialist)',
           linkedin: 'https://www.linkedin.com/in/harry-wynn-williams-59b89040/',
           twitter: 'https://twitter.com/harrywinmillion',
@@ -91,7 +92,7 @@ export default {
         },
         {
           name: 'Pat Bautista',
-          img: '../assets/img/pat-vector.svg',
+          img: PatImg,
           title: 'Fullstack (back-end specialist)',
           linkedin: 'https://www.linkedin.com/in/pat-bautista/',
           twitter: '',
