@@ -68,13 +68,14 @@ function teamCarousel () {
     focusOnSelect: true
   })
 }
+
 export default {
   data () {
     return {
       members: [
         {
           name: 'Peter Barry',
-          img: PeterImg,
+          img: '../assets/img/peter-vector.svg',
           title: 'Cloud Architect',
           linkedin: 'https://uk.linkedin.com/in/peterbarry/',
           twitter: '',
@@ -82,7 +83,7 @@ export default {
         },
         {
           name: 'Harry Wynn-Williams',
-          img: HarryImg,
+          img: '../assets/img/harry-vector.svg',
           title: 'Fullstack (front-end specialist)',
           linkedin: 'https://www.linkedin.com/in/harry-wynn-williams-59b89040/',
           twitter: 'https://twitter.com/harrywinmillion',
@@ -90,7 +91,7 @@ export default {
         },
         {
           name: 'Pat Bautista',
-          img: PatImg,
+          img: '../assets/img/pat-vector.svg',
           title: 'Fullstack (back-end specialist)',
           linkedin: 'https://www.linkedin.com/in/pat-bautista/',
           twitter: '',
