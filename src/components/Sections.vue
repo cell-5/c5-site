@@ -41,7 +41,7 @@
                                 <img :src="section.img" :alt="section.title" />
                             </figure>
                         </div>
-                        <div id="cta" class="text-center  d-none d-lg-flex">
+                        <div id="cta" class="text-center col-12 d-none d-lg-flex">
                             <router-link to="portfolio" class="gradient-button call-to-action">View Portfolio</router-link>
                         </div>
                     </div>
@@ -270,7 +270,7 @@ background-color: #228f42;
 color: white
 }
 .gradient-button {
-    margin: 10px;
+    margin: 10px auto;
     font-size: 1.1rem;
     font-weight: bold;
     padding: .7rem 2.4rem;

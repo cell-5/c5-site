@@ -2,234 +2,279 @@
   <div id="portfolio">
     <Header></Header>
     <main role="main">
-      <section class="portfolio">
+      <section id="portfolio-heading">
+      </section>
+      <section id="portfolio">
         <div class="container">
-          <div class="row justify-content-md-center align-items-center">
-            <div class="col-lg-11 row">
-              <div v-for="(portfolioItem, index) in this.portfolio" :key="index" class="justify-content-md-center client col-md-6">
-                <div>
-                  <a class="portfolio-link" target="_blank" :href="portfolioItem.link">
-                    <figure>
-                      <img class="client-image img-fluid mx-auto" :src="portfolioItem.image" :alt="portfolioItem.alt">
-                    </figure>
-                    <div class="overlay">
-                      <h5>{{ portfolioItem.title }}</h5>
-                      <figure>
-                        <img class="title-break" src="../assets/img/cell-5-logo-black.svg" alt="cell5">
-                      </figure>
-                      <p>
-                        {{ portfolioItem.service }}
-                      </p>
-                    </div>
-                  </a>
-                  <div class="mobile-caption">
-                    <h5>{{ portfolioItem.title }}</h5>
-                    <p>{{ portfolioItem.service }}</p>
-                    <div>
-                      <img class="title-break" src="../assets/img/cell-5-logo-black.svg" alt="cell5">
-                    </div>
+          <div class="row justify-content-center align-items-center">
+            <carousel-3d :controls-visible="true" :width="carouselWidth" v-bind:display="itemCount" :autoplay-timeout="5000" perspective="0">
+              <slide v-for="(portfolioItem, index) in this.portfolio" :index="index" :key="index">                
+                <template slot-scope="{ isCurrent}">
+                  <img :data-index="index" :class="{ current: isCurrent }" :src="portfolioItem.image">
+                  <div  v-bind:class="{ 'show-description' : isCurrent, 'hide' : !isCurrent}">
+                    <h6>{{portfolioItem.title}}</h6>
+                    <div class="link"><a :href="portfolioItem.link">VISIT SITE</a></div>
                   </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div id="cta" class="text-center">
-            <router-link to="/#solutions" class="learn-more-btn call-to-action">Learn More</router-link>
+                </template>
+              </slide>
+            </carousel-3d>
           </div>
         </div>
       </section>
-      <FooterSection></FooterSection>
+      <div class="get-started">
+        <div class="container text-center">
+          <h1>Get Started Today!</h1>
+          <div>We would love to have your website listed above so get in touch and let us impress you.</div>
+          <a href="/#contact-us" class="learn-more-btn">Subscribe Now</a>
+        </div>
+      </section>
     </main>
+    <FooterSection></FooterSection>
   </div>
 </template>
 
 <script>
-  import Header from './Header.vue'
-  import FooterSection from './FooterSection.vue'
-  import MelissaTwiggImg from '../assets/img/mtwigg-screenshot-2.jpg'
-  import PortlandImg from '../assets/img/portland-screenshot.jpg'
-  import Good2RentImg from '../assets/img/good2rent-screenshot.jpg'
-  import MyValImg from '../assets/img/myval-screenshot.jpg'
-  import Cell5BlackLogo from '../assets/img/cell-5-logo-black.svg'
-  import $ from 'jquery'
+import Header from './Header.vue'
+import FooterSection from './FooterSection.vue'
+import MelissaTwiggImg from '../assets/img/mtwigg-screenshot.jpg'
+import PortlandImg from '../assets/img/portland-screenshot.jpg'
+import Good2RentImg from '../assets/img/good2rent-screenshot.jpg'
+import MyValImg from '../assets/img/myval-screenshot.jpg'
+import WhiteSpiderMedia from '../assets/img/whitespider-screenshot.jpg'
+import Cell5BlackLogo from '../assets/img/cell-5-logo-black.svg'
+import { Carousel3d, Slide } from 'vue-carousel-3d';
+import $ from 'jquery'
 
-  function backToTop () {
-    $('html,body').animate({
-      scrollTop: 0
-    }, 500)
-  }
-
-  export default {
-    name: 'portfolio',
-    data () {
-      return {
-        portfolio: [{
-          image: MelissaTwiggImg,
-          title: 'Melissa Twigg',
-          service: 'Website & Hosting',
-          link: 'http://melissatwigg.co.uk',
-          alt: 'Melissa Twigg Portfolio Site'
-        },
-        {
-          image: PortlandImg,
-          title: 'Portland Decorating & Design',
-          service: 'Web rescue & On-site SEO',
-          link: 'http://portlanddecorating.co.uk/',
-          alt: 'Portland Decorating and Design Website'
-        },
-        {
-          image: Good2RentImg,
-          title: 'good2rent',
-          service: 'Cloud migration & start-up app dev',
-          link: 'http://good2rent.co.uk/',
-          alt: 'good2rent website'
-        },
-        {
-          image: MyValImg,
-          title: 'myVal',
-          service: 'Web rescue & API integrations',
-          link: 'http://myval.co.uk/',
-          alt: 'myVal website'
-        }],
-        cell5logo: Cell5BlackLogo
-      }
-    },
-    components: {
-      Header,
-      FooterSection
-    },
-    mounted () {
-      backToTop()
+function backToTop() {
+  $('html,body').animate({
+    scrollTop: 0
+  }, 500)
+}
+export default {
+  name: 'portfolio',
+  data() {
+    return {
+      portfolio: [{
+        image: MelissaTwiggImg,
+        title: 'Melissa Twigg',
+        service: 'Website & Hosting',
+        link: 'http://melissatwigg.co.uk',
+        alt: 'Melissa Twigg Portfolio Site'
+      },
+      {
+        image: PortlandImg,
+        title: 'Portland Decorating & Design',
+        service: 'Web rescue & On-site SEO',
+        link: 'http://portlanddecorating.co.uk/',
+        alt: 'Portland Decorating and Design Website'
+      },
+      {
+        image: Good2RentImg,
+        title: 'good2rent',
+        service: 'Cloud migration & start-up app dev',
+        link: 'http://good2rent.co.uk/',
+        alt: 'good2rent website'
+      },
+      {
+        image: MyValImg,
+        title: 'myVal',
+        service: 'Web rescue & API integrations',
+        link: 'http://myval.co.uk/',
+        alt: 'myVal website'
+      },
+      {
+        image: WhiteSpiderMedia,
+        title: 'White Spider Media',
+        service: 'My super-duper Nuxt.js project',
+        link: 'https://pensive-mcclintock-1395fd.netlify.com/',
+        alt: 'White Spider Media Website'
+      }],
+      portfolioNavigation: [
+        'All','Business','Entertainment','Creative','Blog','Portfolio','One page','Shop','Other' 
+      ],
+      cell5logo: Cell5BlackLogo,
+      itemCount: 0,
+      carouselWidth: 0
     }
+  },
+  components: {
+    Header,
+    FooterSection,
+    Carousel3d,
+    Slide
+  },
+  methods: {
+    handleResize() {
+      if (window.matchMedia("only screen and (max-width: 768px)").matches) {
+          this.carouselWidth = 200;
+      } else if (window.matchMedia("only screen and (max-width: 1024px)").matches) {
+          this.carouselWidth = 300;
+      } else {  
+          this.carouselWidth = 350;
+      }
+      if ( window.matchMedia("only screen and (max-width: 600px)").matches) {
+        this.itemCount = 1;
+      } else {
+        this.itemCount = 5;
+      }
+    }
+  },
+  mounted () {
+    backToTop(),
+    window.addEventListener('resize', this.handleResize)
+    this.handleResize();
   }
+}
 </script>
-<style scoped>
-  .portfolio {
-    position: relative;
-    background: white;
-    margin-top: 4.1rem;
-  }
-
-  .portfolio .container {
-    padding-bottom: 5em;
-  }
-  .portfolio-heading {
-    text-align: center;
-    max-width: 80%;
-    margin: 0 auto;
-  }
-  .portfolio-heading p {
-    line-height: 1.8;
-  }
-  .portfolio-link {
-    display: block;
-  }
-  .portfolio-link img {
-    display: block;
-  }
-  .portfolio-link:hover,
-  .portfolio-link:focus {
-    text-decoration: none;
-  }
-  .portfolio-link h2 {
-    text-align: center;
-    font-size: 1.2rem;
-    color: #2c302e;
-  }
-  .portfolio .row {
-    padding-top: 2em;
-    padding-bottom: 2em;
-  }
-  .portfolio a.learn-more-btn:link,
-  .portfolio a.learn-more-btn:visited {
-    display: inline-block;
-    background-color: #34b95b;
-    color: white;
-    border-radius: 8px;
-    padding: 1rem 3rem;
-    margin-top: 0.5rem;
-    text-decoration: none
-  }
-
-  .portfolio a.learn-more-btn:hover {
-    background-color: #269f49;
-    color: white
-  }
-
-  .portfolio a.learn-more-btn:active {
-    background-color: #228f42;
-    color: white
-  }
-
-.client {
-  padding: 15px;
-  text-align: center;
-  /* border-radius: 25px; */
+<style type="text/css">
+header.siteheader {
+  background: #000 !important;
 }
-
-.client-image {
-  border-radius: 7px;
+#portfolio {
+  position: relative;
+  height: auto;
 }
-
-.client:hover .overlay {
-  opacity: .7;
-  color: black
+#portfolio-heading {
+  background: linear-gradient(to right, #232474, #aa245c);
+  padding: 40px 0;
+  margin: 4.1rem 0;
 }
-
-.overlay {
-  padding-top: 5em;
-  padding-bottom: 2em;
+#portfolio-heading:after {
+  content: "";
   position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
   right: 0;
-  height: 100%;
-  width: 100%;
-  opacity: 0;
-  transition: .5s ease;
-  background-color:  white;
+  top: 45px;
+  height: 3.13rem;
+  width: 50%;
+  border-left: 3.13rem solid transparent;
+  border-bottom: 3.13rem solid #fefffe;
 }
-.img-fluid{
-  height: 100%;
-  width: 100%;
+.portfolio-navbar , .portfolio-navbar .nav-item {
+  padding: 0 10px;
+  display: inline;
+  font-size: 0.8rem;
+  font-weight: bold;
+  word-break: break-all;
+}
+.portfolio-navbar  a {
+  text-decoration: none;
+  color: #000;
+}
+.portfolio-navbar  a:hover, .portfolio-navbar  a:active {
+  text-decoration: none;
+  color: #e22571;
+}
+a.learn-more-btn:link,
+a.learn-more-btn:visited {
+  display: inline-block;
+  background-color: #34b95b;
+  color: white;
+  border-radius: 5px;
+  padding: 0.7rem 3.5rem;
+  margin: 1.8rem 0 0;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
 }
 
-.title-break {
-  height: 16px;
+a.learn-more-btn:hover {
+  background-color: #269f49;
+  color: white
 }
-.overlay .title-break {
-  display: inline;
+
+a.learn-more-btn:active {
+  background-color: #228f42;
+  color: white
 }
-.mobile-caption{
-  visibility: hidden;
+.get-started {
+  background: linear-gradient(to right, #11052b, #230930);
+  color: #fff;
+  font-size: 1rem;
+  padding: 70px 0 60px;
+}
+.carousel-3d-slide {
+  border:none !important; 
+  height: auto !important;
+  background: #fff;
+}
+.carousel-3d-slide:not(.current) {
+  box-shadow: 0px 15px 60px -20px rgba(0,0,0,1);
+}
+.carousel-3d-slide.current {
+  background: transparent;
+  padding: 10px;
+}
+.carousel-3d-slide img {
+  box-shadow: 0px 0px 10px 0px rgba(87,87,87,0.5);
+}
+.carousel-3d-controls {
+  top: 35% !important;
+}
+.carousel-3d-container {
+  height: 350px !important;
+}
+.carousel-3d-controls .prev, .carousel-3d-controls .next {
+  border: 2px solid #000;
+  color: #000 !important;
+  z-index: 999;
+  height: 51px !important;
+  width: 51px !important;
+  position: absolute;
+  line-height: 26px !important;
+  text-align: center;
+  font-size: 70px !important;
+  padding: 0 11px;
+}
+.carousel-3d-slide .show-description {
+  background : #fff;
+  display: block;
+  color: #000;
+  font-size: 0.8rem;
+  text-align: center;
+  padding: 30px 0;
+}
+.show-description .link {
+  margin: 20px 0 0;
+}
+.show-description a {
+  border: 1px solid;
+  font-size: 14px;
+  padding: 6px 20px;
+  text-decoration: none;
+}
+.show-description a:hover {
+  text-decoration: none;
+}
+.carousel-3d-slide .hide {
   display: none;
 }
-.row {
-    padding-top: 1em !important;
-}
-@media screen and (max-width: 600px) {
-  .overlay {
-    visibility: hidden;
-    display: none;
-  }
-  .mobile-caption{
-    visibility: visible;
-    display: inline;
-
+@media (max-width: 1200px) {
+  .carousel-3d-controls .prev, .carousel-3d-controls .next {
+    height: 30px !important;
+    width: 30px !important;
+    line-height: 15px !important;
+    padding: 0 6px;
+    font-size: 40px !important;
   }
 }
-
-@media (max-width: 767px) and (orientation: portrait) {
-  .overlay {
-    visibility: hidden;
-    display: none;
+@media (max-width: 991px) {
+  .carousel-3d-container {
+    height: 300px !important;
   }
-  .mobile-caption{
-    visibility: visible;
-    display: inline;
-
+  .carousel-3d-slide.current {
+    margin: 15px 0 0;
   }
 }
-
+@media (max-width: 767px) {
+  .carousel-3d-container {
+    padding: 10px 0;
+  }
+  .carousel-3d-controls .prev, .carousel-3d-controls .next {
+    height: 30px !important;
+    width: 30px !important;
+    line-height: 15px !important;
+    padding: 0 6px;
+    font-size: 40px !important;
+  }
+}
 </style>
