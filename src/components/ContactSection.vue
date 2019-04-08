@@ -127,7 +127,6 @@ export default {
 
   methods: {
     callback(element) {
-      console.log(element);
       this.changeBackground = true;
     },
     submitForm(event) {
@@ -152,7 +151,6 @@ export default {
             self.loading = false;
           })
           .catch(error => {
-            console.log(error);
             self.hasErrors = true;
             self.error =
               "Something went wrong. Please try again some other time";

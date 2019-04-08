@@ -17,14 +17,9 @@
 	                <li class="nav-item"><a @click="scrollOrRedirect" class="nav-link scrollactive-item" href="#home">Home</a></li>
 	                <li class="nav-item"><a @click="scrollOrRedirect" class="nav-link scrollactive-item" href="#solutions">Solutions</a></li>
 	                <li class="nav-item"><a @click="scrollOrRedirect" class="nav-link scrollactive-item" href="#profiles">The Team</a></li>
-                  <template v-if="isPortfolioPage">
-                    <li class="nav-item"><a id="portfolio-link" class="nav-link scrollactive-item" href="#portfolio">Portfolio</a></li>
-                  </template>
-                  <template v-else>
-                    <router-link to="portfolio" tag="li" class="nav-item">
-                      <a class="nav-link" data-toggle="collapse" data-target="#collapsible-navbar">Portfolio</a>
-                    </router-link>
-                  </template>
+                  <router-link to="portfolio" tag="li" class="nav-item">
+                    <a @click="scrollOrRedirect" class="nav-link scrollactive-item">Portfolio</a>
+                  </router-link>
                   <li class="nav-item"><a @click="scrollOrRedirect" class="nav-link scrollactive-item" href="#contact-us">Contact Us</a></li>
                 </ul>
             </div>
