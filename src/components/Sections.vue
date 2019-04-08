@@ -155,16 +155,11 @@
         height: 40vmin
     }
 }
-@media (min-width: 992px) {
-    .solution figure img {
-        width: 40vmin;
-        height: 40vmin
-    }
-}
+
 @media (min-width: 992px) and (max-width: 1199px) {
     .solution figure img {
-        width: 40vmin;
-        height: 40vmin
+        width: 30vmin;
+        height: 30vmin
     }
 }
 @media (max-width: 991px) {

@@ -513,7 +513,6 @@ li.nav-item:hover {
     display: inline-block !important;
     text-align: center;
     margin: 0;
-    padding: 1rem;
     -webkit-transition: all 0.2s linear;
     transition: all 0.2s linear
 }
@@ -656,15 +655,15 @@ li.nav-item:hover {
 
 @media (min-width: 992px) {
     .solution figure img {
-        width: 40vmin;
-        height: 40vmin
+        width: 30vmin;
+        height: 30vmin
     }
 }
 
 @media (min-width: 992px) and (max-width: 1199px) {
     .solution figure img {
-        width: 40vmin;
-        height: 40vmin
+        width: 30vmin;
+        height: 30vmin
     }
 }
 

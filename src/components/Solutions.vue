@@ -39,6 +39,10 @@
     position: relative
 }
 
+#solutions-wrapper > div {
+  height: 80vh;
+}
+
 #solutions:after {
     content: '';
     position: absolute;
@@ -70,6 +74,12 @@
     }
 }
 
+@media (min-width: 992px) {
+    #solutions {
+        height: 100vh
+    }
+}
+
 #solutions div.solutions-nav {
     margin: 0;
     padding: 0
@@ -79,7 +89,6 @@
     display: inline-block !important;
     text-align: center;
     margin: 0;
-    padding: 1rem;
     -webkit-transition: all 0.2s linear;
     transition: all 0.2s linear
 }
