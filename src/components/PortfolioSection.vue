@@ -4,6 +4,11 @@
     <main role="main">
       <section class="portfolio">
         <div class="container">
+          <b-row class="project-category">
+            <b-col class="services d-flex justify-content-center flex-column flex-md-row">
+              <Categories />
+            </b-col>
+          </b-row>
           <div class="row justify-content-md-center align-items-center">
             <div class="col-lg-11 row">
               <div v-for="(portfolioItem, index) in this.portfolio" :key="index" class="justify-content-md-center client col-md-6">
@@ -52,6 +57,7 @@
   import MyValImg from '../assets/img/myval-screenshot.jpg'
   import Cell5BlackLogo from '../assets/img/cell-5-logo-black.svg'
   import $ from 'jquery'
+  import Categories from "./Categories"
 
   function backToTop () {
     $('html,body').animate({
@@ -96,7 +102,8 @@
     },
     components: {
       Header,
-      FooterSection
+      FooterSection,
+      Categories
     },
     mounted () {
       backToTop()
