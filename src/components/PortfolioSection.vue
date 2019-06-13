@@ -6,7 +6,7 @@
         <div class="container">
           <b-row class="project-category">
             <b-col class="services d-flex justify-content-center flex-column flex-md-row">
-              <Categories />
+              <Categories @handleSelect="handleSelect"/>
             </b-col>
           </b-row>
           <div class="row justify-content-md-center align-items-center">
@@ -69,36 +69,48 @@
     name: 'portfolio',
     data () {
       return {
-        portfolio: [{
-          image: MelissaTwiggImg,
-          title: 'Melissa Twigg',
-          service: 'Website & Hosting',
-          link: 'http://melissatwigg.co.uk',
-          alt: 'Melissa Twigg Portfolio Site'
-        },
-        {
-          image: PortlandImg,
-          title: 'Portland Decorating & Design',
-          service: 'Web rescue & On-site SEO',
-          link: 'http://portlanddecorating.co.uk/',
-          alt: 'Portland Decorating and Design Website'
-        },
-        {
-          image: Good2RentImg,
-          title: 'good2rent',
-          service: 'Cloud migration & start-up app dev',
-          link: 'http://good2rent.co.uk/',
-          alt: 'good2rent website'
-        },
-        {
-          image: MyValImg,
-          title: 'myVal',
-          service: 'Web rescue & API integrations',
-          link: 'http://myval.co.uk/',
-          alt: 'myVal website'
-        }],
-        cell5logo: Cell5BlackLogo
+        cell5logo: Cell5BlackLogo,
+        filter: [],
+        filtered: []
       }
+    },
+    computed: {
+      portfolio() {
+        return [
+          {
+            image: MelissaTwiggImg,
+            title: 'Melissa Twigg',
+            service: 'Website & Hosting',
+            link: 'http://melissatwigg.co.uk',
+            alt: 'Melissa Twigg Portfolio Site',
+            category: ['WEBSITE','HOSTING']
+          },
+          {
+            image: PortlandImg,
+            title: 'Portland Decorating & Design',
+            service: 'Web rescue & On-site SEO',
+            link: 'http://portlanddecorating.co.uk/',
+            alt: 'Portland Decorating and Design Website',
+            category: ['WEB_RESCUE','ON_SITE_SEO']
+          },
+          {
+            image: Good2RentImg,
+            title: 'good2rent',
+            service: 'Cloud migration & start-up app dev',
+            link: 'http://good2rent.co.uk/',
+            alt: 'good2rent website',
+            category: ['CLOUD_MIGRATION','STARTUP_APP_DEV']
+          },
+          {
+            image: MyValImg,
+            title: 'myVal',
+            service: 'Web rescue & API integrations',
+            link: 'http://myval.co.uk/',
+            alt: 'myVal website',
+            category: ['WEB_RESCUE','API_INTEGRATION']
+          }
+        ]
+      },
     },
     components: {
       Header,
@@ -107,6 +119,27 @@
     },
     mounted () {
       backToTop()
+    },
+    methods: {
+      handleSelect(value) {
+        if(value.selected) {
+          this.filter.push(value.key)
+
+          for (let index = 0; index < this.filter.length; index++) {
+            const element = this.filter[index];
+            const filtered = this.portfolio.filter(item => {
+              return item.category.find(cat => cat == element)
+            })
+            this.filtered.push(filtered)
+          }
+          
+        } else {
+          const index = this.filter.indexOf(this.filter.key);
+          this.filter.splice(index, 1);
+        }
+        console.log(this.filter)
+        console.log(this.filtered)
+      }
     }
   }
 </script>

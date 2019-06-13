@@ -4,11 +4,11 @@
     <button
       v-for="(c, i) in this.categories"
       type="button"
-      @click="c.selected = !c.selected"
+      @click="c.selected = !c.selected, handleSelect(i, c.selected)"
       class="btn-1 btn-light"
       :class="{'is-active' : c.selected }"
       :key="i">
-      {{c.text}} {{ c.selected }}
+      {{c.text}}
     </button>
     <button class="btn-1 btn-light" @click="clearAll">Clear</button>
   </div>
@@ -25,8 +25,9 @@
       }
     },
     methods: {
-      handleInput(key, value) {
-        key.updateCategory(value)
+      handleSelect(key, selected) {
+        const filter = {key, selected}
+        this.$emit('handleSelect', filter);
       },
       clearAll() {
         this.$emit('clearAll');
