@@ -10,8 +10,35 @@
             </b-col>
           </b-row>
           <div class="row justify-content-md-center align-items-center">
-            <div class="col-lg-11 row">
+            <div v-if="this.filter == ''" class="col-lg-11 row">
               <div v-for="(portfolioItem, index) in this.portfolio" :key="index" class="justify-content-md-center client col-md-6">
+                <div>
+                  <a class="portfolio-link" target="_blank" :href="portfolioItem.link">
+                    <figure>
+                      <img class="client-image img-fluid mx-auto" :src="portfolioItem.image" :alt="portfolioItem.alt">
+                    </figure>
+                    <div class="overlay">
+                      <h5>{{ portfolioItem.title }}</h5>
+                      <figure>
+                        <img class="title-break" src="../assets/img/cell-5-logo-black.svg" alt="cell5">
+                      </figure>
+                      <p>
+                        {{ portfolioItem.service }}
+                      </p>
+                    </div>
+                  </a>
+                  <div class="mobile-caption">
+                    <h5>{{ portfolioItem.title }}</h5>
+                    <p>{{ portfolioItem.service }}</p>
+                    <div>
+                      <img class="title-break" src="../assets/img/cell-5-logo-black.svg" alt="cell5">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div v-else class="col-lg-11 row">
+              <div v-for="(portfolioItem, index) in this.filteredPortfolio" :key="index" class="justify-content-md-center client col-md-6">
                 <div>
                   <a class="portfolio-link" target="_blank" :href="portfolioItem.link">
                     <figure>
@@ -83,7 +110,8 @@
             service: 'Website & Hosting',
             link: 'http://melissatwigg.co.uk',
             alt: 'Melissa Twigg Portfolio Site',
-            category: ['WEBSITE','HOSTING']
+            category: ['WEBSITE','HOSTING'],
+            isSelected: false
           },
           {
             image: PortlandImg,
@@ -91,7 +119,8 @@
             service: 'Web rescue & On-site SEO',
             link: 'http://portlanddecorating.co.uk/',
             alt: 'Portland Decorating and Design Website',
-            category: ['WEB_RESCUE','ON_SITE_SEO']
+            category: ['WEB_RESCUE','ON_SITE_SEO'],
+            isSelected: false
           },
           {
             image: Good2RentImg,
@@ -99,7 +128,8 @@
             service: 'Cloud migration & start-up app dev',
             link: 'http://good2rent.co.uk/',
             alt: 'good2rent website',
-            category: ['CLOUD_MIGRATION','STARTUP_APP_DEV']
+            category: ['CLOUD_MIGRATION','STARTUP_APP_DEV'],
+            isSelected: false
           },
           {
             image: MyValImg,
@@ -107,10 +137,15 @@
             service: 'Web rescue & API integrations',
             link: 'http://myval.co.uk/',
             alt: 'myVal website',
-            category: ['WEB_RESCUE','API_INTEGRATION']
+            category: ['WEB_RESCUE','API_INTEGRATION'],
+            isSelected: false
           }
         ]
       },
+      filteredPortfolio() {
+        if(this.filter !== '')
+          return this.portfolio.filter(item => item.isSelected === true)
+      }
     },
     components: {
       Header,
@@ -124,21 +159,32 @@
       handleSelect(value) {
         if(value.selected) {
           this.filter.push(value.key)
-
           for (let index = 0; index < this.filter.length; index++) {
             const element = this.filter[index];
-            const filtered = this.portfolio.filter(item => {
-              return item.category.find(cat => cat == element)
-            })
-            this.filtered.push(filtered)
-          }
-          
+            this.portfolio.filter(item => {
+              if(item.category.find(cat => cat == element)){
+                item.isSelected = true;
+              }              
+            })            
+          }          
         } else {
-          const index = this.filter.indexOf(this.filter.key);
-          this.filter.splice(index, 1);
+          this.portfolio.filter(item => {
+            if(item.category.find(cat => cat == value.key)){
+              item.isSelected = false;
+            }              
+          }) 
+          this.filter.splice(value.key, 1);
         }
-        console.log(this.filter)
-        console.log(this.filtered)
+        if(this.filter != '') {
+          for (let index = 0; index < this.filter.length; index++) {
+            const element = this.filter[index];
+            this.portfolio.filter(item => {
+              if(item.category.find(cat => cat == element)){
+                item.isSelected = true;
+              }              
+            })            
+          }
+        }
       }
     }
   }
