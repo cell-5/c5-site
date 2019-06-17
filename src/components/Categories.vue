@@ -16,7 +16,6 @@
 
 <script>
   import categories from '../utils/category'
-  import filter from '../utils/filter'
   export default {
     data() {
       return {
