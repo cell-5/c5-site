@@ -6,7 +6,7 @@
         <div class="container">
           <b-row class="project-category">
             <b-col class="services d-flex justify-content-center flex-column flex-md-row">
-              <Categories @handleSelect="handleSelect"/>
+              <Categories @handleSelect="handleSelect" @clearAll="clearAll" />
             </b-col>
           </b-row>
           <div class="row justify-content-md-center align-items-center">
@@ -145,6 +145,10 @@
       filteredPortfolio() {
         if(this.filter !== '')
           return this.portfolio.filter(item => item.isSelected === true)
+        // else 
+        //   return this.portfolio.filter(item => {
+        //     return item.isSelected = false
+        //   })
       }
     },
     components: {
@@ -157,7 +161,7 @@
     },
     methods: {
       handleSelect(value) {
-        if(value.selected) {
+        if(value.isSelected) {
           this.filter.push(value.key)
           for (let index = 0; index < this.filter.length; index++) {
             const element = this.filter[index];
@@ -185,6 +189,13 @@
             })            
           }
         }
+      },
+      clearAll() {
+        this.filter = [];
+        this.filteredPortfolio.map( (item) => {
+          item.isSelected = false;
+          return item;
+        })
       }
     }
   }

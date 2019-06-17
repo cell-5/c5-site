@@ -4,7 +4,7 @@
     <button
       v-for="(c, i) in this.categories"
       type="button"
-      @click="c.selected = !c.selected, handleSelect(i, c.selected)"
+      @click="handleSelect(i, c.selected)"
       class="btn-1 btn-light"
       :class="{'is-active' : c.selected }"
       :key="i">
@@ -21,15 +21,28 @@
     data() {
       return {
         categories: categories,
-        isSelected: false
+        isSelected: false,
+        filteredKey: [],
       }
     },
     methods: {
-      handleSelect(key, selected) {
-        const filter = {key, selected}
-        this.$emit('handleSelect', filter);
+      handleSelect(key, selected) {    
+        if(selected){
+          this.categories[key].selected = false
+          const isSelected = false
+          const filter = {key, isSelected}
+          this.$emit('handleSelect', filter);
+        } else {
+          this.categories[key].selected = true
+          const isSelected = true
+          const filter = {key, isSelected}
+          this.$emit('handleSelect', filter);
+        }     
       },
       clearAll() {
+        for (const [key, value] of Object.entries(this.categories)) {
+          this.categories[key].selected = false;
+        }
         this.$emit('clearAll');
       },
     }
