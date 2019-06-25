@@ -24,6 +24,7 @@
     "vue": "^2.6.7",
     "vue-hot-reload-api": "^2.3.3",
     "vue-is-in-view": "^1.0.7",
+    "vue-masonry-gallery": "^1.1.1",
     "vue-router": "^3.0.2",
     "vue-scrollactive": "^0.8.0",
     "vue-typer": "^1.2.0",

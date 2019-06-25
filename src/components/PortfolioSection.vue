@@ -3,38 +3,67 @@
     <Header></Header>
     <main role="main">
       <section class="portfolio">
-        <div class="container">
-          <div class="row justify-content-md-center align-items-center">
-            <div class="col-lg-11 row">
-              <div v-for="(portfolioItem, index) in this.portfolio" :key="index" class="justify-content-md-center client col-md-6">
-                <div>
-                  <a class="portfolio-link" target="_blank" :href="portfolioItem.link">
-                    <figure>
-                      <img class="client-image img-fluid mx-auto" :src="portfolioItem.image" :alt="portfolioItem.alt">
-                    </figure>
-                    <div class="overlay">
-                      <h5>{{ portfolioItem.title }}</h5>
-                      <figure>
-                        <img class="title-break" src="../assets/img/cell-5-logo-black.svg" alt="cell5">
-                      </figure>
-                      <p>
-                        {{ portfolioItem.service }}
-                      </p>
-                    </div>
-                  </a>
-                  <div class="mobile-caption">
-                    <h5>{{ portfolioItem.title }}</h5>
-                    <p>{{ portfolioItem.service }}</p>
-                    <div>
-                      <img class="title-break" src="../assets/img/cell-5-logo-black.svg" alt="cell5">
-                    </div>
-                  </div>
+        <div class="h-100">
+          <vue-masonry-gallery
+            :target="options.target"
+            :maxCols="options.maxCols"
+            :gap="options.gap"
+            :mobileGap="options.mobileGap"
+            :imgsArr="imgsArr"
+            @click="clickFn"
+            @scrollReachBottom="getData"
+          ></vue-masonry-gallery>
+          <div class="lightbox-alpha animated fadeIn" v-if="visible" @click="hide">
+            <div
+              class="position-fixed text-white cursor-pointer close-icon"
+              @click.stop="hide"
+            >&times;</div>
+            <div
+              class="position-fixed text-white pl-2 pt-1"
+            >{{ indexCount }} / {{ this.imgsArr.length }}</div>
+            <div class="d-flex lightbox-content animated">
+              <div
+                class="cursor-pointer align-self-center prev-icon position-absolute"
+                @click.stop="prev"
+                :class="{'invisible': ! hasPrev()}"
+              >
+                <svg
+                  class="pointer-events-none"
+                  fill="#fff"
+                  height="48"
+                  viewBox="0 0 24 24"
+                  width="48"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M15.41 16.09l-4.58-4.59 4.58-4.59L14 5.5l-6 6 6 6z"></path>
+                  <path d="M0-.5h24v24H0z" fill="none"></path>
+                </svg>
+              </div>
+              <div class="lightbox-container" @click.stop>
+                <img :src="this.imgsArr[this.index].src">
+                <div class="lightbox-container-info" ref="info">
+                  <h4 ref="modal-title">{{ this.imgsArr[this.index].title }}</h4>
+                  <p ref="modal-description">{{ this.imgsArr[this.index].info }}</p>
                 </div>
               </div>
+              <div
+                class="cursor-pointer align-self-center next-icon position-absolute"
+                @click.stop="next"
+                :class="{'invisible': ! hasNext()}"
+              >
+                <svg
+                  class="pointer-events-none"
+                  fill="#fff"
+                  height="48"
+                  viewBox="0 0 24 24"
+                  width="48"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"></path>
+                  <path d="M0-.25h24v24H0z" fill="none"></path>
+                </svg>
+              </div>
             </div>
-          </div>
-          <div id="cta" class="text-center">
-            <router-link to="/#solutions" class="learn-more-btn call-to-action">Learn More</router-link>
           </div>
         </div>
       </section>
@@ -44,192 +73,334 @@
 </template>
 
 <script>
-  import Header from './Header.vue'
-  import FooterSection from './FooterSection.vue'
-  import MelissaTwiggImg from '../assets/img/mtwigg-screenshot-2.jpg'
-  import PortlandImg from '../assets/img/portland-screenshot.jpg'
-  import Good2RentImg from '../assets/img/good2rent-screenshot.jpg'
-  import MyValImg from '../assets/img/myval-screenshot.jpg'
-  import Cell5BlackLogo from '../assets/img/cell-5-logo-black.svg'
-  import $ from 'jquery'
+import Header from "./Header.vue";
+import FooterSection from "./FooterSection.vue";
+import VueMasonryGallery from "vue-masonry-gallery";
+import $ from "jquery";
 
-  function backToTop () {
-    $('html,body').animate({
+function backToTop() {
+  $("html,body").animate(
+    {
       scrollTop: 0
-    }, 500)
-  }
+    },
+    500
+  );
+}
+export default {
+  name: "portfolio",
+  mounted() {
+    backToTop();
 
-  export default {
-    name: 'portfolio',
-    data () {
-      return {
-        portfolio: [{
-          image: MelissaTwiggImg,
-          title: 'Melissa Twigg',
-          service: 'Website & Hosting',
-          link: 'http://melissatwigg.co.uk',
-          alt: 'Melissa Twigg Portfolio Site'
-        },
-        {
-          image: PortlandImg,
-          title: 'Portland Decorating & Design',
-          service: 'Web rescue & On-site SEO',
-          link: 'http://portlanddecorating.co.uk/',
-          alt: 'Portland Decorating and Design Website'
-        },
-        {
-          image: Good2RentImg,
-          title: 'good2rent',
-          service: 'Cloud migration & start-up app dev',
-          link: 'http://good2rent.co.uk/',
-          alt: 'good2rent website'
-        },
-        {
-          image: MyValImg,
-          title: 'myVal',
-          service: 'Web rescue & API integrations',
-          link: 'http://myval.co.uk/',
-          alt: 'myVal website'
-        }],
-        cell5logo: Cell5BlackLogo
+    window.addEventListener("keydown", this.onKeydown);
+  },
+  destroyed() {
+    window.removeEventListener("keydown", this.onKeydown);
+  },
+  created() {
+    this.getData();
+  },
+  computed: {
+    indexCount() {
+      return parseInt(this.index) + 1;
+    }
+  },
+  methods: {
+    hide() {
+      this.visible = false;
+      this.index = 0;
+      document.querySelector("html").classList.remove("overflow-hidden");
+    },
+    hasNext() {
+      var val = parseInt(this.index) + 1;
+      return val < this.imgsArr.length;
+    },
+    hasPrev() {
+      return this.index - 1 >= 0;
+    },
+    prev() {
+      if (this.hasPrev()) {
+        this.index = parseInt(this.index) - 1;
       }
     },
-    components: {
-      Header,
-      FooterSection
+    next() {
+      if (this.hasNext()) {
+        this.index = parseInt(this.index) + 1;
+      }
     },
-    mounted () {
-      backToTop()
+    onKeydown(e) {
+      if (this.visible) {
+        switch (e.key) {
+          case "ArrowRight":
+            this.next();
+            break;
+          case "ArrowLeft":
+            this.prev();
+            break;
+          case "ArrowDown":
+          case "ArrowUp":
+          case " ":
+            e.preventDefault();
+            break;
+          case "Escape":
+            this.hide();
+            break;
+        }
+      }
+    },
+    getData() {
+      return this.imgArr;
+    },
+    clickFn(event, { index, value }) {
+      // Prevent a tag jump
+      document.querySelector("html").classList.add("overflow-hidden");
+      event.preventDefault();
+
+      // Do it only when you click on the image
+      if (event.target.tagName.toLowerCase() == "img") {
+        // console.log("img clicked", index, value);
+        this.index = index;
+        this.visible = true;
+        this.hasNext();
+        this.hasPrev();
+      }
     }
+  },
+  components: {
+    VueMasonryGallery,
+    Header,
+    FooterSection
+  },
+  data() {
+    return {
+      visible: false,
+      index: 0,
+      options: {
+        maxCols: 5,
+        gap: 15,
+        mobileGap: 5
+      },
+      imgsArr: [
+        {
+          src: "https://placeimg.com/1024/1024/grayscale",
+          srcBig: "https://placeimg.com/250/250/grayscale",
+          href: null,
+          link: "https://google.com",
+          title: "This is first img title",
+          info: "First description",
+          target: "modal",
+          maxCols: 3
+        },
+        {
+          src: "https://placeimg.com/768/768/nature",
+          srcBig: "https://placeimg.com/250/250/nature",
+          title: "This is second img title",
+          href: null,
+          link: "https://google.com",
+          info:
+            "Second desc with lorem Ipsum is simply dummy text of the printing and typesetting industry",
+          target: "modal"
+        },
+        {
+          src: "https://placeimg.com/600/550/tech",
+          srcBig: "https://placeimg.com/250/250/tech",
+          title: "This is second img title",
+          href: null,
+          link: "https://google.com",
+          info:
+            "Second desc with lorem Ipsum is simply dummy text of the printing and typesetting industry",
+          target: "modal"
+        },
+        {
+          src: "https://placeimg.com/1024/1024/animals",
+          srcBig: "https://placeimg.com/250/300/animals",
+          title: "This is second img title",
+          href: null,
+          link: "https://google.com",
+          info:
+            "Second desc with lorem Ipsum is simply dummy text of the printing and typesetting industry",
+          target: "modal"
+        },
+        {
+          src: "https://placeimg.com/900/800/arh",
+          srcBig: "https://placeimg.com/900/400/arch",
+          title: "This is second img title",
+          href: null,
+          link: "https://google.com",
+          info:
+            "Second desc with lorem Ipsum is simply dummy text of the printing and typesetting industry",
+          target: "modal"
+        },
+        {
+          src: "https://placeimg.com/1300/1200/nature",
+          srcBig: "https://placeimg.com/400/250/nature",
+          title: "This is second img title",
+          href: null,
+          link: "https://google.com",
+          info:
+            "Second desc with lorem Ipsum is simply dummy text of the printing and typesetting industry",
+          target: "modal"
+        },
+        {
+          src: "https://placeimg.com/1300/1200/grayscale",
+          srcBig: "https://placeimg.com/400/250/grayscale",
+          title: "This is second img title",
+          href: null,
+          link: "https://google.com",
+          info:
+            "Second desc with lorem Ipsum is simply dummy text of the printing and typesetting industry",
+          target: "modal"
+        },
+        {
+          src: "https://placeimg.com/1300/1200/animals",
+          srcBig: "https://placeimg.com/400/250/animals",
+          title: "This is second img title",
+          href: null,
+          link: "https://google.com",
+          info:
+            "Second desc with lorem Ipsum is simply dummy text of the printing and typesetting industry",
+          target: "modal"
+        },
+        {
+          src: "https://placeimg.com/1000/900/tech",
+          srcBig: "https://placeimg.com/1000/900/tech",
+          title: "This is second img title",
+          href: null,
+          link: "https://google.com",
+          info:
+            "Second desc with lorem Ipsum is simply dummy text of the printing and typesetting industry",
+          target: "modal"
+        },
+        {
+          src: "https://placeimg.com/1000/900/nature",
+          srcBig: "https://placeimg.com/1000/900/nature",
+          title: "This is second img title",
+          href: null,
+          link: "https://google.com",
+          info:
+            "Second desc with lorem Ipsum is simply dummy text of the printing and typesetting industry",
+          target: "modal"
+        }
+      ]
+    };
   }
+};
 </script>
-<style scoped>
-  .portfolio {
-    position: relative;
-    background: white;
-    margin-top: 4.1rem;
-  }
-
-  .portfolio .container {
-    padding-bottom: 5em;
-  }
-  .portfolio-heading {
-    text-align: center;
-    max-width: 80%;
-    margin: 0 auto;
-  }
-  .portfolio-heading p {
-    line-height: 1.8;
-  }
-  .portfolio-link {
-    display: block;
-  }
-  .portfolio-link img {
-    display: block;
-  }
-  .portfolio-link:hover,
-  .portfolio-link:focus {
-    text-decoration: none;
-  }
-  .portfolio-link h2 {
-    text-align: center;
-    font-size: 1.2rem;
-    color: #2c302e;
-  }
-  .portfolio .row {
-    padding-top: 2em;
-    padding-bottom: 2em;
-  }
-  .portfolio a.learn-more-btn:link,
-  .portfolio a.learn-more-btn:visited {
-    display: inline-block;
-    background-color: #34b95b;
-    color: white;
-    border-radius: 8px;
-    padding: 1rem 3rem;
-    margin-top: 0.5rem;
-    text-decoration: none
-  }
-
-  .portfolio a.learn-more-btn:hover {
-    background-color: #269f49;
-    color: white
-  }
-
-  .portfolio a.learn-more-btn:active {
-    background-color: #228f42;
-    color: white
-  }
-
-.client {
-  padding: 15px;
-  text-align: center;
-  /* border-radius: 25px; */
+<style>
+#app {
+  height: 100%;
+}
+#portfolio {
+  height: 100%;
 }
 
-.client-image {
-  border-radius: 7px;
+main {
+  height: 100%;
 }
 
-.client:hover .overlay {
-  opacity: .7;
-  color: black
+.portfolio {
+  height: calc(100% - 126px);
+  position: relative;
+  background: white;
 }
 
-.overlay {
+.vue-masonry-gallery-container .vue-masonry-gallery-scroll {
+  overflow-y: auto !important;
   padding-top: 5em;
-  padding-bottom: 2em;
-  position: absolute;
+}
+
+.portfolio .container {
+  padding-bottom: 5em;
+}
+.portfolio-heading {
+  text-align: center;
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.lightbox-alpha {
+  transition: transform 0.3s ease-out;
+  /* background: hsla(0, 0%, 96%, 0.88); */
+  position: fixed;
+  background: rgba(0, 0, 0, 0.85);
+  height: 100%;
+  width: 100%;
+  z-index: 999;
+  opacity: 1;
   top: 0;
-  bottom: 0;
   left: 0;
+}
+
+.fadeIn {
+  animation-name: fadeIn;
+}
+
+.animated {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+.lightbox-content {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  height: auto;
+  overflow: auto;
+}
+
+.lightbox-container {
+  text-align: center;
+}
+
+.lightbox-container-info {
+  background: white;
+  padding: 10px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: calc(100vh - 90px);
+}
+
+.close-icon {
+  top: -7px;
   right: 0;
-  height: 100%;
-  width: 100%;
-  opacity: 0;
-  transition: .5s ease;
-  background-color:  white;
-}
-.img-fluid{
-  height: 100%;
-  width: 100%;
+  padding: 0 10px;
+  font-size: 45px;
 }
 
-.title-break {
-  height: 16px;
+.close-icon,
+.prev-icon,
+.next-icon {
+  background: rgba(0, 0, 0, 0.2);
 }
-.overlay .title-break {
-  display: inline;
+
+.next-icon {
+  right: 0;
 }
-.mobile-caption{
-  visibility: hidden;
-  display: none;
+
+.cursor-pointer {
+  cursor: pointer;
 }
-.row {
-    padding-top: 1em !important;
-}
-@media screen and (max-width: 600px) {
-  .overlay {
-    visibility: hidden;
-    display: none;
+
+@media only screen and (max-width: 767px) {
+  .lightbox-content {
+    width: 90%;
   }
-  .mobile-caption{
-    visibility: visible;
-    display: inline;
 
+  .lightbox-container {
+    width: 100%;
   }
 }
 
-@media (max-width: 767px) and (orientation: portrait) {
-  .overlay {
-    visibility: hidden;
-    display: none;
-  }
-  .mobile-caption{
-    visibility: visible;
-    display: inline;
-
+@media (max-width: 567px) {
+  main {
+    height: calc(100% - 35px);
   }
 }
-
 </style>
