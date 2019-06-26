@@ -4,15 +4,34 @@
     <main role="main">
       <section class="portfolio">
         <div class="h-100">
+          <b-row class="project-category">
+            <b-col class="services d-flex justify-content-center flex-column flex-md-row">
+              <Categories @handleSelect="handleSelect" @clearAll="clearAll"/>
+            </b-col>
+          </b-row>
           <vue-masonry-gallery
+            v-if="this.filter == ''"
             :target="options.target"
             :maxCols="options.maxCols"
             :gap="options.gap"
             :mobileGap="options.mobileGap"
-            :imgsArr="imgsArr"
+            :imgsArr="portfolio"
             @click="clickFn"
             @scrollReachBottom="getData"
           ></vue-masonry-gallery>
+
+          <div v-else class="h-100">
+            <vue-masonry-gallery
+              :target="options.target"
+              :maxCols="options.maxCols"
+              :gap="options.gap"
+              :mobileGap="options.mobileGap"
+              :imgsArr="filteredPortfolio"
+              @click="clickFn"
+              @scrollReachBottom="getData"
+            ></vue-masonry-gallery>
+          </div>
+
           <div class="lightbox-alpha animated fadeIn" v-if="visible" @click="hide">
             <div
               class="position-fixed text-white cursor-pointer close-icon"
@@ -20,7 +39,7 @@
             >&times;</div>
             <div
               class="position-fixed text-white pl-2 pt-1"
-            >{{ indexCount }} / {{ this.imgsArr.length }}</div>
+            >{{ indexCount }} / {{ this.showFiltered ? this.filteredPortfolio.length: this.portfolio.length }}</div>
             <div class="d-flex lightbox-content animated">
               <div
                 class="cursor-pointer align-self-center prev-icon position-absolute"
@@ -40,10 +59,10 @@
                 </svg>
               </div>
               <div class="lightbox-container" @click.stop>
-                <img :src="this.imgsArr[this.index].src">
+                <img :src="this.portfolio[this.index].src">
                 <div class="lightbox-container-info" ref="info">
-                  <h4 ref="modal-title">{{ this.imgsArr[this.index].title }}</h4>
-                  <p ref="modal-description">{{ this.imgsArr[this.index].info }}</p>
+                  <h4 ref="modal-title">{{ this.portfolio[this.index].title }}</h4>
+                  <p ref="modal-description">{{ this.portfolio[this.index].info }}</p>
                 </div>
               </div>
               <div
@@ -76,7 +95,9 @@
 import Header from "./Header.vue";
 import FooterSection from "./FooterSection.vue";
 import VueMasonryGallery from "vue-masonry-gallery";
+import Categories from "./Categories";
 import $ from "jquery";
+import { setTimeout } from "timers";
 
 function backToTop() {
   $("html,body").animate(
@@ -86,11 +107,11 @@ function backToTop() {
     500
   );
 }
+
 export default {
   name: "portfolio",
   mounted() {
     backToTop();
-
     window.addEventListener("keydown", this.onKeydown);
   },
   destroyed() {
@@ -102,9 +123,177 @@ export default {
   computed: {
     indexCount() {
       return parseInt(this.index) + 1;
+    },
+    filteredPortfolio() {
+      if (this.filter !== "")
+        return this.portfolio.filter(item => item.isSelected === true);
+    },
+    portfolio() {
+      return [
+        {
+          src: "https://placeimg.com/1024/1024/grayscale",
+          srcBig: "https://placeimg.com/250/250/grayscale",
+          href: null,
+          link: "https://google.com",
+          title: "This is first img title",
+          info: "First description",
+          target: "modal",
+          category: ["WEBSITE", "HOSTING"],
+          isSelected: false
+        },
+        {
+          src: "https://placeimg.com/768/768/nature",
+          srcBig: "https://placeimg.com/250/250/nature",
+          title: "This is second img title",
+          href: null,
+          link: "https://google.com",
+          info:
+            "Second desc with lorem Ipsum is simply dummy text of the printing and typesetting industry",
+          target: "modal",
+          category: ["CLOUD_MIGRATION", "STARTUP_APP_DEV"],
+          isSelected: false
+        },
+        {
+          src: "https://placeimg.com/600/550/nature",
+          srcBig: "https://placeimg.com/250/250/nature",
+          title: "This is second img title",
+          href: null,
+          link: "https://google.com",
+          info:
+            "Second desc with lorem Ipsum is simply dummy text of the printing and typesetting industry",
+          target: "modal",
+          category: ["WEB_RESCUE", "API_INTEGRATION"],
+          isSelected: false
+        },
+        {
+          src: "https://placeimg.com/1024/1024/animals",
+          srcBig: "https://placeimg.com/250/300/animals",
+          title: "This is second img title",
+          href: null,
+          link: "https://google.com",
+          info:
+            "Second desc with lorem Ipsum is simply dummy text of the printing and typesetting industry",
+          target: "modal",
+          category: ["CLOUD_MIGRATION", "STARTUP_APP_DEV"],
+          isSelected: false
+        },
+        {
+          src: "https://placeimg.com/900/800/arh",
+          srcBig: "https://placeimg.com/900/400/arch",
+          title: "This is second img title",
+          href: null,
+          link: "https://google.com",
+          info:
+            "Second desc with lorem Ipsum is simply dummy text of the printing and typesetting industry",
+          target: "modal",
+          category: ["CLOUD_MIGRATION", "STARTUP_APP_DEV"],
+          isSelected: false
+        },
+        {
+          src: "https://placeimg.com/1300/1200/nature",
+          srcBig: "https://placeimg.com/400/250/nature",
+          title: "This is second img title",
+          href: null,
+          link: "https://google.com",
+          info:
+            "Second desc with lorem Ipsum is simply dummy text of the printing and typesetting industry",
+          target: "modal",
+          category: ["CLOUD_MIGRATION", "STARTUP_APP_DEV"],
+          isSelected: false
+        },
+        {
+          src: "https://placeimg.com/1300/1200/grayscale",
+          srcBig: "https://placeimg.com/400/250/grayscale",
+          title: "This is second img title",
+          href: null,
+          link: "https://google.com",
+          info:
+            "Second desc with lorem Ipsum is simply dummy text of the printing and typesetting industry",
+          target: "modal",
+          category: ["WEB_RESCUE", "API_INTEGRATION"],
+          isSelected: false
+        },
+        {
+          src: "https://placeimg.com/1300/1200/animals",
+          srcBig: "https://placeimg.com/400/250/animals",
+          title: "This is second img title",
+          href: null,
+          link: "https://google.com",
+          info:
+            "Second desc with lorem Ipsum is simply dummy text of the printing and typesetting industry",
+          target: "modal",
+          category: ["WEB_RESCUE", "ON_SITE_SEO"],
+          isSelected: false
+        },
+        {
+          src: "https://placeimg.com/1000/900/tech",
+          srcBig: "https://placeimg.com/1000/900/tech",
+          title: "This is second img title",
+          href: null,
+          link: "https://google.com",
+          info:
+            "Second desc with lorem Ipsum is simply dummy text of the printing and typesetting industry",
+          target: "modal",
+          category: ["CLOUD_MIGRATION", "STARTUP_APP_DEV"],
+          isSelected: false
+        },
+        {
+          src: "https://placeimg.com/1000/900/nature",
+          srcBig: "https://placeimg.com/1000/900/nature",
+          title: "This is second img title",
+          href: null,
+          link: "https://google.com",
+          info:
+            "Second desc with lorem Ipsum is simply dummy text of the printing and typesetting industry",
+          target: "modal",
+          category: ["CLOUD_MIGRATION", "STARTUP_APP_DEV"],
+          isSelected: false
+        }
+      ];
     }
   },
   methods: {
+    handleSelect(value) {
+      if (value.isSelected) {
+        this.showFiltered = true;
+        this.filter.push(value.key);
+        for (let index = 0; index < this.filter.length; index++) {
+          const element = this.filter[index];
+          this.portfolio.filter(item => {
+            if (item.category.find(cat => cat == element)) {
+              item.isSelected = true;
+            }
+          });
+        }
+      } else {
+        this.showFiltered = false;
+        this.portfolio.filter(item => {
+          if (item.category.find(cat => cat == value.key)) {
+            item.isSelected = false;
+          }
+        });
+        this.filter.splice(value.key, 1);
+      }
+      if (this.filter != "") {
+        this.showFiltered = true;
+        for (let index = 0; index < this.filter.length; index++) {
+          const element = this.filter[index];
+          this.portfolio.filter(item => {
+            if (item.category.find(cat => cat == element)) {
+              item.isSelected = true;
+            }
+          });
+        }
+      }
+    },
+    clearAll() {
+      this.showFiltered = false;
+      this.filter = [];
+      this.filteredPortfolio.map(item => {
+        item.isSelected = false;
+        return item;
+      });
+    },
     hide() {
       this.visible = false;
       this.index = 0;
@@ -112,7 +301,11 @@ export default {
     },
     hasNext() {
       var val = parseInt(this.index) + 1;
-      return val < this.imgsArr.length;
+      if (!this.showFiltered) {
+        return val < this.portfolio.length;
+      } else {
+        return val < this.filteredPortfolio.length;
+      }
     },
     hasPrev() {
       return this.index - 1 >= 0;
@@ -148,7 +341,7 @@ export default {
       }
     },
     getData() {
-      return this.imgArr;
+      return this.portfolio;
     },
     clickFn(event, { index, value }) {
       // Prevent a tag jump
@@ -157,7 +350,6 @@ export default {
 
       // Do it only when you click on the image
       if (event.target.tagName.toLowerCase() == "img") {
-        // console.log("img clicked", index, value);
         this.index = index;
         this.visible = true;
         this.hasNext();
@@ -167,120 +359,22 @@ export default {
   },
   components: {
     VueMasonryGallery,
+    Categories,
     Header,
     FooterSection
   },
   data() {
     return {
+      filter: [],
+      filtered: [],
+      showFiltered: false,
       visible: false,
       index: 0,
       options: {
         maxCols: 5,
         gap: 15,
         mobileGap: 5
-      },
-      imgsArr: [
-        {
-          src: "https://placeimg.com/1024/1024/grayscale",
-          srcBig: "https://placeimg.com/250/250/grayscale",
-          href: null,
-          link: "https://google.com",
-          title: "This is first img title",
-          info: "First description",
-          target: "modal",
-          maxCols: 3
-        },
-        {
-          src: "https://placeimg.com/768/768/nature",
-          srcBig: "https://placeimg.com/250/250/nature",
-          title: "This is second img title",
-          href: null,
-          link: "https://google.com",
-          info:
-            "Second desc with lorem Ipsum is simply dummy text of the printing and typesetting industry",
-          target: "modal"
-        },
-        {
-          src: "https://placeimg.com/600/550/tech",
-          srcBig: "https://placeimg.com/250/250/tech",
-          title: "This is second img title",
-          href: null,
-          link: "https://google.com",
-          info:
-            "Second desc with lorem Ipsum is simply dummy text of the printing and typesetting industry",
-          target: "modal"
-        },
-        {
-          src: "https://placeimg.com/1024/1024/animals",
-          srcBig: "https://placeimg.com/250/300/animals",
-          title: "This is second img title",
-          href: null,
-          link: "https://google.com",
-          info:
-            "Second desc with lorem Ipsum is simply dummy text of the printing and typesetting industry",
-          target: "modal"
-        },
-        {
-          src: "https://placeimg.com/900/800/arh",
-          srcBig: "https://placeimg.com/900/400/arch",
-          title: "This is second img title",
-          href: null,
-          link: "https://google.com",
-          info:
-            "Second desc with lorem Ipsum is simply dummy text of the printing and typesetting industry",
-          target: "modal"
-        },
-        {
-          src: "https://placeimg.com/1300/1200/nature",
-          srcBig: "https://placeimg.com/400/250/nature",
-          title: "This is second img title",
-          href: null,
-          link: "https://google.com",
-          info:
-            "Second desc with lorem Ipsum is simply dummy text of the printing and typesetting industry",
-          target: "modal"
-        },
-        {
-          src: "https://placeimg.com/1300/1200/grayscale",
-          srcBig: "https://placeimg.com/400/250/grayscale",
-          title: "This is second img title",
-          href: null,
-          link: "https://google.com",
-          info:
-            "Second desc with lorem Ipsum is simply dummy text of the printing and typesetting industry",
-          target: "modal"
-        },
-        {
-          src: "https://placeimg.com/1300/1200/animals",
-          srcBig: "https://placeimg.com/400/250/animals",
-          title: "This is second img title",
-          href: null,
-          link: "https://google.com",
-          info:
-            "Second desc with lorem Ipsum is simply dummy text of the printing and typesetting industry",
-          target: "modal"
-        },
-        {
-          src: "https://placeimg.com/1000/900/tech",
-          srcBig: "https://placeimg.com/1000/900/tech",
-          title: "This is second img title",
-          href: null,
-          link: "https://google.com",
-          info:
-            "Second desc with lorem Ipsum is simply dummy text of the printing and typesetting industry",
-          target: "modal"
-        },
-        {
-          src: "https://placeimg.com/1000/900/nature",
-          srcBig: "https://placeimg.com/1000/900/nature",
-          title: "This is second img title",
-          href: null,
-          link: "https://google.com",
-          info:
-            "Second desc with lorem Ipsum is simply dummy text of the printing and typesetting industry",
-          target: "modal"
-        }
-      ]
+      }
     };
   }
 };
@@ -303,9 +397,17 @@ main {
   background: white;
 }
 
+.project-category {
+  padding-top: 100px;
+}
+
 .vue-masonry-gallery-container .vue-masonry-gallery-scroll {
   overflow-y: auto !important;
-  padding-top: 5em;
+  padding-top: 1em;
+}
+
+.vue-masonry-gallery {
+  position: relative;
 }
 
 .portfolio .container {
@@ -318,7 +420,7 @@ main {
 }
 
 .lightbox-alpha {
-  transition: transform 0.3s ease-out;
+  transition: all 0.3s ease-out;
   position: fixed;
   background: rgba(0, 0, 0, 0.95);
   height: 100%;
@@ -385,6 +487,10 @@ img {
 
 .cursor-pointer {
   cursor: pointer;
+}
+
+.img-box {
+  float: left;
 }
 
 @media only screen and (max-width: 767px) {
