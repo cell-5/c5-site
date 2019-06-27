@@ -85,7 +85,7 @@ export default {
         {
           name: 'Harry Wynn-Williams',
           img: HarryImg,
-          title: 'Fullstack (front-end specialist)',
+          title: 'Fullstack',
           linkedin: 'https://www.linkedin.com/in/harry-wynn-williams-59b89040/',
           twitter: 'https://twitter.com/harrywinmillion',
           bio: "Harry has experience of building web and mobile apps at an investment bank and in the gaming industry. He loves building complex UIs, especially when it's with Vue.js."
