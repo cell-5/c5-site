@@ -23,6 +23,7 @@
 
           <vue-masonry-gallery
             v-else
+            ref="myGallery"
             :target="options.target"
             :maxCols="options.maxCols"
             :gap="options.gap"
