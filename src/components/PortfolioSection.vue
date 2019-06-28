@@ -10,6 +10,7 @@
             </b-col>
           </b-row>
           <vue-masonry-gallery
+            ref="myGallery"
             v-if="this.filter == ''"
             :target="options.target"
             :maxCols="options.maxCols"
@@ -20,18 +21,17 @@
             @scrollReachBottom="getData"
           ></vue-masonry-gallery>
 
-          <div v-else class="h-100">
-            <vue-masonry-gallery
-              :target="options.target"
-              :maxCols="options.maxCols"
-              :gap="options.gap"
-              :mobileGap="options.mobileGap"
-              :imgsArr="filteredPortfolio"
-              @click="clickFn"
-              @scrollReachBottom="getData"
-            ></vue-masonry-gallery>
-          </div>
-
+          <vue-masonry-gallery
+            v-else
+            :target="options.target"
+            :maxCols="options.maxCols"
+            :gap="options.gap"
+            :mobileGap="options.mobileGap"
+            :imgsArr="filteredPortfolio"
+            @click="clickFn"
+            @scrollReachBottom="getData"
+          ></vue-masonry-gallery>
+          <div v-if="initialHeight" class="initialHeight"></div>
           <div class="lightbox-alpha animated fadeIn" v-if="visible" @click="hide">
             <div
               class="position-fixed text-white cursor-pointer close-icon"
@@ -111,7 +111,46 @@ function backToTop() {
 export default {
   name: "portfolio",
   mounted() {
+    var parentContainer = this.$refs.myGallery;
+    var gparent = parentContainer.$el.querySelector(
+      ".vue-masonry-gallery-scroll"
+    );
+    var parent = gparent.querySelector(".vue-masonry-gallery");
+
+    //created custom function for setting gallery container height to avoid double scroll
+    //and minimize adding of media query
+    function heightGallery() {
+      setTimeout(() => {
+        var list = parent.querySelectorAll(".img-box");
+        var parentOffset = parent.getBoundingClientRect();
+        var arrList = Array.from(list);
+        var bottom = 0;
+
+        arrList.map(function(el) {
+          var elemOffset = el.getBoundingClientRect();
+          var elemBottom = elemOffset.top + el.offsetHeight - parentOffset.top;
+          if (elemBottom > bottom) {
+            bottom = elemBottom;
+          }
+        });
+        [parent, gparent, parentContainer.$el].map(
+          el => (el.style.minHeight = bottom + "px")
+        );
+      }, 500);
+    }
+    
+    heightGallery();
     backToTop();
+
+    //add initial height on page load and prevent page from being jumpy
+    var footerFade = parentContainer.$parent.$el.querySelector("footer");
+    setTimeout(() => (this.initialHeight = false), 400);
+    setTimeout(() => (footerFade.style.opacity = 1), 600);
+
+    //remove scroll on gallery pop
+    document.querySelector("html").classList.add("html-overflow");
+
+    window.addEventListener("resize", heightGallery);
     window.addEventListener("keydown", this.onKeydown);
   },
   destroyed() {
@@ -365,13 +404,14 @@ export default {
   },
   data() {
     return {
+      initialHeight: true,
       filter: [],
       filtered: [],
       showFiltered: false,
       visible: false,
       index: 0,
       options: {
-        maxCols: 5,
+        maxCols: 4,
         gap: 15,
         mobileGap: 5
       }
@@ -380,19 +420,8 @@ export default {
 };
 </script>
 <style>
-#app {
-  height: 100%;
-}
-#portfolio {
-  height: 100%;
-}
-
-main {
-  height: 100%;
-}
-
 .portfolio {
-  height: calc(100% - 126px);
+  margin-bottom: 5em;
   position: relative;
   background: white;
 }
@@ -402,7 +431,7 @@ main {
 }
 
 .vue-masonry-gallery-container .vue-masonry-gallery-scroll {
-  overflow-y: auto !important;
+  overflow-y: hidden !important;
   padding-top: 1em;
 }
 
@@ -493,6 +522,11 @@ img {
   float: left;
 }
 
+.html-overflow {
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
 @media only screen and (max-width: 767px) {
   .lightbox-content {
     width: 90%;
@@ -503,9 +537,11 @@ img {
   }
 }
 
-@media (max-width: 567px) {
-  main {
-    height: calc(100% - 35px);
-  }
+.initialHeight {
+  height: 100vh;
+}
+
+footer {
+  opacity: 0;
 }
 </style>
