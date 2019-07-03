@@ -165,8 +165,25 @@ export default {
       return parseInt(this.index) + 1;
     },
     filteredPortfolio() {
-      if (this.filter !== "")
-        return this.portfolio.filter(item => item.isSelected === true);
+      if (this.filter !== ""){
+        let lists = [];
+        this.portfolio.filter(item => {
+            if(item.isSelected === true){
+              lists.push({
+                src: item.src,
+                srcBig: item.srcBig,
+                href: item.href,
+                link: item.link,
+                title: item.title,
+                info: item.info,
+                target: item.target,
+                category: item.category,
+              })
+            }
+          });
+          console.log(lists)
+          return lists;
+      }
     },
     portfolio() {
       return [
@@ -299,7 +316,7 @@ export default {
         this.filter.push(value.key);
         for (let index = 0; index < this.filter.length; index++) {
           const element = this.filter[index];
-          this.portfolio.filter(item => {
+          this.portfolio.filter(item => {            
             if (item.category.find(cat => cat == element)) {
               item.isSelected = true;
             }
