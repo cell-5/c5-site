@@ -181,7 +181,6 @@ export default {
               })
             }
           });
-          console.log(lists)
           return lists;
       }
     },
