@@ -85,7 +85,7 @@ export default {
           }
         });
         [parent, gparent, container].map(
-          el => (el.minHeight = bottom + 'px')
+          el => (document.getElementsByClassName(el.className)[0].style.minHeight = bottom + 'px')
         );
       }, 500);
     }
