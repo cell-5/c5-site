@@ -49,17 +49,17 @@ let $ = JQuery;
 export default {
   name: "portfolio",
   mounted() {
-    var parentContainer = this.$refs.myGallery;
-    var gparent = parentContainer.$el.querySelector(
+    var parentContainer = this.$refs["myGallery"];
+    var gparent = document.querySelector(
       ".vue-masonry-gallery-scroll"
     );
-    var parent = gparent.querySelector(".vue-masonry-gallery");
+    var parent = document.querySelector(".vue-masonry-gallery");
 
     //created custom function for setting gallery container height to avoid double scroll
     //and minimize adding of media query
     function heightGallery() {
       setTimeout(() => {
-        var list = parent.querySelectorAll(".img-box");
+        var list = document.querySelectorAll(".img-box");
         var parentOffset = parent.getBoundingClientRect();
         var arrList = Array.from(list);
         var bottom = 0;
@@ -71,7 +71,7 @@ export default {
             bottom = elemBottom;
           }
         });
-        [parent, gparent, parentContainer.$el].map(
+        [parent, gparent].map(
           el => (el.style.minHeight = bottom + "px")
         );
       }, 500);
@@ -80,7 +80,7 @@ export default {
     heightGallery();
 
     //add initial height on page load and prevent page from being jumpy
-    var footerFade = parentContainer.$parent.$el.querySelector("footer");
+    var footerFade = document.querySelector("footer");
     setTimeout(() => (this.initialHeight = false), 400);
     setTimeout(() => (footerFade.style.opacity = 1), 600);
   },
