@@ -55,18 +55,30 @@ export default {
     );
     var parent = document.querySelector(".vue-masonry-gallery");
 
+    function getPosition(elm) {
+      var xPos = 0, yPos = 0;
+      
+      while(elm) {
+        xPos += (elm.offsetLeft - elm.scrollLeft + elm.clientLeft);
+        yPos += (elm.offsetTop - elm.scrollTop + elm.clientTop);
+        elm = elm.offsetParent;
+      }
+      
+      return { x: xPos, y: yPos };
+    }
+
     //created custom function for setting gallery container height to avoid double scroll
     //and minimize adding of media query
     function heightGallery() {
       setTimeout(() => {
         var list = document.querySelectorAll(".img-box");
-        var parentOffset = parent.getBoundingClientRect();
+        var parentOffset = getPosition(parent);
         var arrList = Array.from(list);
         var bottom = 0;
 
         arrList.map(function(el) {
-          var elemOffset = el.getBoundingClientRect();
-          var elemBottom = elemOffset.top + el.offsetHeight - parentOffset.top;
+          var elemOffset = getPosition(el);
+          var elemBottom = elemOffset['y'] + el.offsetHeight - parentOffset['y'];
           if (elemBottom > bottom) {
             bottom = elemBottom;
           }
