@@ -49,6 +49,7 @@ let $ = JQuery;
 export default {
   name: "portfolio",
   mounted() {
+    var container = document.querySelector(".vue-masonry-gallery-container")
     var parentContainer = this.$refs["myGallery"];
     var gparent = document.querySelector(
       ".vue-masonry-gallery-scroll"
@@ -83,8 +84,8 @@ export default {
             bottom = elemBottom;
           }
         });
-        [parent, gparent].map(
-          el => (el.style.minHeight = bottom + "px")
+        [parent, gparent, container].map(
+          el => (el.style.minHeight = bottom + 'px')
         );
       }, 500);
     }
