@@ -17,7 +17,6 @@
             :gap="options.gap"
             :mobileGap="options.mobileGap"
             :imgsArr="portfolio"
-            @click="clickFn"
             @scrollReachBottom="getData"
           ></vue-masonry-gallery>
 
@@ -29,63 +28,8 @@
             :gap="options.gap"
             :mobileGap="options.mobileGap"
             :imgsArr="filteredPortfolio"
-            @click="clickFn"
             @scrollReachBottom="getData"
           ></vue-masonry-gallery>
-          <div v-if="initialHeight" class="initialHeight"></div>
-          <div class="lightbox-alpha animated fadeIn" v-if="visible" @click="hide">
-            <div
-              class="position-fixed text-white cursor-pointer close-icon"
-              @click.stop="hide"
-            >&times;</div>
-            <div
-              class="position-fixed text-white pl-2 pt-1"
-            >{{ indexCount }} / {{ this.showFiltered ? this.filteredPortfolio.length: this.portfolio.length }}</div>
-            <div class="d-flex lightbox-content animated">
-              <div
-                class="cursor-pointer align-self-center prev-icon position-absolute"
-                @click.stop="prev"
-                :class="{'invisible': ! hasPrev()}"
-              >
-                <svg
-                  class="pointer-events-none"
-                  fill="#fff"
-                  height="48"
-                  viewBox="0 0 24 24"
-                  width="48"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path d="M15.41 16.09l-4.58-4.59 4.58-4.59L14 5.5l-6 6 6 6z"></path>
-                  <path d="M0-.5h24v24H0z" fill="none"></path>
-                </svg>
-              </div>
-              <div class="lightbox-container" @click.stop>
-                <img :src="this.portfolio[this.index].src">
-                <div class="lightbox-container-info" ref="info">
-                  <h4 ref="modal-title">{{ this.portfolio[this.index].title }}</h4>
-                  <p ref="modal-description">{{ this.portfolio[this.index].info }}</p>
-                </div>
-              </div>
-              <div
-                class="cursor-pointer align-self-center next-icon position-absolute"
-                @click.stop="next"
-                :class="{'invisible': ! hasNext()}"
-              >
-                <svg
-                  class="pointer-events-none"
-                  fill="#fff"
-                  height="48"
-                  viewBox="0 0 24 24"
-                  width="48"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"></path>
-                  <path d="M0-.25h24v24H0z" fill="none"></path>
-                </svg>
-              </div>
-            </div>
-          </div>
-        </div>
       </section>
       <FooterSection></FooterSection>
     </main>
@@ -97,17 +41,10 @@ import Header from "./Header.vue";
 import FooterSection from "./FooterSection.vue";
 import VueMasonryGallery from "vue-masonry-gallery";
 import Categories from "./Categories";
-import $ from "jquery";
+import JQuery from "jquery";
 import { setTimeout } from "timers";
 
-function backToTop() {
-  $("html,body").animate(
-    {
-      scrollTop: 0
-    },
-    500
-  );
-}
+let $ = JQuery;
 
 export default {
   name: "portfolio",
@@ -141,29 +78,13 @@ export default {
     }
     
     heightGallery();
-    backToTop();
 
     //add initial height on page load and prevent page from being jumpy
     var footerFade = parentContainer.$parent.$el.querySelector("footer");
     setTimeout(() => (this.initialHeight = false), 400);
     setTimeout(() => (footerFade.style.opacity = 1), 600);
-
-    //remove scroll on gallery pop
-    document.querySelector("html").classList.add("html-overflow");
-
-    window.addEventListener("resize", heightGallery);
-    window.addEventListener("keydown", this.onKeydown);
-  },
-  destroyed() {
-    window.removeEventListener("keydown", this.onKeydown);
-  },
-  created() {
-    this.getData();
   },
   computed: {
-    indexCount() {
-      return parseInt(this.index) + 1;
-    },
     filteredPortfolio() {
       if (this.filter !== ""){
         let lists = [];
@@ -350,68 +271,9 @@ export default {
         return item;
       });
     },
-    hide() {
-      this.visible = false;
-      this.index = 0;
-      document.querySelector("html").classList.remove("overflow-hidden");
-    },
-    hasNext() {
-      var val = parseInt(this.index) + 1;
-      if (!this.showFiltered) {
-        return val < this.portfolio.length;
-      } else {
-        return val < this.filteredPortfolio.length;
-      }
-    },
-    hasPrev() {
-      return this.index - 1 >= 0;
-    },
-    prev() {
-      if (this.hasPrev()) {
-        this.index = parseInt(this.index) - 1;
-      }
-    },
-    next() {
-      if (this.hasNext()) {
-        this.index = parseInt(this.index) + 1;
-      }
-    },
-    onKeydown(e) {
-      if (this.visible) {
-        switch (e.key) {
-          case "ArrowRight":
-            this.next();
-            break;
-          case "ArrowLeft":
-            this.prev();
-            break;
-          case "ArrowDown":
-          case "ArrowUp":
-          case " ":
-            e.preventDefault();
-            break;
-          case "Escape":
-            this.hide();
-            break;
-        }
-      }
-    },
     getData() {
       return this.portfolio;
     },
-    clickFn(event, { index, value }) {
-      // Prevent a tag jump
-      document.querySelector("html").classList.add("overflow-hidden");
-      event.preventDefault();
-
-      // Do it only when you click on the image
-      if (event.target.tagName.toLowerCase() == "img") {
-        this.index = index;
-        this.visible = true;
-        this.hasNext();
-        this.hasPrev();
-      }
-    }
   },
   components: {
     VueMasonryGallery,
