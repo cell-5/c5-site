@@ -84,15 +84,11 @@ export default {
             bottom = elemBottom;
           }
         });
-        console.log(document.querySelector(
-      ".vue-masonry-gallery-scroll"
-    ))
-        gparent.style.minHeight = bottom+ 'px';
-        // [parent, gparent, container].map(function(el){
-        //     el.style.minHeight = bottom + 'px';
-        //   }
-        // );
-      }, 500);
+        [parent, gparent, container].map(function(el){
+            el.style.minHeight = bottom + 'px';
+          }
+        );
+      }, 1000);
     }
     
     heightGallery();
