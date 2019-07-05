@@ -84,11 +84,11 @@ export default {
             bottom = elemBottom;
           }
         });
-        [gparent].map(function(el){
-          console.log(gparent)
-            el.style.minHeight = bottom + 'px';
-          }
-        );
+        gparent.style.minHeight = bottom+ 'px';
+        // [parent, gparent, container].map(function(el){
+        //     el.style.minHeight = bottom + 'px';
+        //   }
+        // );
       }, 500);
     }
     
