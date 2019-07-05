@@ -84,7 +84,8 @@ export default {
             bottom = elemBottom;
           }
         });
-        [parent, gparent, container].map(function(el){
+        [gparent].map(function(el){
+          console.log(gparent)
             el.style.minHeight = bottom + 'px';
           }
         );
