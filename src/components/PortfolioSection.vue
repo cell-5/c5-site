@@ -48,14 +48,12 @@ let $ = JQuery;
 export default {
   name: "portfolio",
   mounted() {
-    var container = document.querySelector(".vue-masonry-gallery-container")
-    var parentContainer = this.$refs["myGallery"];
-    var gparent = document.querySelector(
-      ".vue-masonry-gallery-scroll"
-    );
-    var parent = document.querySelector(".vue-masonry-gallery");
-
-    gparent.style.minHeight = 720 + "px";
+    // var container = document.querySelector(".vue-masonry-gallery-container")
+    // var parentContainer = this.$refs["myGallery"];
+    // var gparent = document.querySelector(
+    //   ".vue-masonry-gallery-scroll"
+    // );
+    // var parent = document.querySelector(".vue-masonry-gallery");
 
     // function getPosition(elm) {
     //   var xPos = 0, yPos = 0;
@@ -69,8 +67,8 @@ export default {
     //   return { x: xPos, y: yPos };
     // }
 
-    //created custom function for setting gallery container height to avoid double scroll
-    //and minimize adding of media query
+    // //created custom function for setting gallery container height to avoid double scroll
+    // //and minimize adding of media query
     // function heightGallery() {
     //   setTimeout(() => {
     //     var list = document.querySelectorAll(".img-box");
@@ -89,15 +87,15 @@ export default {
     //         el.style.minHeight = bottom + 'px';
     //       }
     //     );
-    //   }, 1000);
+    //   }, 500);
     // }
     
     // heightGallery();
 
-    //add initial height on page load and prevent page from being jumpy
-    var footerFade = document.querySelector("footer");
-    setTimeout(() => (this.initialHeight = false), 400);
-    setTimeout(() => (footerFade.style.opacity = 1), 600);
+    // //add initial height on page load and prevent page from being jumpy
+    // var footerFade = document.querySelector("footer");
+    // setTimeout(() => (this.initialHeight = false), 400);
+    // setTimeout(() => (footerFade.style.opacity = 1), 600);
   },
   computed: {
     filteredPortfolio() {
