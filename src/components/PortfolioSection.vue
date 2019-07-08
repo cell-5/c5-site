@@ -11,7 +11,6 @@
           </b-row>
           <vue-masonry-gallery
             ref="myGallery"
-            v-if="this.filter == ''"
             :target="options.target"
             :maxCols="options.maxCols"
             :gap="options.gap"
@@ -20,7 +19,7 @@
             @scrollReachBottom="getData"
           ></vue-masonry-gallery>
 
-          <vue-masonry-gallery
+          <!-- <vue-masonry-gallery
             v-else
             ref="myGallery"
             :target="options.target"
@@ -29,7 +28,7 @@
             :mobileGap="options.mobileGap"
             :imgsArr="filteredPortfolio"
             @scrollReachBottom="getData"
-          ></vue-masonry-gallery>
+          ></vue-masonry-gallery> -->
       </section>
       <FooterSection></FooterSection>
     </main>
@@ -56,42 +55,44 @@ export default {
     );
     var parent = document.querySelector(".vue-masonry-gallery");
 
-    function getPosition(elm) {
-      var xPos = 0, yPos = 0;
+    gparent.style.minHeight = 720 + "px";
+
+    // function getPosition(elm) {
+    //   var xPos = 0, yPos = 0;
       
-      while(elm) {
-        xPos += (elm.offsetLeft - elm.scrollLeft + elm.clientLeft);
-        yPos += (elm.offsetTop - elm.scrollTop + elm.clientTop);
-        elm = elm.offsetParent;
-      }
+    //   while(elm) {
+    //     xPos += (elm.offsetLeft - elm.scrollLeft + elm.clientLeft);
+    //     yPos += (elm.offsetTop - elm.scrollTop + elm.clientTop);
+    //     elm = elm.offsetParent;
+    //   }
       
-      return { x: xPos, y: yPos };
-    }
+    //   return { x: xPos, y: yPos };
+    // }
 
     //created custom function for setting gallery container height to avoid double scroll
     //and minimize adding of media query
-    function heightGallery() {
-      setTimeout(() => {
-        var list = document.querySelectorAll(".img-box");
-        var parentOffset = getPosition(parent);
-        var arrList = Array.from(list);
-        var bottom = 0;
+    // function heightGallery() {
+    //   setTimeout(() => {
+    //     var list = document.querySelectorAll(".img-box");
+    //     var parentOffset = getPosition(parent);
+    //     var arrList = Array.from(list);
+    //     var bottom = 0;
 
-        arrList.map(function(el) {
-          var elemOffset = getPosition(el);
-          var elemBottom = elemOffset['y'] + el.offsetHeight - parentOffset['y'];
-          if (elemBottom > bottom) {
-            bottom = elemBottom;
-          }
-        });
-        [parent, gparent, container].map(function(el){
-            el.style.minHeight = bottom + 'px';
-          }
-        );
-      }, 1000);
-    }
+    //     arrList.map(function(el) {
+    //       var elemOffset = getPosition(el);
+    //       var elemBottom = elemOffset['y'] + el.offsetHeight - parentOffset['y'];
+    //       if (elemBottom > bottom) {
+    //         bottom = elemBottom;
+    //       }
+    //     });
+    //     [parent, gparent, container].map(function(el){
+    //         el.style.minHeight = bottom + 'px';
+    //       }
+    //     );
+    //   }, 1000);
+    // }
     
-    heightGallery();
+    // heightGallery();
 
     //add initial height on page load and prevent page from being jumpy
     var footerFade = document.querySelector("footer");
