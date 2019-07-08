@@ -244,48 +244,48 @@ export default {
   },
   methods: {
     handleSelect(value) {
-      if (value.isSelected) {
-        this.showFiltered = true;
-        this.filter.push(value.key);
-        for (let index = 0; index < this.filter.length; index++) {
-          const element = this.filter[index];
-          this.portfolio.filter(item => {            
-            if (item.category.find(cat => cat == element)) {
-              item.isSelected = true;
-            }
-          });
-        }
-      } else {
-        this.showFiltered = false;
-        this.portfolio.filter(item => {
-          if (item.category.find(cat => cat == value.key)) {
-            item.isSelected = false;
-          }
-        });
-        this.filter.splice(value.key, 1);
-      }
-      if (this.filter != "") {
-        this.showFiltered = true;
-        for (let index = 0; index < this.filter.length; index++) {
-          const element = this.filter[index];
-          this.portfolio.filter(item => {
-            if (item.category.find(cat => cat == element)) {
-              item.isSelected = true;
-            }
-          });
-        }
-      }
-    },
-    clearAll() {
-      this.showFiltered = false;
-      this.filter = [];
-      this.filteredPortfolio.map(item => {
-        item.isSelected = false;
-        return item;
-      });
-    },
-    getData() {
-      return this.portfolio;
+    //   if (value.isSelected) {
+    //     this.showFiltered = true;
+    //     this.filter.push(value.key);
+    //     for (let index = 0; index < this.filter.length; index++) {
+    //       const element = this.filter[index];
+    //       this.portfolio.filter(item => {            
+    //         if (item.category.find(cat => cat == element)) {
+    //           item.isSelected = true;
+    //         }
+    //       });
+    //     }
+    //   } else {
+    //     this.showFiltered = false;
+    //     this.portfolio.filter(item => {
+    //       if (item.category.find(cat => cat == value.key)) {
+    //         item.isSelected = false;
+    //       }
+    //     });
+    //     this.filter.splice(value.key, 1);
+    //   }
+    //   if (this.filter != "") {
+    //     this.showFiltered = true;
+    //     for (let index = 0; index < this.filter.length; index++) {
+    //       const element = this.filter[index];
+    //       this.portfolio.filter(item => {
+    //         if (item.category.find(cat => cat == element)) {
+    //           item.isSelected = true;
+    //         }
+    //       });
+    //     }
+    //   }
+    // },
+    // clearAll() {
+    //   this.showFiltered = false;
+    //   this.filter = [];
+    //   this.filteredPortfolio.map(item => {
+    //     item.isSelected = false;
+    //     return item;
+    //   });
+    // },
+    // getData() {
+    //   return this.portfolio;
     },
   },
   components: {
