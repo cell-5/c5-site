@@ -11,13 +11,11 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 import 'bootstrap'
 import VueIsInView from 'vue-is-in-view'
 import VueScrollactive from 'vue-scrollactive'
-import VueMasonryGallery from 'vue-masonry-gallery'
 
 Vue.use(VueScrollactive)
 Vue.use(VueIsInView)
 Vue.use(BootstrapVue)
 Vue.use(VueParticles)
-Vue.use(VueMasonryGallery)
 
 Vue.use(VueProgressBar, {
     color: '#228f42',

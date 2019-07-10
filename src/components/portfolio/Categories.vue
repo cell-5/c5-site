@@ -2,11 +2,11 @@
   <div class="category-wrap">
     <!-- {{value}} -->
     <button
-      v-for="(c, i) in this.categories"
+      v-for="(c, i) in this.value"
       type="button"
-      @click="handleSelect(i, c.selected)"
+      @click="handleInput(c, !c.getIsSelected())"
       class="btn-1 btn-light"
-      :class="{'is-active' : c.selected }"
+      :class="{'is-active' : c.isSelected}"
       :key="i">
       {{c.text}}
     </button>
@@ -15,35 +15,20 @@
 </template>
 
 <script>
-  import categories from '../utils/category'
   export default {
-    data() {
-      return {
-        categories: categories,
-        isSelected: false,
-        filteredKey: [],
+    name: 'categories',
+    props: {
+      value: {
+        type: Object
       }
     },
     methods: {
-      handleSelect(key, selected) {    
-        if(selected){
-          this.categories[key].selected = false
-          const isSelected = false
-          const filter = {key, isSelected}
-          this.$emit('handleSelect', filter);
-        } else {
-          this.categories[key].selected = true
-          const isSelected = true
-          const filter = {key, isSelected}
-          this.$emit('handleSelect', filter);
-        }     
+      handleInput(key, value) {
+        key.updateCategory(value)
       },
       clearAll() {
-        for (const [key, value] of Object.entries(this.categories)) {
-          this.categories[key].selected = false;
-        }
         this.$emit('clearAll');
-      },
+      }
     }
   }
 </script>
