@@ -18,7 +18,7 @@
             class="d-flex transition-fast-in-fast-out orange darken-2 v-card--reveal display-3 white--text"
             style="height: 100%;"
           >
-           {{ info }}
+            {{ info }}
           </div>
         </v-expand-transition>
       </v-img>
@@ -37,16 +37,14 @@
         >
           Learn more
         </v-btn>
-<!--        <div class="font-weight-light grey&#45;&#45;text title mb-2">For the perfect meal</div>-->
-<!--        <h3 class="display-1 font-weight-light mb-2">QW cooking utensils</h3>-->
-<!--        <div class="font-weight-light title mb-2">-->
-<!--          Our Vintage kitchen utensils delight any chef.<br>-->
-<!--          Made of bamboo by hand-->
-<!--        </div>-->
+        <!--        <div class="font-weight-light grey&#45;&#45;text title mb-2">For the perfect meal</div>-->
+        <!--        <h3 class="display-1 font-weight-light mb-2">QW cooking utensils</h3>-->
+        <!--        <div class="font-weight-light title mb-2">-->
+        <!--          Our Vintage kitchen utensils delight any chef.<br>-->
+        <!--          Made of bamboo by hand-->
+        <!--        </div>-->
 
-<!--        <div class="text-xs-center">-->
-<!--          <v-chip>Example Chip</v-chip>-->
-<!--        </div>-->
+        <v-chip v-for="(c, i) in category" @click="() => c.updateCategory(!c.isSelected)">{{c.text}}</v-chip>
       </v-card-text>
     </v-card>
   </v-hover>
@@ -58,7 +56,7 @@
     props: {
       image: String,
       info: String,
-
+      category: Array,
     }
   }
 </script>

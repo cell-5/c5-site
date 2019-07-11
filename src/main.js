@@ -29,6 +29,7 @@ Vue.use(VueProgressBar, {
 import 'vuetify/src/stylus/app.styl'
 
 import Vuetify, {
+  VChip,
   VHover,
   VIcon,
   VBtn,
@@ -41,6 +42,7 @@ import { Ripple } from 'vuetify/lib/directives'
 
 Vue.use(Vuetify, {
   components: {
+    VChip,
     VHover,
     VIcon,
     VBtn,

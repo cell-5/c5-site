@@ -1,6 +1,7 @@
 <template>
   <div id="portfolio">
     <Header></Header>
+    <cell5-splash v-show="!isLoaded" @masonry-loaded=""></cell5-splash>
     <main role="main">
       <section class="portfolio">
         <div class="h-100">
@@ -18,21 +19,15 @@
                class="item">
 
 
-            <portfolio-item :key="i" :image="p.src">
-
+            <portfolio-item :key="i"
+                            :info="p.title"
+                            :image="p.src"
+                            :category="p.category">
             </portfolio-item>
-
-
-<!--            <picture>-->
-<!--              &lt;!&ndash;              <source media="(min-width: 1200px)" :id="i + 1" :srcset="p.srcBig">&ndash;&gt;-->
-<!--              &lt;!&ndash;              <source media="(min-width: 768px)" :id="i + 1" :srcset="p.src">&ndash;&gt;-->
-<!--              <img class="thumbnail" :id="i + 1" :src="p.src" :data-project-name="p.info">-->
-<!--            </picture>-->
           </div>
         </div>
       </section>
       <FooterSection></FooterSection>
-      <cell5-splash v-show="!isLoaded" @masonry-loaded=""></cell5-splash>
     </main>
   </div>
 </template>
@@ -48,6 +43,7 @@
   import Good2RentImg from '../../assets/img/portfolio/good2rent-screenshot.jpg'
   import MyValImg from '../../assets/img/portfolio/myval-screenshot.jpg'
   import WhiteSpiderMedia from '../../assets/img/portfolio/white-spider-media.png'
+  import MarkEllwood from '../../assets/img/portfolio/mark-ellwood.gif'
   import Cell5Splash from '../Home/Cell5Welcome.vue'
 
   import Vue from "vue";
@@ -90,6 +86,7 @@
             title: 'Melissa Twigg',
             info: "First description",
             category: [categories.website, categories.hosting],
+            learnMore: false,
           },
           {
             src: PortlandImg,
@@ -122,6 +119,14 @@
             info:
               "Second desc with lorem Ipsum is simply dummy text of the printing and typesetting industry",
             category: [categories.website, categories.hosting, categories.onSiteSEO],
+          },
+          {
+            src: MarkEllwood,
+            title: "Mark Ellwood",
+            href: 'https://www.mark-ellwood.com/',
+            info:
+              "Second desc with lorem Ipsum is simply dummy text of the printing and typesetting industry",
+            category: [categories.website],
           }
         ];
       },
@@ -182,13 +187,14 @@
   }
 
   .portfolio {
-    margin-bottom: 5em;
     position: relative;
     background: white;
   }
 
   .project-category {
-    padding-top: 100px;
+    /*position: fixed;*/
+    margin-top: 5em;
+    margin-bottom: 1em;
   }
 
   @media only screen and (max-width: 768px) {
@@ -238,9 +244,9 @@
       width: 100%;
     }
 
-    /*.box-1 {*/
-    /*  width: 66%;*/
-    /*}*/
+    .box-1 {
+      width: 33%;
+    }
   }
 
 
