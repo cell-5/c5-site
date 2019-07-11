@@ -23,6 +23,7 @@
         </div>
       </section>
       <FooterSection></FooterSection>
+      <cell5-splash v-show="!isLoaded" @masonry-loaded=""></cell5-splash>
     </main>
   </div>
 </template>
@@ -37,6 +38,9 @@
   import Good2RentImg from '../../assets/img/portfolio/good2rent-screenshot.jpg'
   import MyValImg from '../../assets/img/portfolio/myval-screenshot.jpg'
   import WhiteSpiderMedia from '../../assets/img/portfolio/white-spider-media.png'
+  import Cell5Splash from '../Home/Cell5Welcome.vue'
+
+  import Vue from "vue";
 
   const Masonry = require('masonry-layout');
   const ImagesLoaded = require('imagesloaded');
@@ -45,6 +49,7 @@
   export default {
     name: "portfolio",
     components: {
+      Cell5Splash,
       Categories,
       Header,
       FooterSection
@@ -53,6 +58,7 @@
       return {
         categories: categories,
         selector: ".viewer",
+        isLoaded: false,
         options: {
           percentPosition: true,
           gutter: 0,
@@ -101,7 +107,7 @@
             href: 'http://whitespidermedia.co.uk/',
             info:
               "Second desc with lorem Ipsum is simply dummy text of the printing and typesetting industry",
-            category: [categories.website, categories.hosting],
+            category: [categories.website, categories.hosting, categories.onSiteSEO],
           }
         ];
       },
@@ -115,34 +121,30 @@
       },
     },
     watch: {
-      filteredPortfolio: function() {
-        console.log("called")
-        this.loaded();
-
-        // ImagesLoaded(this.selector, () => {
-        //   masonry.layout()
-        //
-        // })
+      filteredPortfolio: function () {
+        this.updated()
       }
     },
     methods: {
       loaded() {
-        // all images are loaded
         ImagesLoaded(this.selector, () => {
           this.$emit("masonry-images-loaded");
-          // activate mansonry grid
           masonry = new Masonry(this.selector, this.options);
           this.$emit("masonry-loaded", masonry);
+          this.isLoaded=true
+        });
+      },
+      updated() {
+        Vue.nextTick(() => {
           masonry.layout()
+          masonry.reloadItems()
         });
       },
       handleClear() {
         const values = Object.values(categories)
-
         for (let c in values) {
           values[c].reset()
         }
-
       },
       getData() {
         return this.portfolio;
@@ -211,9 +213,9 @@
       width: 100%;
     }
 
-    .box-1 {
-      width: 66%;
-    }
+    /*.box-1 {*/
+    /*  width: 66%;*/
+    /*}*/
   }
 
 
