@@ -5,7 +5,7 @@
       <section class="portfolio">
         <div class="h-100">
           <b-row class="project-category">
-            <b-col class="services d-flex justify-content-center flex-column flex-md-row">
+            <b-col class="d-flex justify-content-center flex-column flex-md-row">
               <categories v-model="categories" @clearAll="handleClear"/>
             </b-col>
           </b-row>
@@ -32,13 +32,15 @@
   import FooterSection from "../FooterSection.vue";
   import Categories from "../portfolio/Categories";
   import categories from './categories'
-  import MelissaTwiggImg from '../../assets/img/mtwigg-screenshot-2.jpg'
-  import PortlandImg from '../../assets/img/portland-screenshot.jpg'
-  import Good2RentImg from '../../assets/img/good2rent-screenshot.jpg'
-  import MyValImg from '../../assets/img/myval-screenshot.jpg'
+  import MelissaTwiggImg from '../../assets/img/portfolio/mtwigg-screenshot-2.jpg'
+  import PortlandImg from '../../assets/img/portfolio/portland-screenshot.jpg'
+  import Good2RentImg from '../../assets/img/portfolio/good2rent-screenshot.jpg'
+  import MyValImg from '../../assets/img/portfolio/myval-screenshot.jpg'
+  import WhiteSpiderMedia from '../../assets/img/portfolio/white-spider-media.png'
 
   const Masonry = require('masonry-layout');
   const ImagesLoaded = require('imagesloaded');
+  let masonry
 
   export default {
     name: "portfolio",
@@ -92,6 +94,14 @@
             info:
               "Second desc with lorem Ipsum is simply dummy text of the printing and typesetting industry",
             category: [categories.api, categories.startUpDev],
+          },
+          {
+            src: WhiteSpiderMedia,
+            title: "White Spider Media",
+            href: 'http://whitespidermedia.co.uk/',
+            info:
+              "Second desc with lorem Ipsum is simply dummy text of the printing and typesetting industry",
+            category: [categories.website, categories.hosting],
           }
         ];
       },
@@ -108,6 +118,11 @@
       filteredPortfolio: function() {
         console.log("called")
         this.loaded();
+
+        // ImagesLoaded(this.selector, () => {
+        //   masonry.layout()
+        //
+        // })
       }
     },
     methods: {
@@ -116,8 +131,9 @@
         ImagesLoaded(this.selector, () => {
           this.$emit("masonry-images-loaded");
           // activate mansonry grid
-          let masonry = new Masonry(this.selector, this.options);
+          masonry = new Masonry(this.selector, this.options);
           this.$emit("masonry-loaded", masonry);
+          masonry.layout()
         });
       },
       handleClear() {
@@ -182,11 +198,11 @@
 
   @media only screen and (min-width: 1200px) {
     .grid-sizer {
-      width: 20%;
+      width: 33%;
     }
 
     .item {
-      width: 20%;
+      width: 33%;
       padding-bottom: 10px;
       padding-left: 10px;
     }
@@ -195,9 +211,9 @@
       width: 100%;
     }
 
-    /*.box-0 {*/
-    /*  width: 10%;*/
-    /*}*/
+    .box-1 {
+      width: 66%;
+    }
   }
 
 
