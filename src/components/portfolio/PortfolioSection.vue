@@ -10,15 +10,24 @@
             </b-col>
           </b-row>
         </div>
+
+
         <div class="viewer">
           <div class="grid-sizer"></div>
           <div v-for="(p, i) in filteredPortfolio" :data-index="i + 1" :key="i + 1" :class="`box-${i + 1}`"
                class="item">
-            <picture>
-              <!--              <source media="(min-width: 1200px)" :id="i + 1" :srcset="p.srcBig">-->
-              <!--              <source media="(min-width: 768px)" :id="i + 1" :srcset="p.src">-->
-              <img class="thumbnail" :id="i + 1" :src="p.src" :data-project-name="p.info">
-            </picture>
+
+
+            <portfolio-item :key="i" :image="p.src">
+
+            </portfolio-item>
+
+
+<!--            <picture>-->
+<!--              &lt;!&ndash;              <source media="(min-width: 1200px)" :id="i + 1" :srcset="p.srcBig">&ndash;&gt;-->
+<!--              &lt;!&ndash;              <source media="(min-width: 768px)" :id="i + 1" :srcset="p.src">&ndash;&gt;-->
+<!--              <img class="thumbnail" :id="i + 1" :src="p.src" :data-project-name="p.info">-->
+<!--            </picture>-->
           </div>
         </div>
       </section>
@@ -33,6 +42,7 @@
   import FooterSection from "../FooterSection.vue";
   import Categories from "../portfolio/Categories";
   import categories from './categories'
+  import PortfolioItem from "./PortfolioItem.vue"
   import MelissaTwiggImg from '../../assets/img/portfolio/mtwigg-screenshot-2.jpg'
   import PortlandImg from '../../assets/img/portfolio/portland-screenshot.jpg'
   import Good2RentImg from '../../assets/img/portfolio/good2rent-screenshot.jpg'
@@ -46,13 +56,17 @@
   const ImagesLoaded = require('imagesloaded');
   let masonry
 
+  // TODO HARRY add vuetify hover component for the images https://vuetifyjs.com/en/components/hover
+
+
   export default {
     name: "portfolio",
     components: {
       Cell5Splash,
       Categories,
       Header,
-      FooterSection
+      FooterSection,
+      PortfolioItem
     },
     data() {
       return {
@@ -122,6 +136,7 @@
     },
     watch: {
       filteredPortfolio: function () {
+        console.log("CALLED")
         this.updated()
       }
     },
@@ -131,13 +146,13 @@
           this.$emit("masonry-images-loaded");
           masonry = new Masonry(this.selector, this.options);
           this.$emit("masonry-loaded", masonry);
-          this.isLoaded=true
+          this.isLoaded = true
         });
       },
       updated() {
         Vue.nextTick(() => {
-          masonry.layout()
           masonry.reloadItems()
+          masonry.layout()
         });
       },
       handleClear() {
@@ -156,6 +171,16 @@
   };
 </script>
 <style>
+
+  .v-card--reveal {
+    align-items: center;
+    bottom: 0;
+    justify-content: center;
+    opacity: .5;
+    position: absolute;
+    width: 100%;
+  }
+
   .portfolio {
     margin-bottom: 5em;
     position: relative;

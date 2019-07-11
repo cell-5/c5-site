@@ -26,6 +26,34 @@ Vue.use(VueProgressBar, {
         termination: 300
     }
 })
+import 'vuetify/src/stylus/app.styl'
+
+import Vuetify, {
+  VHover,
+  VIcon,
+  VBtn,
+  VImg,
+  VCardText,
+  VCard,
+  VExpandTransition
+} from 'vuetify/lib'
+import { Ripple } from 'vuetify/lib/directives'
+
+Vue.use(Vuetify, {
+  components: {
+    VHover,
+    VIcon,
+    VBtn,
+    VImg,
+    VCardText,
+    VCard,
+    VExpandTransition
+  },
+  directives: {
+    Ripple
+  }
+})
+
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */

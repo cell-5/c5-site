@@ -29,7 +29,8 @@
     "vue-router": "^3.0.7",
     "vue-scrollactive": "^0.8.0",
     "vue-typer": "^1.2.0",
-    "vue2-transitions": "^0.3.0"
+    "vue2-transitions": "^0.3.0",
+    "vuetify": "^1.5.16"
   },
   "devDependencies": {
     "@vue/component-compiler-utils": "^2.6.0",
@@ -40,6 +41,9 @@
     "css-loader": "^2.1.1",
     "parcel-bundler": "^1.12.3",
     "sass": "^1.22.3",
+    "style-loader": "^0.23.1",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.2",
     "vue-loader": "^15.7.0",
     "vue-particles": "^1.0.9",
     "vue-progressbar": "^0.7.5",
