@@ -1,19 +1,15 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-import PortfolioSection from "../components/portfolio/PortfolioSection.vue"
-
+const PortfolioSection = ()=> import ("../components/PortfolioSection.vue")
+const Landing = () => import('../components/Landing.vue')
+const ThankYouSection = () => import('../components/ThankYouSection.vue')
 let routes = [
-  {path: '/portfolio', component: PortfolioSection}
+  {path: '/portfolio', component: PortfolioSection},
+  {path: '/', component: Landing},
+  {path: '/thank-you', component: ThankYouSection}
 ]
 Vue.use(Router)
-
-
-const Landing = () => import('../components/Landing.vue')
-routes.push({path: '/', component: Landing})
-
-const ThankYouSection = () => import('../components/ThankYouSection.vue')
-routes.push({path: '/thank-you', component: ThankYouSection})
 
 export default new Router({
   mode: 'history',

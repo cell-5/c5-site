@@ -15,10 +15,11 @@
         <v-expand-transition>
           <div
             v-if="hover"
-            class="d-flex transition-fast-in-fast-out orange darken-2 v-card--reveal display-3 white--text"
+            close-delay="2"
+            class="d-flex transition-fast-in-fast-out item-transition v-card--reveal display-3 white--text"
             style="height: 100%;"
           >
-            {{ info }}
+            <h2 class="center">{{ info }}</h2>
           </div>
         </v-expand-transition>
       </v-img>
@@ -37,14 +38,15 @@
         >
           Learn more
         </v-btn>
-        <!--        <div class="font-weight-light grey&#45;&#45;text title mb-2">For the perfect meal</div>-->
-        <!--        <h3 class="display-1 font-weight-light mb-2">QW cooking utensils</h3>-->
-        <!--        <div class="font-weight-light title mb-2">-->
-        <!--          Our Vintage kitchen utensils delight any chef.<br>-->
-        <!--          Made of bamboo by hand-->
-        <!--        </div>-->
+        <div>
 
-        <v-chip v-for="(c, i) in category" @click="() => c.updateCategory(!c.isSelected)">{{c.text}}</v-chip>
+          <h3 class="display-1 font-weight-light mb-2"><a :href="href"> <i style="font-size: smaller"
+                                                                           class="fas fa-link"></i></a>
+            {{ title }}</h3>
+        </div>
+
+
+        <v-chip v-for="(c, i) in category" disabled>{{c.text}}</v-chip>
       </v-card-text>
     </v-card>
   </v-hover>
@@ -54,13 +56,18 @@
   export default {
     name: "PortfolioItem",
     props: {
+      title: String,
       image: String,
       info: String,
+      href: String,
       category: Array,
     }
   }
 </script>
 
 <style scoped>
+  .item-transition {
+    background-image: linear-gradient(to bottom right, red, blue);
 
+  }
 </style>

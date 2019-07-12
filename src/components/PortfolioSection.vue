@@ -20,9 +20,11 @@
 
 
             <portfolio-item :key="i"
-                            :info="p.title"
+                            :title="p.title"
+                            :info="p.info"
                             :image="p.src"
-                            :category="p.category">
+                            :category="p.category"
+                            :href="p.href">
             </portfolio-item>
           </div>
         </div>
@@ -33,26 +35,25 @@
 </template>
 
 <script>
-  import Header from "../Header.vue";
-  import FooterSection from "../FooterSection.vue";
-  import Categories from "../portfolio/Categories";
-  import categories from './categories'
-  import PortfolioItem from "./PortfolioItem.vue"
-  import MelissaTwiggImg from '../../assets/img/portfolio/mtwigg-screenshot-2.jpg'
-  import PortlandImg from '../../assets/img/portfolio/portland-screenshot.jpg'
-  import Good2RentImg from '../../assets/img/portfolio/good2rent-screenshot.jpg'
-  import MyValImg from '../../assets/img/portfolio/myval-screenshot.jpg'
-  import WhiteSpiderMedia from '../../assets/img/portfolio/white-spider-media.png'
-  import MarkEllwood from '../../assets/img/portfolio/mark-ellwood.gif'
-  import Cell5Splash from '../Home/Cell5Welcome.vue'
+  import Header from "./Header.vue";
+  import FooterSection from "./FooterSection.vue";
+  import Categories from "./portfolio/Categories";
+  import categories from './portfolio/categories'
+  import PortfolioItem from "./portfolio/PortfolioItem.vue"
+  import MelissaTwiggImg from '../assets/img/portfolio/mtwigg-screenshot-2.jpg'
+  import PortlandImg from '../assets/img/portfolio/portland-screenshot.jpg'
+  import Good2RentImg from '../assets/img/portfolio/good2rent-screenshot.jpg'
+  import MyValImg from '../assets/img/portfolio/myval-screenshot.jpg'
+  import WhiteSpiderMedia from '../assets/img/portfolio/white-spider-media.png'
+  import MarkEllwood from '../assets/img/portfolio/mark-ellwood.gif'
+  import Atlam from '../assets/img/portfolio/atlam.gif'
+  import Cell5Splash from './Home/Cell5Welcome.vue'
 
   import Vue from "vue";
 
   const Masonry = require('masonry-layout');
   const ImagesLoaded = require('imagesloaded');
   let masonry
-
-  // TODO HARRY add vuetify hover component for the images https://vuetifyjs.com/en/components/hover
 
 
   export default {
@@ -84,7 +85,7 @@
             src: MelissaTwiggImg,
             href: 'http://melissatwigg.co.uk',
             title: 'Melissa Twigg',
-            info: "First description",
+            info: "London-based freelance journalist",
             category: [categories.website, categories.hosting],
             learnMore: false,
           },
@@ -92,41 +93,43 @@
             src: PortlandImg,
             title: 'Portland Decorating & Design',
             href: 'http://portlanddecorating.co.uk/',
-            info:
-              "Second desc with lorem Ipsum is simply dummy text of the printing and typesetting industry",
+            info: "London based painter and decorator",
             category: [categories.webRescue, categories.onSiteSEO],
           },
           {
             src: Good2RentImg,
             title: "good2rent",
             href: 'http://good2rent.co.uk/',
-            info:
-              "Second desc with lorem Ipsum is simply dummy text of the printing and typesetting industry",
+            info: "Disruptive Tenant Referencing start-up",
             category: [categories.cloudMigration, categories.startUpDev],
           },
           {
             src: MyValImg,
             title: "myVal",
             href: 'http://myVal.co.uk/',
-            info:
-              "Second desc with lorem Ipsum is simply dummy text of the printing and typesetting industry",
+            info: "Lead generation tool for estate agents",
             category: [categories.api, categories.startUpDev],
           },
           {
             src: WhiteSpiderMedia,
             title: "White Spider Media",
             href: 'http://whitespidermedia.co.uk/',
-            info:
-              "Second desc with lorem Ipsum is simply dummy text of the printing and typesetting industry",
+            info: "A leading, bespoke media planning and buying agency.",
             category: [categories.website, categories.hosting, categories.onSiteSEO],
           },
           {
             src: MarkEllwood,
             title: "Mark Ellwood",
             href: 'https://www.mark-ellwood.com/',
-            info:
-              "Second desc with lorem Ipsum is simply dummy text of the printing and typesetting industry",
+            info: "New York-based journalist",
             category: [categories.website],
+          },
+          {
+            src: Atlam,
+            title: "Atlam",
+            // href: 'https://www.mark-ellwood.com/',
+            info: "Team of engineers and technicians led by Alex Mark",
+            category: [categories.website, categories.hosting],
           }
         ];
       },
@@ -181,7 +184,7 @@
     align-items: center;
     bottom: 0;
     justify-content: center;
-    opacity: .5;
+    opacity: .7;
     position: absolute;
     width: 100%;
   }
