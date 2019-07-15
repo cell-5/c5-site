@@ -12,4 +12,7 @@ export default class Category {
   reset(){
     this.isSelected = false
   }
+  toString(){
+    return this.text
+  }
 }

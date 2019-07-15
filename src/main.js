@@ -26,7 +26,6 @@ Vue.use(VueProgressBar, {
         termination: 300
     }
 })
-import 'vuetify/src/stylus/app.styl'
 
 import Vuetify, {
   VChip,

@@ -19,7 +19,7 @@
             class="d-flex transition-fast-in-fast-out item-transition v-card--reveal display-3 white--text"
             style="height: 100%;"
           >
-            <h2 class="center">{{ info }}</h2>
+            <h3 class="center">{{ info }}</h3>
           </div>
         </v-expand-transition>
       </v-img>
@@ -28,10 +28,10 @@
         style="position: relative;"
       >
         <v-btn
+          v-if="learnMore"
           absolute
           color="green"
           class="white--text"
-
           large
           right
           top
@@ -56,6 +56,7 @@
   export default {
     name: "PortfolioItem",
     props: {
+      learnMore: Boolean,
       title: String,
       image: String,
       info: String,
@@ -68,6 +69,7 @@
 <style scoped>
   .item-transition {
     background-image: linear-gradient(to bottom right, red, blue);
+    text-align: center;
 
   }
 </style>

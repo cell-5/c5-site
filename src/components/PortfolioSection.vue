@@ -1,7 +1,7 @@
 <template>
   <div id="portfolio">
     <Header></Header>
-    <cell5-splash v-show="!isLoaded" @masonry-loaded=""></cell5-splash>
+    <cell5-splash v-show="!isLoaded"></cell5-splash>
     <main role="main">
       <section class="portfolio">
         <div class="h-100">
@@ -11,19 +11,16 @@
             </b-col>
           </b-row>
         </div>
-
-
         <div class="viewer">
           <div class="grid-sizer"></div>
           <div v-for="(p, i) in filteredPortfolio" :data-index="i + 1" :key="i + 1" :class="`box-${i + 1}`"
                class="item">
-
-
             <portfolio-item :key="i"
                             :title="p.title"
                             :info="p.info"
                             :image="p.src"
                             :category="p.category"
+                            :learn-more="p.learnMore"
                             :href="p.href">
             </portfolio-item>
           </div>
@@ -35,6 +32,9 @@
 </template>
 
 <script>
+  import 'vuetify/src/stylus/app.styl'
+
+
   import Header from "./Header.vue";
   import FooterSection from "./FooterSection.vue";
   import Categories from "./portfolio/Categories";
@@ -44,7 +44,7 @@
   import PortlandImg from '../assets/img/portfolio/portland-screenshot.jpg'
   import Good2RentImg from '../assets/img/portfolio/good2rent-screenshot.jpg'
   import MyValImg from '../assets/img/portfolio/myval-screenshot.jpg'
-  import WhiteSpiderMedia from '../assets/img/portfolio/white-spider-media.png'
+  import WhiteSpiderMedia from '../assets/img/portfolio/wsm.gif'
   import MarkEllwood from '../assets/img/portfolio/mark-ellwood.gif'
   import Atlam from '../assets/img/portfolio/atlam.gif'
   import Cell5Splash from './Home/Cell5Welcome.vue'
@@ -95,6 +95,7 @@
             href: 'http://portlanddecorating.co.uk/',
             info: "London based painter and decorator",
             category: [categories.webRescue, categories.onSiteSEO],
+            learnMore: false,
           },
           {
             src: Good2RentImg,
@@ -102,6 +103,7 @@
             href: 'http://good2rent.co.uk/',
             info: "Disruptive Tenant Referencing start-up",
             category: [categories.cloudMigration, categories.startUpDev],
+            learnMore: false,
           },
           {
             src: MyValImg,
@@ -109,13 +111,15 @@
             href: 'http://myVal.co.uk/',
             info: "Lead generation tool for estate agents",
             category: [categories.api, categories.startUpDev],
+            learnMore: false,
           },
           {
             src: WhiteSpiderMedia,
             title: "White Spider Media",
-            href: 'http://whitespidermedia.co.uk/',
+            href: 'http://whitespidermedia.com/',
             info: "A leading, bespoke media planning and buying agency.",
             category: [categories.website, categories.hosting, categories.onSiteSEO],
+            learnMore: false,
           },
           {
             src: MarkEllwood,
@@ -123,6 +127,7 @@
             href: 'https://www.mark-ellwood.com/',
             info: "New York-based journalist",
             category: [categories.website],
+            learnMore: false,
           },
           {
             src: Atlam,
@@ -130,6 +135,7 @@
             // href: 'https://www.mark-ellwood.com/',
             info: "Team of engineers and technicians led by Alex Mark",
             category: [categories.website, categories.hosting],
+            learnMore: false,
           }
         ];
       },
@@ -146,9 +152,31 @@
       filteredPortfolio: function () {
         console.log("CALLED")
         this.updated()
-      }
+      },
+      '$route.query.categories': {
+        handler: function () {
+          this.handleClear()
+          this.filterPorfolioFromURL()
+        },
+        deep: true,
+        immediate: true
+      },
     },
     methods: {
+      filterPorfolioFromURL: function () {
+        if(this.$route.query.categories){
+          const selectedCategories = JSON.parse(decodeURIComponent(this.$route.query.categories));
+          for (let sc of selectedCategories) {
+            for (let c in this.categories) {
+              console.log("1", sc, "2", this.categories[c].text)
+              if (sc.text === this.categories[c].text) {
+                this.categories[c].updateCategory(true)
+              }
+
+            }
+          }
+        }
+      },
       loaded() {
         ImagesLoaded(this.selector, () => {
           this.$emit("masonry-images-loaded");
@@ -175,6 +203,9 @@
     },
     mounted() {
       this.loaded();
+    },
+    created() {
+      this.filterPorfolioFromURL();
     }
   };
 </script>
