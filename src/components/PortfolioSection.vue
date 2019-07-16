@@ -81,6 +81,22 @@
       portfolio() {
         return [
           {
+            src: WhiteSpiderMedia,
+            title: "White Spider Media",
+            href: 'http://whitespidermedia.com/',
+            info: "A leading, bespoke media planning and buying agency.",
+            category: [categories.website, categories.hosting, categories.onSiteSEO],
+            learnMore: false,
+          },
+          {
+            src: MarkEllwood,
+            title: "Mark Ellwood",
+            href: 'https://www.mark-ellwood.com/',
+            info: "New York-based journalist",
+            category: [categories.website],
+            learnMore: false,
+          },
+          {
             src: MelissaTwiggImg,
             href: 'http://melissatwigg.co.uk',
             title: 'Melissa Twigg',
@@ -110,22 +126,6 @@
             href: 'http://myVal.co.uk/',
             info: "Lead generation tool for estate agents",
             category: [categories.api, categories.startUpDev],
-            learnMore: false,
-          },
-          {
-            src: WhiteSpiderMedia,
-            title: "White Spider Media",
-            href: 'http://whitespidermedia.com/',
-            info: "A leading, bespoke media planning and buying agency.",
-            category: [categories.website, categories.hosting, categories.onSiteSEO],
-            learnMore: false,
-          },
-          {
-            src: MarkEllwood,
-            title: "Mark Ellwood",
-            href: 'https://www.mark-ellwood.com/',
-            info: "New York-based journalist",
-            category: [categories.website],
             learnMore: false,
           },
           {
