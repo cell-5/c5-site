@@ -12,9 +12,10 @@ let routes = [
 Vue.use(Router)
 
 export default new Router({
-  scrollBehavior (to, from, savedPosition) {
-    return { x: 0, y: 0 }
-  },
+  // TODO if to the portfolio scroll to the top...
+  // scrollBehavior (to, from, savedPosition) {
+  //   return { x: 0, y: 0 }
+  // },
   mode: 'history',
   routes
 })
