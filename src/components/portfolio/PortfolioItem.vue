@@ -70,6 +70,16 @@
   .item-transition {
     background-image: linear-gradient(to bottom right, red, blue);
     text-align: center;
-
   }
+
+  .v-card--reveal {
+    align-items: center;
+    bottom: 0;
+    justify-content: center;
+    opacity: .7 !important;
+    position: absolute;
+    width: 100%;
+  }
+
+
 </style>

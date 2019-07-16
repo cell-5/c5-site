@@ -211,16 +211,8 @@
 
 
 <style scoped>
-  @import "vuetify/dist/vuetify.min.css";
 
-  .v-card--reveal {
-    align-items: center;
-    bottom: 0;
-    justify-content: center;
-    opacity: .7;
-    position: absolute;
-    width: 100%;
-  }
+  @import 'vuetify/src/stylus/app.styl';
 
   .portfolio {
     position: relative;
@@ -228,7 +220,6 @@
   }
 
   .project-category {
-    /*position: fixed;*/
     margin-top: 5em;
     margin-bottom: 1em;
   }
@@ -243,26 +234,19 @@
       padding-bottom: 10px;
       padding-left: 0px;
     }
-
-    /*.box-0 {*/
-    /*  width: 100%;*/
-    /*}*/
   }
 
   @media only screen and (min-width: 769px) {
     .grid-sizer {
-      width: 33%;
+      width: 50%;
     }
 
     .item {
-      width: 33%;
+      width: 50%;
       padding-bottom: 10px;
       padding-left: 10px;
     }
-
-    /*.box-0 {*/
-    /*  width: 66%;*/
-    /*}*/
+    
   }
 
   @media only screen and (min-width: 1200px) {
@@ -284,6 +268,5 @@
       width: 33%;
     }
   }
-
 
 </style>
