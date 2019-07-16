@@ -5,7 +5,7 @@
     <main role="main">
       <section class="portfolio">
         <div class="h-100">
-          <b-row class="project-category">
+          <b-row class="project-category no-gutters">
             <b-col class="d-flex justify-content-center flex-column flex-md-row">
               <categories v-model="categories" @clearAll="handleClear"/>
             </b-col>
@@ -32,7 +32,6 @@
 </template>
 
 <script>
-  import 'vuetify/src/stylus/app.styl'
 
 
   import Header from "./Header.vue";
@@ -164,7 +163,7 @@
     },
     methods: {
       filterPorfolioFromURL: function () {
-        if(this.$route.query.categories){
+        if (this.$route.query.categories) {
           const selectedCategories = JSON.parse(decodeURIComponent(this.$route.query.categories));
           for (let sc of selectedCategories) {
             for (let c in this.categories) {

@@ -50,7 +50,6 @@ import 'slick-carousel/slick/slick-theme.css'
 import PeterImg from '../assets/img/peter-vector.svg'
 import HarryImg from '../assets/img/harry-vector.svg'
 import PatImg from '../assets/img/pat-vector.svg'
-import NicImg from '../assets/img/nic-vector.png'
 
 function teamCarousel () {
   $('.team').slick({

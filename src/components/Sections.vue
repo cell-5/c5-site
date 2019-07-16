@@ -7,9 +7,9 @@
             <figure>
               <img :src="section.img"/>
             </figure>
-<!--            <div id="cta" class="text-center d-none d-lg-flex">-->
-<!--              <router-link to="portfolio" class="gradient-button call-to-action">View Portfolio</router-link>-->
-<!--            </div>-->
+            <div class="text-center d-none d-lg-flex gradient-button call-to-action">
+              <a @click="goToPortfolio(section.categories)">View Portfolio</a>
+            </div>
           </div>
           <div class="body-wrapper col-lg-7">
             <div class="solution-text">
@@ -41,15 +41,13 @@
                 <img :src="section.img" :alt="section.title"/>
               </figure>
             </div>
-            <div id="cta" class="text-center  d-none d-lg-flex">
-              <a class="gradient-button call-to-action" @click="goToPortfolio(section.categories)">View Portfolio</a>
-<!--              <router-link to="portfolio" class="gradient-button call-to-action">View Portfolio</router-link>-->
-            </div>
-
+            <div class="text-center gradient-button call-to-action d-none d-lg-flex">
+              <a class="justify-content-center" @click="goToPortfolio(section.categories)">View Portfolio</a>
             </div>
           </div>
-          <div id="cta" class="text-highlightcenter col-lg-12 d-lg-none d-flex justify-content-center">
-            <a class="gradient-button call-to-action" @click="goToPortfolio(section.categories)">View Portfolio</a>
+          <div
+            class="text-highlightcenter col-lg-12 d-lg-none d-flex gradient-button call-to-action">
+            <a class="button-content" @click="goToPortfolio(section.categories)">View Portfolio</a>
           </div>
         </div>
       </section>
@@ -172,7 +170,7 @@
     },
     methods: {
       goToPortfolio(params) {
-          this.$router.push({path: 'portfolio', query: {categories: encodeURIComponent(JSON.stringify(params))}})
+        this.$router.push({path: 'portfolio', query: {categories: encodeURIComponent(JSON.stringify(params))}})
       }
     }
   }
@@ -431,28 +429,25 @@
     background-size: 200% auto;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
     transition: all 0.5s cubic-bezier(.25, .8, .25, 1);
-  }
-
-  .odd .gradient-button {
-    background: #2c302e;
+    background: #34b95a;
     color: #fff;
     border: 4px solid #fff;
-  }
-
-  .even .gradient-button {
-    background: #fff;
-    color: #2c302e;
-    border: 4px solid #2c302e;
+    border-radius: 8px;
   }
 
   .gradient-button:hover {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
     text-decoration: none;
-    border-radius: 0;
-    border-style: solid;
-    border-width: 4px;
+    /*border-style: solid;*/
     border-image: linear-gradient(to right, #509bf6 0%, #e1304e 60%) 1;
+    background: #fff;
+    color: #000;
+    border-radius: 8px;
   }
+  .button-content {
+    text-align: center;
+  }
+
 </style>
 
 

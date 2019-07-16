@@ -6,9 +6,7 @@ import BootstrapVue from 'bootstrap-vue'
 import router from './router'
 import App from './App.vue'
 import VueParticles from 'vue-particles'
-import 'bootstrap/dist/css/bootstrap.min.css'
-import 'bootstrap-vue/dist/bootstrap-vue.css'
-import 'bootstrap'
+import 'vuetify/src/stylus/app.styl'
 import VueIsInView from 'vue-is-in-view'
 import VueScrollactive from 'vue-scrollactive'
 
@@ -54,7 +52,9 @@ Vue.use(Vuetify, {
     Ripple
   }
 })
-
+import 'bootstrap/dist/css/bootstrap.min.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
+import 'bootstrap'
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
