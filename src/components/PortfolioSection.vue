@@ -208,7 +208,10 @@
     }
   };
 </script>
-<style>
+
+
+<style scoped>
+  @import "vuetify/dist/vuetify.min.css";
 
   .v-card--reveal {
     align-items: center;

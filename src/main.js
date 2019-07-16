@@ -6,7 +6,7 @@ import BootstrapVue from 'bootstrap-vue'
 import router from './router'
 import App from './App.vue'
 import VueParticles from 'vue-particles'
-import 'vuetify/src/stylus/app.styl'
+// import "vuetify/dist/vuetify.min.css"
 import VueIsInView from 'vue-is-in-view'
 import VueScrollactive from 'vue-scrollactive'
 
