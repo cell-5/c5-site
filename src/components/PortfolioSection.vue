@@ -177,18 +177,20 @@
         }
       },
       loaded() {
-        ImagesLoaded(this.selector, () => {
+        const items = document.querySelectorAll('.item');
+        new ImagesLoaded(items, () => {
           this.$emit("masonry-images-loaded");
           masonry = new Masonry(this.selector, this.options);
           this.$emit("masonry-loaded", masonry);
           this.isLoaded = true
-        });
+        })
+
       },
       updated() {
         Vue.nextTick(() => {
           masonry.reloadItems()
           masonry.layout()
-        });
+        })
       },
       handleClear() {
         const values = Object.values(categories)
@@ -246,7 +248,7 @@
       padding-bottom: 10px;
       padding-left: 10px;
     }
-    
+
   }
 
   @media only screen and (min-width: 1200px) {
