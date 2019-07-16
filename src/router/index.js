@@ -1,29 +1,23 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+
+import PortfolioSection from "../components/PortfolioSection.vue"
 import Landing from '../components/Landing.vue'
 import ThankYouSection from '../components/ThankYouSection.vue'
-import PortfolioSection from '../components/PortfolioSection.vue'
 
+let routes = [
+  {path: '/portfolio', component: PortfolioSection},
+  {path: '/', component: Landing},
+  {path: '/thank-you', component: ThankYouSection}
+]
 Vue.use(Router)
 
 export default new Router({
-  mode: 'history',
-  routes: [
-    {
-      path: '/',
-      name: 'Landing',
-      component: Landing,
-      alias: '/index.html'
-    },
-    {
-      path: '/thank-you',
-      name: 'ThankYouSection',
-      component: ThankYouSection
-    },
-    {
-      path: '/portfolio',
-      name: 'PortfolioSection',
-      component: PortfolioSection
+  scrollBehavior(to, from, savedPosition) {
+    if (to.path === "/portfolio") {
+      return {x: 0, y: 0}
     }
-  ]
+  },
+  mode: 'history',
+  routes
 })

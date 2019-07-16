@@ -1,45 +1,45 @@
 <template>
     <section id="profiles">
-            <div class="container">
-                <h2>Meet The Team</h2>
-                <div class="team">
-                    <div id="teamList" v-for="member of members">
-                        <div class="team-member">
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <figure class="team-member-photo">
-                                        <img :src="member.img" :alt="member.name" class="img-fluid">
-                                    </figure>
-                                </div>
-                                <div class="col-lg-6">
-                                    <h3 class="team-member-name">{{ member.name }}</h3>
-                                    <h4 class="team-member-title">{{ member.title }}</h4>
-                                    <ul class="team-member-social">
-                                        <li>
-                                            <a :href="member.linkedin" target="_blank">
-                                                <span class="fab fa-linkedin"></span>
-                                            </a>
-                                            <a v-if="hasTwitter(member.twitter)" :href="member.twitter" target="_blank">
-                                               <span class="fab fa-twitter"></span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                    <p class="team-member-bio">{{ member.bio }}</p>
-                                </div>
+        <div class="container">
+            <h2>Meet The Team</h2>
+            <div class="team">
+                <div id="teamList" v-for="member of members">
+                    <div class="team-member">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <figure class="team-member-photo">
+                                    <img :src="member.img" :alt="member.name" class="img-fluid">
+                                </figure>
+                            </div>
+                            <div class="col-lg-6">
+                                <h3 class="team-member-name">{{ member.name }}</h3>
+                                <h4 class="team-member-title">{{ member.title }}</h4>
+                                <ul class="team-member-social">
+                                    <li>
+                                        <a :href="member.linkedin" target="_blank">
+                                            <span class="fab fa-linkedin"></span>
+                                        </a>
+                                        <a v-if="hasTwitter(member.twitter)" :href="member.twitter" target="_blank">
+                                            <span class="fab fa-twitter"></span>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <p class="team-member-bio">{{ member.bio }}</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="teamNav">
-                    <div class="teamNav-slide">
-                      <div id="teamList" v-for="member of members">
-                        <div>
-                            <img :src="member.img" :alt="member.name">
-                        </div>
-                      </div>
+            </div>
+            <div class="teamNav">
+                <div class="teamNav-slide">
+                    <div id="teamList" v-for="member of members">
+                    <div>
+                        <img :src="member.img" :alt="member.name">
+                    </div>
                     </div>
                 </div>
             </div>
+        </div>
     </section>
 </template>
 <script>
@@ -50,7 +50,6 @@ import 'slick-carousel/slick/slick-theme.css'
 import PeterImg from '../assets/img/peter-vector.svg'
 import HarryImg from '../assets/img/harry-vector.svg'
 import PatImg from '../assets/img/pat-vector.svg'
-import NicImg from '../assets/img/nic-vector.png'
 
 function teamCarousel () {
   $('.team').slick({
