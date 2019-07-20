@@ -230,7 +230,7 @@
     margin-bottom: 1rem;
   }
 
-  @media only screen and (max-width: 1200px) {
+  @media only screen and (max-width: 1330px) {
     .grid-sizer {
       width: 100%;
     }
