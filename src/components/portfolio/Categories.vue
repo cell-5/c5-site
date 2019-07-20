@@ -42,5 +42,11 @@
     display: flex;
     flex-flow: wrap;
     justify-content: center;
+    
+  }
+  .v-btn{
+    font-size: 1rem;
+    height: inherit;
+    margin: 6px 0.5rem;
   }
 </style>
