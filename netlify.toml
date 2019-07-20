@@ -1,0 +1,5 @@
+# SPA APP Redirect to support history api and direct routing for handing out permalinks that work. 
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
