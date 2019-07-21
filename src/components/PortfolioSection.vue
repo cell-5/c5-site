@@ -238,8 +238,7 @@
 
     .item {
       width: 90%;
-      margin-left: 5vw;
-      margin-right: 5vw;
+      margin-left: 3vw;
     }
     
   }

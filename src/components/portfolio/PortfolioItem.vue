@@ -6,7 +6,7 @@
       :class="{ 'on-hover': hover }"
       class="mx-auto"
       color="grey lighten-4"
-      width="80%"
+      width="98%"
     >
       <v-img
         :aspect-ratio="16/9"

@@ -31,7 +31,7 @@
           <p class="top-bottom">client-first</p>
         </div>
         <div class="row middle">
-
+          <p>
           <a :href="hrefSolution">
 
             <vue-typer @typed="typed"
@@ -47,6 +47,7 @@
                        :erase-on-complete='false'
                        caret-animation='blink'></vue-typer>
           </a>
+          </p>
         </div>
         <div class="row">
           <p class="top-bottom">solutions</p>
@@ -246,9 +247,9 @@ export default {
 }
 .middle {
   color: white;
-  padding: 10px 0px 10px;
+  padding: 8px;
   -webkit-text-fill-color: transparent; /* Will override color (regardless of order) */
-  -webkit-text-stroke-width: 3px;
+  -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: white;
  
 }
@@ -271,14 +272,15 @@ export default {
 }
 
 .vue-typer .custom.char.typed {
+  color: white;
   -webkit-text-fill-color: transparent; /* Will override color (regardless of order) */
-  -webkit-text-stroke-width: 3px;
+  -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: white;
 }
 char custom typed .middle,
 .top-bottom {
   display: inline-block;
-  padding: 8px !important;
+  padding: 8px;
   word-wrap: break-word;
 }
 .fade-enter-active,
