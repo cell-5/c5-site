@@ -8,8 +8,7 @@
       <h2 class="text-center">Book a
         <strong>FREE</strong> consultation</h2>
       <br>
-      <p class="text-center">It really is
-        <strong>win-win</strong>!<br>
+      <p class="text-center">
         <div class="center">
           <ul>
             <li>
