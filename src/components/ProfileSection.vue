@@ -112,7 +112,7 @@ export default {
 </script>
 <style scoped>
 #profiles {
-    background: #d64933;
+    background: indigo;
     color: white;
     padding: 6vw 0;
     position: relative

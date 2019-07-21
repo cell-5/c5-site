@@ -10,11 +10,11 @@
       @click="handleInput(c, !c.getIsSelected())"
       :key="i"
       :depressed="c.getIsSelected()"
-      :color="c.getIsSelected() ? 'black' : ''"
-      :style="c.getIsSelected() ? 'color : white' : ''"
+      :color="c.getIsSelected() ? 'green' : 'black'"
+      :style="c.getIsSelected() ? '': 'color : white' "
       >{{c.text}}
     </v-btn>
-    <v-btn color="red" style="color: white" @click="clearAll">Clear</v-btn>
+    <v-btn color="red" class="call-to-action" @click="clearAll">Clear</v-btn>
   </div>
 </template>
 

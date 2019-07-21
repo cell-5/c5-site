@@ -246,7 +246,7 @@ export default {
 }
 .middle {
   color: white;
-  padding: 8px 0px 8px;
+  padding: 10px 0px 10px;
 }
 .top-bottom {
   background: black;
@@ -257,7 +257,7 @@ export default {
 char custom typed .middle,
 .top-bottom {
   display: inline-block;
-  padding: 7px !important;
+  padding: 8px !important;
   word-wrap: break-word;
 }
 .fade-enter-active,

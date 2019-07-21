@@ -242,7 +242,7 @@
   }
 
   #start-up:after {
-    border-bottom: 3.13rem solid #d64933;
+    border-bottom: 3.13rem solid indigo;
   }
 
   .solution div.icon-wrapper {

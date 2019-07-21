@@ -215,9 +215,12 @@
 
   @import 'vuetify/src/stylus/app.styl';
 
+  .v-card__text {
+    background: indigo;
+  }
   .portfolio {
     position: relative;
-    background: #2c302e;
+    background: indigo;
     padding-top: 0.5rem;
   }
 
@@ -227,17 +230,21 @@
   }
 
   .item {
+    margin-top: 1rem;
     margin-bottom: 1rem;
   }
 
   @media only screen and (max-width: 1330px) {
     .grid-sizer {
-      width: 100%;
+      width: 90%;
     }
 
     .item {
-      width: 100%;
+      width: 90%;
+      margin-left: 5vw;
+      margin-right: 5vw;
     }
+    
   }
 
   @media only screen and (min-width: 1330px) {
