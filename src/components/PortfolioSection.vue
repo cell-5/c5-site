@@ -149,7 +149,6 @@
     },
     watch: {
       filteredPortfolio: function () {
-        console.log("CALLED")
         this.updated()
       },
       '$route.query.categories': {
@@ -218,57 +217,63 @@
 
   .portfolio {
     position: relative;
-    background: white;
+    background: black;
+    padding-top: 0.5rem;
   }
 
   .project-category {
-    margin-top: 5em;
-    margin-bottom: 1em;
+    margin-top: 4.13rem;
+    margin-bottom: 1rem;
   }
 
-  @media only screen and (max-width: 768px) {
+  .item {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  @media only screen and (max-width: 1330px) {
     .grid-sizer {
-      width: 100%;
+      width: 90%;
     }
 
     .item {
-      width: 100%;
-      padding-bottom: 10px;
-      padding-left: 0px;
+      width: 90%;
+      margin-left: 3vw;
     }
+    
   }
 
-  @media only screen and (min-width: 769px) {
+  @media only screen and (min-width: 1330px) {
     .grid-sizer {
       width: 50%;
     }
 
     .item {
       width: 50%;
-      padding-bottom: 10px;
-      padding-left: 10px;
-    }
-
-  }
-
-  @media only screen and (min-width: 1200px) {
-    .grid-sizer {
-      width: 33%;
-    }
-
-    .item {
-      width: 33%;
-      padding-bottom: 10px;
-      padding-left: 10px;
     }
 
     .thumbnail {
       width: 100%;
     }
-
-    .box-1 {
-      width: 33%;
-    }
   }
 
+   @media only screen and (min-width: 2000px) {
+    .grid-sizer {
+      width: 33%;
+    }
+
+    .item {
+      width: 33%;
+    }
+
+    .thumbnail {
+      width: 100%;
+    }
+  }
+  @media only screen and (min-width: 3000px) {
+    .project-category {
+      padding-left: 5rem;
+      padding-right: 5rem;
+    }
+  }
 </style>

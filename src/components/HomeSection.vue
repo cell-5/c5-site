@@ -31,7 +31,7 @@
           <p class="top-bottom">client-first</p>
         </div>
         <div class="row middle">
-
+          <p>
           <a :href="hrefSolution">
 
             <vue-typer @typed="typed"
@@ -47,6 +47,7 @@
                        :erase-on-complete='false'
                        caret-animation='blink'></vue-typer>
           </a>
+          </p>
         </div>
         <div class="row">
           <p class="top-bottom">solutions</p>
@@ -246,18 +247,40 @@ export default {
 }
 .middle {
   color: white;
-  padding: 8px 0px 8px;
+  padding: 8px;
+  -webkit-text-fill-color: transparent; /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: white;
+ 
 }
 .top-bottom {
-  background: black;
+   color: white;
+	opacity: 1;
+	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 2s;
 }
+
+@keyframes fadeInOpacity {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
 .vue-typer .custom.char.typed {
-  color: white !important;
+  color: white;
+  -webkit-text-fill-color: transparent; /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: white;
 }
 char custom typed .middle,
 .top-bottom {
   display: inline-block;
-  padding: 7px !important;
+  padding: 8px;
   word-wrap: break-word;
 }
 .fade-enter-active,
