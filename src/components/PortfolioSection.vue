@@ -215,12 +215,9 @@
 
   @import 'vuetify/src/stylus/app.styl';
 
-  .v-card__text {
-    background: indigo;
-  }
   .portfolio {
     position: relative;
-    background: indigo;
+    background: black;
     padding-top: 0.5rem;
   }
 
