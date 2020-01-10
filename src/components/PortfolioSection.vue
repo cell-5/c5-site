@@ -41,8 +41,8 @@
   import PortfolioItem from "./portfolio/PortfolioItem.vue";
   import MelissaTwiggImg from '../assets/img/portfolio/mtwigg-screenshot-2.jpg';
   import PortlandImg from '../assets/img/portfolio/portland-screenshot.jpg';
-  import Good2RentImg from '../assets/img/portfolio/good2rent-screenshot.jpg';
-  import MyValImg from '../assets/img/portfolio/myval-screenshot.jpg';
+  import Good2RentImg from '../assets/img/portfolio/good2rent-screenshot-2.jpg';
+  import MyValImg from '../assets/img/portfolio/myval-screenshot-2.jpg';
   import WhiteSpiderMedia from '../assets/img/portfolio/wsm.gif';
   import MarkEllwood from '../assets/img/portfolio/mark-ellwood.gif';
   import Atlam from '../assets/img/portfolio/atlam.gif';
@@ -83,35 +83,26 @@
       portfolio() {
         return [
           {
+            src: TendrrImg,
+            title: 'Tendrr',
+            // href: 'https://tendrr.co/',
+            info: 'Destination site for sailing opportunities',
+            category: [categories.website, categories.api]
+          },
+          {
+            src: AphexImg,
+            title: 'Aphex',
+            // href: 'https://www.aphex.co/',
+            info: 'Construction planning platform',
+            category: [categories.api],
+            learnMore: false,
+          },
+          {
             src: WhiteSpiderMedia,
             title: "White Spider Media",
             href: 'http://whitespidermedia.com/',
             info: "A leading, bespoke media planning and buying agency.",
             category: [categories.website, categories.hosting, categories.onSiteSEO],
-            learnMore: false,
-          },
-          {
-            src: MarkEllwood,
-            title: "Mark Ellwood",
-            href: 'https://www.mark-ellwood.com/',
-            info: "New York-based journalist",
-            category: [categories.website],
-            learnMore: false,
-          },
-          {
-            src: MelissaTwiggImg,
-            href: 'http://melissatwigg.co.uk',
-            title: 'Melissa Twigg',
-            info: "London-based freelance journalist",
-            category: [categories.website, categories.hosting],
-            learnMore: false,
-          },
-          {
-            src: PortlandImg,
-            title: 'Portland Decorating & Design',
-            href: 'http://portlanddecorating.co.uk/',
-            info: "London based painter and decorator",
-            category: [categories.webRescue, categories.onSiteSEO],
             learnMore: false,
           },
           {
@@ -131,6 +122,14 @@
             learnMore: false,
           },
           {
+            src: MarkEllwood,
+            title: "Mark Ellwood",
+            href: 'https://www.mark-ellwood.com/',
+            info: "New York-based journalist",
+            category: [categories.website],
+            learnMore: false,
+          },
+          {
             src: Atlam,
             title: "Atlam",
             // href: 'https://www.mark-ellwood.com/',
@@ -139,19 +138,20 @@
             learnMore: false,
           },
           {
-            src: AphexImg,
-            title: 'Aphex',
-            // href: 'https://www.aphex.co/',
-            info: 'Construction planning platform',
-            category: [categories.api],
+            src: MelissaTwiggImg,
+            href: 'http://melissatwigg.co.uk',
+            title: 'Melissa Twigg',
+            info: "London-based freelance journalist",
+            category: [categories.website, categories.hosting],
             learnMore: false,
           },
           {
-            src: TendrrImg,
-            title: 'Tendrr',
-            // href: 'https://tendrr.co/',
-            info: 'Destination site for sailing opportunities',
-            category: [categories.website, categories.api]
+            src: PortlandImg,
+            title: 'Portland Decorating & Design',
+            href: 'http://portlanddecorating.co.uk/',
+            info: "London based painter and decorator",
+            category: [categories.webRescue, categories.onSiteSEO],
+            learnMore: false,
           },
         ];
       },
