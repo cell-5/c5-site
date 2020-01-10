@@ -38,21 +38,23 @@
   import FooterSection from "./FooterSection.vue";
   import Categories from "./portfolio/Categories";
   import categories from './portfolio/categories'
-  import PortfolioItem from "./portfolio/PortfolioItem.vue"
-  import MelissaTwiggImg from '../assets/img/portfolio/mtwigg-screenshot-2.jpg'
-  import PortlandImg from '../assets/img/portfolio/portland-screenshot.jpg'
-  import Good2RentImg from '../assets/img/portfolio/good2rent-screenshot.jpg'
-  import MyValImg from '../assets/img/portfolio/myval-screenshot.jpg'
-  import WhiteSpiderMedia from '../assets/img/portfolio/wsm.gif'
-  import MarkEllwood from '../assets/img/portfolio/mark-ellwood.gif'
-  import Atlam from '../assets/img/portfolio/atlam.gif'
-  import Cell5Splash from './Home/Cell5Welcome.vue'
+  import PortfolioItem from "./portfolio/PortfolioItem.vue";
+  import MelissaTwiggImg from '../assets/img/portfolio/mtwigg-screenshot-2.jpg';
+  import PortlandImg from '../assets/img/portfolio/portland-screenshot.jpg';
+  import Good2RentImg from '../assets/img/portfolio/good2rent-screenshot.jpg';
+  import MyValImg from '../assets/img/portfolio/myval-screenshot.jpg';
+  import WhiteSpiderMedia from '../assets/img/portfolio/wsm.gif';
+  import MarkEllwood from '../assets/img/portfolio/mark-ellwood.gif';
+  import Atlam from '../assets/img/portfolio/atlam.gif';
+  import AphexImg from '../assets/img/portfolio/aphex-screenshot.jpg';
+  import TendrrImg from '../assets/img/portfolio/tendrr-screenshot.jpg';
+  import Cell5Splash from './Home/Cell5Welcome.vue';
 
   import Vue from "vue";
 
   const Masonry = require('masonry-layout');
   const ImagesLoaded = require('imagesloaded');
-  let masonry
+  let masonry;
 
 
   export default {
@@ -135,7 +137,22 @@
             info: "Team of engineers and technicians led by Alex Mark",
             category: [categories.website, categories.hosting],
             learnMore: false,
-          }
+          },
+          {
+            src: AphexImg,
+            title: 'Aphex',
+            // href: 'https://www.aphex.co/',
+            info: 'Construction planning platform',
+            category: [categories.api],
+            learnMore: false,
+          },
+          {
+            src: TendrrImg,
+            title: 'Tendrr',
+            // href: 'https://tendrr.co/',
+            info: 'Destination site for sailing opportunities',
+            category: [categories.website, categories.api]
+          },
         ];
       },
       filteredPortfolio() {

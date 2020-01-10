@@ -40,13 +40,16 @@
         </v-btn>
         <div>
 
-          <h3 class="display-1 font-weight-light mb-2"><a :href="href"> <i style="font-size: smaller"
-                                                                           class="fas fa-link"></i></a>
-            {{ title }}</h3>
+          <h3 class="display-1 font-weight-light mb-2">
+            <a :href="href">
+              <i style="font-size: smaller" class="fas fa-link"></i>
+            </a>
+            {{ title }}
+          </h3>
         </div>
 
 
-        <v-chip v-for="(c, i) in category" disabled>{{c.text}}</v-chip>
+        <v-chip v-for="(c, i) in category" disabled :key="i">{{c.text}}</v-chip>
       </v-card-text>
     </v-card>
   </v-hover>
