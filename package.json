@@ -19,7 +19,7 @@
     "bootstrap-vue": "^2.0.0-rc.25",
     "fs": "0.0.2",
     "imagesloaded": "^4.1.4",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "masonry-layout": "^4.2.2",
     "popper.js": "^1.15.0",
     "slick-carousel": "^1.8.1",
